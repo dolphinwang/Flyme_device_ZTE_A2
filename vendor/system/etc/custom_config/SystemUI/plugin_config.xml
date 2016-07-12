@@ -1,0 +1,15 @@
+<resources>
+	<!--use internal plugin-->
+    <string name="operator_china_telecom">
+		P650A30
+    </string>
+	
+    <string name="operator_china_mobile">
+
+    </string>
+		
+    <string name="operator_china_unicom">
+
+    </string>
+
+</resources>
