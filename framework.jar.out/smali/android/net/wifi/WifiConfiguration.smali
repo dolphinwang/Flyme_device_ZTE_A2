@@ -1096,6 +1096,8 @@
 
     iput v1, p0, Landroid/net/wifi/WifiConfiguration;->channelWidth:I
 
+    invoke-static/range {p0 .. p1}, Landroid/net/wifi/WifiConfiguration$FlymeInjector;->initFlymeExtraFields(Landroid/net/wifi/WifiConfiguration;Landroid/net/wifi/WifiConfiguration;)V
+
     .end local v0    # "i":I
     :cond_6
     return-void

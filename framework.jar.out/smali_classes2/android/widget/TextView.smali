@@ -24485,6 +24485,8 @@
     if-eqz v5, :cond_b
 
     :cond_8
+    invoke-static/range {p0 .. p1}, Landroid/widget/TextView$FlymeInjector;->onTouchUpEventMz(Landroid/widget/TextView;Landroid/view/MotionEvent;)V
+
     invoke-static {}, Landroid/view/inputmethod/InputMethodManager;->peekInstance()Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v2
@@ -24609,6 +24611,8 @@
 
     .prologue
     invoke-super {p0, p1}, Landroid/view/View;->onWindowFocusChanged(Z)V
+
+    invoke-static/range {p0 .. p1}, Landroid/widget/TextView$FlymeInjector;->onFocusChanged(Landroid/widget/TextView;Z)V
 
     if-eqz p1, :cond_0
 
