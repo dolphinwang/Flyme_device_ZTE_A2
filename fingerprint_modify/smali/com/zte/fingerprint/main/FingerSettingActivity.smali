@@ -506,10 +506,10 @@
     invoke-virtual {v7, v14}, Lcom/zte/mifavor/preference/SwitchPreference;->setChecked(Z)V
 
     .line 273
-    invoke-virtual {v5, v14}, Lcom/zte/mifavor/preference/SwitchPreference;->setChecked(Z)V
+    #invoke-virtual {v5, v14}, Lcom/zte/mifavor/preference/SwitchPreference;->setChecked(Z)V
 
     .line 274
-    invoke-virtual {v8, v14}, Lcom/zte/mifavor/preference/SwitchPreference;->setChecked(Z)V
+    #invoke-virtual {v8, v14}, Lcom/zte/mifavor/preference/SwitchPreference;->setChecked(Z)V
 
     .line 278
     :cond_3
@@ -517,23 +517,23 @@
 
     invoke-direct {v11, p0, v0, v5}, Lcom/zte/fingerprint/main/FingerSettingActivity$2;-><init>(Lcom/zte/fingerprint/main/FingerSettingActivity;ILcom/zte/mifavor/preference/SwitchPreference;)V
 
-    invoke-virtual {v5, v11}, Lcom/zte/mifavor/preference/SwitchPreference;->setOnPreferenceClickListener(Lcom/zte/mifavor/preference/Preference$OnPreferenceClickListener;)V
+    #invoke-virtual {v5, v11}, Lcom/zte/mifavor/preference/SwitchPreference;->setOnPreferenceClickListener(Lcom/zte/mifavor/preference/Preference$OnPreferenceClickListener;)V
 
     .line 293
     new-instance v11, Lcom/zte/fingerprint/main/FingerSettingActivity$3;
 
     invoke-direct {v11, p0, v0, v8}, Lcom/zte/fingerprint/main/FingerSettingActivity$3;-><init>(Lcom/zte/fingerprint/main/FingerSettingActivity;ILcom/zte/mifavor/preference/SwitchPreference;)V
 
-    invoke-virtual {v8, v11}, Lcom/zte/mifavor/preference/SwitchPreference;->setOnPreferenceClickListener(Lcom/zte/mifavor/preference/Preference$OnPreferenceClickListener;)V
+    #invoke-virtual {v8, v11}, Lcom/zte/mifavor/preference/SwitchPreference;->setOnPreferenceClickListener(Lcom/zte/mifavor/preference/Preference$OnPreferenceClickListener;)V
 
     .line 306
     invoke-virtual {v7, p0}, Lcom/zte/mifavor/preference/SwitchPreference;->setOnPreferenceChangeListener(Lcom/zte/mifavor/preference/Preference$OnPreferenceChangeListener;)V
 
     .line 307
-    invoke-virtual {v5, p0}, Lcom/zte/mifavor/preference/SwitchPreference;->setOnPreferenceChangeListener(Lcom/zte/mifavor/preference/Preference$OnPreferenceChangeListener;)V
+    #invoke-virtual {v5, p0}, Lcom/zte/mifavor/preference/SwitchPreference;->setOnPreferenceChangeListener(Lcom/zte/mifavor/preference/Preference$OnPreferenceChangeListener;)V
 
     .line 308
-    invoke-virtual {v8, p0}, Lcom/zte/mifavor/preference/SwitchPreference;->setOnPreferenceChangeListener(Lcom/zte/mifavor/preference/Preference$OnPreferenceChangeListener;)V
+    #invoke-virtual {v8, p0}, Lcom/zte/mifavor/preference/SwitchPreference;->setOnPreferenceChangeListener(Lcom/zte/mifavor/preference/Preference$OnPreferenceChangeListener;)V
 
     .line 310
     const-string v11, "quick_open_app"
