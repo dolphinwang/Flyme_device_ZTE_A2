@@ -217,6 +217,16 @@
 
 .field listener:Landroid/hardware/SensorEventListener;
 
+.field mFlymeBootLayout:Landroid/view/View;
+
+.field mFlymeBootMsgBar:Landroid/widget/ProgressBar;
+
+.field mFlymeBootMsgText:Landroid/widget/TextView;
+
+.field mFlymeBootMsgTitle:Landroid/widget/TextView;
+
+.field mFlymeStatusBarService:Lmeizu/statusbar/IFlymeStatusBarService;
+
 .field mAccelerometerDefault:Z
 
 .field mAccessibilityManager:Landroid/view/accessibility/AccessibilityManager;
@@ -10365,6 +10375,8 @@
     iput-boolean v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mAllowLockscreenWhenOn:Z
 
     :cond_b
+    invoke-static/range {p0 .. p2}, Lcom/android/internal/policy/impl/PhoneWindowManager$FlymeInjector;->setHideLockScreen(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/view/WindowManagerPolicy$WindowState;Landroid/view/WindowManager$LayoutParams;)V
+
     iget-object v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mWinShowWhenLocked:Landroid/view/WindowManagerPolicy$WindowState;
 
     if-eqz v6, :cond_c
@@ -18810,6 +18822,8 @@
 
     :goto_2
     iput-boolean v6, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mAppLaunchTimeEnabled:Z
+
+    invoke-static/range {p0 .. p1}, Lcom/android/internal/policy/impl/PhoneWindowManager$FlymeInjector;->initFlymeExtraFields(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/content/Context;)V
 
     return-void
 
