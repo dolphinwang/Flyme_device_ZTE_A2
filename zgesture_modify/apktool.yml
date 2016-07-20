@@ -1,0 +1,37 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: zgesture.apk
+compressionType: false
+doNotCompress:
+- arsc
+- PNG
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo:
+  minSdkVersion: '20'
+  targetSdkVersion: '23'
+sharedLibrary: false
+unknownFiles:
+  'null': '8'
+  com/hcrest/motionengine/cursor/gesture/GesturePatterns.xml: '8'
+  doc-files/symbol_2.png: '8'
+  doc-files/symbol_8_byhand.png: '8'
+  doc-files/symbol_8_plotvectors.png: '8'
+  doc-files/symbol_8_points.png: '8'
+  doc-files/symbol_8_rotation1.png: '8'
+  doc-files/symbol_8_rotation2.png: '8'
+  doc-files/symbol_8_variation1.png: '8'
+  doc-files/symbol_8_variation2.png: '8'
+  doc-files/symbol_8_variation3.png: '8'
+  doc-files/symbol_at1.png: '8'
+  doc-files/symbol_at2.png: '8'
+  doc-files/symbol_directions.png: '8'
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.1.1-04d478-SNAPSHOT
+versionInfo:
+  versionCode: '301'
+  versionName: 3.0.1

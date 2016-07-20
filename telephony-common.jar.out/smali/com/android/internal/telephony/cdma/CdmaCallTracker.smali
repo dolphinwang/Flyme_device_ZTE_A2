@@ -1089,7 +1089,7 @@
     .line 1564
     iget-object v3, p0, Lcom/android/internal/telephony/cdma/CdmaCallTracker;->mPhone:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
-    invoke-virtual {v3}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyCdmaCallAccepted()V
+    #invoke-virtual {v3}, Lcom/android/internal/telephony/cdma/CDMAPhone;->notifyCdmaCallAccepted()V
 
     .line 1567
     .end local v0    # "c":Lcom/android/internal/telephony/cdma/CdmaConnection;

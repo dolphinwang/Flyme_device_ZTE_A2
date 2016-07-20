@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:persistent="false" android:key="head_tips" android:summary="@string/head_tips" android:widgetLayout="@null" />
+    <PreferenceCategory android:color="@color/default_widget" android:title="@string/gesture" android:key="gesture_category" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/air_gestures" android:key="air_gestures" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/black_screen_gesture" android:key="black_screen_gesture" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/double_tap_to_wakeup" android:key="double_tap" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/close_app" android:key="close_app" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/switch_app" android:key="switch_app" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/screen_shot" android:key="screen_shot" />
+    <com.zte.mifavor.preference.Preference android:persistent="false" android:key="learn_more" android:summary="@string/learn_more_tip" />
+    <PreferenceCategory android:color="@color/default_widget" android:title="@string/motion" android:key="motion_category" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/call" android:key="call" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/answer" android:key="answer" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/pocket" android:key="pocket" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/turnover" android:key="turnover" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/alarm" android:key="alarmclock" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/change_to_receiver" android:key="changetoreceiver" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/close_screen" android:key="closescreen" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/shake_it" android:key="shakeit" />
+</PreferenceScreen>

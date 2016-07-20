@@ -1,0 +1,92 @@
+.class Lcom/zte/zgesture/motionrec/AppListSlideRecognizer$1;
+.super Landroid/content/BroadcastReceiver;
+.source "AppListSlideRecognizer.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;
+
+
+# direct methods
+.method constructor <init>(Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;)V
+    .locals 0
+
+    .prologue
+    .line 90
+    iput-object p1, p0, Lcom/zte/zgesture/motionrec/AppListSlideRecognizer$1;->this$0:Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;
+
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 3
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
+
+    .prologue
+    .line 94
+    iget-object v0, p0, Lcom/zte/zgesture/motionrec/AppListSlideRecognizer$1;->this$0:Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;
+
+    # getter for: Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;->mGestureSetting:Lcom/zte/zgesture/setting/GestureSetting;
+    invoke-static {v0}, Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;->access$000(Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;)Lcom/zte/zgesture/setting/GestureSetting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/zte/zgesture/setting/GestureSetting;->reloadSetting()V
+
+    .line 95
+    iget-object v0, p0, Lcom/zte/zgesture/motionrec/AppListSlideRecognizer$1;->this$0:Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;
+
+    iget-object v1, p0, Lcom/zte/zgesture/motionrec/AppListSlideRecognizer$1;->this$0:Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;
+
+    # getter for: Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;->mGestureSetting:Lcom/zte/zgesture/setting/GestureSetting;
+    invoke-static {v1}, Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;->access$000(Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;)Lcom/zte/zgesture/setting/GestureSetting;
+
+    move-result-object v1
+
+    const-string v2, "setting_close_app"
+
+    invoke-virtual {v1, v2}, Lcom/zte/zgesture/setting/GestureSetting;->getValue(Ljava/lang/String;)Z
+
+    move-result v1
+
+    # setter for: Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;->mSwitchCloseApp:Z
+    invoke-static {v0, v1}, Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;->access$102(Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;Z)Z
+
+    .line 97
+    iget-object v0, p0, Lcom/zte/zgesture/motionrec/AppListSlideRecognizer$1;->this$0:Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;
+
+    iget-object v1, p0, Lcom/zte/zgesture/motionrec/AppListSlideRecognizer$1;->this$0:Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;
+
+    # getter for: Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;->mGestureSetting:Lcom/zte/zgesture/setting/GestureSetting;
+    invoke-static {v1}, Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;->access$000(Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;)Lcom/zte/zgesture/setting/GestureSetting;
+
+    move-result-object v1
+
+    const-string v2, "setting_switch_app"
+
+    invoke-virtual {v1, v2}, Lcom/zte/zgesture/setting/GestureSetting;->getValue(Ljava/lang/String;)Z
+
+    move-result v1
+
+    # setter for: Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;->mSwitchNextApp:Z
+    invoke-static {v0, v1}, Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;->access$202(Lcom/zte/zgesture/motionrec/AppListSlideRecognizer;Z)Z
+
+    .line 99
+    return-void
+.end method

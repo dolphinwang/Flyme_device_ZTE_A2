@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zte.mifavor.preference.PreferenceScreen android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/call" android:key="call" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/answer" android:key="answer" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/pocket" android:key="pocket" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/turnover" android:key="turnover" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/alarm" android:key="alarmclock" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/change_to_receiver" android:key="changetoreceiver" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/close_screen" android:key="closescreen" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/shake_it" android:key="shakeit" />
+</com.zte.mifavor.preference.PreferenceScreen>

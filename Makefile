@@ -14,7 +14,7 @@
 # It depends on the device's resolution.
 # The default value is hdpi.
 #-----------------------------------------------------------------------------
-DENSITY := xhdpi
+DENSITY := hdpi
 
 ##############################################################################
 # The value is used to config the bootanimation.
@@ -33,7 +33,7 @@ RESOLUTION := 720x1280
 # If the boot.img or recovery.img exists, the system of build will use a prebuilt boot.img or recovery.img.
 # If the boot.img or recovery.img doesn't exists, the system of build will do nothing.
 #-----------------------------------------------------------------------------
-vendor_modify_images := boot
+#vendor_modify_images := boot
 
 ##############################################################################
 # The value decides the directory which you want to remove in the vendor directory for the ota package.
@@ -56,7 +56,8 @@ vendor_modify_images := boot
 #-----------------------------------------------------------------------------
 vendor_saved_apps := Bluetooth KeyChain HTMLViewer UserDictionaryProvider BackupRestoreConfirmation \
                      FusedLocation PrintSpooler SharedStorageBackup  ExternalStorageProvider InputDevices \
-                     ProxyHandler Shell DefaultContainerService
+                     ProxyHandler Shell DefaultContainerService SuperSU Camera_ZTE VirtualHardKey \
+                     zgesture MIPop FPService fingerprint FMRadio_ZTE
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -74,7 +75,8 @@ vendor_saved_apps := Bluetooth KeyChain HTMLViewer UserDictionaryProvider Backup
 # You need to decode android.policy.jar to the project directory (use apktool d android.policy.jar) first,
 # and then you can make it by:   make android.policy
 #-----------------------------------------------------------------------------
-vendor_modify_jars := android.policy framework mediatek-framework mediatek-telephony-common services telephony-common wifi-service
+vendor_modify_jars := android.policy framework mediatek-framework mediatek-telephony-common services telephony-common wifi-service \
+                      com.zte.ZTESecurity
 
 ##############################################################################
 # The value decides which board system directory you want to save.
@@ -89,14 +91,15 @@ vendor_modify_jars := android.policy framework mediatek-framework mediatek-telep
 # You can configure the board system file path which relative to the system directory in the board release.
 # You should add "lib64/libwebviewchromium.so" for 64 bit system.
 #-----------------------------------------------------------------------------
-board_saved_files := lib64/libwebviewchromium.so bin/bootanimation bin/shutdownanimation media/bootanimation.zip
+board_saved_files := lib/libwebviewchromium.so lib64/libwebviewchromium.so bin/bootanimation bin/shutdownanimation \
+                     media/bootanimation.zip
 
 ##############################################################################
 # The value decides which board system apk you want to remove.
 # The default value is nothing.
 # You can configure the board system apk name in the value.
 #-----------------------------------------------------------------------------
-#board_remove_apps := LogReport
+board_remove_apps := NfcNci
 
 ##############################################################################
 # The value decides which apk you want to modify, when the apk is based on the board system apk.
@@ -108,7 +111,7 @@ board_saved_files := lib64/libwebviewchromium.so bin/bootanimation bin/shutdowna
 # The command idtoname how to use: first use "apktool d source/system/framework/framework-res.apk other/TMP/framework-res",
 # and then use "idtoname other/TMP/framework-res/res/values/public_master.xml XXXX/smali"(XXXX is the directory where you decode board system apk).
 #-----------------------------------------------------------------------------
-#board_modify_apps := TeleService
+board_modify_apps := Mms Settings SystemUI
 
 ##############################################################################
 # The value decides which jar you want to modify, when the jar is based on the board framework jar.

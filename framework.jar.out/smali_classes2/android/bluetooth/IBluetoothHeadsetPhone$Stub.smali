@@ -44,8 +44,6 @@
 
 .field static final TRANSACTION_queryPhoneState:I = 0x8
 
-.field static final TRANSACTION_restrictDualTalk:I = 0x9
-
 .field static final TRANSACTION_sendDtmf:I = 0x3
 
 .field static final TRANSACTION_updateBtHandsfreeAfterRadioTechnologyChange:I = 0xa
@@ -374,32 +372,6 @@
     .line 120
     .end local v1    # "_result":Z
     :sswitch_9
-    const-string v4, "android.bluetooth.IBluetoothHeadsetPhone"
-
-    invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 121
-    invoke-virtual {p0}, Landroid/bluetooth/IBluetoothHeadsetPhone$Stub;->restrictDualTalk()Z
-
-    move-result v1
-
-    .line 122
-    .restart local v1    # "_result":Z
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 123
-    if-eqz v1, :cond_6
-
-    move v2, v3
-
-    :cond_6
-    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto/16 :goto_0
-
-    .line 128
-    .end local v1    # "_result":Z
-    :sswitch_a
     const-string v2, "android.bluetooth.IBluetoothHeadsetPhone"
 
     invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -413,7 +385,7 @@
     goto/16 :goto_0
 
     .line 135
-    :sswitch_b
+    :sswitch_a
     const-string v2, "android.bluetooth.IBluetoothHeadsetPhone"
 
     invoke-virtual {p2, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -427,7 +399,7 @@
     goto/16 :goto_0
 
     .line 142
-    :sswitch_c
+    :sswitch_b
     const-string v4, "android.bluetooth.IBluetoothHeadsetPhone"
 
     invoke-virtual {p2, v4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
@@ -437,7 +409,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_6
 
     move v0, v3
 
@@ -452,7 +424,7 @@
     goto/16 :goto_0
 
     .end local v0    # "_arg0":Z
-    :cond_7
+    :cond_6
     move v0, v2
 
     .line 144
@@ -472,7 +444,6 @@
         0x9 -> :sswitch_9
         0xa -> :sswitch_a
         0xb -> :sswitch_b
-        0xc -> :sswitch_c
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

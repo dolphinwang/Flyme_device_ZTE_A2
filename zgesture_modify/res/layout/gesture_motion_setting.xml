@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zte.mifavor.preference.PreferenceScreen android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.zte.mifavor.preference.Preference android:persistent="false" android:key="head_tips" android:summary="@string/head_tips" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/double_tap_to_wakeup" android:key="double_tap" />
+    <com.zte.zgesture.setting.SettingSwitchPreference android:persistent="false" android:title="@string/screen_shot" android:key="screen_shot" />
+</com.zte.mifavor.preference.PreferenceScreen>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zte.mifavor.preference.PreferenceScreen android:title="@string/alarm" android:key="alarm_setting"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.zte.mifavor.preference.Preference android:persistent="false" android:title="@string/alarm_cancel" android:key="alarm_cancel" android:summary="@string/alarm_cancel_sum" />
+    <com.zte.mifavor.preference.Preference android:persistent="false" android:title="@string/alarm_snooze" android:key="alarm_snooze" android:summary="@string/alarm_snooze_sum" />
+</com.zte.mifavor.preference.PreferenceScreen>

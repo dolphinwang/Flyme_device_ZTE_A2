@@ -957,9 +957,9 @@
     if-eqz v10, :cond_6
 
     .line 405
-    iget-object v0, p0, Landroid/mtp/MtpDatabase;->mMediaProvider:Landroid/content/IContentProvider;
+    #iget-object v0, p0, Landroid/mtp/MtpDatabase;->mMediaProvider:Landroid/content/IContentProvider;
 
-    invoke-direct {p0, v0, p1}, Landroid/mtp/MtpDatabase;->notifyBeginSend(Landroid/content/IContentProvider;Ljava/lang/String;)V
+    #invoke-direct {p0, v0, p1}, Landroid/mtp/MtpDatabase;->notifyBeginSend(Landroid/content/IContentProvider;Ljava/lang/String;)V
 
     .line 407
     invoke-virtual {v10}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
@@ -2508,9 +2508,9 @@
 
     .prologue
     .line 1208
-    iget-object v0, p0, Landroid/mtp/MtpDatabase;->mMediaProvider:Landroid/content/IContentProvider;
+    #iget-object v0, p0, Landroid/mtp/MtpDatabase;->mMediaProvider:Landroid/content/IContentProvider;
 
-    invoke-direct {p0, v0, p1}, Landroid/mtp/MtpDatabase;->notifyBeginSend(Landroid/content/IContentProvider;Ljava/lang/String;)V
+    #invoke-direct {p0, v0, p1}, Landroid/mtp/MtpDatabase;->notifyBeginSend(Landroid/content/IContentProvider;Ljava/lang/String;)V
 
     .line 1209
     return-void

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/intro_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/intro_pic" android:background="@color/intro_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerInside" android:layout_above="@id/title" />
+    <ImageView android:id="@id/divider" android:layout_width="fill_parent" android:layout_height="50.0dip" android:src="@drawable/intro_divider" android:scaleType="fitXY" android:layout_above="@id/title" />
+    <TextView android:textSize="18.0sp" android:textColor="@color/black" android:id="@id/title" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="205.0dip" android:layout_alignParentBottom="true" />
+    <TextView android:textSize="18.0sp" android:textColor="@color/intro_font" android:id="@id/intro" android:background="@color/white" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="10.0dip" android:singleLine="false" android:layout_above="@id/btn" android:layout_below="@id/divider" />
+    <LinearLayout android:orientation="vertical" android:id="@id/btn" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="10.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+        <Button android:id="@id/choose_btn" android:background="@drawable/try_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:text="@string/select_app" />
+        <Button android:id="@id/try_btn" android:background="@drawable/try_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/bt_try" />
+    </LinearLayout>
+</RelativeLayout>

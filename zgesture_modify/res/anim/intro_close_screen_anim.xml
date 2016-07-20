@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="700" android:drawable="@drawable/help_close_screen_01" />
+    <item android:duration="700" android:drawable="@drawable/help_close_screen_02" />
+    <item android:duration="700" android:drawable="@drawable/help_close_screen_03" />
+    <item android:duration="700" android:drawable="@drawable/help_close_screen_04" />
+    <item android:duration="2000" android:drawable="@drawable/help_close_screen_05" />
+</animation-list>

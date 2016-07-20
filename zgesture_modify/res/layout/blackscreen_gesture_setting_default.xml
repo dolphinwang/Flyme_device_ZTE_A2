@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:persistent="false" android:color="@color/default_widget" android:title="@string/default_" />
+    <com.zte.zgesture.setting.SettingDrawItemSwitchPreference android:persistent="false" android:key="draw_up" />
+    <com.zte.zgesture.setting.SettingDrawItemSwitchPreference android:persistent="false" android:key="draw_down" />
+    <com.zte.zgesture.setting.SettingDrawItemSwitchPreference android:persistent="false" android:key="draw_left" />
+    <com.zte.zgesture.setting.SettingDrawItemSwitchPreference android:persistent="false" android:key="draw_right" />
+    <PreferenceCategory android:color="@color/default_widget" android:title="@string/shake_custom" />
+    <com.zte.zgesture.setting.SettingDrawItemSwitchPreference android:persistent="false" android:key="draw_c" />
+    <com.zte.zgesture.setting.SettingDrawItemSwitchPreference android:persistent="false" android:key="draw_o" />
+    <com.zte.zgesture.setting.SettingDrawItemSwitchPreference android:persistent="false" android:key="draw_m" />
+    <com.zte.zgesture.setting.SettingDrawItemSwitchPreference android:persistent="false" android:key="draw_w" />
+    <com.zte.zgesture.setting.SettingDrawItemSwitchPreference android:persistent="false" android:key="draw_v" />
+    <com.zte.zgesture.setting.SettingDrawItemSwitchPreference android:persistent="false" android:key="draw_e" />
+    <com.zte.zgesture.setting.SettingDrawItemSwitchPreference android:persistent="false" android:key="draw_s" />
+</PreferenceScreen>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zte.mifavor.preference.PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.zte.mifavor.preference.Preference android:persistent="false" android:key="intro_shake" android:summary="@string/intro_shake_it" />
+    <com.zte.zgesture.setting.RadioPreference android:persistent="false" android:title="@string/shake_flashlight" android:key="shake_flashlight" android:widgetLayout="@layout/radioview" />
+    <com.zte.zgesture.setting.RadioPreference android:persistent="false" android:title="@string/shake_caculator" android:key="shake_caculator" android:widgetLayout="@layout/radioview" />
+</com.zte.mifavor.preference.PreferenceScreen>

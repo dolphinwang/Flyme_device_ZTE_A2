@@ -1,0 +1,309 @@
+.field private mFingerprintUnlock:Lcom/android/keyguard/FingerprintUnlock;
+
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .locals 1
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
+
+    .prologue
+    invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/keyguard/KeyguardViewBase;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+
+    iput-object v0, p0, Lcom/android/keyguard/KeyguardViewBase;->mFingerprintUnlock:Lcom/android/keyguard/FingerprintUnlock;
+
+    new-instance v0, Lcom/android/keyguard/KeyguardViewBase$1;
+
+    invoke-direct {v0, p0}, Lcom/android/keyguard/KeyguardViewBase$1;-><init>(Lcom/android/keyguard/KeyguardViewBase;)V
+
+    iput-object v0, p0, Lcom/android/keyguard/KeyguardViewBase;->mActivityLauncher:Lcom/android/keyguard/KeyguardActivityLauncher;
+
+    return-void
+.end method
+
+.method public finish()V
+    .locals 9
+
+    .prologue
+    const/4 v8, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v6, 0x1
+
+    const-string v1, "KeyguardViewBase"
+
+    const-string v2, "finish() is called."
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v1, "KeyguardViewBase"
+
+    const-string v2, "finish"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mFingerprintUnlock:Lcom/android/keyguard/FingerprintUnlock;
+
+    if-eqz v1, :cond_hxs_0
+
+    const-string v1, "FPCUnlock"
+
+    const-string v2, "the startTime is %d"
+
+    new-array v3, v6, [Ljava/lang/Object;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v4
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    aput-object v4, v3, v7
+
+    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mFingerprintUnlock:Lcom/android/keyguard/FingerprintUnlock;
+
+    invoke-virtual {v1, v6}, Lcom/android/keyguard/FingerprintUnlock;->handleUnregisterCallback(Z)V
+
+    const-string v1, "FPCUnlock"
+
+    const-string v2, "the endTime is %d"
+
+    new-array v3, v6, [Ljava/lang/Object;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v4
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    aput-object v4, v3, v7
+
+    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    iput-object v8, p0, Lcom/android/keyguard/KeyguardViewBase;->mFingerprintUnlock:Lcom/android/keyguard/FingerprintUnlock;
+
+    :cond_hxs_0
+
+    const/4 v2, 0x1
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mContext:Landroid/content/Context;
+
+    invoke-static {v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Lcom/android/keyguard/KeyguardUpdateMonitor;->setAlternateUnlockEnabled(Z)V
+
+    const/4 v0, 0x0
+
+    .local v0, "deferKeyguardDone":Z
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mDismissAction:Lcom/android/keyguard/KeyguardHostView$OnDismissAction;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mDismissAction:Lcom/android/keyguard/KeyguardHostView$OnDismissAction;
+
+    invoke-interface {v1}, Lcom/android/keyguard/KeyguardHostView$OnDismissAction;->onDismiss()Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mDismissAction:Lcom/android/keyguard/KeyguardHostView$OnDismissAction;
+
+    :cond_0
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mViewMediatorCallback:Lcom/android/keyguard/ViewMediatorCallback;
+
+    if-eqz v1, :cond_1
+
+    if-eqz v0, :cond_2
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mViewMediatorCallback:Lcom/android/keyguard/ViewMediatorCallback;
+
+    invoke-interface {v1}, Lcom/android/keyguard/ViewMediatorCallback;->keyguardDonePending()V
+
+    :cond_1
+    :goto_0
+    return-void
+
+    :cond_2
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mViewMediatorCallback:Lcom/android/keyguard/ViewMediatorCallback;
+
+    invoke-interface {v1, v2}, Lcom/android/keyguard/ViewMediatorCallback;->keyguardDone(Z)V
+
+    goto :goto_0
+.end method
+
+.method protected onFinishInflate()V
+    .locals 4
+
+    .prologue
+    sget v1, Lcom/android/keyguard/R$id;->keyguard_security_container:I
+
+    invoke-virtual {p0, v1}, Lcom/android/keyguard/KeyguardViewBase;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/keyguard/KeyguardSecurityContainer;
+
+    iput-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mSecurityContainer:Lcom/android/keyguard/KeyguardSecurityContainer;
+
+    new-instance v1, Lcom/android/internal/widget/LockPatternUtils;
+
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardViewBase;->mContext:Landroid/content/Context;
+
+    invoke-direct {v1, v2}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
+
+    iput-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mSecurityContainer:Lcom/android/keyguard/KeyguardSecurityContainer;
+
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardViewBase;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+
+    invoke-virtual {v1, v2}, Lcom/android/keyguard/KeyguardSecurityContainer;->setLockPatternUtils(Lcom/android/internal/widget/LockPatternUtils;)V
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mSecurityContainer:Lcom/android/keyguard/KeyguardSecurityContainer;
+
+    invoke-virtual {v1, p0}, Lcom/android/keyguard/KeyguardSecurityContainer;->setSecurityCallback(Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;)V
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mSecurityContainer:Lcom/android/keyguard/KeyguardSecurityContainer;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Lcom/android/keyguard/KeyguardSecurityContainer;->showPrimarySecurityScreen(Z)V
+
+    :try_start_0
+    const-string v1, "KeyguardViewBase"
+
+    const-string v2, "new FingerprintUnlock  start"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mContext:Landroid/content/Context;
+
+    invoke-static {v1}, Lcom/android/keyguard/FingerprintHelper;->isDeviceWithFingerPrint(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mContext:Landroid/content/Context;
+
+    invoke-static {v1}, Lcom/android/keyguard/FingerprintHelper;->checkSreenLock(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mContext:Landroid/content/Context;
+
+    invoke-static {v1}, Lcom/android/keyguard/FingerprintHelper;->checkFingerPrinter(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mFingerprintUnlock:Lcom/android/keyguard/FingerprintUnlock;
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mContext:Landroid/content/Context;
+
+    invoke-static {v1}, Lcom/android/keyguard/FingerprintUnlock;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/FingerprintUnlock;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mFingerprintUnlock:Lcom/android/keyguard/FingerprintUnlock;
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mFingerprintUnlock:Lcom/android/keyguard/FingerprintUnlock;
+
+    invoke-virtual {v1, p0}, Lcom/android/keyguard/FingerprintUnlock;->setKeyguardCallback(Lcom/android/keyguard/KeyguardSecurityContainer$SecurityCallback;)V
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mFingerprintUnlock:Lcom/android/keyguard/FingerprintUnlock;
+
+    iget-object v2, p0, Lcom/android/keyguard/KeyguardViewBase;->mViewMediatorCallback:Lcom/android/keyguard/ViewMediatorCallback;
+
+    invoke-virtual {v1, v2}, Lcom/android/keyguard/FingerprintUnlock;->setViewMediatorCallback(Lcom/android/keyguard/ViewMediatorCallback;)V
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mFingerprintUnlock:Lcom/android/keyguard/FingerprintUnlock;
+
+    invoke-virtual {v1}, Lcom/android/keyguard/FingerprintUnlock;->handleRegisterCallback()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    .local v0, "e":Ljava/lang/Exception;
+    const-string v1, "KeyguardViewBase"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "new FingerprintUnlock  Exception="
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+.end method
+
+.method public setViewMediatorCallback(Lcom/android/keyguard/ViewMediatorCallback;)V
+    .locals 2
+    .param p1, "viewMediatorCallback"    # Lcom/android/keyguard/ViewMediatorCallback;
+
+    .prologue
+    iput-object p1, p0, Lcom/android/keyguard/KeyguardViewBase;->mViewMediatorCallback:Lcom/android/keyguard/ViewMediatorCallback;
+
+    iget-object v0, p0, Lcom/android/keyguard/KeyguardViewBase;->mFingerprintUnlock:Lcom/android/keyguard/FingerprintUnlock;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/keyguard/KeyguardViewBase;->mFingerprintUnlock:Lcom/android/keyguard/FingerprintUnlock;
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mViewMediatorCallback:Lcom/android/keyguard/ViewMediatorCallback;
+
+    invoke-virtual {v0, v1}, Lcom/android/keyguard/FingerprintUnlock;->setViewMediatorCallback(Lcom/android/keyguard/ViewMediatorCallback;)V
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/keyguard/KeyguardViewBase;->mViewMediatorCallback:Lcom/android/keyguard/ViewMediatorCallback;
+
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardViewBase;->mSecurityContainer:Lcom/android/keyguard/KeyguardSecurityContainer;
+
+    invoke-virtual {v1}, Lcom/android/keyguard/KeyguardSecurityContainer;->needsInput()Z
+
+    move-result v1
+
+    invoke-interface {v0, v1}, Lcom/android/keyguard/ViewMediatorCallback;->setNeedsInput(Z)V
+
+    return-void
+.end method

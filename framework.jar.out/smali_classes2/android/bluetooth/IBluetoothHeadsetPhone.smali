@@ -87,14 +87,6 @@
     .end annotation
 .end method
 
-.method public abstract restrictDualTalk()Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract sendDtmf(I)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {

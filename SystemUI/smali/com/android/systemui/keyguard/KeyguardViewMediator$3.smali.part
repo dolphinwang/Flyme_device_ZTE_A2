@@ -1,0 +1,24 @@
+.method public isOccluded()Z
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$3;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
+
+    invoke-virtual {v0}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->isOccluded()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public setFingerprintFlag(Z)V
+    .locals 1
+    .param p1, "flag"    # Z
+
+    .prologue
+    iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$3;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
+
+    invoke-virtual {v0, p1}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->setFingerprintFlag(Z)V
+
+    return-void
+.end method

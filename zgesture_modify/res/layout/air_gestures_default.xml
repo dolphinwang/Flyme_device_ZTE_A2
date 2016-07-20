@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:persistent="false" android:summary="@string/intro_air_gestures" android:widgetLayout="@null" />
+    <PreferenceCategory android:persistent="false" android:color="@color/default_widget" android:title="@string/default_" />
+    <com.zte.zgesture.setting.SettingDrawItemSwitchPreference android:persistent="false" android:key="air_m" />
+    <com.zte.zgesture.setting.SettingDrawItemSwitchPreference android:persistent="false" android:key="air_o" />
+    <PreferenceCategory android:persistent="false" android:color="@color/default_widget" android:title="@string/shake_custom" />
+    <com.zte.zgesture.setting.SettingDrawItemSwitchPreference android:persistent="false" android:key="air_v" />
+    <com.zte.zgesture.setting.SettingDrawItemSwitchPreference android:persistent="false" android:key="air_z" />
+    <com.zte.zgesture.setting.SettingDrawItemSwitchPreference android:persistent="false" android:key="air_w" />
+</PreferenceScreen>
