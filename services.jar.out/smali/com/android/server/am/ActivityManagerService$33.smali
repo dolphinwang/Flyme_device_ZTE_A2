@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 22642
+    .line 22640
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$33;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$33;->val$cmpName:Landroid/content/ComponentName;
@@ -44,10 +44,10 @@
     .locals 2
 
     .prologue
-    .line 22644
+    .line 22642
     monitor-enter p0
 
-    .line 22645
+    .line 22643
     :try_start_0
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$33;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -55,20 +55,20 @@
 
     iput-object v1, v0, Lcom/android/server/am/ActivityManagerService;->mWallpaperClassName:Landroid/content/ComponentName;
 
-    .line 22646
+    .line 22644
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$33;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lcom/android/server/am/ActivityManagerService;->mIsWallpaperFg:Z
 
-    .line 22647
+    .line 22645
     monitor-exit p0
 
-    .line 22648
+    .line 22646
     return-void
 
-    .line 22647
+    .line 22645
     :catchall_0
     move-exception v0
 

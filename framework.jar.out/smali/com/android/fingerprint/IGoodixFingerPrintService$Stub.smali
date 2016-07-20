@@ -54,6 +54,8 @@
 
 .field static final TRANSACTION_startEnroll:I = 0x1
 
+.field static final TRANSACTION_startNavigation:I = 0x12
+
 .field static final TRANSACTION_startVerify:I = 0x3
 
 .field static final TRANSACTION_unregisterReceiver:I = 0xc
@@ -154,7 +156,7 @@
     .line 38
     sparse-switch p1, :sswitch_data_0
 
-    .line 226
+    .line 236
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v4
@@ -687,7 +689,35 @@
     .line 220
     goto :goto_1
 
+    .line 227
+    :sswitch_12
+    const-string v3, "com.android.fingerprint.IGoodixFingerPrintService"
+
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 229
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    .line 230
+    .local v0, "_arg0":Landroid/os/IBinder;
+    invoke-virtual {p0, v0}, Lcom/android/fingerprint/IGoodixFingerPrintService$Stub;->startNavigation(Landroid/os/IBinder;)I
+
+    move-result v2
+
+    .line 231
+    .local v2, "_result":I
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 232
+    invoke-virtual {p3, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto/16 :goto_0
+
     .line 38
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -707,6 +737,7 @@
         0xf -> :sswitch_f
         0x10 -> :sswitch_10
         0x11 -> :sswitch_11
+        0x12 -> :sswitch_12
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

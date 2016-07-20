@@ -24,7 +24,7 @@
     .param p2, "x0"    # Landroid/os/Handler;
 
     .prologue
-    .line 750
+    .line 757
     iput-object p1, p0, Lcom/mediatek/internal/telephony/ims/ImsService$2;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -39,7 +39,7 @@
     .param p1, "selfChange"    # Z
 
     .prologue
-    .line 754
+    .line 761
     const-string v0, "user_selected_wfc_preference"
 
     invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -48,7 +48,7 @@
 
     invoke-virtual {p0, p1, v0}, Lcom/mediatek/internal/telephony/ims/ImsService$2;->onChange(ZLandroid/net/Uri;)V
 
-    .line 756
+    .line 763
     return-void
 .end method
 
@@ -60,14 +60,14 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 760
+    .line 767
     const-string v1, "user_selected_wfc_preference"
 
     invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 762
+    .line 769
     .local v0, "i":Landroid/net/Uri;
     const-string v1, "ImsService"
 
@@ -101,7 +101,7 @@
 
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 763
+    .line 770
     const-string v1, "ImsService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -141,7 +141,7 @@
 
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 766
+    .line 773
     if-eqz v0, :cond_0
 
     invoke-virtual {v0, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
@@ -150,7 +150,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 768
+    .line 775
     iget-object v1, p0, Lcom/mediatek/internal/telephony/ims/ImsService$2;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     # getter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mImsRILAdapter:Lcom/mediatek/internal/telephony/ims/ImsRILAdapter;
@@ -177,7 +177,7 @@
 
     invoke-virtual {v1, v2}, Lcom/mediatek/internal/telephony/ims/ImsRILAdapter;->sendWfcProfileInfo(I)V
 
-    .line 772
+    .line 779
     :cond_0
     return-void
 .end method

@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 5944
+    .line 5981
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$27;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,36 +39,48 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 5946
+    .line 5983
     const-string v1, "WindowManager"
 
     const-string v2, "mIpoEventReceiver -- onReceive -- entry"
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5947
+    .line 5984
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5948
+    .line 5985
     .local v0, "action":Ljava/lang/String;
-    const-string v1, "sys.boot.reason"
+    const-string v1, "android.intent.action.ACTION_SHUTDOWN_IPO"
 
-    const-string v2, "0"
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+    move-result v1
 
-    .line 5949
+    if-eqz v1, :cond_0
+
+    .line 5986
+    const-string v1, "WindowManager"
+
+    const-string v2, "Receive IPO_ENABLE"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 5987
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$27;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    const/4 v2, 0x0
+    # invokes: Lcom/android/internal/policy/impl/PhoneWindowManager;->ipoSystemShutdown()V
+    invoke-static {v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$2900(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
 
-    # setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsAlarmBoot:Z
-    invoke-static {v1, v2}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$3102(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
+    .line 5994
+    :goto_0
+    return-void
 
-    .line 5950
-    const-string v1, "android.intent.action.normal.shutdown"
+    .line 5988
+    :cond_0
+    const-string v1, "android.intent.action.ACTION_BOOT_IPO"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -76,56 +88,28 @@
 
     if-eqz v1, :cond_1
 
-    .line 5951
+    .line 5989
     const-string v1, "WindowManager"
 
-    const-string v2, "Receive NORMAL_SHUTDOWN_ACTION"
+    const-string v2, "Receive IPO_DISABLE"
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 5952
+    .line 5990
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$27;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    const/4 v2, 0x1
+    # invokes: Lcom/android/internal/policy/impl/PhoneWindowManager;->ipoSystemBooted()V
+    invoke-static {v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$3000(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
 
-    # setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsShutDown:Z
-    invoke-static {v1, v2}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$3202(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
+    goto :goto_0
 
-    .line 5958
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 5953
+    .line 5992
     :cond_1
-    const-string v1, "android.intent.action.normal.boot"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 5954
     const-string v1, "WindowManager"
 
-    const-string v2, "Receive NORMAL_BOOT_ACTION"
+    const-string v2, "Receive Fake Intent"
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 5955
-    const-string v1, "service.bootanim.exit"
-
-    const-string v2, "0"
-
-    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 5956
-    const-string v1, "ctl.start"
-
-    const-string v2, "bootanim"
-
-    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 .end method

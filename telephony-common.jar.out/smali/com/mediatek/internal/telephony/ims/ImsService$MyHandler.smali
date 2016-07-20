@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 783
+    .line 790
     iput-object p1, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -37,7 +37,7 @@
     .param p2, "x1"    # Lcom/mediatek/internal/telephony/ims/ImsService$1;
 
     .prologue
-    .line 783
+    .line 790
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;-><init>(Lcom/mediatek/internal/telephony/ims/ImsService;)V
 
     return-void
@@ -50,24 +50,24 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 789
+    .line 796
     invoke-static {}, Lcom/mediatek/internal/telephony/RadioCapabilitySwitchUtil;->getMainCapabilityPhoneId()I
 
     move-result v4
 
-    .line 790
+    .line 797
     .local v4, "phoneId":I
     iget v10, p1, Landroid/os/Message;->what:I
 
     packed-switch v10, :pswitch_data_0
 
-    .line 961
+    .line 968
     :cond_0
     :goto_0
     :pswitch_0
     return-void
 
-    .line 792
+    .line 799
     :pswitch_1
     const-string v10, "ImsService"
 
@@ -75,12 +75,12 @@
 
     invoke-static {v10, v11}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 808
+    .line 815
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 811
+    .line 818
     .local v0, "ar":Landroid/os/AsyncResult;
     iget-object v10, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
@@ -92,12 +92,12 @@
 
     aget v8, v10, v11
 
-    .line 812
+    .line 819
     .local v8, "socketId":I
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     # getter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mActivePhoneId:I
-    invoke-static {v10}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$400(Lcom/mediatek/internal/telephony/ims/ImsService;)I
+    invoke-static {v10}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$300(Lcom/mediatek/internal/telephony/ims/ImsService;)I
 
     move-result v10
 
@@ -105,13 +105,13 @@
 
     move-result v9
 
-    .line 813
+    .line 820
     .local v9, "subId":I
     invoke-static {v9}, Landroid/telephony/SubscriptionManager;->getSlotId(I)I
 
     move-result v7
 
-    .line 814
+    .line 821
     .local v7, "slotId":I
     const-string v10, "ImsService"
 
@@ -138,7 +138,7 @@
     iget-object v12, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     # getter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mActivePhoneId:I
-    invoke-static {v12}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$400(Lcom/mediatek/internal/telephony/ims/ImsService;)I
+    invoke-static {v12}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$300(Lcom/mediatek/internal/telephony/ims/ImsService;)I
 
     move-result v12
 
@@ -172,10 +172,10 @@
 
     invoke-static {v10, v11}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 817
+    .line 824
     if-eq v8, v7, :cond_1
 
-    .line 818
+    .line 825
     const-string v10, "ImsService"
 
     const-string v11, "IMS: ignore other slot\'s registration event"
@@ -184,11 +184,11 @@
 
     goto :goto_0
 
-    .line 823
+    .line 830
     :cond_1
     const/4 v3, 0x3
 
-    .line 824
+    .line 831
     .local v3, "newImsRegInfo":I
     iget-object v10, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
@@ -204,10 +204,10 @@
 
     if-ne v10, v11, :cond_3
 
-    .line 825
+    .line 832
     const/4 v3, 0x0
 
-    .line 830
+    .line 837
     :goto_1
     const-string v10, "persist.ims.simulate"
 
@@ -221,11 +221,11 @@
 
     if-ne v10, v11, :cond_2
 
-    .line 831
+    .line 838
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     # getter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mImsRegistry:Z
-    invoke-static {v10}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$300(Lcom/mediatek/internal/telephony/ims/ImsService;)Z
+    invoke-static {v10}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$400(Lcom/mediatek/internal/telephony/ims/ImsService;)Z
 
     move-result v10
 
@@ -233,7 +233,7 @@
 
     const/4 v3, 0x0
 
-    .line 833
+    .line 840
     :goto_2
     const-string v10, "ImsService"
 
@@ -257,7 +257,7 @@
 
     invoke-static {v10, v11}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 837
+    .line 844
     :cond_2
     iget-object v10, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
@@ -269,7 +269,7 @@
 
     aget v2, v10, v11
 
-    .line 841
+    .line 848
     .local v2, "newImsExtInfo":I
     const-string v10, "ImsService"
 
@@ -310,13 +310,13 @@
 
     invoke-static {v10, v11}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 844
+    .line 851
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     # setter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mImsRegInfo:I
     invoke-static {v10, v3}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$802(Lcom/mediatek/internal/telephony/ims/ImsService;I)I
 
-    .line 845
+    .line 852
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     iget-object v11, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
@@ -329,7 +329,7 @@
     # invokes: Lcom/mediatek/internal/telephony/ims/ImsService;->notifyRegistrationStateChange(I)V
     invoke-static {v10, v11}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$900(Lcom/mediatek/internal/telephony/ims/ImsService;I)V
 
-    .line 849
+    .line 856
     const-string v10, "ImsService"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -369,7 +369,7 @@
 
     invoke-static {v10, v11}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 852
+    .line 859
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     # getter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mImsRegInfo:I
@@ -379,13 +379,13 @@
 
     if-nez v10, :cond_5
 
-    .line 853
+    .line 860
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     # setter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mImsExtInfo:I
     invoke-static {v10, v2}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$1002(Lcom/mediatek/internal/telephony/ims/ImsService;I)I
 
-    .line 857
+    .line 864
     :goto_3
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
@@ -401,20 +401,20 @@
 
     goto/16 :goto_0
 
-    .line 827
+    .line 834
     .end local v2    # "newImsExtInfo":I
     :cond_3
     const/4 v3, 0x1
 
     goto/16 :goto_1
 
-    .line 831
+    .line 838
     :cond_4
     const/4 v3, 0x1
 
     goto/16 :goto_2
 
-    .line 855
+    .line 862
     .restart local v2    # "newImsExtInfo":I
     :cond_5
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
@@ -426,7 +426,7 @@
 
     goto :goto_3
 
-    .line 863
+    .line 870
     .end local v0    # "ar":Landroid/os/AsyncResult;
     .end local v2    # "newImsExtInfo":I
     .end local v3    # "newImsRegInfo":I
@@ -449,7 +449,7 @@
     iget-object v12, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     # getter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mActivePhoneId:I
-    invoke-static {v12}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$400(Lcom/mediatek/internal/telephony/ims/ImsService;)I
+    invoke-static {v12}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$300(Lcom/mediatek/internal/telephony/ims/ImsService;)I
 
     move-result v12
 
@@ -473,23 +473,23 @@
 
     invoke-static {v10, v11}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 867
+    .line 874
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     # getter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mActivePhoneId:I
-    invoke-static {v10}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$400(Lcom/mediatek/internal/telephony/ims/ImsService;)I
+    invoke-static {v10}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$300(Lcom/mediatek/internal/telephony/ims/ImsService;)I
 
     move-result v10
 
     if-eq v10, v4, :cond_6
 
-    .line 868
+    .line 875
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     # setter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mActivePhoneId:I
-    invoke-static {v10, v4}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$402(Lcom/mediatek/internal/telephony/ims/ImsService;I)I
+    invoke-static {v10, v4}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$302(Lcom/mediatek/internal/telephony/ims/ImsService;I)I
 
-    .line 871
+    .line 878
     :cond_6
     new-instance v1, Landroid/content/Intent;
 
@@ -497,20 +497,20 @@
 
     invoke-direct {v1, v10}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 872
+    .line 879
     .local v1, "intent":Landroid/content/Intent;
     const-string v10, "android:phone_id"
 
     iget-object v11, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     # getter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mActivePhoneId:I
-    invoke-static {v11}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$400(Lcom/mediatek/internal/telephony/ims/ImsService;)I
+    invoke-static {v11}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$300(Lcom/mediatek/internal/telephony/ims/ImsService;)I
 
     move-result v11
 
     invoke-virtual {v1, v10, v11}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 873
+    .line 880
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     # getter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mContext:Landroid/content/Context;
@@ -520,12 +520,12 @@
 
     invoke-virtual {v10, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 875
+    .line 882
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     invoke-virtual {v10}, Lcom/mediatek/internal/telephony/ims/ImsService;->enableImsAdapter()V
 
-    .line 876
+    .line 883
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     const/4 v11, 0x1
@@ -533,7 +533,7 @@
     # setter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mImsState:I
     invoke-static {v10, v11}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$1202(Lcom/mediatek/internal/telephony/ims/ImsService;I)I
 
-    .line 877
+    .line 884
     const-string v10, "ro.mtk_wfc_support"
 
     invoke-static {v10}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -548,7 +548,7 @@
 
     if-eqz v10, :cond_0
 
-    .line 878
+    .line 885
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     # getter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mImsRILAdapter:Lcom/mediatek/internal/telephony/ims/ImsRILAdapter;
@@ -579,7 +579,7 @@
 
     goto/16 :goto_0
 
-    .line 886
+    .line 893
     .end local v1    # "intent":Landroid/content/Intent;
     :pswitch_3
     const-string v10, "ImsService"
@@ -590,7 +590,7 @@
 
     goto/16 :goto_0
 
-    .line 892
+    .line 899
     :pswitch_4
     const-string v10, "ImsService"
 
@@ -607,7 +607,7 @@
     iget-object v12, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     # getter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mActivePhoneId:I
-    invoke-static {v12}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$400(Lcom/mediatek/internal/telephony/ims/ImsService;)I
+    invoke-static {v12}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$300(Lcom/mediatek/internal/telephony/ims/ImsService;)I
 
     move-result v12
 
@@ -631,25 +631,25 @@
 
     invoke-static {v10, v11}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 896
+    .line 903
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     # getter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mActivePhoneId:I
-    invoke-static {v10}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$400(Lcom/mediatek/internal/telephony/ims/ImsService;)I
+    invoke-static {v10}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$300(Lcom/mediatek/internal/telephony/ims/ImsService;)I
 
     move-result v10
 
     if-eq v10, v4, :cond_0
 
-    .line 897
+    .line 904
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     # setter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mActivePhoneId:I
-    invoke-static {v10, v4}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$402(Lcom/mediatek/internal/telephony/ims/ImsService;I)I
+    invoke-static {v10, v4}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$302(Lcom/mediatek/internal/telephony/ims/ImsService;I)I
 
     goto/16 :goto_0
 
-    .line 902
+    .line 909
     :pswitch_5
     const-string v10, "ImsService"
 
@@ -657,14 +657,14 @@
 
     invoke-static {v10, v11}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 903
+    .line 910
     new-instance v1, Landroid/content/Intent;
 
     const-string v10, "com.android.ims.IMS_SERVICE_DOWN"
 
     invoke-direct {v1, v10}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 904
+    .line 911
     .restart local v1    # "intent":Landroid/content/Intent;
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
@@ -675,14 +675,14 @@
 
     invoke-virtual {v10, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 906
+    .line 913
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     const/4 v11, 0x1
 
     invoke-virtual {v10, v11}, Lcom/mediatek/internal/telephony/ims/ImsService;->disableImsAdapter(Z)V
 
-    .line 907
+    .line 914
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     const/4 v11, 0x0
@@ -692,7 +692,7 @@
 
     goto/16 :goto_0
 
-    .line 912
+    .line 919
     .end local v1    # "intent":Landroid/content/Intent;
     :pswitch_6
     const-string v10, "ImsService"
@@ -703,7 +703,7 @@
 
     goto/16 :goto_0
 
-    .line 918
+    .line 925
     :pswitch_7
     const-string v10, "ImsService"
 
@@ -713,7 +713,7 @@
 
     goto/16 :goto_0
 
-    .line 922
+    .line 929
     :pswitch_8
     const-string v10, "ImsService"
 
@@ -721,12 +721,12 @@
 
     invoke-static {v10, v11}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 923
+    .line 930
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 924
+    .line 931
     .restart local v0    # "ar":Landroid/os/AsyncResult;
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
@@ -735,7 +735,7 @@
 
     goto/16 :goto_0
 
-    .line 927
+    .line 934
     .end local v0    # "ar":Landroid/os/AsyncResult;
     :pswitch_9
     const-string v10, "ImsService"
@@ -746,7 +746,7 @@
 
     goto/16 :goto_0
 
-    .line 930
+    .line 937
     :pswitch_a
     const-string v10, "ImsService"
 
@@ -754,7 +754,7 @@
 
     invoke-static {v10, v11}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 931
+    .line 938
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     # getter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mContext:Landroid/content/Context;
@@ -770,7 +770,7 @@
 
     invoke-virtual {v10, v11}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 932
+    .line 939
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     const/4 v11, 0x0
@@ -779,13 +779,13 @@
 
     goto/16 :goto_0
 
-    .line 935
+    .line 942
     :pswitch_b
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 936
+    .line 943
     .restart local v0    # "ar":Landroid/os/AsyncResult;
     iget-object v10, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
 
@@ -795,11 +795,11 @@
 
     check-cast v6, [I
 
-    .line 938
+    .line 945
     .local v6, "sipMessage":[I
     if-eqz v6, :cond_0
 
-    .line 939
+    .line 946
     const-string v10, "ImsService"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -840,7 +840,7 @@
 
     invoke-static {v10, v11}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 940
+    .line 947
     const/4 v10, 0x3
 
     aget v10, v6, v10
@@ -855,7 +855,7 @@
 
     if-ne v10, v11, :cond_0
 
-    .line 943
+    .line 950
     :cond_7
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
@@ -878,7 +878,7 @@
 
     goto/16 :goto_0
 
-    .line 949
+    .line 956
     .end local v0    # "ar":Landroid/os/AsyncResult;
     .end local v6    # "sipMessage":[I
     :pswitch_c
@@ -886,7 +886,7 @@
 
     check-cast v1, Landroid/content/Intent;
 
-    .line 950
+    .line 957
     .restart local v1    # "intent":Landroid/content/Intent;
     const-string v10, "handoverResult"
 
@@ -896,7 +896,7 @@
 
     move-result v5
 
-    .line 952
+    .line 959
     .local v5, "result":Z
     const-string v10, "ImsService"
 
@@ -920,7 +920,7 @@
 
     invoke-static {v10, v11}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 953
+    .line 960
     if-eqz v5, :cond_0
 
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
@@ -932,7 +932,7 @@
 
     if-nez v10, :cond_0
 
-    .line 954
+    .line 961
     iget-object v10, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     iget-object v11, p0, Lcom/mediatek/internal/telephony/ims/ImsService$MyHandler;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
@@ -947,7 +947,7 @@
 
     goto/16 :goto_0
 
-    .line 790
+    .line 797
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1

@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 5963
+    .line 5998
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$28;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -34,146 +34,98 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 5
+    .locals 3
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 5965
+    .line 6000
+    const-string v1, "WindowManager"
+
+    const-string v2, "mIpoEventReceiver -- onReceive -- entry"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 6001
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5967
+    .line 6002
     .local v0, "action":Ljava/lang/String;
-    const-string v2, "WindowManager"
+    const-string v1, "sys.boot.reason"
 
-    const-string v3, "mStkUserActivityEnReceiver -- onReceive -- entry"
+    const-string v2, "0"
 
-    invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 5969
-    iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$28;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
+    .line 6003
+    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$28;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    # getter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mStkLock:Ljava/lang/Object;
-    invoke-static {v2}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$3300(Lcom/android/internal/policy/impl/PhoneWindowManager;)Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    move-result-object v3
+    # setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsAlarmBoot:Z
+    invoke-static {v1, v2}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$3102(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
 
-    monitor-enter v3
+    .line 6004
+    const-string v1, "android.intent.action.normal.shutdown"
 
-    .line 5970
-    :try_start_0
-    const-string v2, "android.intent.action.stk.USER_ACTIVITY.enable"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    .line 5971
-    sget-boolean v2, Lcom/android/internal/policy/impl/PhoneWindowManager;->DEBUG_INPUT:Z
-
-    if-eqz v2, :cond_0
-
-    .line 5972
-    const-string v2, "WindowManager"
-
-    const-string v4, "Receive STK_ENABLE"
-
-    invoke-static {v2, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 5974
-    :cond_0
-    const-string v2, "state"
-
-    const/4 v4, 0x0
-
-    invoke-virtual {p2, v2, v4}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    .line 5975
-    .local v1, "enabled":Z
-    iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$28;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
+    if-eqz v1, :cond_1
 
-    iget-boolean v2, v2, Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsStkUserActivityEnabled:Z
+    .line 6005
+    const-string v1, "WindowManager"
 
-    if-eq v1, v2, :cond_1
+    const-string v2, "Receive NORMAL_SHUTDOWN_ACTION"
 
-    .line 5976
-    iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$28;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
+    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    iput-boolean v1, v2, Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsStkUserActivityEnabled:Z
+    .line 6006
+    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$28;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    .line 5983
-    .end local v1    # "enabled":Z
-    :cond_1
+    const/4 v2, 0x1
+
+    # setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsShutDown:Z
+    invoke-static {v1, v2}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$3202(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
+
+    .line 6012
+    :cond_0
     :goto_0
-    monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 5984
-    sget-boolean v2, Lcom/android/internal/policy/impl/PhoneWindowManager;->DEBUG_INPUT:Z
-
-    if-eqz v2, :cond_2
-
-    .line 5985
-    const-string v2, "WindowManager"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "mStkUserActivityEnReceiver -- onReceive -- exist "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$28;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    iget-boolean v4, v4, Lcom/android/internal/policy/impl/PhoneWindowManager;->mIsStkUserActivityEnabled:Z
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 5988
-    :cond_2
     return-void
 
-    .line 5979
-    :cond_3
-    :try_start_1
-    sget-boolean v2, Lcom/android/internal/policy/impl/PhoneWindowManager;->DEBUG_INPUT:Z
+    .line 6007
+    :cond_1
+    const-string v1, "android.intent.action.normal.boot"
 
-    if-eqz v2, :cond_1
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 5980
-    const-string v2, "WindowManager"
+    move-result v1
 
-    const-string v4, "Receive Fake Intent"
+    if-eqz v1, :cond_0
 
-    invoke-static {v2, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    .line 6008
+    const-string v1, "WindowManager"
+
+    const-string v2, "Receive NORMAL_BOOT_ACTION"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 6009
+    const-string v1, "service.bootanim.exit"
+
+    const-string v2, "0"
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 6010
+    const-string v1, "ctl.start"
+
+    const-string v2, "bootanim"
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
-
-    .line 5983
-    :catchall_0
-    move-exception v2
-
-    monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v2
 .end method

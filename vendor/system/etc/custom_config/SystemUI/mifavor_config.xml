@@ -6,7 +6,7 @@
     </string>
     <!--wifi,data,airplane,sound,vibrate,bt,sync,hotspot,location,rotation,glove,pop,smart,standby,voice,camera,flashlight,network-->
     <string name="mifavor_quick_settings_tiles_default_msim" translatable="false">
-        wifi,dataconnection,simdataconnection,bt,flashlight,hotspot,airplane,rotation,location,standby
+        wifi,dataconnection,simdataconnection,bt,flashlight,hotspot,airplane,rotation,location,standby,pop,audioprofile,keyGuard
     </string>
 	<!--wifi,data0,data1,airplane,sound,vibrate,bt,sync,hotspot,location,rotation,glove,pop,smart,standby,voice,camera,flashlight,network,dual,data1,data2-->
 

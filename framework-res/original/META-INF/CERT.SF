@@ -1,6 +1,6 @@
 Signature-Version: 1.0
 Created-By: 1.0 (Android SignApk)
-SHA1-Digest-Manifest: U5+ILkzgGVsLIWUFr5z3RXD6w/s=
+SHA1-Digest-Manifest: 8cvLzUSLdtTwQKBA2sK6IuCqAew=
 
 Name: res/color/date_picker_calendar_holo_dark.xml
 SHA1-Digest-Manifest: Gk4T6f4r3iesJrt9+8gobsxj1GY=
@@ -1247,7 +1247,7 @@ Name: res/anim/slide_in_up.xml
 SHA1-Digest-Manifest: BuKyd6DfX8wleLTmkRgjIzDMCmY=
 
 Name: res/drawable-xhdpi-v4/list_divider_mtrl_alpha.9.png
-SHA1-Digest-Manifest: uCKNZWTVaBf4CRQwtuGqUpNgY4M=
+SHA1-Digest-Manifest: V19NrtrRX3NsSBVFaq4m9LWCgGM=
 
 Name: res/drawable-xhdpi-v4/list_selector_background_longpress.9.png
 SHA1-Digest-Manifest: mUgh+LUXBw0GaXffDt5oVkXIYLg=
@@ -2224,7 +2224,7 @@ Name: res/drawable/tab_indicator_holo.xml
 SHA1-Digest-Manifest: vQbFlSkJkRjBvLI5xz/yE7UfFXs=
 
 Name: res/drawable-xhdpi-v4/tab_selected_bar_right_v4.9.png
-SHA1-Digest-Manifest: xYgVujEqod5Z4+Guoschef+ocRQ=
+SHA1-Digest-Manifest: Oh2imt86pzL6G/RmgtAgyEWTaPY=
 
 Name: res/drawable-xhdpi-v4/edit_query_background_pressed.9.png
 SHA1-Digest-Manifest: sEDyB8SNtpap6+Fo/HENv59DQIc=
@@ -2436,7 +2436,7 @@ Name: res/drawable-xhdpi-v4/scrubber_control_to_pressed_mtrl_005.png
 SHA1-Digest-Manifest: ypzFPgKqdyIxGesO0ktQz6uAr7s=
 
 Name: AndroidManifest.xml
-SHA1-Digest-Manifest: tmDntH4ihXD08H9t6pU3EENNgvY=
+SHA1-Digest-Manifest: rYxNLUUB4Ues4BOI7Jzgqthde8g=
 
 Name: res/drawable-xhdpi-v4/stat_sys_download_anim3.png
 SHA1-Digest-Manifest: RA6GzcA2Pn+qJIHqC6jREDIQ0ME=
@@ -3013,7 +3013,7 @@ Name: res/drawable-xhdpi-v4/tab_pressed_holo.9.png
 SHA1-Digest-Manifest: aCxtRS2M0y8xyaCssHUdrHwvERg=
 
 Name: res/layout/alert_dialog_material.xml
-SHA1-Digest-Manifest: viGAHjlYhuqi2IWDh8KOaVmWH5k=
+SHA1-Digest-Manifest: CQRZ2iKDtGNP7sMPJ0qT1u4ojZw=
 
 Name: res/drawable-xhdpi-v4/ic_clear_search_api_disabled_holo_light.pn
  g
@@ -6255,7 +6255,7 @@ Name: res/drawable-xhdpi-v4/title_bar_medium.9.png
 SHA1-Digest-Manifest: ZCy3QKWPGws0M51ukJETQkFb49A=
 
 Name: res/drawable-xhdpi-v4/tab_selected_bar_left_v4.9.png
-SHA1-Digest-Manifest: taODXcFBg+zyzDDXbDg2q1G4Q2s=
+SHA1-Digest-Manifest: HIGy0WAlUBePftU4WlYNUIjD0VM=
 
 Name: res/drawable-xhdpi-v4/btn_radio_to_on_mtrl_002.png
 SHA1-Digest-Manifest: C8xmUvbg6xaazsz3TdXDiOjP1W4=
@@ -7111,7 +7111,7 @@ Name: res/drawable/notification_material_media_action_background.xml
 SHA1-Digest-Manifest: +hcVI//wMFVUhHA545jWTDLk0Tk=
 
 Name: resources.arsc
-SHA1-Digest-Manifest: UyS6l4yuz4SMQcUUjPRzZ/NLamU=
+SHA1-Digest-Manifest: 2hbNqSPgZ/JtU+CJgImogIDtarA=
 
 Name: res/drawable-xhdpi-v4/btn_keyboard_key_dark_normal_on_holo.9.png
 SHA1-Digest-Manifest: URs2e0VsW62FSCn0sT3tSynA7QY=

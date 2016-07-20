@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 18766
+    .line 18764
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$24;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iput p2, p0, Lcom/android/server/am/ActivityManagerService$24;->val$mChange:I
@@ -44,7 +44,7 @@
     .locals 19
 
     .prologue
-    .line 18769
+    .line 18767
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService$24;->this$0:Lcom/android/server/am/ActivityManagerService;
@@ -53,7 +53,7 @@
 
     monitor-enter v18
 
-    .line 18770
+    .line 18768
     :try_start_0
     move-object/from16 v0, p0
 
@@ -63,20 +63,20 @@
 
     if-eqz v2, :cond_1
 
-    .line 18771
+    .line 18769
     new-instance v5, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.CONFIGURATION_CHANGED"
 
     invoke-direct {v5, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 18777
+    .line 18775
     .local v5, "intent":Landroid/content/Intent;
     const/high16 v2, 0x60000000
 
     invoke-virtual {v5, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 18780
+    .line 18778
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/am/ActivityManagerService$24;->this$0:Lcom/android/server/am/ActivityManagerService;
@@ -112,14 +112,14 @@
     # invokes: Lcom/android/server/am/ActivityManagerService;->broadcastIntentLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;Ljava/lang/String;IZZIII)I
     invoke-static/range {v2 .. v17}, Lcom/android/server/am/ActivityManagerService;->access$200(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;Ljava/lang/String;IZZIII)I
 
-    .line 18783
+    .line 18781
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/server/am/ActivityManagerService$24;->val$mChange:I
 
     if-eqz v2, :cond_0
 
-    .line 18784
+    .line 18782
     new-instance v5, Landroid/content/Intent;
 
     .end local v5    # "intent":Landroid/content/Intent;
@@ -127,7 +127,7 @@
 
     invoke-direct {v5, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 18786
+    .line 18784
     .restart local v5    # "intent":Landroid/content/Intent;
     move-object/from16 v0, p0
 
@@ -164,16 +164,16 @@
     # invokes: Lcom/android/server/am/ActivityManagerService;->broadcastIntentLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;Ljava/lang/String;IZZIII)I
     invoke-static/range {v2 .. v17}, Lcom/android/server/am/ActivityManagerService;->access$200(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;Ljava/lang/String;IZZIII)I
 
-    .line 18795
+    .line 18793
     .end local v5    # "intent":Landroid/content/Intent;
     :cond_0
     :goto_0
     monitor-exit v18
 
-    .line 18796
+    .line 18794
     return-void
 
-    .line 18792
+    .line 18790
     :cond_1
     move-object/from16 v0, p0
 
@@ -185,7 +185,7 @@
 
     invoke-virtual {v2, v0}, Lcom/android/server/am/ActivityManagerService$MainHandler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 18793
+    .line 18791
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/am/ActivityManagerService$24;->this$0:Lcom/android/server/am/ActivityManagerService;
@@ -200,7 +200,7 @@
 
     goto :goto_0
 
-    .line 18795
+    .line 18793
     :catchall_0
     move-exception v2
 

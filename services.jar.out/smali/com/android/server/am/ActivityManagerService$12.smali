@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 12500
+    .line 12505
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$12;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,20 +40,20 @@
     .locals 1
 
     .prologue
-    .line 12503
+    .line 12508
     monitor-enter p0
 
-    .line 12504
+    .line 12509
     :try_start_0
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 12505
+    .line 12510
     monitor-exit p0
 
-    .line 12506
+    .line 12511
     return-void
 
-    .line 12505
+    .line 12510
     :catchall_0
     move-exception v0
 

@@ -29,12 +29,12 @@
     .locals 1
 
     .prologue
-    .line 6119
+    .line 6132
     iput-object p1, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreInstallObserver;->this$1:Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask;
 
     invoke-direct {p0}, Landroid/content/pm/IPackageInstallObserver$Stub;-><init>()V
 
-    .line 6120
+    .line 6133
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
@@ -50,7 +50,7 @@
     .locals 1
 
     .prologue
-    .line 6141
+    .line 6154
     iget v0, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreInstallObserver;->mResult:I
 
     return v0
@@ -67,37 +67,37 @@
     .end annotation
 
     .prologue
-    .line 6147
+    .line 6160
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreInstallObserver;->mDone:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     monitor-enter v1
 
-    .line 6148
+    .line 6161
     :try_start_0
     iput p2, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreInstallObserver;->mResult:I
 
-    .line 6149
+    .line 6162
     iput-object p1, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreInstallObserver;->mPackageName:Ljava/lang/String;
 
-    .line 6150
+    .line 6163
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreInstallObserver;->mDone:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 6151
+    .line 6164
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreInstallObserver;->mDone:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 6152
+    .line 6165
     monitor-exit v1
 
-    .line 6153
+    .line 6166
     return-void
 
-    .line 6152
+    .line 6165
     :catchall_0
     move-exception v0
 
@@ -112,12 +112,12 @@
     .locals 3
 
     .prologue
-    .line 6125
+    .line 6138
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreInstallObserver;->mDone:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     monitor-enter v1
 
-    .line 6126
+    .line 6139
     :try_start_0
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreInstallObserver;->mDone:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -125,13 +125,13 @@
 
     invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 6127
+    .line 6140
     monitor-exit v1
 
-    .line 6128
+    .line 6141
     return-void
 
-    .line 6127
+    .line 6140
     :catchall_0
     move-exception v0
 
@@ -146,12 +146,12 @@
     .locals 2
 
     .prologue
-    .line 6131
+    .line 6144
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreInstallObserver;->mDone:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     monitor-enter v1
 
-    .line 6132
+    .line 6145
     :goto_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreInstallObserver;->mDone:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -164,7 +164,7 @@
 
     if-nez v0, :cond_0
 
-    .line 6134
+    .line 6147
     :try_start_1
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$PerformAdbRestoreTask$RestoreInstallObserver;->mDone:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -175,21 +175,21 @@
 
     goto :goto_0
 
-    .line 6135
+    .line 6148
     :catch_0
     move-exception v0
 
     goto :goto_0
 
-    .line 6137
+    .line 6150
     :cond_0
     :try_start_2
     monitor-exit v1
 
-    .line 6138
+    .line 6151
     return-void
 
-    .line 6137
+    .line 6150
     :catchall_0
     move-exception v0
 

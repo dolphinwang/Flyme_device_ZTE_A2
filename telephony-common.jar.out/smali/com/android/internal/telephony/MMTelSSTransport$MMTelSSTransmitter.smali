@@ -183,44 +183,44 @@
     .prologue
     const/4 v8, 0x2
 
-    .line 4683
+    .line 4720
     const/4 v5, 0x0
 
-    .line 4684
+    .line 4721
     .local v5, "timeSlot":[J
     if-eqz p1, :cond_0
 
-    .line 4685
+    .line 4722
     const-string v6, ","
 
     invoke-virtual {p1, v6, v8}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
     move-result-object v4
 
-    .line 4686
+    .line 4723
     .local v4, "timeArray":[Ljava/lang/String;
     array-length v6, v4
 
     if-ne v6, v8, :cond_0
 
-    .line 4687
+    .line 4724
     new-array v5, v8, [J
 
-    .line 4688
+    .line 4725
     const/4 v3, 0x0
 
     .local v3, "i":I
     :goto_0
     if-ge v3, v8, :cond_0
 
-    .line 4689
+    .line 4726
     new-instance v1, Ljava/text/SimpleDateFormat;
 
     const-string v6, "HH:mm"
 
     invoke-direct {v1, v6}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 4690
+    .line 4727
     .local v1, "dateFormat":Ljava/text/SimpleDateFormat;
     const-string v6, "GMT+8"
 
@@ -230,7 +230,7 @@
 
     invoke-virtual {v1, v6}, Ljava/text/SimpleDateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
-    .line 4692
+    .line 4729
     :try_start_0
     aget-object v6, v4, v3
 
@@ -238,7 +238,7 @@
 
     move-result-object v0
 
-    .line 4693
+    .line 4730
     .local v0, "date":Ljava/util/Date;
     invoke-virtual {v0}, Ljava/util/Date;->getTime()J
 
@@ -248,24 +248,24 @@
     :try_end_0
     .catch Ljava/text/ParseException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4688
+    .line 4725
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 4694
+    .line 4731
     .end local v0    # "date":Ljava/util/Date;
     :catch_0
     move-exception v2
 
-    .line 4695
+    .line 4732
     .local v2, "e":Ljava/text/ParseException;
     invoke-virtual {v2}, Ljava/text/ParseException;->printStackTrace()V
 
-    .line 4696
+    .line 4733
     const/4 v6, 0x0
 
-    .line 4701
+    .line 4738
     .end local v1    # "dateFormat":Ljava/text/SimpleDateFormat;
     .end local v2    # "e":Ljava/text/ParseException;
     .end local v3    # "i":I
@@ -284,10 +284,10 @@
     .param p1, "timeSlot"    # [J
 
     .prologue
-    .line 4705
+    .line 4742
     const/4 v3, 0x0
 
-    .line 4706
+    .line 4743
     .local v3, "timeSlotString":Ljava/lang/String;
     if-eqz p1, :cond_0
 
@@ -297,15 +297,15 @@
 
     if-eq v4, v5, :cond_1
 
-    .line 4707
+    .line 4744
     :cond_0
     const/4 v4, 0x0
 
-    .line 4719
+    .line 4756
     :goto_0
     return-object v4
 
-    .line 4709
+    .line 4746
     :cond_1
     const/4 v2, 0x0
 
@@ -315,14 +315,14 @@
 
     if-ge v2, v4, :cond_3
 
-    .line 4710
+    .line 4747
     new-instance v0, Ljava/util/Date;
 
     aget-wide v4, p1, v2
 
     invoke-direct {v0, v4, v5}, Ljava/util/Date;-><init>(J)V
 
-    .line 4711
+    .line 4748
     .local v0, "date":Ljava/util/Date;
     new-instance v1, Ljava/text/SimpleDateFormat;
 
@@ -330,7 +330,7 @@
 
     invoke-direct {v1, v4}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 4712
+    .line 4749
     .local v1, "dateFormat":Ljava/text/SimpleDateFormat;
     const-string v4, "GMT+8"
 
@@ -340,21 +340,21 @@
 
     invoke-virtual {v1, v4}, Ljava/text/SimpleDateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
-    .line 4713
+    .line 4750
     if-nez v2, :cond_2
 
-    .line 4714
+    .line 4751
     invoke-virtual {v1, v0}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 4709
+    .line 4746
     :goto_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 4716
+    .line 4753
     :cond_2
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -389,7 +389,7 @@
     :cond_3
     move-object v4, v3
 
-    .line 4719
+    .line 4756
     goto :goto_0
 .end method
 
@@ -401,18 +401,18 @@
     .param p4, "cfReason"    # I
 
     .prologue
-    .line 2266
+    .line 2299
     invoke-virtual {p1}, Lcom/mediatek/simservs/client/policy/Rule;->getConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v5
 
-    .line 2267
+    .line 2300
     .local v5, "oldCond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual {p1}, Lcom/mediatek/simservs/client/policy/Rule;->getActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v4
 
-    .line 2269
+    .line 2302
     .local v4, "oldAction":Lcom/mediatek/simservs/client/policy/Actions;
     iget-object v8, p1, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
@@ -420,33 +420,33 @@
 
     move-result-object v3
 
-    .line 2270
+    .line 2303
     .local v3, "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual {v3}, Lcom/mediatek/simservs/client/policy/Rule;->createConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v2
 
-    .line 2271
+    .line 2304
     .local v2, "newCond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual {v3}, Lcom/mediatek/simservs/client/policy/Rule;->createActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v1
 
-    .line 2273
+    .line 2306
     .local v1, "newAction":Lcom/mediatek/simservs/client/policy/Actions;
     if-eqz v5, :cond_b
 
-    .line 2274
+    .line 2307
     invoke-virtual {v5}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendBusy()Z
 
     move-result v8
 
     if-eqz v8, :cond_0
 
-    .line 2275
+    .line 2308
     invoke-virtual {v2}, Lcom/mediatek/simservs/client/policy/Conditions;->addBusy()V
 
-    .line 2277
+    .line 2310
     :cond_0
     invoke-virtual {v5}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendCommunicationDiverted()Z
 
@@ -454,10 +454,10 @@
 
     if-eqz v8, :cond_1
 
-    .line 2278
+    .line 2311
     invoke-virtual {v2}, Lcom/mediatek/simservs/client/policy/Conditions;->addCommunicationDiverted()V
 
-    .line 2280
+    .line 2313
     :cond_1
     invoke-virtual {v5}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendInternational()Z
 
@@ -465,10 +465,10 @@
 
     if-eqz v8, :cond_2
 
-    .line 2281
+    .line 2314
     invoke-virtual {v2}, Lcom/mediatek/simservs/client/policy/Conditions;->addInternational()V
 
-    .line 2283
+    .line 2316
     :cond_2
     invoke-virtual {v5}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendInternationalExHc()Z
 
@@ -476,10 +476,10 @@
 
     if-eqz v8, :cond_3
 
-    .line 2284
+    .line 2317
     invoke-virtual {v2}, Lcom/mediatek/simservs/client/policy/Conditions;->addInternationalExHc()V
 
-    .line 2286
+    .line 2319
     :cond_3
     invoke-virtual {v5}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendNoAnswer()Z
 
@@ -487,10 +487,10 @@
 
     if-eqz v8, :cond_4
 
-    .line 2287
+    .line 2320
     invoke-virtual {v2}, Lcom/mediatek/simservs/client/policy/Conditions;->addNoAnswer()V
 
-    .line 2289
+    .line 2322
     :cond_4
     invoke-virtual {v5}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendNotReachable()Z
 
@@ -498,10 +498,10 @@
 
     if-eqz v8, :cond_5
 
-    .line 2290
+    .line 2323
     invoke-virtual {v2}, Lcom/mediatek/simservs/client/policy/Conditions;->addNotReachable()V
 
-    .line 2292
+    .line 2325
     :cond_5
     invoke-virtual {v5}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendNotRegistered()Z
 
@@ -509,10 +509,10 @@
 
     if-eqz v8, :cond_6
 
-    .line 2293
+    .line 2326
     invoke-virtual {v2}, Lcom/mediatek/simservs/client/policy/Conditions;->addNotRegistered()V
 
-    .line 2295
+    .line 2328
     :cond_6
     invoke-virtual {v5}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendPresenceStatus()Z
 
@@ -520,10 +520,10 @@
 
     if-eqz v8, :cond_7
 
-    .line 2296
+    .line 2329
     invoke-virtual {v2}, Lcom/mediatek/simservs/client/policy/Conditions;->addPresenceStatus()V
 
-    .line 2298
+    .line 2331
     :cond_7
     invoke-virtual {v5}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendRoaming()Z
 
@@ -531,10 +531,10 @@
 
     if-eqz v8, :cond_8
 
-    .line 2299
+    .line 2332
     invoke-virtual {v2}, Lcom/mediatek/simservs/client/policy/Conditions;->addRoaming()V
 
-    .line 2301
+    .line 2334
     :cond_8
     invoke-virtual {v5}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendRuleDeactivated()Z
 
@@ -542,20 +542,20 @@
 
     if-eqz v8, :cond_9
 
-    .line 2302
+    .line 2335
     invoke-virtual {v2}, Lcom/mediatek/simservs/client/policy/Conditions;->addRuleDeactivated()V
 
-    .line 2305
+    .line 2338
     :cond_9
     invoke-virtual {v5}, Lcom/mediatek/simservs/client/policy/Conditions;->getMedias()Ljava/util/List;
 
     move-result-object v7
 
-    .line 2306
+    .line 2339
     .local v7, "oldMediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     if-eqz v7, :cond_a
 
-    .line 2307
+    .line 2340
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -566,7 +566,7 @@
 
     if-ge v0, v8, :cond_a
 
-    .line 2308
+    .line 2341
     invoke-interface {v7, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v8
@@ -575,12 +575,12 @@
 
     invoke-virtual {v2, v8}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
-    .line 2307
+    .line 2340
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 2312
+    .line 2345
     .end local v0    # "i":I
     :cond_a
     invoke-virtual {v5}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendTime()Ljava/lang/String;
@@ -589,32 +589,32 @@
 
     invoke-virtual {v2, v8}, Lcom/mediatek/simservs/client/policy/Conditions;->addTime(Ljava/lang/String;)V
 
-    .line 2315
+    .line 2348
     .end local v7    # "oldMediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :cond_b
     invoke-virtual {v4}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v6
 
-    .line 2316
+    .line 2349
     .local v6, "oldForward":Lcom/mediatek/simservs/client/policy/ForwardTo;
     if-eqz v6, :cond_d
 
-    .line 2317
+    .line 2350
     const/4 v8, 0x4
 
     if-ne p3, v8, :cond_c
 
     if-nez p4, :cond_c
 
-    .line 2319
+    .line 2352
     const-string v8, "MMTelSS"
 
     const-string v9, "No need to append the original numebr in Erasure."
 
     invoke-static {v8, v9}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2320
+    .line 2353
     const-string v8, ""
 
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/ForwardTo;->isNotifyCaller()Z
@@ -623,7 +623,7 @@
 
     invoke-virtual {v1, v8, v9}, Lcom/mediatek/simservs/client/policy/Actions;->setFowardTo(Ljava/lang/String;Z)V
 
-    .line 2324
+    .line 2357
     :goto_1
     invoke-virtual {v1}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
@@ -635,7 +635,7 @@
 
     invoke-virtual {v8, v9}, Lcom/mediatek/simservs/client/policy/ForwardTo;->setRevealIdentityToCaller(Z)V
 
-    .line 2326
+    .line 2359
     invoke-virtual {v1}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v8
@@ -646,7 +646,7 @@
 
     invoke-virtual {v8, v9}, Lcom/mediatek/simservs/client/policy/ForwardTo;->setRevealIdentityToTarget(Z)V
 
-    .line 2333
+    .line 2366
     :goto_2
     invoke-virtual {v4}, Lcom/mediatek/simservs/client/policy/Actions;->isAllow()Z
 
@@ -654,10 +654,10 @@
 
     invoke-virtual {v1, v8}, Lcom/mediatek/simservs/client/policy/Actions;->setAllow(Z)V
 
-    .line 2334
+    .line 2367
     return-object v3
 
-    .line 2322
+    .line 2355
     :cond_c
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/ForwardTo;->getTarget()Ljava/lang/String;
 
@@ -671,7 +671,7 @@
 
     goto :goto_1
 
-    .line 2329
+    .line 2362
     :cond_d
     const-string v8, "MMTelSS"
 
@@ -718,18 +718,18 @@
     .param p6, "cfReason"    # I
 
     .prologue
-    .line 2368
+    .line 2401
     invoke-virtual {p1}, Lcom/mediatek/simservs/client/policy/Rule;->getConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v6
 
-    .line 2369
+    .line 2402
     .local v6, "oldCond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual {p1}, Lcom/mediatek/simservs/client/policy/Rule;->getActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v5
 
-    .line 2419
+    .line 2452
     .local v5, "oldAction":Lcom/mediatek/simservs/client/policy/Actions;
     if-eqz v6, :cond_0
 
@@ -743,14 +743,14 @@
 
     if-nez v9, :cond_0
 
-    .line 2422
+    .line 2455
     const/4 v4, 0x0
 
-    .line 2507
+    .line 2540
     :goto_0
     return-object v4
 
-    .line 2425
+    .line 2458
     :cond_0
     iget-object v9, p1, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
@@ -758,33 +758,33 @@
 
     move-result-object v4
 
-    .line 2426
+    .line 2459
     .local v4, "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual {v4}, Lcom/mediatek/simservs/client/policy/Rule;->createConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v3
 
-    .line 2427
+    .line 2460
     .local v3, "newCond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual {v4}, Lcom/mediatek/simservs/client/policy/Rule;->createActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v2
 
-    .line 2429
+    .line 2462
     .local v2, "newAction":Lcom/mediatek/simservs/client/policy/Actions;
     if-eqz v6, :cond_e
 
-    .line 2430
+    .line 2463
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendBusy()Z
 
     move-result v9
 
     if-eqz v9, :cond_1
 
-    .line 2431
+    .line 2464
     invoke-virtual {v3}, Lcom/mediatek/simservs/client/policy/Conditions;->addBusy()V
 
-    .line 2433
+    .line 2466
     :cond_1
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendCommunicationDiverted()Z
 
@@ -792,10 +792,10 @@
 
     if-eqz v9, :cond_2
 
-    .line 2434
+    .line 2467
     invoke-virtual {v3}, Lcom/mediatek/simservs/client/policy/Conditions;->addCommunicationDiverted()V
 
-    .line 2436
+    .line 2469
     :cond_2
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendInternational()Z
 
@@ -803,10 +803,10 @@
 
     if-eqz v9, :cond_3
 
-    .line 2437
+    .line 2470
     invoke-virtual {v3}, Lcom/mediatek/simservs/client/policy/Conditions;->addInternational()V
 
-    .line 2439
+    .line 2472
     :cond_3
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendInternationalExHc()Z
 
@@ -814,10 +814,10 @@
 
     if-eqz v9, :cond_4
 
-    .line 2440
+    .line 2473
     invoke-virtual {v3}, Lcom/mediatek/simservs/client/policy/Conditions;->addInternationalExHc()V
 
-    .line 2442
+    .line 2475
     :cond_4
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendNoAnswer()Z
 
@@ -825,10 +825,10 @@
 
     if-eqz v9, :cond_5
 
-    .line 2443
+    .line 2476
     invoke-virtual {v3}, Lcom/mediatek/simservs/client/policy/Conditions;->addNoAnswer()V
 
-    .line 2445
+    .line 2478
     :cond_5
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendNotReachable()Z
 
@@ -836,10 +836,10 @@
 
     if-eqz v9, :cond_6
 
-    .line 2446
+    .line 2479
     invoke-virtual {v3}, Lcom/mediatek/simservs/client/policy/Conditions;->addNotReachable()V
 
-    .line 2448
+    .line 2481
     :cond_6
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendNotRegistered()Z
 
@@ -847,10 +847,10 @@
 
     if-eqz v9, :cond_7
 
-    .line 2449
+    .line 2482
     invoke-virtual {v3}, Lcom/mediatek/simservs/client/policy/Conditions;->addNotRegistered()V
 
-    .line 2451
+    .line 2484
     :cond_7
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendPresenceStatus()Z
 
@@ -858,10 +858,10 @@
 
     if-eqz v9, :cond_8
 
-    .line 2452
+    .line 2485
     invoke-virtual {v3}, Lcom/mediatek/simservs/client/policy/Conditions;->addPresenceStatus()V
 
-    .line 2454
+    .line 2487
     :cond_8
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendRoaming()Z
 
@@ -869,10 +869,10 @@
 
     if-eqz v9, :cond_9
 
-    .line 2455
+    .line 2488
     invoke-virtual {v3}, Lcom/mediatek/simservs/client/policy/Conditions;->addRoaming()V
 
-    .line 2457
+    .line 2490
     :cond_9
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendRuleDeactivated()Z
 
@@ -880,20 +880,20 @@
 
     if-eqz v9, :cond_a
 
-    .line 2458
+    .line 2491
     invoke-virtual {v3}, Lcom/mediatek/simservs/client/policy/Conditions;->addRuleDeactivated()V
 
-    .line 2461
+    .line 2494
     :cond_a
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/Conditions;->getMedias()Ljava/util/List;
 
     move-result-object v8
 
-    .line 2462
+    .line 2495
     .local v8, "oldMediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     if-eqz v8, :cond_c
 
-    .line 2463
+    .line 2496
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -904,7 +904,7 @@
 
     if-ge v1, v9, :cond_c
 
-    .line 2464
+    .line 2497
     invoke-virtual {p0, p3}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->getMediaType(I)Ljava/lang/String;
 
     move-result-object v9
@@ -919,7 +919,7 @@
 
     if-nez v9, :cond_b
 
-    .line 2465
+    .line 2498
     invoke-interface {v8, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v9
@@ -928,13 +928,13 @@
 
     invoke-virtual {v3, v9}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
-    .line 2463
+    .line 2496
     :cond_b
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 2470
+    .line 2503
     .end local v1    # "i":I
     :cond_c
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendTime()Ljava/lang/String;
@@ -943,18 +943,18 @@
 
     invoke-virtual {v3, v9}, Lcom/mediatek/simservs/client/policy/Conditions;->addTime(Ljava/lang/String;)V
 
-    .line 2488
+    .line 2521
     .end local v8    # "oldMediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :cond_d
     invoke-virtual {v5}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v7
 
-    .line 2489
+    .line 2522
     .local v7, "oldForward":Lcom/mediatek/simservs/client/policy/ForwardTo;
     if-eqz v7, :cond_11
 
-    .line 2490
+    .line 2523
     const/4 v9, 0x4
 
     move/from16 v0, p5
@@ -963,14 +963,14 @@
 
     if-nez p6, :cond_10
 
-    .line 2492
+    .line 2525
     const-string v9, "MMTelSS"
 
     const-string v10, "No need to append the original numebr in Erasure."
 
     invoke-static {v9, v10}, Landroid/telephony/Rlog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2493
+    .line 2526
     const-string v9, ""
 
     invoke-virtual {v7}, Lcom/mediatek/simservs/client/policy/ForwardTo;->isNotifyCaller()Z
@@ -979,7 +979,7 @@
 
     invoke-virtual {v2, v9, v10}, Lcom/mediatek/simservs/client/policy/Actions;->setFowardTo(Ljava/lang/String;Z)V
 
-    .line 2497
+    .line 2530
     :goto_2
     invoke-virtual {v2}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
@@ -991,7 +991,7 @@
 
     invoke-virtual {v9, v10}, Lcom/mediatek/simservs/client/policy/ForwardTo;->setRevealIdentityToCaller(Z)V
 
-    .line 2499
+    .line 2532
     invoke-virtual {v2}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v9
@@ -1002,7 +1002,7 @@
 
     invoke-virtual {v9, v10}, Lcom/mediatek/simservs/client/policy/ForwardTo;->setRevealIdentityToTarget(Z)V
 
-    .line 2505
+    .line 2538
     :goto_3
     invoke-virtual {v5}, Lcom/mediatek/simservs/client/policy/Actions;->isAllow()Z
 
@@ -1012,7 +1012,7 @@
 
     goto/16 :goto_0
 
-    .line 2474
+    .line 2507
     .end local v7    # "oldForward":Lcom/mediatek/simservs/client/policy/ForwardTo;
     :cond_e
     invoke-static/range {p4 .. p4}, Lcom/android/internal/telephony/MMTelSSUtils;->isOp06IccCard(I)Z
@@ -1027,23 +1027,23 @@
 
     if-nez v9, :cond_d
 
-    .line 2476
+    .line 2509
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2477
+    .line 2510
     .restart local v8    # "oldMediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const-string v9, "audio"
 
     invoke-interface {v8, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2478
+    .line 2511
     const-string v9, "video"
 
     invoke-interface {v8, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2479
+    .line 2512
     const/4 v1, 0x0
 
     .restart local v1    # "i":I
@@ -1054,7 +1054,7 @@
 
     if-ge v1, v9, :cond_d
 
-    .line 2480
+    .line 2513
     invoke-virtual {p0, p3}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->getMediaType(I)Ljava/lang/String;
 
     move-result-object v9
@@ -1069,7 +1069,7 @@
 
     if-nez v9, :cond_f
 
-    .line 2482
+    .line 2515
     invoke-interface {v8, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v9
@@ -1078,13 +1078,13 @@
 
     invoke-virtual {v3, v9}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
-    .line 2479
+    .line 2512
     :cond_f
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_4
 
-    .line 2495
+    .line 2528
     .end local v1    # "i":I
     .end local v8    # "oldMediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     .restart local v7    # "oldForward":Lcom/mediatek/simservs/client/policy/ForwardTo;
@@ -1101,7 +1101,7 @@
 
     goto :goto_2
 
-    .line 2502
+    .line 2535
     :cond_11
     const-string v9, "MMTelSS"
 
@@ -1151,26 +1151,26 @@
     .param p5, "cfReason"    # I
 
     .prologue
-    .line 2339
+    .line 2372
     const/4 v0, 0x0
 
-    .line 2340
+    .line 2373
     .local v0, "newAction":Lcom/mediatek/simservs/client/policy/Actions;
     const/4 v1, 0x0
 
-    .line 2341
+    .line 2374
     .local v1, "newCond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual {p1}, Lcom/mediatek/simservs/client/policy/Rule;->getActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v3
 
-    .line 2342
+    .line 2375
     .local v3, "oldAction":Lcom/mediatek/simservs/client/policy/Actions;
     invoke-virtual {p1}, Lcom/mediatek/simservs/client/policy/Rule;->getConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v4
 
-    .line 2344
+    .line 2377
     .local v4, "oldCond":Lcom/mediatek/simservs/client/policy/Conditions;
     iget-object v5, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
@@ -1180,7 +1180,7 @@
 
     if-ne v5, v6, :cond_2
 
-    .line 2345
+    .line 2378
     invoke-virtual {v3}, Lcom/mediatek/simservs/client/policy/Actions;->isAllow()Z
 
     move-result v5
@@ -1193,18 +1193,18 @@
 
     if-nez v5, :cond_1
 
-    .line 2363
+    .line 2396
     :cond_0
     :goto_0
     return-void
 
-    .line 2348
+    .line 2381
     :cond_1
     invoke-virtual {p0, p1, p2, p4, p5}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->copyOldRuleToNewRuleSet(Lcom/mediatek/simservs/client/policy/Rule;Lcom/mediatek/simservs/client/policy/RuleSet;II)Lcom/mediatek/simservs/client/policy/Rule;
 
     goto :goto_0
 
-    .line 2350
+    .line 2383
     :cond_2
     iget-object v5, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
@@ -1214,12 +1214,12 @@
 
     if-ne v5, v6, :cond_3
 
-    .line 2351
+    .line 2384
     invoke-virtual {p0, p1, p2, p4, p5}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->copyOldRuleToNewRuleSet(Lcom/mediatek/simservs/client/policy/Rule;Lcom/mediatek/simservs/client/policy/RuleSet;II)Lcom/mediatek/simservs/client/policy/Rule;
 
     move-result-object v2
 
-    .line 2352
+    .line 2385
     .local v2, "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     if-eqz v2, :cond_0
 
@@ -1235,17 +1235,17 @@
 
     if-nez v5, :cond_0
 
-    .line 2353
+    .line 2386
     invoke-virtual {v2}, Lcom/mediatek/simservs/client/policy/Rule;->createConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v1
 
-    .line 2354
+    .line 2387
     invoke-virtual {v1}, Lcom/mediatek/simservs/client/policy/Conditions;->addRuleDeactivated()V
 
     goto :goto_0
 
-    .line 2356
+    .line 2389
     .end local v2    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     :cond_3
     iget-object v5, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -1256,12 +1256,12 @@
 
     if-ne v5, v6, :cond_0
 
-    .line 2357
+    .line 2390
     invoke-virtual {p0, p1, p2, p4, p5}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->copyOldRuleToNewRuleSet(Lcom/mediatek/simservs/client/policy/Rule;Lcom/mediatek/simservs/client/policy/RuleSet;II)Lcom/mediatek/simservs/client/policy/Rule;
 
     move-result-object v2
 
-    .line 2358
+    .line 2391
     .restart local v2    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     if-eqz v2, :cond_0
 
@@ -1277,12 +1277,12 @@
 
     if-nez v5, :cond_0
 
-    .line 2359
+    .line 2392
     invoke-virtual {v2}, Lcom/mediatek/simservs/client/policy/Rule;->createActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v0
 
-    .line 2360
+    .line 2393
     invoke-virtual {v0, p3}, Lcom/mediatek/simservs/client/policy/Actions;->setAllow(Z)V
 
     goto :goto_0
@@ -1342,24 +1342,24 @@
     .end annotation
 
     .prologue
-    .line 4639
+    .line 4675
     invoke-virtual {p2, p9}, Lcom/mediatek/simservs/client/policy/RuleSet;->createNewRule(Ljava/lang/String;)Lcom/mediatek/simservs/client/policy/Rule;
 
     move-result-object v2
 
-    .line 4640
+    .line 4676
     .local v2, "cfRule":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual {v2}, Lcom/mediatek/simservs/client/policy/Rule;->createConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v1
 
-    .line 4641
+    .line 4677
     .local v1, "cfCond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual {v2}, Lcom/mediatek/simservs/client/policy/Rule;->createActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v0
 
-    .line 4642
+    .line 4678
     .local v0, "cfAction":Lcom/mediatek/simservs/client/policy/Actions;
     const-string v3, "MMTelSS"
 
@@ -1423,44 +1423,44 @@
 
     invoke-static {v3, v4}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4647
+    .line 4683
     const/4 v3, 0x1
 
     if-ne p5, v3, :cond_3
 
-    .line 4648
+    .line 4684
     const-string v3, "audio"
 
     invoke-virtual {v1, v3}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
-    .line 4656
+    .line 4693
     :cond_0
     :goto_0
     const/4 v3, 0x1
 
     if-ne p3, v3, :cond_5
 
-    .line 4657
+    .line 4694
     invoke-virtual {v1}, Lcom/mediatek/simservs/client/policy/Conditions;->addBusy()V
 
-    .line 4667
+    .line 4704
     :cond_1
     :goto_1
     invoke-virtual {v1, p8}, Lcom/mediatek/simservs/client/policy/Conditions;->addTime(Ljava/lang/String;)V
 
-    .line 4668
+    .line 4705
     invoke-static {}, Lcom/android/internal/telephony/MMTelSSUtils;->isNotifyCallerTest()Z
 
     move-result v3
 
     if-eqz v3, :cond_9
 
-    .line 4669
+    .line 4706
     const/4 v3, 0x0
 
     invoke-virtual {v0, p6, v3}, Lcom/mediatek/simservs/client/policy/Actions;->setFowardTo(Ljava/lang/String;Z)V
 
-    .line 4673
+    .line 4710
     :goto_2
     invoke-virtual {v0}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
@@ -1470,7 +1470,7 @@
 
     invoke-virtual {v3, v4}, Lcom/mediatek/simservs/client/policy/ForwardTo;->setRevealIdentityToCaller(Z)V
 
-    .line 4674
+    .line 4711
     invoke-virtual {v0}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v3
@@ -1479,87 +1479,89 @@
 
     invoke-virtual {v3, v4}, Lcom/mediatek/simservs/client/policy/ForwardTo;->setRevealIdentityToTarget(Z)V
 
-    .line 4676
+    .line 4713
     if-eqz p10, :cond_2
 
-    .line 4677
+    .line 4714
     invoke-virtual {p1, p9}, Lcom/mediatek/simservs/client/CommunicationDiversion;->saveRule(Ljava/lang/String;)V
 
-    .line 4679
+    .line 4716
     :cond_2
     const/4 v3, 0x1
 
     return v3
 
-    .line 4649
+    .line 4685
     :cond_3
     const/16 v3, 0x200
 
     if-ne p5, v3, :cond_4
 
-    .line 4650
+    .line 4686
     const-string v3, "video"
 
     invoke-virtual {v1, v3}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 4651
+    .line 4687
     :cond_4
     if-nez p5, :cond_0
 
-    .line 4652
+    .line 4688
+    const-string v3, "MMTelSS"
+
+    const-string v4, "if op01,do not add video!"
+
+    invoke-static {v3, v4}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 4689
     const-string v3, "audio"
 
     invoke-virtual {v1, v3}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
-    .line 4653
-    const-string v3, "video"
-
-    invoke-virtual {v1, v3}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
-
     goto :goto_0
 
-    .line 4658
+    .line 4695
     :cond_5
     const/4 v3, 0x2
 
     if-ne p3, v3, :cond_6
 
-    .line 4659
+    .line 4696
     invoke-virtual {v1}, Lcom/mediatek/simservs/client/policy/Conditions;->addNoAnswer()V
 
     goto :goto_1
 
-    .line 4660
+    .line 4697
     :cond_6
     const/4 v3, 0x3
 
     if-ne p3, v3, :cond_7
 
-    .line 4661
+    .line 4698
     invoke-virtual {v1}, Lcom/mediatek/simservs/client/policy/Conditions;->addNotReachable()V
 
     goto :goto_1
 
-    .line 4662
+    .line 4699
     :cond_7
     const/4 v3, 0x6
 
     if-ne p3, v3, :cond_8
 
-    .line 4663
+    .line 4700
     invoke-virtual {v1}, Lcom/mediatek/simservs/client/policy/Conditions;->addNotRegistered()V
 
     goto :goto_1
 
-    .line 4664
+    .line 4701
     :cond_8
     if-nez p3, :cond_1
 
     goto :goto_1
 
-    .line 4671
+    .line 4708
     :cond_9
     const/4 v3, 0x1
 
@@ -1587,26 +1589,26 @@
     .end annotation
 
     .prologue
-    .line 2115
+    .line 2142
     invoke-virtual/range {p3 .. p3}, Lcom/mediatek/simservs/client/policy/Rule;->getConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v8
 
-    .line 2116
+    .line 2143
     .local v8, "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual/range {p3 .. p3}, Lcom/mediatek/simservs/client/policy/Rule;->getActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v2
 
-    .line 2117
+    .line 2144
     .local v2, "action":Lcom/mediatek/simservs/client/policy/Actions;
     const/4 v5, 0x1
 
-    .line 2118
+    .line 2145
     .local v5, "cbAllow":Z
     const/4 v3, 0x0
 
-    .line 2121
+    .line 2148
     .local v3, "addRuleDeactivatedNode":Z
     const-string v12, "persist.radio.ss.xrdm"
 
@@ -1620,7 +1622,7 @@
 
     move-result-object v11
 
-    .line 2122
+    .line 2149
     .local v11, "sDisableRuleMode":Ljava/lang/String;
     const-string v12, "MMTelSS"
 
@@ -1644,7 +1646,7 @@
 
     invoke-static {v12, v13}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2123
+    .line 2150
     iget-object v12, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     invoke-static {v11}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1653,17 +1655,17 @@
 
     iput v13, v12, Lcom/android/internal/telephony/MMTelSSTransport;->mDisableRuleMode:I
 
-    .line 2125
+    .line 2152
     const/4 v12, 0x1
 
     move/from16 v0, p5
 
     if-ne v0, v12, :cond_5
 
-    .line 2127
+    .line 2154
     const/4 v5, 0x0
 
-    .line 2145
+    .line 2172
     :cond_0
     :goto_0
     move-object/from16 v0, p2
@@ -1674,19 +1676,19 @@
 
     move-result-object v7
 
-    .line 2146
+    .line 2173
     .local v7, "cbRule":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual {v7}, Lcom/mediatek/simservs/client/policy/Rule;->createConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v6
 
-    .line 2147
+    .line 2174
     .local v6, "cbCond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual {v7}, Lcom/mediatek/simservs/client/policy/Rule;->createActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v4
 
-    .line 2150
+    .line 2177
     .local v4, "cbAction":Lcom/mediatek/simservs/client/policy/Actions;
     invoke-static/range {p10 .. p10}, Lcom/android/internal/telephony/MMTelSSUtils;->isOp06IccCard(I)Z
 
@@ -1700,19 +1702,19 @@
 
     if-nez v12, :cond_1
 
-    .line 2152
+    .line 2179
     const/4 v12, 0x1
 
     move/from16 v0, p6
 
     if-ne v0, v12, :cond_9
 
-    .line 2153
+    .line 2180
     const-string v12, "audio"
 
     invoke-virtual {v6, v12}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
-    .line 2163
+    .line 2193
     :cond_1
     :goto_1
     iget-object v12, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -1727,10 +1729,10 @@
 
     if-ne v3, v12, :cond_2
 
-    .line 2164
+    .line 2194
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/Conditions;->addRuleDeactivated()V
 
-    .line 2167
+    .line 2197
     :cond_2
     const-string v12, "IR"
 
@@ -1742,13 +1744,13 @@
 
     if-eqz v12, :cond_b
 
-    .line 2168
+    .line 2198
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/Conditions;->addRoaming()V
 
-    .line 2169
+    .line 2199
     invoke-virtual {v4, v5}, Lcom/mediatek/simservs/client/policy/Actions;->setAllow(Z)V
 
-    .line 2184
+    .line 2214
     :cond_3
     :goto_2
     if-eqz p8, :cond_4
@@ -1759,7 +1761,7 @@
 
     if-ne v12, v0, :cond_4
 
-    .line 2185
+    .line 2215
     move-object/from16 v0, p1
 
     instance-of v12, v0, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
@@ -1768,16 +1770,16 @@
 
     move-object/from16 v10, p1
 
-    .line 2186
+    .line 2216
     check-cast v10, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
 
-    .line 2187
+    .line 2217
     .local v10, "ocb":Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     move-object/from16 v0, p7
 
     invoke-virtual {v10, v0}, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;->saveRule(Ljava/lang/String;)V
 
-    .line 2194
+    .line 2224
     .end local v10    # "ocb":Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     :cond_4
     :goto_3
@@ -1789,7 +1791,7 @@
     :goto_4
     return v12
 
-    .line 2130
+    .line 2157
     :cond_5
     iget-object v12, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
@@ -1799,7 +1801,7 @@
 
     if-ne v12, v13, :cond_7
 
-    .line 2131
+    .line 2158
     const-string v12, "MMTelSS"
 
     new-instance v13, Ljava/lang/StringBuilder;
@@ -1830,23 +1832,23 @@
 
     invoke-static {v12, v13}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2132
+    .line 2159
     if-eqz p8, :cond_6
 
-    .line 2133
+    .line 2160
     const-string v12, "MMTelSS"
 
     const-string v13, "handleCreateNewRuleForExistingCB(): ERROR: DISABLE_MODE_DELETE_RULE but updateSingleRule"
 
     invoke-static {v12, v13}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2135
+    .line 2162
     :cond_6
     const/4 v12, 0x0
 
     goto :goto_4
 
-    .line 2136
+    .line 2163
     :cond_7
     iget-object v12, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
@@ -1856,15 +1858,15 @@
 
     if-ne v12, v13, :cond_8
 
-    .line 2138
+    .line 2165
     const/4 v3, 0x1
 
-    .line 2139
+    .line 2166
     const/4 v5, 0x0
 
     goto/16 :goto_0
 
-    .line 2140
+    .line 2167
     :cond_8
     iget-object v12, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
@@ -1874,12 +1876,12 @@
 
     if-ne v12, v13, :cond_0
 
-    .line 2141
+    .line 2168
     const/4 v5, 0x1
 
     goto/16 :goto_0
 
-    .line 2154
+    .line 2181
     .restart local v4    # "cbAction":Lcom/mediatek/simservs/client/policy/Actions;
     .restart local v6    # "cbCond":Lcom/mediatek/simservs/client/policy/Conditions;
     .restart local v7    # "cbRule":Lcom/mediatek/simservs/client/policy/Rule;
@@ -1890,30 +1892,44 @@
 
     if-ne v0, v12, :cond_a
 
-    .line 2155
+    .line 2182
     const-string v12, "video"
 
     invoke-virtual {v6, v12}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
     goto/16 :goto_1
 
-    .line 2156
+    .line 2183
     :cond_a
     if-nez p6, :cond_1
 
-    .line 2157
+    .line 2184
+    const-string v12, "MMTelSS"
+
+    const-string v13, "if op01,do not add video!"
+
+    invoke-static {v12, v13}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2185
     const-string v12, "audio"
 
     invoke-virtual {v6, v12}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
-    .line 2158
+    .line 2186
+    invoke-static/range {p10 .. p10}, Lcom/android/internal/telephony/MMTelSSUtils;->isOp01IccCard(I)Z
+
+    move-result v12
+
+    if-nez v12, :cond_1
+
+    .line 2187
     const-string v12, "video"
 
     invoke-virtual {v6, v12}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
     goto/16 :goto_1
 
-    .line 2170
+    .line 2200
     :cond_b
     const-string v12, "AI"
 
@@ -1925,12 +1941,12 @@
 
     if-eqz v12, :cond_c
 
-    .line 2172
+    .line 2202
     invoke-virtual {v4, v5}, Lcom/mediatek/simservs/client/policy/Actions;->setAllow(Z)V
 
     goto/16 :goto_2
 
-    .line 2173
+    .line 2203
     :cond_c
     const-string v12, "OI"
 
@@ -1942,15 +1958,15 @@
 
     if-eqz v12, :cond_d
 
-    .line 2174
+    .line 2204
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/Conditions;->addInternational()V
 
-    .line 2175
+    .line 2205
     invoke-virtual {v4, v5}, Lcom/mediatek/simservs/client/policy/Actions;->setAllow(Z)V
 
     goto/16 :goto_2
 
-    .line 2176
+    .line 2206
     :cond_d
     const-string v12, "OX"
 
@@ -1962,15 +1978,15 @@
 
     if-eqz v12, :cond_e
 
-    .line 2177
+    .line 2207
     invoke-virtual {v6}, Lcom/mediatek/simservs/client/policy/Conditions;->addInternationalExHc()V
 
-    .line 2178
+    .line 2208
     invoke-virtual {v4, v5}, Lcom/mediatek/simservs/client/policy/Actions;->setAllow(Z)V
 
     goto/16 :goto_2
 
-    .line 2179
+    .line 2209
     :cond_e
     const-string v12, "AO"
 
@@ -1982,12 +1998,12 @@
 
     if-eqz v12, :cond_3
 
-    .line 2181
+    .line 2211
     invoke-virtual {v4, v5}, Lcom/mediatek/simservs/client/policy/Actions;->setAllow(Z)V
 
     goto/16 :goto_2
 
-    .line 2188
+    .line 2218
     :cond_f
     move-object/from16 v0, p1
 
@@ -1997,10 +2013,10 @@
 
     move-object/from16 v9, p1
 
-    .line 2189
+    .line 2219
     check-cast v9, Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
 
-    .line 2190
+    .line 2220
     .local v9, "icb":Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
     move-object/from16 v0, p7
 
@@ -2030,18 +2046,18 @@
     .end annotation
 
     .prologue
-    .line 1984
+    .line 2008
     invoke-virtual/range {p3 .. p3}, Lcom/mediatek/simservs/client/policy/Rule;->getConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v16
 
-    .line 1985
+    .line 2009
     .local v16, "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual/range {p3 .. p3}, Lcom/mediatek/simservs/client/policy/Rule;->getActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v12
 
-    .line 1988
+    .line 2012
     .local v12, "action":Lcom/mediatek/simservs/client/policy/Actions;
     const-string v5, "persist.radio.ss.xrdm"
 
@@ -2055,7 +2071,7 @@
 
     move-result-object v19
 
-    .line 1989
+    .line 2013
     .local v19, "sDisableRuleMode":Ljava/lang/String;
     const-string v5, "MMTelSS"
 
@@ -2081,7 +2097,7 @@
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1990
+    .line 2014
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -2092,7 +2108,7 @@
 
     iput v6, v5, Lcom/android/internal/telephony/MMTelSSTransport;->mDisableRuleMode:I
 
-    .line 1993
+    .line 2017
     const/4 v5, 0x1
 
     move/from16 v0, p5
@@ -2105,7 +2121,7 @@
 
     if-ne v0, v5, :cond_d
 
-    .line 1995
+    .line 2019
     :cond_0
     move-object/from16 v0, p2
 
@@ -2115,19 +2131,19 @@
 
     move-result-object v15
 
-    .line 1996
+    .line 2020
     .local v15, "cfRule":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual {v15}, Lcom/mediatek/simservs/client/policy/Rule;->createConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v14
 
-    .line 1997
+    .line 2021
     .local v14, "cfCond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual {v15}, Lcom/mediatek/simservs/client/policy/Rule;->createActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v13
 
-    .line 1998
+    .line 2022
     .local v13, "cfAction":Lcom/mediatek/simservs/client/policy/Actions;
     const-string v5, "MMTelSS"
 
@@ -2189,7 +2205,7 @@
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2000
+    .line 2024
     invoke-static/range {p12 .. p12}, Lcom/android/internal/telephony/MMTelSSUtils;->isOp06IccCard(I)Z
 
     move-result v5
@@ -2202,19 +2218,19 @@
 
     if-nez v5, :cond_1
 
-    .line 2002
+    .line 2026
     const/4 v5, 0x1
 
     move/from16 v0, p6
 
     if-ne v0, v5, :cond_6
 
-    .line 2003
+    .line 2027
     const-string v5, "audio"
 
     invoke-virtual {v14, v5}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
-    .line 2012
+    .line 2039
     :cond_1
     :goto_0
     const/4 v5, 0x1
@@ -2223,10 +2239,10 @@
 
     if-ne v0, v5, :cond_8
 
-    .line 2013
+    .line 2040
     invoke-virtual {v14}, Lcom/mediatek/simservs/client/policy/Conditions;->addBusy()V
 
-    .line 2025
+    .line 2052
     :cond_2
     :goto_1
     if-eqz p7, :cond_3
@@ -2237,7 +2253,7 @@
 
     if-eqz v5, :cond_4
 
-    .line 2026
+    .line 2053
     :cond_3
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
@@ -2247,7 +2263,7 @@
 
     move-result-object p7
 
-    .line 2027
+    .line 2054
     const-string v5, "MMTelSS"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -2284,7 +2300,7 @@
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2032
+    .line 2059
     :cond_4
     invoke-static/range {p12 .. p12}, Lcom/android/internal/telephony/MMTelSSUtils;->isOp01IccCard(I)Z
 
@@ -2298,14 +2314,14 @@
 
     if-eqz v5, :cond_c
 
-    .line 2033
+    .line 2060
     const/4 v5, 0x0
 
     move-object/from16 v0, p7
 
     invoke-virtual {v13, v0, v5}, Lcom/mediatek/simservs/client/policy/Actions;->setFowardTo(Ljava/lang/String;Z)V
 
-    .line 2037
+    .line 2064
     :goto_2
     invoke-virtual {v13}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
@@ -2315,7 +2331,7 @@
 
     invoke-virtual {v5, v6}, Lcom/mediatek/simservs/client/policy/ForwardTo;->setRevealIdentityToCaller(Z)V
 
-    .line 2038
+    .line 2065
     invoke-virtual {v13}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v5
@@ -2324,7 +2340,7 @@
 
     invoke-virtual {v5, v6}, Lcom/mediatek/simservs/client/policy/ForwardTo;->setRevealIdentityToTarget(Z)V
 
-    .line 2039
+    .line 2066
     if-eqz p10, :cond_5
 
     const/4 v5, 0x1
@@ -2333,25 +2349,25 @@
 
     if-ne v5, v0, :cond_5
 
-    .line 2040
+    .line 2067
     move-object/from16 v0, p1
 
     move-object/from16 v1, p9
 
     invoke-virtual {v0, v1}, Lcom/mediatek/simservs/client/CommunicationDiversion;->saveRule(Ljava/lang/String;)V
 
-    .line 2042
+    .line 2069
     :cond_5
     const/4 v5, 0x1
 
-    .line 2104
+    .line 2131
     .end local v13    # "cfAction":Lcom/mediatek/simservs/client/policy/Actions;
     .end local v14    # "cfCond":Lcom/mediatek/simservs/client/policy/Conditions;
     .end local v15    # "cfRule":Lcom/mediatek/simservs/client/policy/Rule;
     :goto_3
     return v5
 
-    .line 2004
+    .line 2028
     .restart local v13    # "cfAction":Lcom/mediatek/simservs/client/policy/Actions;
     .restart local v14    # "cfCond":Lcom/mediatek/simservs/client/policy/Conditions;
     .restart local v15    # "cfRule":Lcom/mediatek/simservs/client/policy/Rule;
@@ -2362,30 +2378,44 @@
 
     if-ne v0, v5, :cond_7
 
-    .line 2005
+    .line 2029
     const-string v5, "video"
 
     invoke-virtual {v14, v5}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 2006
+    .line 2030
     :cond_7
     if-nez p6, :cond_1
 
-    .line 2007
+    .line 2031
+    const-string v5, "MMTelSS"
+
+    const-string v6, "if op01,do not add video!"
+
+    invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2032
     const-string v5, "audio"
 
     invoke-virtual {v14, v5}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
-    .line 2008
+    .line 2033
+    invoke-static/range {p12 .. p12}, Lcom/android/internal/telephony/MMTelSSUtils;->isOp01IccCard(I)Z
+
+    move-result v5
+
+    if-nez v5, :cond_1
+
+    .line 2034
     const-string v5, "video"
 
     invoke-virtual {v14, v5}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 2014
+    .line 2041
     :cond_8
     const/4 v5, 0x2
 
@@ -2393,12 +2423,12 @@
 
     if-ne v0, v5, :cond_9
 
-    .line 2015
+    .line 2042
     invoke-virtual {v14}, Lcom/mediatek/simservs/client/policy/Conditions;->addNoAnswer()V
 
     goto/16 :goto_1
 
-    .line 2016
+    .line 2043
     :cond_9
     const/4 v5, 0x3
 
@@ -2406,12 +2436,12 @@
 
     if-ne v0, v5, :cond_a
 
-    .line 2017
+    .line 2044
     invoke-virtual {v14}, Lcom/mediatek/simservs/client/policy/Conditions;->addNotReachable()V
 
     goto/16 :goto_1
 
-    .line 2018
+    .line 2045
     :cond_a
     const/4 v5, 0x6
 
@@ -2419,18 +2449,18 @@
 
     if-ne v0, v5, :cond_b
 
-    .line 2019
+    .line 2046
     invoke-virtual {v14}, Lcom/mediatek/simservs/client/policy/Conditions;->addNotRegistered()V
 
     goto/16 :goto_1
 
-    .line 2020
+    .line 2047
     :cond_b
     if-nez p4, :cond_2
 
     goto/16 :goto_1
 
-    .line 2035
+    .line 2062
     :cond_c
     const/4 v5, 0x1
 
@@ -2440,14 +2470,14 @@
 
     goto :goto_2
 
-    .line 2045
+    .line 2072
     .end local v13    # "cfAction":Lcom/mediatek/simservs/client/policy/Actions;
     .end local v14    # "cfCond":Lcom/mediatek/simservs/client/policy/Conditions;
     .end local v15    # "cfRule":Lcom/mediatek/simservs/client/policy/Rule;
     :cond_d
     if-nez p6, :cond_11
 
-    .line 2046
+    .line 2073
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -2458,30 +2488,30 @@
 
     if-ne v5, v6, :cond_f
 
-    .line 2047
+    .line 2074
     const-string v5, "MMTelSS"
 
     const-string v6, "Disable CF for serviceClass=0 (all media types):neither create new rule nor copy old rule to new rule set"
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2048
+    .line 2075
     if-eqz p10, :cond_e
 
-    .line 2049
+    .line 2076
     const-string v5, "MMTelSS"
 
     const-string v6, "handleCreateNewRuleForExistingCF(): ERROR: DISABLE_MODE_DELETE_RULE but updateSingleRule"
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2051
+    .line 2078
     :cond_e
     const/4 v5, 0x0
 
     goto :goto_3
 
-    .line 2052
+    .line 2079
     :cond_f
     move-object/from16 v0, p0
 
@@ -2493,14 +2523,14 @@
 
     if-ne v5, v6, :cond_19
 
-    .line 2053
+    .line 2080
     const-string v5, "MMTelSS"
 
     const-string v6, "Disable CF for serviceClass=0 (all media types):copy old rule with <rule-deactivated> into new rule set"
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2054
+    .line 2081
     move-object/from16 v0, p0
 
     move-object/from16 v1, p3
@@ -2515,7 +2545,7 @@
 
     move-result-object v18
 
-    .line 2055
+    .line 2082
     .local v18, "nr":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual/range {v18 .. v18}, Lcom/mediatek/simservs/client/policy/Rule;->getConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
@@ -2523,7 +2553,7 @@
 
     invoke-virtual {v5}, Lcom/mediatek/simservs/client/policy/Conditions;->addRuleDeactivated()V
 
-    .line 2056
+    .line 2083
     if-eqz p10, :cond_10
 
     const/4 v5, 0x1
@@ -2532,7 +2562,7 @@
 
     if-ne v5, v0, :cond_10
 
-    .line 2057
+    .line 2084
     move-object/from16 v0, v18
 
     iget-object v5, v0, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
@@ -2541,13 +2571,13 @@
 
     invoke-virtual {v0, v5}, Lcom/mediatek/simservs/client/CommunicationDiversion;->saveRule(Ljava/lang/String;)V
 
-    .line 2059
+    .line 2086
     :cond_10
     const/4 v5, 0x1
 
     goto/16 :goto_3
 
-    .line 2061
+    .line 2088
     .end local v18    # "nr":Lcom/mediatek/simservs/client/policy/Rule;
     :cond_11
     invoke-virtual/range {v16 .. v16}, Lcom/mediatek/simservs/client/policy/Conditions;->getMedias()Ljava/util/List;
@@ -2564,7 +2594,7 @@
 
     if-eqz v5, :cond_15
 
-    .line 2062
+    .line 2089
     if-eqz p10, :cond_13
 
     const/4 v5, 0x1
@@ -2587,16 +2617,16 @@
 
     move/from16 v11, p4
 
-    .line 2064
+    .line 2091
     invoke-virtual/range {v5 .. v11}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->copyOldRuleToNewRuleSetExceptSpecificMedia(Lcom/mediatek/simservs/client/policy/Rule;Lcom/mediatek/simservs/client/policy/RuleSet;IIII)Lcom/mediatek/simservs/client/policy/Rule;
 
     move-result-object v17
 
-    .line 2066
+    .line 2093
     .local v17, "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     if-eqz v17, :cond_12
 
-    .line 2067
+    .line 2094
     move-object/from16 v0, v17
 
     iget-object v5, v0, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
@@ -2605,13 +2635,13 @@
 
     invoke-virtual {v0, v5}, Lcom/mediatek/simservs/client/CommunicationDiversion;->saveRule(Ljava/lang/String;)V
 
-    .line 2069
+    .line 2096
     :cond_12
     const/4 v5, 0x1
 
     goto/16 :goto_3
 
-    .line 2071
+    .line 2098
     .end local v17    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     :cond_13
     move-object/from16 v0, p0
@@ -2624,7 +2654,7 @@
 
     if-ne v5, v6, :cond_14
 
-    .line 2072
+    .line 2099
     const-string v5, "MMTelSS"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -2661,7 +2691,7 @@
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2074
+    .line 2101
     move-object/from16 v0, p0
 
     move-object/from16 v1, p3
@@ -2676,7 +2706,7 @@
 
     move-result-object v18
 
-    .line 2075
+    .line 2102
     .restart local v18    # "nr":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual/range {v18 .. v18}, Lcom/mediatek/simservs/client/policy/Rule;->getConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
@@ -2684,7 +2714,7 @@
 
     invoke-virtual {v5}, Lcom/mediatek/simservs/client/policy/Conditions;->addRuleDeactivated()V
 
-    .line 2078
+    .line 2105
     .end local v18    # "nr":Lcom/mediatek/simservs/client/policy/Rule;
     :cond_14
     const-string v5, "MMTelSS"
@@ -2731,15 +2761,15 @@
 
     move/from16 v11, p4
 
-    .line 2081
+    .line 2108
     invoke-virtual/range {v5 .. v11}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->copyOldRuleToNewRuleSetExceptSpecificMedia(Lcom/mediatek/simservs/client/policy/Rule;Lcom/mediatek/simservs/client/policy/RuleSet;IIII)Lcom/mediatek/simservs/client/policy/Rule;
 
-    .line 2083
+    .line 2110
     const/4 v5, 0x1
 
     goto/16 :goto_3
 
-    .line 2086
+    .line 2113
     :cond_15
     move-object/from16 v0, p0
 
@@ -2751,7 +2781,7 @@
 
     if-ne v5, v6, :cond_17
 
-    .line 2087
+    .line 2114
     const-string v5, "MMTelSS"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -2782,23 +2812,23 @@
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2089
+    .line 2116
     if-eqz p10, :cond_16
 
-    .line 2090
+    .line 2117
     const-string v5, "MMTelSS"
 
     const-string v6, "handleCreateNewRuleForExistingCF(): ERROR: DISABLE_MODE_DELETE_RULE but updateSingleRule"
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2092
+    .line 2119
     :cond_16
     const/4 v5, 0x0
 
     goto/16 :goto_3
 
-    .line 2093
+    .line 2120
     :cond_17
     move-object/from16 v0, p0
 
@@ -2810,7 +2840,7 @@
 
     if-ne v5, v6, :cond_19
 
-    .line 2094
+    .line 2121
     const-string v5, "MMTelSS"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -2841,7 +2871,7 @@
 
     invoke-static {v5, v6}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2096
+    .line 2123
     move-object/from16 v0, p0
 
     move-object/from16 v1, p3
@@ -2856,7 +2886,7 @@
 
     move-result-object v18
 
-    .line 2097
+    .line 2124
     .restart local v18    # "nr":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual/range {v18 .. v18}, Lcom/mediatek/simservs/client/policy/Rule;->getConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
@@ -2864,7 +2894,7 @@
 
     invoke-virtual {v5}, Lcom/mediatek/simservs/client/policy/Conditions;->addRuleDeactivated()V
 
-    .line 2098
+    .line 2125
     if-eqz p10, :cond_18
 
     const/4 v5, 0x1
@@ -2873,7 +2903,7 @@
 
     if-ne v5, v0, :cond_18
 
-    .line 2099
+    .line 2126
     move-object/from16 v0, v18
 
     iget-object v5, v0, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
@@ -2882,13 +2912,13 @@
 
     invoke-virtual {v0, v5}, Lcom/mediatek/simservs/client/CommunicationDiversion;->saveRule(Ljava/lang/String;)V
 
-    .line 2101
+    .line 2128
     :cond_18
     const/4 v5, 0x1
 
     goto/16 :goto_3
 
-    .line 2104
+    .line 2131
     .end local v18    # "nr":Lcom/mediatek/simservs/client/policy/Rule;
     :cond_19
     const/4 v5, 0x0
@@ -2914,36 +2944,36 @@
     .end annotation
 
     .prologue
-    .line 2202
+    .line 2232
     const/4 v2, 0x1
 
-    .line 2204
+    .line 2234
     .local v2, "cbAllow":Z
     const/4 v7, 0x1
 
     if-ne p4, v7, :cond_3
 
-    .line 2206
+    .line 2236
     const/4 v2, 0x0
 
-    .line 2216
+    .line 2246
     invoke-virtual {p2, p6}, Lcom/mediatek/simservs/client/policy/RuleSet;->createNewRule(Ljava/lang/String;)Lcom/mediatek/simservs/client/policy/Rule;
 
     move-result-object v4
 
-    .line 2217
+    .line 2247
     .local v4, "cbRule":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual {v4}, Lcom/mediatek/simservs/client/policy/Rule;->createConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v3
 
-    .line 2218
+    .line 2248
     .local v3, "cbCond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual {v4}, Lcom/mediatek/simservs/client/policy/Rule;->createActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v1
 
-    .line 2221
+    .line 2251
     .local v1, "cbAction":Lcom/mediatek/simservs/client/policy/Actions;
     invoke-static/range {p9 .. p9}, Lcom/android/internal/telephony/MMTelSSUtils;->isOp06IccCard(I)Z
 
@@ -2957,17 +2987,17 @@
 
     if-nez v7, :cond_0
 
-    .line 2223
+    .line 2253
     const/4 v7, 0x1
 
     if-ne p5, v7, :cond_4
 
-    .line 2224
+    .line 2254
     const-string v7, "audio"
 
     invoke-virtual {v3, v7}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
-    .line 2233
+    .line 2266
     :cond_0
     :goto_0
     const-string v7, "IR"
@@ -2978,13 +3008,13 @@
 
     if-eqz v7, :cond_6
 
-    .line 2234
+    .line 2267
     invoke-virtual {v3}, Lcom/mediatek/simservs/client/policy/Conditions;->addRoaming()V
 
-    .line 2235
+    .line 2268
     invoke-virtual {v1, v2}, Lcom/mediatek/simservs/client/policy/Actions;->setAllow(Z)V
 
-    .line 2250
+    .line 2283
     :cond_1
     :goto_1
     if-eqz p7, :cond_2
@@ -2995,21 +3025,21 @@
 
     if-ne v7, v0, :cond_2
 
-    .line 2251
+    .line 2284
     instance-of v7, p1, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
 
     if-eqz v7, :cond_a
 
     move-object v6, p1
 
-    .line 2252
+    .line 2285
     check-cast v6, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
 
-    .line 2253
+    .line 2286
     .local v6, "ocb":Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     invoke-virtual {v6, p6}, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;->saveRule(Ljava/lang/String;)V
 
-    .line 2260
+    .line 2293
     .end local v6    # "ocb":Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     :cond_2
     :goto_2
@@ -3021,23 +3051,23 @@
     :goto_3
     return v7
 
-    .line 2211
+    .line 2241
     :cond_3
     const/4 v2, 0x1
 
-    .line 2212
+    .line 2242
     const-string v7, "MMTelSS"
 
     const-string v8, "Disable one non-existed rule!Return from handleCreateNewRuleForReqCB() directly!"
 
     invoke-static {v7, v8}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2213
+    .line 2243
     const/4 v7, 0x0
 
     goto :goto_3
 
-    .line 2225
+    .line 2255
     .restart local v1    # "cbAction":Lcom/mediatek/simservs/client/policy/Actions;
     .restart local v3    # "cbCond":Lcom/mediatek/simservs/client/policy/Conditions;
     .restart local v4    # "cbRule":Lcom/mediatek/simservs/client/policy/Rule;
@@ -3046,30 +3076,44 @@
 
     if-ne p5, v7, :cond_5
 
-    .line 2226
+    .line 2256
     const-string v7, "video"
 
     invoke-virtual {v3, v7}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 2227
+    .line 2257
     :cond_5
     if-nez p5, :cond_0
 
-    .line 2228
+    .line 2258
+    const-string v7, "MMTelSS"
+
+    const-string v8, "if op01,do not add video!"
+
+    invoke-static {v7, v8}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 2259
     const-string v7, "audio"
 
     invoke-virtual {v3, v7}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
-    .line 2229
+    .line 2260
+    invoke-static/range {p9 .. p9}, Lcom/android/internal/telephony/MMTelSSUtils;->isOp01IccCard(I)Z
+
+    move-result v7
+
+    if-nez v7, :cond_0
+
+    .line 2261
     const-string v7, "video"
 
     invoke-virtual {v3, v7}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 2236
+    .line 2269
     :cond_6
     const-string v7, "AI"
 
@@ -3079,12 +3123,12 @@
 
     if-eqz v7, :cond_7
 
-    .line 2238
+    .line 2271
     invoke-virtual {v1, v2}, Lcom/mediatek/simservs/client/policy/Actions;->setAllow(Z)V
 
     goto :goto_1
 
-    .line 2239
+    .line 2272
     :cond_7
     const-string v7, "OI"
 
@@ -3094,15 +3138,15 @@
 
     if-eqz v7, :cond_8
 
-    .line 2240
+    .line 2273
     invoke-virtual {v3}, Lcom/mediatek/simservs/client/policy/Conditions;->addInternational()V
 
-    .line 2241
+    .line 2274
     invoke-virtual {v1, v2}, Lcom/mediatek/simservs/client/policy/Actions;->setAllow(Z)V
 
     goto :goto_1
 
-    .line 2242
+    .line 2275
     :cond_8
     const-string v7, "OX"
 
@@ -3112,15 +3156,15 @@
 
     if-eqz v7, :cond_9
 
-    .line 2243
+    .line 2276
     invoke-virtual {v3}, Lcom/mediatek/simservs/client/policy/Conditions;->addInternationalExHc()V
 
-    .line 2244
+    .line 2277
     invoke-virtual {v1, v2}, Lcom/mediatek/simservs/client/policy/Actions;->setAllow(Z)V
 
     goto :goto_1
 
-    .line 2245
+    .line 2278
     :cond_9
     const-string v7, "AO"
 
@@ -3130,12 +3174,12 @@
 
     if-eqz v7, :cond_1
 
-    .line 2247
+    .line 2280
     invoke-virtual {v1, v2}, Lcom/mediatek/simservs/client/policy/Actions;->setAllow(Z)V
 
     goto :goto_1
 
-    .line 2254
+    .line 2287
     :cond_a
     instance-of v7, p1, Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
 
@@ -3143,10 +3187,10 @@
 
     move-object v5, p1
 
-    .line 2255
+    .line 2288
     check-cast v5, Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
 
-    .line 2256
+    .line 2289
     .local v5, "icb":Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
     invoke-virtual {v5, p6}, Lcom/mediatek/simservs/client/IncomingCommunicationBarring;->saveRule(Ljava/lang/String;)V
 
@@ -3158,22 +3202,22 @@
     .param p1, "rr"    # Lcom/android/internal/telephony/MMTelSSRequest;
 
     .prologue
-    .line 1228
+    .line 1252
     const/16 v25, -0x1
 
-    .line 1229
+    .line 1253
     .local v25, "reqNo":I
     const/16 v28, -0x1
 
-    .line 1230
+    .line 1254
     .local v28, "serialNo":I
     const/4 v11, -0x1
 
-    .line 1232
+    .line 1256
     .local v11, "cbServiceClass":I
     const-string v10, ""
 
-    .line 1233
+    .line 1257
     .local v10, "cBFacility":Ljava/lang/String;
     const/4 v2, 0x1
 
@@ -3181,7 +3225,7 @@
 
     move-object/from16 v17, v0
 
-    .line 1235
+    .line 1259
     .local v17, "get_cb_response":[I
     const/4 v2, 0x0
 
@@ -3189,7 +3233,7 @@
 
     aput v3, v17, v2
 
-    .line 1238
+    .line 1262
     :try_start_0
     move-object/from16 v0, p1
 
@@ -3199,7 +3243,7 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 1239
+    .line 1263
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -3208,7 +3252,7 @@
 
     move-result v25
 
-    .line 1240
+    .line 1264
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -3217,7 +3261,7 @@
 
     move-result v28
 
-    .line 1241
+    .line 1265
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -3226,7 +3270,7 @@
 
     move-result-object v10
 
-    .line 1242
+    .line 1266
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -3235,7 +3279,7 @@
 
     move-result v11
 
-    .line 1243
+    .line 1267
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -3244,7 +3288,7 @@
 
     move-result v8
 
-    .line 1244
+    .line 1268
     .local v8, "phoneId":I
     const-string v2, "MMTelSS"
 
@@ -3278,21 +3322,21 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1246
+    .line 1270
     invoke-static {v8}, Lcom/android/internal/telephony/MMTelSSUtils;->isPreferXcap(I)Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 1247
+    .line 1271
     const-string v2, "MMTelSS"
 
     const-string v3, "handleGetCB(): !isPreferXcap()"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1248
+    .line 1272
     new-instance v2, Ljava/net/UnknownHostException;
 
     invoke-direct {v2}, Ljava/net/UnknownHostException;-><init>()V
@@ -3303,12 +3347,12 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 1510
+    .line 1534
     .end local v8    # "phoneId":I
     :catch_0
     move-exception v29
 
-    .line 1511
+    .line 1535
     .local v29, "unknownHostException":Ljava/net/UnknownHostException;
     move-object/from16 v0, p0
 
@@ -3319,7 +3363,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCache:Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1002(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;)Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
 
-    .line 1512
+    .line 1536
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -3329,7 +3373,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1202(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 1513
+    .line 1537
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -3339,7 +3383,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1514
+    .line 1538
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -3349,7 +3393,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCache:Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1302(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/IncomingCommunicationBarring;)Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
 
-    .line 1515
+    .line 1539
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -3359,7 +3403,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1502(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 1516
+    .line 1540
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -3369,14 +3413,14 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1402(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1518
+    .line 1542
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_15
 
-    .line 1519
+    .line 1543
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -3387,14 +3431,14 @@
 
     invoke-static {v2, v3, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 1520
+    .line 1544
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1521
+    .line 1545
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -3406,7 +3450,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1522
+    .line 1546
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -3418,37 +3462,37 @@
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 1598
+    .line 1622
     .end local v29    # "unknownHostException":Ljava/net/UnknownHostException;
     :cond_0
     :goto_0
     return-void
 
-    .line 1251
+    .line 1275
     .restart local v8    # "phoneId":I
     :cond_1
     const/16 v22, 0x0
 
-    .line 1254
+    .line 1278
     .local v22, "num_of_comparision":I
     const/16 v2, 0x210
 
     if-ne v11, v2, :cond_2
 
-    .line 1255
+    .line 1279
     const/16 v11, 0x200
 
-    .line 1258
+    .line 1282
     :cond_2
     if-nez v11, :cond_6
 
-    .line 1259
+    .line 1283
     const/4 v11, 0x1
 
-    .line 1261
+    .line 1285
     const/16 v22, 0x2
 
-    .line 1262
+    .line 1286
     :try_start_1
     const-string v2, "MMTelSS"
 
@@ -3456,7 +3500,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1270
+    .line 1294
     :goto_1
     const-string v2, "AO"
 
@@ -3482,13 +3526,13 @@
 
     if-eqz v2, :cond_17
 
-    .line 1274
+    .line 1298
     :cond_3
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v14
 
-    .line 1275
+    .line 1299
     .local v14, "curTime":J
     const-string v2, "MMTelSS"
 
@@ -3550,7 +3594,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1277
+    .line 1301
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -3588,7 +3632,7 @@
 
     if-eqz v2, :cond_7
 
-    .line 1279
+    .line 1303
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3620,7 +3664,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1280
+    .line 1304
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -3628,7 +3672,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 1281
+    .line 1305
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -3638,7 +3682,7 @@
 
     move-result-object v23
 
-    .line 1282
+    .line 1306
     .local v23, "ocb":Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     move-object/from16 v0, p0
 
@@ -3653,10 +3697,10 @@
 
     invoke-virtual {v0, v2}, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;->setNetwork(Landroid/net/Network;)V
 
-    .line 1283
+    .line 1307
     invoke-virtual/range {v23 .. v23}, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;->refresh()V
 
-    .line 1284
+    .line 1308
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -3664,40 +3708,40 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCacheLastQueried:J
     invoke-static {v2, v14, v15}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1313
+    .line 1337
     :goto_2
     invoke-virtual/range {v23 .. v23}, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;->getRuleSet()Lcom/mediatek/simservs/client/policy/RuleSet;
 
     move-result-object v27
 
-    .line 1314
+    .line 1338
     .local v27, "ruleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     const/16 v26, 0x0
 
-    .line 1316
+    .line 1340
     .local v26, "ruleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
     if-eqz v27, :cond_b
 
-    .line 1317
+    .line 1341
     invoke-virtual/range {v27 .. v27}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
 
     move-result-object v26
 
-    .line 1318
+    .line 1342
     if-nez v26, :cond_a
 
-    .line 1319
+    .line 1343
     const-string v2, "MMTelSS"
 
     const-string v3, "Dump Get MO CB XML: ruleset with empty rules"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1328
+    .line 1352
     :goto_3
     if-eqz v26, :cond_14
 
-    .line 1329
+    .line 1353
     const/16 v20, 0x0
 
     .local v20, "it":I
@@ -3708,7 +3752,7 @@
 
     if-ge v0, v1, :cond_15
 
-    .line 1330
+    .line 1354
     const/4 v2, 0x1
 
     move/from16 v0, v20
@@ -3719,17 +3763,17 @@
 
     if-ne v11, v2, :cond_4
 
-    .line 1332
+    .line 1356
     const/16 v11, 0x200
 
-    .line 1333
+    .line 1357
     const-string v2, "MMTelSS"
 
     const-string v3, "cbServiceClass==0, try to 2nd match by using SERVICE_CLASS_VIDEO"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1336
+    .line 1360
     :cond_4
     const/16 v18, 0x0
 
@@ -3743,7 +3787,7 @@
 
     if-ge v0, v2, :cond_5
 
-    .line 1337
+    .line 1361
     move-object/from16 v0, v26
 
     move/from16 v1, v18
@@ -3754,23 +3798,23 @@
 
     check-cast v24, Lcom/mediatek/simservs/client/policy/Rule;
 
-    .line 1338
+    .line 1362
     .local v24, "r":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual/range {v24 .. v24}, Lcom/mediatek/simservs/client/policy/Rule;->getConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v13
 
-    .line 1339
+    .line 1363
     .local v13, "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual/range {v24 .. v24}, Lcom/mediatek/simservs/client/policy/Rule;->getActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v9
 
-    .line 1340
+    .line 1364
     .local v9, "action":Lcom/mediatek/simservs/client/policy/Actions;
     const/16 v21, 0x0
 
-    .line 1342
+    .line 1366
     .local v21, "mediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const-string v2, "MMTelSS"
 
@@ -3808,10 +3852,10 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1343
+    .line 1367
     if-eqz v13, :cond_c
 
-    .line 1344
+    .line 1368
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3852,12 +3896,12 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1345
+    .line 1369
     invoke-virtual {v13}, Lcom/mediatek/simservs/client/policy/Conditions;->getMedias()Ljava/util/List;
 
     move-result-object v21
 
-    .line 1350
+    .line 1374
     :goto_6
     if-eqz v13, :cond_e
 
@@ -3885,7 +3929,7 @@
 
     if-eqz v2, :cond_e
 
-    .line 1353
+    .line 1377
     invoke-virtual {v9}, Lcom/mediatek/simservs/client/policy/Actions;->isAllow()Z
 
     move-result v2
@@ -3900,7 +3944,7 @@
 
     if-nez v2, :cond_d
 
-    .line 1355
+    .line 1379
     const/4 v2, 0x0
 
     aget v3, v17, v2
@@ -3909,7 +3953,7 @@
 
     aput v3, v17, v2
 
-    .line 1329
+    .line 1353
     .end local v9    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .end local v13    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     .end local v21    # "mediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
@@ -3920,7 +3964,7 @@
 
     goto/16 :goto_4
 
-    .line 1265
+    .line 1289
     .end local v14    # "curTime":J
     .end local v18    # "i":I
     .end local v20    # "it":I
@@ -3932,7 +3976,7 @@
 
     goto/16 :goto_1
 
-    .line 1285
+    .line 1309
     .restart local v14    # "curTime":J
     :cond_7
     move-object/from16 v0, p0
@@ -3987,7 +4031,7 @@
 
     if-gez v2, :cond_8
 
-    .line 1288
+    .line 1312
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -4019,7 +4063,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1289
+    .line 1313
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4032,7 +4076,7 @@
     .restart local v23    # "ocb":Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     goto/16 :goto_2
 
-    .line 1291
+    .line 1315
     .end local v23    # "ocb":Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     :cond_8
     move-object/from16 v0, p0
@@ -4042,7 +4086,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 1293
+    .line 1317
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4053,7 +4097,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
 
-    .line 1294
+    .line 1318
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4064,7 +4108,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
 
-    .line 1295
+    .line 1319
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4075,7 +4119,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
 
-    .line 1297
+    .line 1321
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4088,7 +4132,7 @@
 
     if-eqz v2, :cond_9
 
-    .line 1298
+    .line 1322
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -4117,7 +4161,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1299
+    .line 1323
     new-instance v2, Ljava/net/UnknownHostException;
 
     invoke-direct {v2}, Ljava/net/UnknownHostException;-><init>()V
@@ -4128,14 +4172,14 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 1526
+    .line 1550
     .end local v8    # "phoneId":I
     .end local v14    # "curTime":J
     .end local v22    # "num_of_comparision":I
     :catch_1
     move-exception v30
 
-    .line 1527
+    .line 1551
     .local v30, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     const-string v2, "MMTelSS"
 
@@ -4143,7 +4187,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1528
+    .line 1552
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4153,7 +4197,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCache:Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1002(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;)Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
 
-    .line 1529
+    .line 1553
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4163,7 +4207,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1202(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 1530
+    .line 1554
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4173,7 +4217,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1531
+    .line 1555
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4183,7 +4227,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCache:Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1302(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/IncomingCommunicationBarring;)Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
 
-    .line 1532
+    .line 1556
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4193,7 +4237,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1502(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 1533
+    .line 1557
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4203,31 +4247,31 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1402(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1535
+    .line 1559
     invoke-virtual/range {v30 .. v30}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
 
-    .line 1536
+    .line 1560
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_15
 
-    .line 1537
+    .line 1561
     invoke-virtual/range {v30 .. v30}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
 
     move-result v2
 
     if-eqz v2, :cond_28
 
-    .line 1538
+    .line 1562
     const-string v2, "MMTelSS"
 
     const-string v3, "handleGetCB(): xcapException.isConnectionError()"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1539
+    .line 1563
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -4240,7 +4284,7 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 1543
+    .line 1567
     :goto_8
     move-object/from16 v0, p1
 
@@ -4248,7 +4292,7 @@
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1544
+    .line 1568
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4260,7 +4304,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1545
+    .line 1569
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4274,7 +4318,7 @@
 
     goto/16 :goto_0
 
-    .line 1302
+    .line 1326
     .end local v30    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     .restart local v8    # "phoneId":I
     .restart local v14    # "curTime":J
@@ -4317,7 +4361,7 @@
 
     invoke-virtual/range {v2 .. v8}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 1305
+    .line 1329
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mSimservs:Lcom/mediatek/simservs/client/SimServs;
     invoke-static {}, Lcom/android/internal/telephony/MMTelSSTransport;->access$500()Lcom/mediatek/simservs/client/SimServs;
 
@@ -4338,7 +4382,7 @@
 
     move-result-object v23
 
-    .line 1306
+    .line 1330
     .restart local v23    # "ocb":Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     move-object/from16 v0, p0
 
@@ -4349,7 +4393,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCache:Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     invoke-static {v2, v0}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1002(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;)Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
 
-    .line 1307
+    .line 1331
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4357,7 +4401,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCachePhoneId:I
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1202(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 1308
+    .line 1332
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4365,7 +4409,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCacheLastQueried:J
     invoke-static {v2, v14, v15}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1309
+    .line 1333
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -4413,7 +4457,7 @@
 
     goto/16 :goto_2
 
-    .line 1549
+    .line 1573
     .end local v8    # "phoneId":I
     .end local v14    # "curTime":J
     .end local v22    # "num_of_comparision":I
@@ -4421,7 +4465,7 @@
     :catch_2
     move-exception v16
 
-    .line 1550
+    .line 1574
     .local v16, "e":Ljava/lang/Exception;
     const-string v2, "MMTelSS"
 
@@ -4429,7 +4473,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1551
+    .line 1575
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4439,7 +4483,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCache:Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1002(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;)Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
 
-    .line 1552
+    .line 1576
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4449,7 +4493,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1202(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 1553
+    .line 1577
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4459,7 +4503,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1554
+    .line 1578
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4469,7 +4513,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCache:Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1302(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/IncomingCommunicationBarring;)Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
 
-    .line 1555
+    .line 1579
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4479,7 +4523,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1502(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 1556
+    .line 1580
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4489,31 +4533,31 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1402(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1558
+    .line 1582
     const/4 v2, 0x0
 
     const/4 v3, 0x0
 
     aput v3, v17, v2
 
-    .line 1559
+    .line 1583
     invoke-virtual/range {v16 .. v16}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 1560
+    .line 1584
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_15
 
-    .line 1561
+    .line 1585
     const/4 v2, 0x2
 
     invoke-static {v2}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v12
 
-    .line 1562
+    .line 1586
     .local v12, "ce":Lcom/android/internal/telephony/CommandException;
     move-object/from16 v0, p1
 
@@ -4523,14 +4567,14 @@
 
     invoke-static {v2, v3, v12}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 1563
+    .line 1587
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1564
+    .line 1588
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4542,7 +4586,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1565
+    .line 1589
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4556,7 +4600,7 @@
 
     goto/16 :goto_0
 
-    .line 1321
+    .line 1345
     .end local v12    # "ce":Lcom/android/internal/telephony/CommandException;
     .end local v16    # "e":Ljava/lang/Exception;
     .restart local v8    # "phoneId":I
@@ -4595,7 +4639,7 @@
 
     goto/16 :goto_3
 
-    .line 1324
+    .line 1348
     :cond_b
     const-string v2, "MMTelSS"
 
@@ -4605,7 +4649,7 @@
 
     goto/16 :goto_3
 
-    .line 1347
+    .line 1371
     .restart local v9    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .restart local v13    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     .restart local v18    # "i":I
@@ -4639,7 +4683,7 @@
 
     goto/16 :goto_6
 
-    .line 1357
+    .line 1381
     :cond_d
     const/4 v2, 0x0
 
@@ -4649,7 +4693,7 @@
 
     goto/16 :goto_7
 
-    .line 1360
+    .line 1384
     :cond_e
     if-eqz v13, :cond_11
 
@@ -4677,7 +4721,7 @@
 
     if-eqz v2, :cond_11
 
-    .line 1363
+    .line 1387
     invoke-virtual {v9}, Lcom/mediatek/simservs/client/policy/Actions;->isAllow()Z
 
     move-result v2
@@ -4692,7 +4736,7 @@
 
     if-nez v2, :cond_10
 
-    .line 1365
+    .line 1389
     const/4 v2, 0x0
 
     aget v3, v17, v2
@@ -4701,14 +4745,14 @@
 
     aput v3, v17, v2
 
-    .line 1336
+    .line 1360
     :cond_f
     :goto_9
     add-int/lit8 v18, v18, 0x1
 
     goto/16 :goto_5
 
-    .line 1367
+    .line 1391
     :cond_10
     const/4 v2, 0x0
 
@@ -4718,7 +4762,7 @@
 
     goto :goto_9
 
-    .line 1369
+    .line 1393
     :cond_11
     move-object/from16 v0, p0
 
@@ -4736,7 +4780,7 @@
 
     if-eqz v2, :cond_f
 
-    .line 1373
+    .line 1397
     invoke-virtual {v9}, Lcom/mediatek/simservs/client/policy/Actions;->isAllow()Z
 
     move-result v2
@@ -4753,7 +4797,7 @@
 
     if-nez v2, :cond_13
 
-    .line 1375
+    .line 1399
     :cond_12
     const/4 v2, 0x0
 
@@ -4765,7 +4809,7 @@
 
     goto/16 :goto_7
 
-    .line 1377
+    .line 1401
     :cond_13
     const/4 v2, 0x0
 
@@ -4775,7 +4819,7 @@
 
     goto/16 :goto_7
 
-    .line 1385
+    .line 1409
     .end local v9    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .end local v13    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     .end local v18    # "i":I
@@ -4789,7 +4833,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1386
+    .line 1410
     const/4 v2, 0x0
 
     const/4 v3, 0x0
@@ -4800,7 +4844,7 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_3 .. :try_end_3} :catch_1
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 1573
+    .line 1597
     .end local v8    # "phoneId":I
     .end local v14    # "curTime":J
     .end local v22    # "num_of_comparision":I
@@ -4815,7 +4859,7 @@
 
     if-eqz v2, :cond_16
 
-    .line 1591
+    .line 1615
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -4826,14 +4870,14 @@
 
     invoke-static {v2, v0, v3}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 1592
+    .line 1616
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1595
+    .line 1619
     :cond_16
     move-object/from16 v0, p0
 
@@ -4846,7 +4890,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1596
+    .line 1620
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4860,7 +4904,7 @@
 
     goto/16 :goto_0
 
-    .line 1389
+    .line 1413
     .restart local v8    # "phoneId":I
     .restart local v22    # "num_of_comparision":I
     :cond_17
@@ -4881,13 +4925,13 @@
 
     if-eqz v2, :cond_27
 
-    .line 1392
+    .line 1416
     :cond_18
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v14
 
-    .line 1393
+    .line 1417
     .restart local v14    # "curTime":J
     const-string v2, "MMTelSS"
 
@@ -4949,7 +4993,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1395
+    .line 1419
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -4987,7 +5031,7 @@
 
     if-eqz v2, :cond_1b
 
-    .line 1397
+    .line 1421
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -5019,7 +5063,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1398
+    .line 1422
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -5027,7 +5071,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 1399
+    .line 1423
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -5037,7 +5081,7 @@
 
     move-result-object v19
 
-    .line 1400
+    .line 1424
     .local v19, "icb":Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
     move-object/from16 v0, p0
 
@@ -5052,10 +5096,10 @@
 
     invoke-virtual {v0, v2}, Lcom/mediatek/simservs/client/IncomingCommunicationBarring;->setNetwork(Landroid/net/Network;)V
 
-    .line 1401
+    .line 1425
     invoke-virtual/range {v19 .. v19}, Lcom/mediatek/simservs/client/IncomingCommunicationBarring;->refresh()V
 
-    .line 1402
+    .line 1426
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -5063,40 +5107,40 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCacheLastQueried:J
     invoke-static {v2, v14, v15}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1402(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1431
+    .line 1455
     :goto_b
     invoke-virtual/range {v19 .. v19}, Lcom/mediatek/simservs/client/IncomingCommunicationBarring;->getRuleSet()Lcom/mediatek/simservs/client/policy/RuleSet;
 
     move-result-object v27
 
-    .line 1432
+    .line 1456
     .restart local v27    # "ruleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     const/16 v26, 0x0
 
-    .line 1434
+    .line 1458
     .restart local v26    # "ruleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
     if-eqz v27, :cond_1f
 
-    .line 1435
+    .line 1459
     invoke-virtual/range {v27 .. v27}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
 
     move-result-object v26
 
-    .line 1436
+    .line 1460
     if-nez v26, :cond_1e
 
-    .line 1437
+    .line 1461
     const-string v2, "MMTelSS"
 
     const-string v3, "Dump Get MT CB XML: ruleset with empty rules"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1446
+    .line 1470
     :goto_c
     if-eqz v26, :cond_26
 
-    .line 1447
+    .line 1471
     const/16 v20, 0x0
 
     .restart local v20    # "it":I
@@ -5107,7 +5151,7 @@
 
     if-ge v0, v1, :cond_15
 
-    .line 1448
+    .line 1472
     const/4 v2, 0x1
 
     move/from16 v0, v20
@@ -5118,17 +5162,17 @@
 
     if-ne v11, v2, :cond_19
 
-    .line 1450
+    .line 1474
     const/16 v11, 0x200
 
-    .line 1451
+    .line 1475
     const-string v2, "MMTelSS"
 
     const-string v3, "cbServiceClass==0, try to 2nd match by using SERVICE_CLASS_VIDEO"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1453
+    .line 1477
     :cond_19
     const/16 v18, 0x0
 
@@ -5142,7 +5186,7 @@
 
     if-ge v0, v2, :cond_25
 
-    .line 1454
+    .line 1478
     move-object/from16 v0, v26
 
     move/from16 v1, v18
@@ -5153,23 +5197,23 @@
 
     check-cast v24, Lcom/mediatek/simservs/client/policy/Rule;
 
-    .line 1455
+    .line 1479
     .restart local v24    # "r":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual/range {v24 .. v24}, Lcom/mediatek/simservs/client/policy/Rule;->getConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v13
 
-    .line 1456
+    .line 1480
     .restart local v13    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual/range {v24 .. v24}, Lcom/mediatek/simservs/client/policy/Rule;->getActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v9
 
-    .line 1457
+    .line 1481
     .restart local v9    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     const/16 v21, 0x0
 
-    .line 1459
+    .line 1483
     .restart local v21    # "mediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const-string v2, "MMTelSS"
 
@@ -5207,10 +5251,10 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1460
+    .line 1484
     if-eqz v13, :cond_20
 
-    .line 1461
+    .line 1485
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -5265,12 +5309,12 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1462
+    .line 1486
     invoke-virtual {v13}, Lcom/mediatek/simservs/client/policy/Conditions;->getMedias()Ljava/util/List;
 
     move-result-object v21
 
-    .line 1467
+    .line 1491
     :goto_f
     if-eqz v13, :cond_22
 
@@ -5298,7 +5342,7 @@
 
     if-eqz v2, :cond_22
 
-    .line 1470
+    .line 1494
     invoke-virtual {v9}, Lcom/mediatek/simservs/client/policy/Actions;->isAllow()Z
 
     move-result v2
@@ -5313,7 +5357,7 @@
 
     if-nez v2, :cond_21
 
-    .line 1472
+    .line 1496
     const/4 v2, 0x0
 
     aget v3, v17, v2
@@ -5322,14 +5366,14 @@
 
     aput v3, v17, v2
 
-    .line 1453
+    .line 1477
     :cond_1a
     :goto_10
     add-int/lit8 v18, v18, 0x1
 
     goto/16 :goto_e
 
-    .line 1403
+    .line 1427
     .end local v9    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .end local v13    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     .end local v18    # "i":I
@@ -5392,7 +5436,7 @@
 
     if-gez v2, :cond_1c
 
-    .line 1406
+    .line 1430
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -5424,7 +5468,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1407
+    .line 1431
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -5437,7 +5481,7 @@
     .restart local v19    # "icb":Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
     goto/16 :goto_b
 
-    .line 1409
+    .line 1433
     .end local v19    # "icb":Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
     :cond_1c
     move-object/from16 v0, p0
@@ -5447,7 +5491,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 1411
+    .line 1435
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -5458,7 +5502,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
 
-    .line 1412
+    .line 1436
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -5469,7 +5513,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
 
-    .line 1413
+    .line 1437
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -5480,7 +5524,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
 
-    .line 1415
+    .line 1439
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -5493,7 +5537,7 @@
 
     if-eqz v2, :cond_1d
 
-    .line 1416
+    .line 1440
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -5522,14 +5566,14 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1417
+    .line 1441
     new-instance v2, Ljava/net/UnknownHostException;
 
     invoke-direct {v2}, Ljava/net/UnknownHostException;-><init>()V
 
     throw v2
 
-    .line 1420
+    .line 1444
     :cond_1d
     move-object/from16 v0, p0
 
@@ -5567,7 +5611,7 @@
 
     invoke-virtual/range {v2 .. v8}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 1423
+    .line 1447
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mSimservs:Lcom/mediatek/simservs/client/SimServs;
     invoke-static {}, Lcom/android/internal/telephony/MMTelSSTransport;->access$500()Lcom/mediatek/simservs/client/SimServs;
 
@@ -5588,7 +5632,7 @@
 
     move-result-object v19
 
-    .line 1424
+    .line 1448
     .restart local v19    # "icb":Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
     move-object/from16 v0, p0
 
@@ -5599,7 +5643,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCache:Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
     invoke-static {v2, v0}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1302(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/IncomingCommunicationBarring;)Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
 
-    .line 1425
+    .line 1449
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -5607,7 +5651,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCachePhoneId:I
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1502(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 1426
+    .line 1450
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -5615,7 +5659,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCacheLastQueried:J
     invoke-static {v2, v14, v15}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1402(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1427
+    .line 1451
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -5659,7 +5703,7 @@
 
     goto/16 :goto_b
 
-    .line 1439
+    .line 1463
     .restart local v26    # "ruleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
     .restart local v27    # "ruleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     :cond_1e
@@ -5691,7 +5735,7 @@
 
     goto/16 :goto_c
 
-    .line 1442
+    .line 1466
     :cond_1f
     const-string v2, "MMTelSS"
 
@@ -5701,7 +5745,7 @@
 
     goto/16 :goto_c
 
-    .line 1464
+    .line 1488
     .restart local v9    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .restart local v13    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     .restart local v18    # "i":I
@@ -5735,7 +5779,7 @@
 
     goto/16 :goto_f
 
-    .line 1474
+    .line 1498
     :cond_21
     const/4 v2, 0x0
 
@@ -5745,7 +5789,7 @@
 
     goto/16 :goto_10
 
-    .line 1476
+    .line 1500
     :cond_22
     move-object/from16 v0, p0
 
@@ -5763,7 +5807,7 @@
 
     if-eqz v2, :cond_1a
 
-    .line 1480
+    .line 1504
     invoke-virtual {v9}, Lcom/mediatek/simservs/client/policy/Actions;->isAllow()Z
 
     move-result v2
@@ -5780,7 +5824,7 @@
 
     if-nez v2, :cond_24
 
-    .line 1482
+    .line 1506
     :cond_23
     const/4 v2, 0x0
 
@@ -5792,7 +5836,7 @@
 
     goto/16 :goto_10
 
-    .line 1484
+    .line 1508
     :cond_24
     const/4 v2, 0x0
 
@@ -5802,7 +5846,7 @@
 
     goto/16 :goto_10
 
-    .line 1447
+    .line 1471
     .end local v9    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .end local v13    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     .end local v21    # "mediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
@@ -5812,7 +5856,7 @@
 
     goto/16 :goto_d
 
-    .line 1492
+    .line 1516
     .end local v18    # "i":I
     .end local v20    # "it":I
     :cond_26
@@ -5822,7 +5866,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1493
+    .line 1517
     const/4 v2, 0x0
 
     const/4 v3, 0x0
@@ -5831,7 +5875,7 @@
 
     goto/16 :goto_a
 
-    .line 1507
+    .line 1531
     .end local v14    # "curTime":J
     .end local v19    # "icb":Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
     .end local v26    # "ruleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
@@ -5865,7 +5909,7 @@
 
     goto/16 :goto_a
 
-    .line 1541
+    .line 1565
     .end local v8    # "phoneId":I
     .end local v22    # "num_of_comparision":I
     .restart local v30    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
@@ -5888,60 +5932,60 @@
     .param p1, "rr"    # Lcom/android/internal/telephony/MMTelSSRequest;
 
     .prologue
-    .line 1601
+    .line 1625
     const/16 v38, -0x1
 
-    .line 1602
+    .line 1626
     .local v38, "reqNo":I
     const/16 v41, -0x1
 
-    .line 1603
+    .line 1627
     .local v41, "serialNo":I
     const/16 v29, 0x1
 
-    .line 1604
+    .line 1628
     .local v29, "numInfos":I
     const/16 v22, 0x0
 
-    .line 1606
+    .line 1630
     .local v22, "infos":[Lcom/android/internal/telephony/CallForwardInfo;
     new-instance v33, Ljava/util/ArrayList;
 
     invoke-direct/range {v33 .. v33}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1608
+    .line 1632
     .local v33, "queriedCallForwardInfoList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/internal/telephony/CallForwardInfo;>;"
     const/4 v15, -0x1
 
-    .line 1609
+    .line 1633
     .local v15, "cfAction":I
     const/16 v37, -0x1
 
-    .line 1610
+    .line 1634
     .local v37, "reason":I
     const/16 v42, -0x1
 
-    .line 1611
+    .line 1635
     .local v42, "serviceClass":I
     const/16 v32, -0x1
 
-    .line 1612
+    .line 1636
     .local v32, "orgServiceClass":I
     const-string v16, ""
 
-    .line 1613
+    .line 1637
     .local v16, "cfNumber":Ljava/lang/String;
     const-string v11, ""
 
-    .line 1614
+    .line 1638
     .local v11, "CFPhoneNum":Ljava/lang/String;
     const/16 v35, 0x0
 
-    .line 1615
+    .line 1639
     .local v35, "queryStatus":I
     const/16 v28, 0x14
 
-    .line 1633
+    .line 1657
     .local v28, "noReplyTimer":I
     :try_start_0
     move-object/from16 v0, p1
@@ -5952,7 +5996,7 @@
 
     invoke-virtual {v4, v5}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 1634
+    .line 1658
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -5961,7 +6005,7 @@
 
     move-result v38
 
-    .line 1635
+    .line 1659
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -5970,7 +6014,7 @@
 
     move-result v41
 
-    .line 1636
+    .line 1660
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -5979,7 +6023,7 @@
 
     move-result v15
 
-    .line 1637
+    .line 1661
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -5988,7 +6032,7 @@
 
     move-result v37
 
-    .line 1638
+    .line 1662
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -5997,10 +6041,10 @@
 
     move-result v42
 
-    .line 1639
+    .line 1663
     move/from16 v32, v42
 
-    .line 1640
+    .line 1664
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -6009,7 +6053,7 @@
 
     move-result-object v16
 
-    .line 1641
+    .line 1665
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -6018,7 +6062,7 @@
 
     move-result v10
 
-    .line 1643
+    .line 1667
     .local v10, "phoneId":I
     invoke-static {v10}, Lcom/android/internal/telephony/MMTelSSUtils;->isPreferXcap(I)Z
 
@@ -6026,14 +6070,14 @@
 
     if-nez v4, :cond_1
 
-    .line 1644
+    .line 1668
     const-string v4, "MMTelSS"
 
     const-string v5, "handleGetCF(): !isPreferXcap()"
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1645
+    .line 1669
     new-instance v4, Ljava/net/UnknownHostException;
 
     invoke-direct {v4}, Ljava/net/UnknownHostException;-><init>()V
@@ -6044,12 +6088,12 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 1885
+    .line 1909
     .end local v10    # "phoneId":I
     :catch_0
     move-exception v43
 
-    .line 1886
+    .line 1910
     .local v43, "unknownHostException":Ljava/net/UnknownHostException;
     move-object/from16 v0, p0
 
@@ -6060,7 +6104,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCache:Lcom/mediatek/simservs/client/CommunicationDiversion;
     invoke-static {v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1602(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationDiversion;)Lcom/mediatek/simservs/client/CommunicationDiversion;
 
-    .line 1887
+    .line 1911
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -6070,7 +6114,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCachePhoneId:I
     invoke-static {v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1802(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 1888
+    .line 1912
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -6080,14 +6124,14 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v4, v6, v7}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1890
+    .line 1914
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v4, :cond_21
 
-    .line 1891
+    .line 1915
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -6098,14 +6142,14 @@
 
     invoke-static {v4, v5, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 1892
+    .line 1916
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v4}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1893
+    .line 1917
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -6117,7 +6161,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 1894
+    .line 1918
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -6129,13 +6173,13 @@
 
     invoke-virtual {v4}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 1974
+    .line 1998
     .end local v43    # "unknownHostException":Ljava/net/UnknownHostException;
     :cond_0
     :goto_0
     return-void
 
-    .line 1648
+    .line 1672
     .restart local v10    # "phoneId":I
     :cond_1
     :try_start_1
@@ -6211,12 +6255,12 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1651
+    .line 1675
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v18
 
-    .line 1652
+    .line 1676
     .local v18, "curTime":J
     const-string v4, "MMTelSS"
 
@@ -6280,7 +6324,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1654
+    .line 1678
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -6318,7 +6362,7 @@
 
     if-eqz v4, :cond_a
 
-    .line 1656
+    .line 1680
     const-string v4, "MMTelSS"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -6350,7 +6394,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1657
+    .line 1681
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -6358,7 +6402,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v4, v10}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 1658
+    .line 1682
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -6368,7 +6412,7 @@
 
     move-result-object v13
 
-    .line 1659
+    .line 1683
     .local v13, "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     move-object/from16 v0, p0
 
@@ -6381,10 +6425,10 @@
 
     invoke-virtual {v13, v4}, Lcom/mediatek/simservs/client/CommunicationDiversion;->setNetwork(Landroid/net/Network;)V
 
-    .line 1660
+    .line 1684
     invoke-virtual {v13}, Lcom/mediatek/simservs/client/CommunicationDiversion;->refresh()V
 
-    .line 1661
+    .line 1685
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -6394,7 +6438,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v4, v0, v1}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1697
+    .line 1721
     :goto_1
     const-string v4, "MMTelSS"
 
@@ -6402,32 +6446,32 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1699
+    .line 1723
     invoke-virtual {v13}, Lcom/mediatek/simservs/client/CommunicationDiversion;->getRuleSet()Lcom/mediatek/simservs/client/policy/RuleSet;
 
     move-result-object v40
 
-    .line 1701
+    .line 1725
     .local v40, "ruleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     const/16 v39, 0x0
 
-    .line 1703
+    .line 1727
     .local v39, "ruleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
     if-eqz v40, :cond_d
 
-    .line 1704
+    .line 1728
     invoke-virtual/range {v40 .. v40}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
 
     move-result-object v39
 
-    .line 1710
+    .line 1734
     :goto_2
     if-eqz v39, :cond_20
 
-    .line 1712
+    .line 1736
     const/16 v31, 0x1
 
-    .line 1713
+    .line 1737
     .local v31, "num_of_expansion":I
     const/4 v4, 0x5
 
@@ -6435,10 +6479,10 @@
 
     if-ne v0, v4, :cond_e
 
-    .line 1716
+    .line 1740
     const/16 v31, 0x4
 
-    .line 1723
+    .line 1747
     :cond_2
     :goto_3
     const/16 v27, 0x0
@@ -6451,19 +6495,19 @@
 
     if-ge v0, v1, :cond_1f
 
-    .line 1724
+    .line 1748
     const/4 v4, 0x1
 
     move/from16 v0, v31
 
     if-eq v0, v4, :cond_3
 
-    .line 1725
+    .line 1749
     if-nez v27, :cond_f
 
     const/16 v37, 0x1
 
-    .line 1732
+    .line 1756
     :cond_3
     :goto_5
     const-string v4, "MMTelSS"
@@ -6514,38 +6558,38 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1735
+    .line 1759
     const/16 v4, 0x210
 
     move/from16 v0, v32
 
     if-ne v0, v4, :cond_4
 
-    .line 1736
+    .line 1760
     const/16 v42, 0x200
 
-    .line 1741
+    .line 1765
     :cond_4
     const/16 v30, 0x0
 
-    .line 1743
+    .line 1767
     .local v30, "num_of_comparision":I
     if-nez v32, :cond_13
 
-    .line 1744
+    .line 1768
     const/16 v42, 0x1
 
-    .line 1746
+    .line 1770
     const/16 v30, 0x2
 
-    .line 1747
+    .line 1771
     const-string v4, "MMTelSS"
 
     const-string v5, "serviceClass==0, try to 1st match by using SERVICE_CLASS_VOICE"
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1753
+    .line 1777
     :goto_6
     const/16 v24, 0x0
 
@@ -6557,7 +6601,7 @@
 
     if-ge v0, v1, :cond_1e
 
-    .line 1755
+    .line 1779
     const/4 v4, 0x1
 
     move/from16 v0, v24
@@ -6570,17 +6614,17 @@
 
     if-ne v0, v4, :cond_5
 
-    .line 1757
+    .line 1781
     const/16 v42, 0x200
 
-    .line 1758
+    .line 1782
     const-string v4, "MMTelSS"
 
     const-string v5, "serviceClass==0, try to 2nd match by using SERVICE_CLASS_VIDEO"
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1761
+    .line 1785
     :cond_5
     const-string v4, "MMTelSS"
 
@@ -6630,7 +6674,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1764
+    .line 1788
     const/16 v21, 0x0
 
     .local v21, "i":I
@@ -6643,7 +6687,7 @@
 
     if-ge v0, v4, :cond_9
 
-    .line 1765
+    .line 1789
     move-object/from16 v0, v39
 
     move/from16 v1, v21
@@ -6654,27 +6698,27 @@
 
     check-cast v36, Lcom/mediatek/simservs/client/policy/Rule;
 
-    .line 1766
+    .line 1790
     .local v36, "r":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual/range {v36 .. v36}, Lcom/mediatek/simservs/client/policy/Rule;->getConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v17
 
-    .line 1767
+    .line 1791
     .local v17, "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual/range {v36 .. v36}, Lcom/mediatek/simservs/client/policy/Rule;->getActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v12
 
-    .line 1768
+    .line 1792
     .local v12, "action":Lcom/mediatek/simservs/client/policy/Actions;
     const/16 v26, 0x0
 
-    .line 1770
+    .line 1794
     .local v26, "mediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     if-eqz v17, :cond_14
 
-    .line 1771
+    .line 1795
     const-string v4, "MMTelSS"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -6743,12 +6787,12 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1772
+    .line 1796
     invoke-virtual/range {v17 .. v17}, Lcom/mediatek/simservs/client/policy/Conditions;->getMedias()Ljava/util/List;
 
     move-result-object v26
 
-    .line 1778
+    .line 1802
     :goto_9
     const/4 v4, 0x2
 
@@ -6804,24 +6848,24 @@
 
     if-eqz v4, :cond_15
 
-    .line 1785
+    .line 1809
     const-string v4, "MMTelSS"
 
     const-string v5, "handleGetCF():CFU is enabled on server"
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1787
+    .line 1811
     const/16 v35, 0x1
 
-    .line 1788
+    .line 1812
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v4
 
     if-eqz v4, :cond_8
 
-    .line 1789
+    .line 1813
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v4
@@ -6830,13 +6874,13 @@
 
     move-result-object v11
 
-    .line 1792
+    .line 1816
     :cond_8
     invoke-virtual {v13}, Lcom/mediatek/simservs/client/CommunicationDiversion;->getNoReplyTimer()I
 
     move-result v28
 
-    .line 1850
+    .line 1874
     .end local v12    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .end local v17    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     .end local v26    # "mediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
@@ -6847,7 +6891,7 @@
 
     invoke-direct/range {v25 .. v25}, Lcom/android/internal/telephony/CallForwardInfo;-><init>()V
 
-    .line 1851
+    .line 1875
     .local v25, "item":Lcom/android/internal/telephony/CallForwardInfo;
     move/from16 v0, v35
 
@@ -6855,40 +6899,40 @@
 
     iput v0, v1, Lcom/android/internal/telephony/CallForwardInfo;->status:I
 
-    .line 1852
+    .line 1876
     move/from16 v0, v37
 
     move-object/from16 v1, v25
 
     iput v0, v1, Lcom/android/internal/telephony/CallForwardInfo;->reason:I
 
-    .line 1853
+    .line 1877
     move/from16 v0, v42
 
     move-object/from16 v1, v25
 
     iput v0, v1, Lcom/android/internal/telephony/CallForwardInfo;->serviceClass:I
 
-    .line 1854
+    .line 1878
     const/4 v4, 0x0
 
     move-object/from16 v0, v25
 
     iput v4, v0, Lcom/android/internal/telephony/CallForwardInfo;->toa:I
 
-    .line 1855
+    .line 1879
     move-object/from16 v0, v25
 
     iput-object v11, v0, Lcom/android/internal/telephony/CallForwardInfo;->number:Ljava/lang/String;
 
-    .line 1856
+    .line 1880
     move/from16 v0, v28
 
     move-object/from16 v1, v25
 
     iput v0, v1, Lcom/android/internal/telephony/CallForwardInfo;->timeSeconds:I
 
-    .line 1857
+    .line 1881
     const-string v4, "MMTelSS"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -6937,28 +6981,28 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1858
+    .line 1882
     move-object/from16 v0, v33
 
     move-object/from16 v1, v25
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1861
+    .line 1885
     const/16 v35, 0x0
 
-    .line 1862
+    .line 1886
     const-string v11, ""
 
-    .line 1863
+    .line 1887
     const/16 v28, 0x14
 
-    .line 1753
+    .line 1777
     add-int/lit8 v24, v24, 0x1
 
     goto/16 :goto_7
 
-    .line 1662
+    .line 1686
     .end local v13    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     .end local v21    # "i":I
     .end local v24    # "it":I
@@ -7021,7 +7065,7 @@
 
     if-gez v4, :cond_b
 
-    .line 1665
+    .line 1689
     const-string v4, "MMTelSS"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -7053,7 +7097,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1666
+    .line 1690
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -7066,7 +7110,7 @@
     .restart local v13    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     goto/16 :goto_1
 
-    .line 1668
+    .line 1692
     .end local v13    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     :cond_b
     move-object/from16 v0, p0
@@ -7076,7 +7120,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v4, v10}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 1670
+    .line 1694
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -7087,7 +7131,7 @@
 
     iput-object v5, v4, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
 
-    .line 1671
+    .line 1695
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -7098,7 +7142,7 @@
 
     iput-object v5, v4, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
 
-    .line 1672
+    .line 1696
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -7109,7 +7153,7 @@
 
     iput-object v5, v4, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
 
-    .line 1674
+    .line 1698
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -7122,7 +7166,7 @@
 
     if-eqz v4, :cond_c
 
-    .line 1675
+    .line 1699
     const-string v4, "MMTelSS"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -7151,7 +7195,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1676
+    .line 1700
     new-instance v4, Ljava/net/UnknownHostException;
 
     invoke-direct {v4}, Ljava/net/UnknownHostException;-><init>()V
@@ -7162,13 +7206,13 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 1898
+    .line 1922
     .end local v10    # "phoneId":I
     .end local v18    # "curTime":J
     :catch_1
     move-exception v44
 
-    .line 1899
+    .line 1923
     .local v44, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     const-string v4, "MMTelSS"
 
@@ -7176,7 +7220,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1900
+    .line 1924
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -7186,7 +7230,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCache:Lcom/mediatek/simservs/client/CommunicationDiversion;
     invoke-static {v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1602(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationDiversion;)Lcom/mediatek/simservs/client/CommunicationDiversion;
 
-    .line 1901
+    .line 1925
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -7196,7 +7240,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCachePhoneId:I
     invoke-static {v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1802(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 1902
+    .line 1926
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -7206,31 +7250,31 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v4, v6, v7}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1904
+    .line 1928
     invoke-virtual/range {v44 .. v44}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
 
-    .line 1905
+    .line 1929
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v4, :cond_21
 
-    .line 1906
+    .line 1930
     invoke-virtual/range {v44 .. v44}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
 
     move-result v4
 
     if-eqz v4, :cond_23
 
-    .line 1907
+    .line 1931
     const-string v4, "MMTelSS"
 
     const-string v5, "handleGetCF(): xcapException.isConnectionError()"
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1908
+    .line 1932
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -7243,7 +7287,7 @@
 
     invoke-static {v4, v5, v6}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 1912
+    .line 1936
     :goto_b
     move-object/from16 v0, p1
 
@@ -7251,7 +7295,7 @@
 
     invoke-virtual {v4}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1913
+    .line 1937
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -7263,7 +7307,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 1914
+    .line 1938
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -7277,7 +7321,7 @@
 
     goto/16 :goto_0
 
-    .line 1679
+    .line 1703
     .end local v44    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     .restart local v10    # "phoneId":I
     .restart local v18    # "curTime":J
@@ -7319,7 +7363,7 @@
 
     invoke-virtual/range {v4 .. v10}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 1682
+    .line 1706
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mSimservs:Lcom/mediatek/simservs/client/SimServs;
     invoke-static {}, Lcom/android/internal/telephony/MMTelSSTransport;->access$500()Lcom/mediatek/simservs/client/SimServs;
 
@@ -7340,7 +7384,7 @@
 
     move-result-object v13
 
-    .line 1683
+    .line 1707
     .restart local v13    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     move-object/from16 v0, p0
 
@@ -7349,7 +7393,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCache:Lcom/mediatek/simservs/client/CommunicationDiversion;
     invoke-static {v4, v13}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1602(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationDiversion;)Lcom/mediatek/simservs/client/CommunicationDiversion;
 
-    .line 1684
+    .line 1708
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -7357,7 +7401,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCachePhoneId:I
     invoke-static {v4, v10}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1802(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 1685
+    .line 1709
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -7367,7 +7411,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v4, v0, v1}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1686
+    .line 1710
     const-string v4, "MMTelSS"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -7417,14 +7461,14 @@
 
     goto/16 :goto_1
 
-    .line 1918
+    .line 1942
     .end local v10    # "phoneId":I
     .end local v13    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     .end local v18    # "curTime":J
     :catch_2
     move-exception v20
 
-    .line 1919
+    .line 1943
     .local v20, "e":Ljava/lang/Exception;
     const-string v4, "MMTelSS"
 
@@ -7432,7 +7476,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1920
+    .line 1944
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -7442,7 +7486,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCache:Lcom/mediatek/simservs/client/CommunicationDiversion;
     invoke-static {v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1602(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationDiversion;)Lcom/mediatek/simservs/client/CommunicationDiversion;
 
-    .line 1921
+    .line 1945
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -7452,7 +7496,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCachePhoneId:I
     invoke-static {v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1802(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 1922
+    .line 1946
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -7462,24 +7506,24 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v4, v6, v7}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1924
+    .line 1948
     invoke-virtual/range {v20 .. v20}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 1928
+    .line 1952
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v4, :cond_21
 
-    .line 1929
+    .line 1953
     const/4 v4, 0x2
 
     invoke-static {v4}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v14
 
-    .line 1930
+    .line 1954
     .local v14, "ce":Lcom/android/internal/telephony/CommandException;
     move-object/from16 v0, p1
 
@@ -7489,14 +7533,14 @@
 
     invoke-static {v4, v5, v14}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 1931
+    .line 1955
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v4}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1932
+    .line 1956
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -7508,7 +7552,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 1933
+    .line 1957
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -7522,7 +7566,7 @@
 
     goto/16 :goto_0
 
-    .line 1706
+    .line 1730
     .end local v14    # "ce":Lcom/android/internal/telephony/CommandException;
     .end local v20    # "e":Ljava/lang/Exception;
     .restart local v10    # "phoneId":I
@@ -7540,7 +7584,7 @@
 
     goto/16 :goto_2
 
-    .line 1717
+    .line 1741
     .restart local v31    # "num_of_expansion":I
     :cond_e
     const/4 v4, 0x4
@@ -7549,12 +7593,12 @@
 
     if-ne v0, v4, :cond_2
 
-    .line 1720
+    .line 1744
     const/16 v31, 0x5
 
     goto/16 :goto_3
 
-    .line 1726
+    .line 1750
     .restart local v27    # "n":I
     :cond_f
     const/4 v4, 0x1
@@ -7567,7 +7611,7 @@
 
     goto/16 :goto_5
 
-    .line 1727
+    .line 1751
     :cond_10
     const/4 v4, 0x2
 
@@ -7579,7 +7623,7 @@
 
     goto/16 :goto_5
 
-    .line 1728
+    .line 1752
     :cond_11
     const/4 v4, 0x3
 
@@ -7591,7 +7635,7 @@
 
     goto/16 :goto_5
 
-    .line 1729
+    .line 1753
     :cond_12
     const/4 v4, 0x4
 
@@ -7603,14 +7647,14 @@
 
     goto/16 :goto_5
 
-    .line 1750
+    .line 1774
     .restart local v30    # "num_of_comparision":I
     :cond_13
     const/16 v30, 0x1
 
     goto/16 :goto_6
 
-    .line 1774
+    .line 1798
     .restart local v12    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .restart local v17    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     .restart local v21    # "i":I
@@ -7644,7 +7688,7 @@
 
     goto/16 :goto_9
 
-    .line 1795
+    .line 1819
     :cond_15
     const/4 v4, 0x2
 
@@ -7684,24 +7728,24 @@
 
     if-eqz v4, :cond_17
 
-    .line 1798
+    .line 1822
     const-string v4, "MMTelSS"
 
     const-string v5, "handleGetCF():CFB is enabled on server"
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1800
+    .line 1824
     const/16 v35, 0x1
 
-    .line 1801
+    .line 1825
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v4
 
     if-eqz v4, :cond_16
 
-    .line 1802
+    .line 1826
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v4
@@ -7710,16 +7754,16 @@
 
     move-result-object v11
 
-    .line 1804
+    .line 1828
     :cond_16
     invoke-virtual {v13}, Lcom/mediatek/simservs/client/CommunicationDiversion;->getNoReplyTimer()I
 
     move-result v28
 
-    .line 1805
+    .line 1829
     goto/16 :goto_a
 
-    .line 1807
+    .line 1831
     :cond_17
     const/4 v4, 0x2
 
@@ -7759,24 +7803,24 @@
 
     if-eqz v4, :cond_19
 
-    .line 1810
+    .line 1834
     const-string v4, "MMTelSS"
 
     const-string v5, "handleGetCF():CFNoAnswer is enabled on server"
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1812
+    .line 1836
     const/16 v35, 0x1
 
-    .line 1813
+    .line 1837
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v4
 
     if-eqz v4, :cond_18
 
-    .line 1814
+    .line 1838
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v4
@@ -7785,16 +7829,16 @@
 
     move-result-object v11
 
-    .line 1816
+    .line 1840
     :cond_18
     invoke-virtual {v13}, Lcom/mediatek/simservs/client/CommunicationDiversion;->getNoReplyTimer()I
 
     move-result v28
 
-    .line 1817
+    .line 1841
     goto/16 :goto_a
 
-    .line 1819
+    .line 1843
     :cond_19
     const/4 v4, 0x2
 
@@ -7834,24 +7878,24 @@
 
     if-eqz v4, :cond_1b
 
-    .line 1822
+    .line 1846
     const-string v4, "MMTelSS"
 
     const-string v5, "handleGetCF():CFNotReachable is enabled on server"
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1824
+    .line 1848
     const/16 v35, 0x1
 
-    .line 1825
+    .line 1849
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v4
 
     if-eqz v4, :cond_1a
 
-    .line 1826
+    .line 1850
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v4
@@ -7860,16 +7904,16 @@
 
     move-result-object v11
 
-    .line 1828
+    .line 1852
     :cond_1a
     invoke-virtual {v13}, Lcom/mediatek/simservs/client/CommunicationDiversion;->getNoReplyTimer()I
 
     move-result v28
 
-    .line 1829
+    .line 1853
     goto/16 :goto_a
 
-    .line 1831
+    .line 1855
     :cond_1b
     const/4 v4, 0x2
 
@@ -7909,24 +7953,24 @@
 
     if-eqz v4, :cond_1d
 
-    .line 1834
+    .line 1858
     const-string v4, "MMTelSS"
 
     const-string v5, "handleGetCF():CFNotRegistered is enabled on server"
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1836
+    .line 1860
     const/16 v35, 0x1
 
-    .line 1837
+    .line 1861
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v4
 
     if-eqz v4, :cond_1c
 
-    .line 1838
+    .line 1862
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v4
@@ -7935,16 +7979,16 @@
 
     move-result-object v11
 
-    .line 1840
+    .line 1864
     :cond_1c
     invoke-virtual {v13}, Lcom/mediatek/simservs/client/CommunicationDiversion;->getNoReplyTimer()I
 
     move-result v28
 
-    .line 1841
+    .line 1865
     goto/16 :goto_a
 
-    .line 1845
+    .line 1869
     :cond_1d
     const-string v4, "MMTelSS"
 
@@ -7952,12 +7996,12 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1764
+    .line 1788
     add-int/lit8 v21, v21, 0x1
 
     goto/16 :goto_8
 
-    .line 1723
+    .line 1747
     .end local v12    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .end local v17    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     .end local v21    # "i":I
@@ -7968,7 +8012,7 @@
 
     goto/16 :goto_4
 
-    .line 1871
+    .line 1895
     .end local v24    # "it":I
     .end local v30    # "num_of_comparision":I
     :cond_1f
@@ -7976,7 +8020,7 @@
 
     move-result v34
 
-    .line 1873
+    .line 1897
     .local v34, "queriedSize":I
     move/from16 v0, v34
 
@@ -7984,7 +8028,7 @@
 
     move-object/from16 v22, v0
 
-    .line 1874
+    .line 1898
     const/16 v23, 0x0
 
     .local v23, "inx":I
@@ -7995,7 +8039,7 @@
 
     if-ge v0, v1, :cond_21
 
-    .line 1875
+    .line 1899
     move-object/from16 v0, v33
 
     move/from16 v1, v23
@@ -8008,12 +8052,12 @@
 
     aput-object v4, v22, v23
 
-    .line 1874
+    .line 1898
     add-int/lit8 v23, v23, 0x1
 
     goto :goto_c
 
-    .line 1880
+    .line 1904
     .end local v23    # "inx":I
     .end local v27    # "n":I
     .end local v31    # "num_of_expansion":I
@@ -8025,7 +8069,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1881
+    .line 1905
     const/4 v4, 0x0
 
     new-array v0, v4, [Lcom/android/internal/telephony/CallForwardInfo;
@@ -8036,10 +8080,10 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_3 .. :try_end_3} :catch_1
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 1882
+    .line 1906
     const/16 v35, 0x0
 
-    .line 1956
+    .line 1980
     .end local v10    # "phoneId":I
     .end local v13    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     .end local v18    # "curTime":J
@@ -8052,7 +8096,7 @@
 
     if-eqz v4, :cond_22
 
-    .line 1967
+    .line 1991
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -8063,14 +8107,14 @@
 
     invoke-static {v4, v0, v5}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 1968
+    .line 1992
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v4}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1971
+    .line 1995
     :cond_22
     move-object/from16 v0, p0
 
@@ -8083,7 +8127,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 1972
+    .line 1996
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -8097,7 +8141,7 @@
 
     goto/16 :goto_0
 
-    .line 1910
+    .line 1934
     .restart local v44    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     :cond_23
     move-object/from16 v0, p1
@@ -8118,56 +8162,56 @@
     .param p1, "rr"    # Lcom/android/internal/telephony/MMTelSSRequest;
 
     .prologue
-    .line 4101
+    .line 4136
     const/16 v33, -0x1
 
-    .line 4102
+    .line 4137
     .local v33, "reqNo":I
     const/16 v36, -0x1
 
-    .line 4103
+    .line 4138
     .local v36, "serialNo":I
     const/16 v20, 0x0
 
-    .line 4104
+    .line 4139
     .local v20, "infos":[Lcom/android/internal/telephony/CallForwardInfoEx;
     new-instance v28, Ljava/util/ArrayList;
 
     invoke-direct/range {v28 .. v28}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4107
+    .line 4142
     .local v28, "queriedCallForwardInfoList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/internal/telephony/CallForwardInfoEx;>;"
     const/16 v32, -0x1
 
-    .line 4108
+    .line 4143
     .local v32, "reason":I
     const/16 v37, -0x1
 
-    .line 4109
+    .line 4144
     .local v37, "serviceClass":I
     const/16 v27, -0x1
 
-    .line 4110
+    .line 4145
     .local v27, "orgServiceClass":I
     const-string v14, ""
 
-    .line 4111
+    .line 4146
     .local v14, "cfPhoneNum":Ljava/lang/String;
     const/16 v30, 0x0
 
-    .line 4112
+    .line 4147
     .local v30, "queryStatus":I
     const/16 v25, 0x14
 
-    .line 4113
+    .line 4148
     .local v25, "noReplyTimer":I
     const/16 v38, 0x0
 
-    .line 4114
+    .line 4149
     .local v38, "timeSlot":[J
     const/4 v10, 0x0
 
-    .line 4117
+    .line 4152
     .local v10, "phoneId":I
     :try_start_0
     move-object/from16 v0, p1
@@ -8178,7 +8222,7 @@
 
     invoke-virtual {v4, v5}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 4118
+    .line 4153
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -8187,7 +8231,7 @@
 
     move-result v33
 
-    .line 4119
+    .line 4154
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -8196,7 +8240,7 @@
 
     move-result v36
 
-    .line 4120
+    .line 4155
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -8205,7 +8249,7 @@
 
     move-result v32
 
-    .line 4121
+    .line 4156
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -8214,7 +8258,7 @@
 
     move-result v37
 
-    .line 4122
+    .line 4157
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -8223,10 +8267,10 @@
 
     move-result v10
 
-    .line 4123
+    .line 4158
     move/from16 v27, v37
 
-    .line 4125
+    .line 4160
     const-string v4, "MMTelSS"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -8277,21 +8321,21 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4128
+    .line 4163
     invoke-static {v10}, Lcom/android/internal/telephony/MMTelSSUtils;->isPreferXcap(I)Z
 
     move-result v4
 
     if-nez v4, :cond_1
 
-    .line 4129
+    .line 4164
     const-string v4, "MMTelSS"
 
     const-string v5, "handleGetCFInTimeSlot(): !isPreferXcap()"
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4130
+    .line 4165
     new-instance v4, Ljava/net/UnknownHostException;
 
     invoke-direct {v4}, Ljava/net/UnknownHostException;-><init>()V
@@ -8302,11 +8346,11 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 4302
+    .line 4337
     :catch_0
     move-exception v39
 
-    .line 4303
+    .line 4338
     .local v39, "unknownHostException":Ljava/net/UnknownHostException;
     move-object/from16 v0, p0
 
@@ -8317,7 +8361,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCache:Lcom/mediatek/simservs/client/CommunicationDiversion;
     invoke-static {v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1602(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationDiversion;)Lcom/mediatek/simservs/client/CommunicationDiversion;
 
-    .line 4304
+    .line 4339
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -8327,7 +8371,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCachePhoneId:I
     invoke-static {v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1802(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 4305
+    .line 4340
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -8337,14 +8381,14 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v4, v6, v7}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 4307
+    .line 4342
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v4, :cond_11
 
-    .line 4308
+    .line 4343
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -8355,14 +8399,14 @@
 
     invoke-static {v4, v5, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 4309
+    .line 4344
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v4}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4310
+    .line 4345
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -8374,7 +8418,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 4311
+    .line 4346
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -8386,20 +8430,20 @@
 
     invoke-virtual {v4}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 4361
+    .line 4396
     .end local v39    # "unknownHostException":Ljava/net/UnknownHostException;
     :cond_0
     :goto_0
     return-void
 
-    .line 4134
+    .line 4169
     :cond_1
     :try_start_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v16
 
-    .line 4135
+    .line 4170
     .local v16, "curTime":J
     const-string v4, "MMTelSS"
 
@@ -8463,7 +8507,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4137
+    .line 4172
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -8501,7 +8545,7 @@
 
     if-eqz v4, :cond_8
 
-    .line 4139
+    .line 4174
     const-string v4, "MMTelSS"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -8533,7 +8577,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4140
+    .line 4175
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -8541,7 +8585,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v4, v10}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 4141
+    .line 4176
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -8551,7 +8595,7 @@
 
     move-result-object v12
 
-    .line 4142
+    .line 4177
     .local v12, "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     move-object/from16 v0, p0
 
@@ -8564,10 +8608,10 @@
 
     invoke-virtual {v12, v4}, Lcom/mediatek/simservs/client/CommunicationDiversion;->setNetwork(Landroid/net/Network;)V
 
-    .line 4143
+    .line 4178
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/CommunicationDiversion;->refresh()V
 
-    .line 4144
+    .line 4179
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -8577,7 +8621,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v4, v0, v1}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 4173
+    .line 4208
     :goto_1
     const-string v4, "MMTelSS"
 
@@ -8585,60 +8629,60 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4175
+    .line 4210
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/CommunicationDiversion;->getRuleSet()Lcom/mediatek/simservs/client/policy/RuleSet;
 
     move-result-object v35
 
-    .line 4178
+    .line 4213
     .local v35, "ruleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     const/16 v34, 0x0
 
-    .line 4180
+    .line 4215
     .local v34, "ruleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
     if-eqz v35, :cond_b
 
-    .line 4181
+    .line 4216
     invoke-virtual/range {v35 .. v35}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
 
     move-result-object v34
 
-    .line 4188
+    .line 4223
     :goto_2
     if-eqz v34, :cond_10
 
-    .line 4190
+    .line 4225
     const/16 v4, 0x210
 
     move/from16 v0, v27
 
     if-ne v0, v4, :cond_2
 
-    .line 4192
+    .line 4227
     const/16 v37, 0x200
 
-    .line 4195
+    .line 4230
     :cond_2
     const/16 v26, 0x0
 
-    .line 4197
+    .line 4232
     .local v26, "numOfComparision":I
     if-nez v27, :cond_c
 
-    .line 4198
+    .line 4233
     const/16 v37, 0x1
 
-    .line 4201
+    .line 4236
     const/16 v26, 0x2
 
-    .line 4202
+    .line 4237
     const-string v4, "MMTelSS"
 
     const-string v5, "serviceClass == 0, try to 1st match by using SERVICE_CLASS_VOICE"
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4210
+    .line 4245
     :goto_3
     const/16 v22, 0x0
 
@@ -8650,7 +8694,7 @@
 
     if-ge v0, v1, :cond_f
 
-    .line 4211
+    .line 4246
     const/4 v4, 0x1
 
     move/from16 v0, v22
@@ -8663,17 +8707,17 @@
 
     if-ne v0, v4, :cond_3
 
-    .line 4213
+    .line 4248
     const/16 v37, 0x200
 
-    .line 4214
+    .line 4249
     const-string v4, "MMTelSS"
 
     const-string v5, "serviceClass == 0, try to 2nd match by using SERVICE_CLASS_VIDEO"
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4218
+    .line 4253
     :cond_3
     const-string v4, "MMTelSS"
 
@@ -8723,7 +8767,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4223
+    .line 4258
     const/16 v19, 0x0
 
     .local v19, "i":I
@@ -8736,7 +8780,7 @@
 
     if-ge v0, v4, :cond_7
 
-    .line 4224
+    .line 4259
     move-object/from16 v0, v34
 
     move/from16 v1, v19
@@ -8747,27 +8791,27 @@
 
     check-cast v31, Lcom/mediatek/simservs/client/policy/Rule;
 
-    .line 4225
+    .line 4260
     .local v31, "r":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual/range {v31 .. v31}, Lcom/mediatek/simservs/client/policy/Rule;->getConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v15
 
-    .line 4226
+    .line 4261
     .local v15, "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual/range {v31 .. v31}, Lcom/mediatek/simservs/client/policy/Rule;->getActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v11
 
-    .line 4227
+    .line 4262
     .local v11, "action":Lcom/mediatek/simservs/client/policy/Actions;
     const/16 v24, 0x0
 
-    .line 4229
+    .line 4264
     .local v24, "mediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     if-eqz v15, :cond_d
 
-    .line 4230
+    .line 4265
     const-string v4, "MMTelSS"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -8836,12 +8880,12 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4235
+    .line 4270
     invoke-virtual {v15}, Lcom/mediatek/simservs/client/policy/Conditions;->getMedias()Ljava/util/List;
 
     move-result-object v24
 
-    .line 4241
+    .line 4276
     :goto_6
     if-nez v32, :cond_e
 
@@ -8893,24 +8937,24 @@
 
     if-eqz v4, :cond_e
 
-    .line 4248
+    .line 4283
     const-string v4, "MMTelSS"
 
     const-string v5, "handleGetCFInTimeSlot(): CFU is enabled on server"
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4251
+    .line 4286
     const/16 v30, 0x1
 
-    .line 4252
+    .line 4287
     invoke-virtual {v11}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v4
 
     if-eqz v4, :cond_6
 
-    .line 4253
+    .line 4288
     invoke-virtual {v11}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v4
@@ -8919,16 +8963,16 @@
 
     move-result-object v14
 
-    .line 4257
+    .line 4292
     :cond_6
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/CommunicationDiversion;->getNoReplyTimer()I
 
     move-result v25
 
-    .line 4258
+    .line 4293
     if-eqz v15, :cond_7
 
-    .line 4259
+    .line 4294
     invoke-virtual {v15}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendTime()Ljava/lang/String;
 
     move-result-object v4
@@ -8939,7 +8983,7 @@
 
     move-result-object v38
 
-    .line 4267
+    .line 4302
     .end local v11    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .end local v15    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     .end local v24    # "mediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
@@ -8949,7 +8993,7 @@
 
     invoke-direct/range {v23 .. v23}, Lcom/android/internal/telephony/CallForwardInfoEx;-><init>()V
 
-    .line 4268
+    .line 4303
     .local v23, "item":Lcom/android/internal/telephony/CallForwardInfoEx;
     move/from16 v0, v30
 
@@ -8957,47 +9001,47 @@
 
     iput v0, v1, Lcom/android/internal/telephony/CallForwardInfoEx;->status:I
 
-    .line 4269
+    .line 4304
     move/from16 v0, v32
 
     move-object/from16 v1, v23
 
     iput v0, v1, Lcom/android/internal/telephony/CallForwardInfoEx;->reason:I
 
-    .line 4270
+    .line 4305
     move/from16 v0, v37
 
     move-object/from16 v1, v23
 
     iput v0, v1, Lcom/android/internal/telephony/CallForwardInfoEx;->serviceClass:I
 
-    .line 4271
+    .line 4306
     const/4 v4, 0x0
 
     move-object/from16 v0, v23
 
     iput v4, v0, Lcom/android/internal/telephony/CallForwardInfoEx;->toa:I
 
-    .line 4272
+    .line 4307
     move-object/from16 v0, v23
 
     iput-object v14, v0, Lcom/android/internal/telephony/CallForwardInfoEx;->number:Ljava/lang/String;
 
-    .line 4273
+    .line 4308
     move/from16 v0, v25
 
     move-object/from16 v1, v23
 
     iput v0, v1, Lcom/android/internal/telephony/CallForwardInfoEx;->timeSeconds:I
 
-    .line 4274
+    .line 4309
     move-object/from16 v0, v38
 
     move-object/from16 v1, v23
 
     iput-object v0, v1, Lcom/android/internal/telephony/CallForwardInfoEx;->timeSlot:[J
 
-    .line 4275
+    .line 4310
     const-string v4, "MMTelSS"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -9060,31 +9104,31 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4280
+    .line 4315
     move-object/from16 v0, v28
 
     move-object/from16 v1, v23
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4283
+    .line 4318
     const/16 v30, 0x0
 
-    .line 4284
+    .line 4319
     const-string v14, ""
 
-    .line 4285
+    .line 4320
     const/16 v25, 0x14
 
-    .line 4286
+    .line 4321
     const/16 v38, 0x0
 
-    .line 4210
+    .line 4245
     add-int/lit8 v22, v22, 0x1
 
     goto/16 :goto_4
 
-    .line 4145
+    .line 4180
     .end local v12    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     .end local v19    # "i":I
     .end local v22    # "it":I
@@ -9145,7 +9189,7 @@
 
     if-gez v4, :cond_9
 
-    .line 4148
+    .line 4183
     const-string v4, "MMTelSS"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -9177,7 +9221,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4149
+    .line 4184
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9190,7 +9234,7 @@
     .restart local v12    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     goto/16 :goto_1
 
-    .line 4151
+    .line 4186
     .end local v12    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     :cond_9
     move-object/from16 v0, p0
@@ -9200,7 +9244,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v4, v10}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 4153
+    .line 4188
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9211,7 +9255,7 @@
 
     iput-object v5, v4, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
 
-    .line 4154
+    .line 4189
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9222,7 +9266,7 @@
 
     iput-object v5, v4, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
 
-    .line 4155
+    .line 4190
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9233,7 +9277,7 @@
 
     iput-object v5, v4, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
 
-    .line 4157
+    .line 4192
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9246,7 +9290,7 @@
 
     if-eqz v4, :cond_a
 
-    .line 4158
+    .line 4193
     const-string v4, "MMTelSS"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -9275,7 +9319,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4159
+    .line 4194
     new-instance v4, Ljava/net/UnknownHostException;
 
     invoke-direct {v4}, Ljava/net/UnknownHostException;-><init>()V
@@ -9286,12 +9330,12 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 4315
+    .line 4350
     .end local v16    # "curTime":J
     :catch_1
     move-exception v40
 
-    .line 4316
+    .line 4351
     .local v40, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     const-string v4, "MMTelSS"
 
@@ -9299,7 +9343,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4317
+    .line 4352
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9309,7 +9353,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCache:Lcom/mediatek/simservs/client/CommunicationDiversion;
     invoke-static {v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1602(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationDiversion;)Lcom/mediatek/simservs/client/CommunicationDiversion;
 
-    .line 4318
+    .line 4353
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9319,7 +9363,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCachePhoneId:I
     invoke-static {v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1802(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 4319
+    .line 4354
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9329,31 +9373,31 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v4, v6, v7}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 4321
+    .line 4356
     invoke-virtual/range {v40 .. v40}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
 
-    .line 4322
+    .line 4357
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v4, :cond_11
 
-    .line 4323
+    .line 4358
     invoke-virtual/range {v40 .. v40}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
 
     move-result v4
 
     if-eqz v4, :cond_13
 
-    .line 4324
+    .line 4359
     const-string v4, "MMTelSS"
 
     const-string v5, "handleGetCFInTimeSlot(): isConnectionError()"
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4325
+    .line 4360
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -9366,7 +9410,7 @@
 
     invoke-static {v4, v5, v6}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 4329
+    .line 4364
     :goto_7
     move-object/from16 v0, p1
 
@@ -9374,7 +9418,7 @@
 
     invoke-virtual {v4}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4330
+    .line 4365
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9386,7 +9430,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 4331
+    .line 4366
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9400,7 +9444,7 @@
 
     goto/16 :goto_0
 
-    .line 4162
+    .line 4197
     .end local v40    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     .restart local v16    # "curTime":J
     :cond_a
@@ -9441,7 +9485,7 @@
 
     invoke-virtual/range {v4 .. v10}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 4165
+    .line 4200
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mSimservs:Lcom/mediatek/simservs/client/SimServs;
     invoke-static {}, Lcom/android/internal/telephony/MMTelSSTransport;->access$500()Lcom/mediatek/simservs/client/SimServs;
 
@@ -9462,7 +9506,7 @@
 
     move-result-object v12
 
-    .line 4166
+    .line 4201
     .restart local v12    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     move-object/from16 v0, p0
 
@@ -9471,7 +9515,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCache:Lcom/mediatek/simservs/client/CommunicationDiversion;
     invoke-static {v4, v12}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1602(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationDiversion;)Lcom/mediatek/simservs/client/CommunicationDiversion;
 
-    .line 4167
+    .line 4202
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9479,7 +9523,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCachePhoneId:I
     invoke-static {v4, v10}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1802(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 4168
+    .line 4203
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9489,7 +9533,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v4, v0, v1}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 4169
+    .line 4204
     const-string v4, "MMTelSS"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -9539,13 +9583,13 @@
 
     goto/16 :goto_1
 
-    .line 4335
+    .line 4370
     .end local v12    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     .end local v16    # "curTime":J
     :catch_2
     move-exception v18
 
-    .line 4336
+    .line 4371
     .local v18, "e":Ljava/lang/Exception;
     const-string v4, "MMTelSS"
 
@@ -9553,7 +9597,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4337
+    .line 4372
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9563,7 +9607,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCache:Lcom/mediatek/simservs/client/CommunicationDiversion;
     invoke-static {v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1602(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationDiversion;)Lcom/mediatek/simservs/client/CommunicationDiversion;
 
-    .line 4338
+    .line 4373
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9573,7 +9617,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCachePhoneId:I
     invoke-static {v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1802(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 4339
+    .line 4374
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9583,24 +9627,24 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v4, v6, v7}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 4341
+    .line 4376
     invoke-virtual/range {v18 .. v18}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 4342
+    .line 4377
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v4, :cond_11
 
-    .line 4343
+    .line 4378
     const/4 v4, 0x2
 
     invoke-static {v4}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v13
 
-    .line 4345
+    .line 4380
     .local v13, "ce":Lcom/android/internal/telephony/CommandException;
     move-object/from16 v0, p1
 
@@ -9610,14 +9654,14 @@
 
     invoke-static {v4, v5, v13}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 4346
+    .line 4381
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v4}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4347
+    .line 4382
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9629,7 +9673,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 4348
+    .line 4383
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9643,7 +9687,7 @@
 
     goto/16 :goto_0
 
-    .line 4183
+    .line 4218
     .end local v13    # "ce":Lcom/android/internal/telephony/CommandException;
     .end local v18    # "e":Ljava/lang/Exception;
     .restart local v12    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
@@ -9660,14 +9704,14 @@
 
     goto/16 :goto_2
 
-    .line 4207
+    .line 4242
     .restart local v26    # "numOfComparision":I
     :cond_c
     const/16 v26, 0x1
 
     goto/16 :goto_3
 
-    .line 4237
+    .line 4272
     .restart local v11    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .restart local v15    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     .restart local v19    # "i":I
@@ -9701,7 +9745,7 @@
 
     goto/16 :goto_6
 
-    .line 4263
+    .line 4298
     :cond_e
     const-string v4, "MMTelSS"
 
@@ -9709,12 +9753,12 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4223
+    .line 4258
     add-int/lit8 v19, v19, 0x1
 
     goto/16 :goto_5
 
-    .line 4290
+    .line 4325
     .end local v11    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .end local v15    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     .end local v19    # "i":I
@@ -9725,7 +9769,7 @@
 
     move-result v29
 
-    .line 4292
+    .line 4327
     .local v29, "queriedSize":I
     move/from16 v0, v29
 
@@ -9733,7 +9777,7 @@
 
     move-object/from16 v20, v0
 
-    .line 4293
+    .line 4328
     const/16 v21, 0x0
 
     .local v21, "inx":I
@@ -9744,7 +9788,7 @@
 
     if-ge v0, v1, :cond_11
 
-    .line 4294
+    .line 4329
     move-object/from16 v0, v28
 
     move/from16 v1, v21
@@ -9757,12 +9801,12 @@
 
     aput-object v4, v20, v21
 
-    .line 4293
+    .line 4328
     add-int/lit8 v21, v21, 0x1
 
     goto :goto_8
 
-    .line 4298
+    .line 4333
     .end local v21    # "inx":I
     .end local v22    # "it":I
     .end local v26    # "numOfComparision":I
@@ -9774,7 +9818,7 @@
 
     invoke-static {v4, v5}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4299
+    .line 4334
     const/4 v4, 0x0
 
     new-array v0, v4, [Lcom/android/internal/telephony/CallForwardInfoEx;
@@ -9785,10 +9829,10 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_3 .. :try_end_3} :catch_1
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 4300
+    .line 4335
     const/16 v30, 0x0
 
-    .line 4354
+    .line 4389
     .end local v12    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     .end local v16    # "curTime":J
     .end local v34    # "ruleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
@@ -9800,7 +9844,7 @@
 
     if-eqz v4, :cond_12
 
-    .line 4355
+    .line 4390
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -9811,14 +9855,14 @@
 
     invoke-static {v4, v0, v5}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 4356
+    .line 4391
     move-object/from16 v0, p1
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v4}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4358
+    .line 4393
     :cond_12
     move-object/from16 v0, p0
 
@@ -9831,7 +9875,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 4359
+    .line 4394
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -9845,7 +9889,7 @@
 
     goto/16 :goto_0
 
-    .line 4327
+    .line 4362
     .restart local v40    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     :cond_13
     move-object/from16 v0, p1
@@ -9866,19 +9910,46 @@
     .param p1, "rr"    # Lcom/android/internal/telephony/MMTelSSRequest;
 
     .prologue
-    .line 794
+    .line 802
     const/4 v13, -0x1
 
-    .line 795
+    .line 803
     .local v13, "reqNo":I
     const/4 v14, -0x1
 
-    .line 796
+    .line 804
     .local v14, "serialNo":I
     const/4 v11, 0x0
 
-    .line 797
+    .line 805
     .local v11, "get_clip_result":I
+    move-object/from16 v0, p1
+
+    iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroid/os/Parcel;->setDataPosition(I)V
+
+    .line 806
+    move-object/from16 v0, p1
+
+    iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v13
+
+    .line 807
+    move-object/from16 v0, p1
+
+    iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v14
+
+    .line 808
     move-object/from16 v0, p1
 
     iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -9887,127 +9958,61 @@
 
     move-result v7
 
-    .line 799
-    .local v7, "phoneId":I
-    invoke-static {v7}, Lcom/android/internal/telephony/MMTelSSUtils;->isPreferXcap(I)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    .line 800
-    const-string v1, "MMTelSS"
-
-    const-string v2, "handleGetCLIP(): !isPreferXcap()"
-
-    invoke-static {v1, v2}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 801
-    move-object/from16 v0, p1
-
-    iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
-
-    if-eqz v1, :cond_0
-
-    .line 802
-    move-object/from16 v0, p1
-
-    iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
-
-    const/4 v2, 0x0
-
-    new-instance v3, Ljava/net/UnknownHostException;
-
-    invoke-direct {v3}, Ljava/net/UnknownHostException;-><init>()V
-
-    invoke-static {v1, v2, v3}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
-
-    .line 803
-    move-object/from16 v0, p1
-
-    iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
-
-    invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
-
-    .line 876
-    :cond_0
-    :goto_0
-    return-void
-
     .line 809
-    :cond_1
-    :try_start_0
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
-
-    invoke-static {v7}, Lcom/android/internal/telephony/MMTelSSUtils;->getXui(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, v1, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
-
-    .line 810
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
-
-    invoke-static {v7}, Lcom/android/internal/telephony/MMTelSSUtils;->getXcapRootUri(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, v1, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
-
-    .line 811
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
-
-    invoke-static {v7}, Lcom/android/internal/telephony/MMTelSSUtils;->getXIntendedId(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, v1, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
-
-    .line 813
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
-
-    iget-object v1, v1, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
-
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    .line 814
+    .local v7, "phoneId":I
     const-string v1, "MMTelSS"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "handleGetCLIP(): XcapRoot = "
+    const-string v3, "handleGetCLIP() reqNo = "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    move-object/from16 v0, p0
+    invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget-object v3, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
+    move-result-object v2
 
-    iget-object v3, v3, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
+    const-string v3, " serialNo = "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " phoneId = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 813
+    invoke-static {v7}, Lcom/android/internal/telephony/MMTelSSUtils;->isPreferXcap(I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    .line 814
+    const-string v1, "MMTelSS"
+
+    const-string v2, "handleGetCLIP(): !isPreferXcap()"
 
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -10037,49 +10042,97 @@
     iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
-    :try_end_0
-    .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    goto :goto_0
+    .line 890
+    :cond_0
+    :goto_0
+    return-void
 
-    .line 835
-    :catch_0
-    move-exception v15
+    .line 823
+    :cond_1
+    :try_start_0
+    move-object/from16 v0, p0
 
-    .line 836
-    .local v15, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
+    iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
+
+    invoke-static {v7}, Lcom/android/internal/telephony/MMTelSSUtils;->getXui(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, v1, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
+
+    .line 824
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
+
+    invoke-static {v7}, Lcom/android/internal/telephony/MMTelSSUtils;->getXcapRootUri(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, v1, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
+
+    .line 825
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
+
+    invoke-static {v7}, Lcom/android/internal/telephony/MMTelSSUtils;->getXIntendedId(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, v1, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
+
+    .line 827
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
+
+    iget-object v1, v1, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 828
     const-string v1, "MMTelSS"
 
-    const-string v2, "handleGetCLIP(): XcapException"
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "handleGetCLIP(): XcapRoot = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
+
+    iget-object v3, v3, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
 
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 837
-    invoke-virtual {v15}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
-
-    .line 838
+    .line 829
     move-object/from16 v0, p1
 
     iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_0
 
-    .line 839
-    invoke-virtual {v15}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_6
-
-    .line 840
-    const-string v1, "MMTelSS"
-
-    const-string v2, "handleGetCLIP(): xcapException.isConnectionError()"
-
-    invoke-static {v1, v2}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 841
+    .line 830
     move-object/from16 v0, p1
 
     iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -10092,7 +10145,68 @@
 
     invoke-static {v1, v2, v3}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 845
+    .line 831
+    move-object/from16 v0, p1
+
+    iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
+
+    invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
+    :try_end_0
+    .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+
+    goto :goto_0
+
+    .line 849
+    :catch_0
+    move-exception v15
+
+    .line 850
+    .local v15, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
+    const-string v1, "MMTelSS"
+
+    const-string v2, "handleGetCLIP(): XcapException"
+
+    invoke-static {v1, v2}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 851
+    invoke-virtual {v15}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
+
+    .line 852
+    move-object/from16 v0, p1
+
+    iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
+
+    if-eqz v1, :cond_3
+
+    .line 853
+    invoke-virtual {v15}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_6
+
+    .line 854
+    const-string v1, "MMTelSS"
+
+    const-string v2, "handleGetCLIP(): xcapException.isConnectionError()"
+
+    invoke-static {v1, v2}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 855
+    move-object/from16 v0, p1
+
+    iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
+
+    const/4 v2, 0x0
+
+    new-instance v3, Ljava/net/UnknownHostException;
+
+    invoke-direct {v3}, Ljava/net/UnknownHostException;-><init>()V
+
+    invoke-static {v1, v2, v3}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
+
+    .line 859
     :goto_1
     move-object/from16 v0, p1
 
@@ -10100,7 +10214,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 846
+    .line 860
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10112,7 +10226,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 847
+    .line 861
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10126,7 +10240,7 @@
 
     goto/16 :goto_0
 
-    .line 822
+    .line 836
     .end local v15    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     :cond_2
     :try_start_1
@@ -10137,7 +10251,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v1, v7}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 824
+    .line 838
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10174,7 +10288,7 @@
 
     invoke-virtual/range {v1 .. v7}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 826
+    .line 840
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mSimservs:Lcom/mediatek/simservs/client/SimServs;
     invoke-static {}, Lcom/android/internal/telephony/MMTelSSTransport;->access$500()Lcom/mediatek/simservs/client/SimServs;
 
@@ -10195,7 +10309,7 @@
 
     move-result-object v12
 
-    .line 828
+    .line 842
     .local v12, "oip":Lcom/mediatek/simservs/client/OriginatingIdentityPresentation;
     const-string v1, "MMTelSS"
 
@@ -10223,7 +10337,7 @@
 
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 829
+    .line 843
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/OriginatingIdentityPresentation;->isActive()Z
     :try_end_1
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_1 .. :try_end_1} :catch_0
@@ -10233,10 +10347,10 @@
 
     if-eqz v1, :cond_5
 
-    .line 830
+    .line 844
     const/4 v11, 0x1
 
-    .line 866
+    .line 880
     .end local v12    # "oip":Lcom/mediatek/simservs/client/OriginatingIdentityPresentation;
     :cond_3
     :goto_2
@@ -10246,18 +10360,18 @@
 
     if-eqz v1, :cond_4
 
-    .line 867
+    .line 881
     const/4 v1, 0x1
 
     new-array v10, v1, [I
 
-    .line 868
+    .line 882
     .local v10, "get_clip_response":[I
     const/4 v1, 0x0
 
     aput v11, v10, v1
 
-    .line 869
+    .line 883
     move-object/from16 v0, p1
 
     iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -10266,14 +10380,14 @@
 
     invoke-static {v1, v10, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 870
+    .line 884
     move-object/from16 v0, p1
 
     iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 873
+    .line 887
     .end local v10    # "get_clip_response":[I
     :cond_4
     move-object/from16 v0, p0
@@ -10287,7 +10401,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 874
+    .line 888
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10301,14 +10415,14 @@
 
     goto/16 :goto_0
 
-    .line 832
+    .line 846
     .restart local v12    # "oip":Lcom/mediatek/simservs/client/OriginatingIdentityPresentation;
     :cond_5
     const/4 v11, 0x0
 
     goto :goto_2
 
-    .line 843
+    .line 857
     .end local v12    # "oip":Lcom/mediatek/simservs/client/OriginatingIdentityPresentation;
     .restart local v15    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     :cond_6
@@ -10322,12 +10436,12 @@
 
     goto/16 :goto_1
 
-    .line 851
+    .line 865
     .end local v15    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     :catch_1
     move-exception v9
 
-    .line 852
+    .line 866
     .local v9, "e":Ljava/lang/Exception;
     const-string v1, "MMTelSS"
 
@@ -10335,24 +10449,24 @@
 
     invoke-static {v1, v2}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 853
+    .line 867
     invoke-virtual {v9}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 854
+    .line 868
     move-object/from16 v0, p1
 
     iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v1, :cond_3
 
-    .line 855
+    .line 869
     const/4 v1, 0x2
 
     invoke-static {v1}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v8
 
-    .line 856
+    .line 870
     .local v8, "ce":Lcom/android/internal/telephony/CommandException;
     move-object/from16 v0, p1
 
@@ -10362,14 +10476,14 @@
 
     invoke-static {v1, v2, v8}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 857
+    .line 871
     move-object/from16 v0, p1
 
     iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 858
+    .line 872
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10381,7 +10495,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 859
+    .line 873
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10397,7 +10511,7 @@
 .end method
 
 .method public handleGetCLIR(Lcom/android/internal/telephony/MMTelSSRequest;)V
-    .locals 19
+    .locals 21
     .param p1, "rr"    # Lcom/android/internal/telephony/MMTelSSRequest;
 
     .prologue
@@ -10410,6 +10524,41 @@
 
     .line 667
     .local v14, "get_clir_result":I
+    const/16 v17, -0x1
+
+    .line 668
+    .local v17, "reqNo":I
+    const/16 v19, -0x1
+
+    .line 670
+    .local v19, "serialNo":I
+    move-object/from16 v0, p1
+
+    iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v3}, Landroid/os/Parcel;->setDataPosition(I)V
+
+    .line 671
+    move-object/from16 v0, p1
+
+    iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v17
+
+    .line 672
+    move-object/from16 v0, p1
+
+    iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v19
+
+    .line 673
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -10418,29 +10567,76 @@
 
     move-result v8
 
-    .line 669
+    .line 674
     .local v8, "phoneId":I
+    const-string v2, "MMTelSS"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "handleGetCLIR() reqNo = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    move/from16 v0, v17
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " serialNo = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    move/from16 v0, v19
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " phoneId = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 677
     invoke-static {v8}, Lcom/android/internal/telephony/MMTelSSUtils;->isPreferXcap(I)Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 670
+    .line 678
     const-string v2, "MMTelSS"
 
     const-string v3, "handleGetCLIR(): !isPreferXcap()"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 671
+    .line 679
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_0
 
-    .line 672
+    .line 680
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -10453,26 +10649,26 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 673
+    .line 681
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 790
+    .line 798
     :cond_0
     :goto_0
     return-void
 
-    .line 681
+    .line 689
     :cond_1
     :try_start_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v10
 
-    .line 682
+    .line 690
     .local v10, "curTime":J
     const-string v2, "MMTelSS"
 
@@ -10534,7 +10730,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 684
+    .line 692
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10572,7 +10768,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 686
+    .line 694
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -10604,7 +10800,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 687
+    .line 695
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10612,7 +10808,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 688
+    .line 696
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10622,7 +10818,7 @@
 
     move-result-object v15
 
-    .line 689
+    .line 697
     .local v15, "oir":Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     move-object/from16 v0, p0
 
@@ -10635,10 +10831,10 @@
 
     invoke-virtual {v15, v2}, Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;->setNetwork(Landroid/net/Network;)V
 
-    .line 690
+    .line 698
     invoke-virtual {v15}, Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;->refresh()V
 
-    .line 691
+    .line 699
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10646,33 +10842,33 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCacheLastQueried:J
     invoke-static {v2, v10, v11}, Lcom/android/internal/telephony/MMTelSSTransport;->access$102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 723
+    .line 731
     :goto_1
     invoke-virtual {v15}, Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;->isDefaultPresentationRestricted()Z
     :try_end_0
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    move-result v17
+    move-result v18
 
-    .line 724
-    .local v17, "restricted":Z
+    .line 732
+    .local v18, "restricted":Z
     const/4 v2, 0x1
 
-    move/from16 v0, v17
+    move/from16 v0, v18
 
     if-ne v0, v2, :cond_7
 
-    .line 726
+    .line 734
     const/16 v16, 0x3
 
-    .line 727
+    .line 735
     const/4 v14, 0x1
 
-    .line 779
+    .line 787
     .end local v10    # "curTime":J
     .end local v15    # "oir":Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
-    .end local v17    # "restricted":Z
+    .end local v18    # "restricted":Z
     :cond_2
     :goto_2
     move-object/from16 v0, p1
@@ -10681,23 +10877,23 @@
 
     if-eqz v2, :cond_3
 
-    .line 780
+    .line 788
     const/4 v2, 0x2
 
     new-array v13, v2, [I
 
-    .line 781
+    .line 789
     .local v13, "get_clir_response":[I
     const/4 v2, 0x0
 
     aput v14, v13, v2
 
-    .line 782
+    .line 790
     const/4 v2, 0x1
 
     aput v16, v13, v2
 
-    .line 783
+    .line 791
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -10706,14 +10902,14 @@
 
     invoke-static {v2, v13, v3}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 784
+    .line 792
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 787
+    .line 795
     .end local v13    # "get_clir_response":[I
     :cond_3
     move-object/from16 v0, p0
@@ -10727,7 +10923,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 788
+    .line 796
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10741,7 +10937,7 @@
 
     goto/16 :goto_0
 
-    .line 692
+    .line 700
     .restart local v10    # "curTime":J
     :cond_4
     :try_start_1
@@ -10797,7 +10993,7 @@
 
     if-gez v2, :cond_5
 
-    .line 695
+    .line 703
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -10829,7 +11025,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 696
+    .line 704
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10842,7 +11038,7 @@
     .restart local v15    # "oir":Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     goto/16 :goto_1
 
-    .line 698
+    .line 706
     .end local v15    # "oir":Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     :cond_5
     move-object/from16 v0, p0
@@ -10855,7 +11051,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
 
-    .line 699
+    .line 707
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10866,7 +11062,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
 
-    .line 700
+    .line 708
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10877,7 +11073,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
 
-    .line 702
+    .line 710
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10890,7 +11086,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 703
+    .line 711
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -10919,14 +11115,14 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 704
+    .line 712
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_0
 
-    .line 705
+    .line 713
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -10939,7 +11135,7 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 706
+    .line 714
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -10951,20 +11147,20 @@
 
     goto/16 :goto_0
 
-    .line 734
+    .line 742
     .end local v10    # "curTime":J
     :catch_0
-    move-exception v18
+    move-exception v20
 
-    .line 735
-    .local v18, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
+    .line 743
+    .local v20, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     const-string v2, "MMTelSS"
 
     const-string v3, "handleGetCLIR(): XcapException"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 736
+    .line 744
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10974,7 +11170,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCache:Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$002(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;)Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
 
-    .line 737
+    .line 745
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10984,7 +11180,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$202(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 738
+    .line 746
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -10994,31 +11190,31 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 740
-    invoke-virtual/range {v18 .. v18}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
+    .line 748
+    invoke-virtual/range {v20 .. v20}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
 
-    .line 741
+    .line 749
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_2
 
-    .line 742
-    invoke-virtual/range {v18 .. v18}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
+    .line 750
+    invoke-virtual/range {v20 .. v20}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
 
     move-result v2
 
     if-eqz v2, :cond_8
 
-    .line 743
+    .line 751
     const-string v2, "MMTelSS"
 
     const-string v3, "handleGetCLIR(): xcapException.isConnectionError()"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 744
+    .line 752
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -11031,7 +11227,7 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 748
+    .line 756
     :goto_3
     move-object/from16 v0, p1
 
@@ -11039,7 +11235,7 @@
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 749
+    .line 757
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -11051,7 +11247,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 750
+    .line 758
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -11065,8 +11261,8 @@
 
     goto/16 :goto_0
 
-    .line 711
-    .end local v18    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
+    .line 719
+    .end local v20    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     .restart local v10    # "curTime":J
     :cond_6
     :try_start_2
@@ -11077,7 +11273,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 713
+    .line 721
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -11114,7 +11310,7 @@
 
     invoke-virtual/range {v2 .. v8}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 715
+    .line 723
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mSimservs:Lcom/mediatek/simservs/client/SimServs;
     invoke-static {}, Lcom/android/internal/telephony/MMTelSSTransport;->access$500()Lcom/mediatek/simservs/client/SimServs;
 
@@ -11135,7 +11331,7 @@
 
     move-result-object v15
 
-    .line 716
+    .line 724
     .restart local v15    # "oir":Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     move-object/from16 v0, p0
 
@@ -11144,7 +11340,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCache:Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     invoke-static {v2, v15}, Lcom/android/internal/telephony/MMTelSSTransport;->access$002(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;)Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
 
-    .line 717
+    .line 725
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -11152,7 +11348,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCachePhoneId:I
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$202(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 718
+    .line 726
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -11160,7 +11356,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCacheLastQueried:J
     invoke-static {v2, v10, v11}, Lcom/android/internal/telephony/MMTelSSTransport;->access$102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 719
+    .line 727
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -11207,13 +11403,13 @@
 
     goto/16 :goto_1
 
-    .line 754
+    .line 762
     .end local v10    # "curTime":J
     .end local v15    # "oir":Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     :catch_1
     move-exception v12
 
-    .line 756
+    .line 764
     .local v12, "e":Ljava/lang/Exception;
     const-string v2, "MMTelSS"
 
@@ -11221,7 +11417,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 757
+    .line 765
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -11231,7 +11427,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCache:Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$002(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;)Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
 
-    .line 758
+    .line 766
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -11241,7 +11437,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$202(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 759
+    .line 767
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -11251,27 +11447,27 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 761
+    .line 769
     const/16 v16, 0x2
 
-    .line 762
+    .line 770
     invoke-virtual {v12}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 763
+    .line 771
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_2
 
-    .line 764
+    .line 772
     const/4 v2, 0x2
 
     invoke-static {v2}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v9
 
-    .line 765
+    .line 773
     .local v9, "ce":Lcom/android/internal/telephony/CommandException;
     move-object/from16 v0, p1
 
@@ -11281,14 +11477,14 @@
 
     invoke-static {v2, v3, v9}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 766
+    .line 774
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 767
+    .line 775
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -11300,7 +11496,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 768
+    .line 776
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -11314,25 +11510,25 @@
 
     goto/16 :goto_0
 
-    .line 730
+    .line 738
     .end local v9    # "ce":Lcom/android/internal/telephony/CommandException;
     .end local v12    # "e":Ljava/lang/Exception;
     .restart local v10    # "curTime":J
     .restart local v15    # "oir":Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
-    .restart local v17    # "restricted":Z
+    .restart local v18    # "restricted":Z
     :cond_7
     const/16 v16, 0x4
 
-    .line 731
+    .line 739
     const/4 v14, 0x2
 
     goto/16 :goto_2
 
-    .line 746
+    .line 754
     .end local v10    # "curTime":J
     .end local v15    # "oir":Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
-    .end local v17    # "restricted":Z
-    .restart local v18    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
+    .end local v18    # "restricted":Z
+    .restart local v20    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     :cond_8
     move-object/from16 v0, p1
 
@@ -11340,7 +11536,7 @@
 
     const/4 v3, 0x0
 
-    move-object/from16 v0, v18
+    move-object/from16 v0, v20
 
     invoke-static {v2, v3, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
@@ -11352,48 +11548,112 @@
     .param p1, "rr"    # Lcom/android/internal/telephony/MMTelSSRequest;
 
     .prologue
-    .line 884
+    .line 898
     const/4 v10, -0x1
 
-    .line 885
+    .line 899
     .local v10, "reqNo":I
     const/4 v11, -0x1
 
-    .line 886
+    .line 900
     .local v11, "serialNo":I
     const/4 v0, 0x2
 
     new-array v9, v0, [I
 
-    .line 887
+    .line 901
     .local v9, "get_colp_response":[I
+    iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->setDataPosition(I)V
+
+    .line 902
+    iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v0}, Landroid/os/Parcel;->readInt()I
+
+    move-result v10
+
+    .line 903
+    iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v0}, Landroid/os/Parcel;->readInt()I
+
+    move-result v11
+
+    .line 904
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v0}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 889
+    .line 905
     .local v6, "phoneId":I
+    const-string v0, "MMTelSS"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "handleGetCOLP() reqNo = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " serialNo = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " phoneId = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 908
     invoke-static {v6}, Lcom/android/internal/telephony/MMTelSSUtils;->isPreferXcap(I)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 890
+    .line 909
     const-string v0, "MMTelSS"
 
     const-string v1, "handleGetCOLP(): !isPreferXcap()"
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 891
+    .line 910
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_0
 
-    .line 892
+    .line 911
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -11404,17 +11664,17 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 893
+    .line 912
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 969
+    .line 988
     :cond_0
     :goto_0
     return-void
 
-    .line 899
+    .line 918
     :cond_1
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -11425,7 +11685,7 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
 
-    .line 900
+    .line 919
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     invoke-static {v6}, Lcom/android/internal/telephony/MMTelSSUtils;->getXcapRootUri(I)Ljava/lang/String;
@@ -11434,7 +11694,7 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
 
-    .line 901
+    .line 920
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     invoke-static {v6}, Lcom/android/internal/telephony/MMTelSSUtils;->getXIntendedId(I)Ljava/lang/String;
@@ -11443,7 +11703,7 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
 
-    .line 903
+    .line 922
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     iget-object v0, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
@@ -11454,7 +11714,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 904
+    .line 923
     const-string v0, "MMTelSS"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -11481,12 +11741,12 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 905
+    .line 924
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_0
 
-    .line 906
+    .line 925
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -11497,7 +11757,7 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 907
+    .line 926
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
@@ -11507,11 +11767,11 @@
 
     goto :goto_0
 
-    .line 928
+    .line 947
     :catch_0
     move-exception v13
 
-    .line 929
+    .line 948
     .local v13, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     const-string v0, "MMTelSS"
 
@@ -11519,29 +11779,29 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 930
+    .line 949
     invoke-virtual {v13}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
 
-    .line 931
+    .line 950
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_3
 
-    .line 932
+    .line 951
     invoke-virtual {v13}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 933
+    .line 952
     const-string v0, "MMTelSS"
 
     const-string v1, "handleGetCOLP(): xcapException.isConnectionError()"
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 934
+    .line 953
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -11552,13 +11812,13 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 938
+    .line 957
     :goto_1
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 939
+    .line 958
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -11568,7 +11828,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 940
+    .line 959
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -11580,7 +11840,7 @@
 
     goto/16 :goto_0
 
-    .line 912
+    .line 931
     .end local v13    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     :cond_2
     :try_start_1
@@ -11589,7 +11849,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v0, v6}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 914
+    .line 933
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     iget-object v1, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -11614,7 +11874,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 916
+    .line 935
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mSimservs:Lcom/mediatek/simservs/client/SimServs;
     invoke-static {}, Lcom/android/internal/telephony/MMTelSSTransport;->access$500()Lcom/mediatek/simservs/client/SimServs;
 
@@ -11633,7 +11893,7 @@
 
     move-result-object v12
 
-    .line 918
+    .line 937
     .local v12, "tip":Lcom/mediatek/simservs/client/TerminatingIdentityPresentation;
     const-string v0, "MMTelSS"
 
@@ -11661,21 +11921,21 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 919
+    .line 938
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/TerminatingIdentityPresentation;->isActive()Z
 
     move-result v0
 
     if-eqz v0, :cond_5
 
-    .line 921
+    .line 940
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     aput v1, v9, v0
 
-    .line 922
+    .line 941
     const/4 v0, 0x1
 
     const/4 v1, 0x1
@@ -11685,7 +11945,7 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 958
+    .line 977
     .end local v12    # "tip":Lcom/mediatek/simservs/client/TerminatingIdentityPresentation;
     :cond_3
     :goto_2
@@ -11693,19 +11953,19 @@
 
     if-eqz v0, :cond_4
 
-    .line 962
+    .line 981
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v9, v1}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 963
+    .line 982
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 966
+    .line 985
     :cond_4
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
@@ -11716,7 +11976,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 967
+    .line 986
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -11728,7 +11988,7 @@
 
     goto/16 :goto_0
 
-    .line 924
+    .line 943
     .restart local v12    # "tip":Lcom/mediatek/simservs/client/TerminatingIdentityPresentation;
     :cond_5
     const/4 v0, 0x0
@@ -11738,7 +11998,7 @@
     :try_start_2
     aput v1, v9, v0
 
-    .line 925
+    .line 944
     const/4 v0, 0x1
 
     const/4 v1, 0x0
@@ -11750,12 +12010,12 @@
 
     goto :goto_2
 
-    .line 944
+    .line 963
     .end local v12    # "tip":Lcom/mediatek/simservs/client/TerminatingIdentityPresentation;
     :catch_1
     move-exception v8
 
-    .line 945
+    .line 964
     .local v8, "e":Ljava/lang/Exception;
     const-string v0, "MMTelSS"
 
@@ -11763,22 +12023,22 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 946
+    .line 965
     invoke-virtual {v8}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 947
+    .line 966
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_3
 
-    .line 948
+    .line 967
     const/4 v0, 0x2
 
     invoke-static {v0}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v7
 
-    .line 949
+    .line 968
     .local v7, "ce":Lcom/android/internal/telephony/CommandException;
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
@@ -11786,12 +12046,12 @@
 
     invoke-static {v0, v1, v7}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 950
+    .line 969
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 951
+    .line 970
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -11801,7 +12061,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 952
+    .line 971
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -11813,7 +12073,7 @@
 
     goto/16 :goto_0
 
-    .line 936
+    .line 955
     .end local v7    # "ce":Lcom/android/internal/telephony/CommandException;
     .end local v8    # "e":Ljava/lang/Exception;
     .restart local v13    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
@@ -11832,48 +12092,112 @@
     .param p1, "rr"    # Lcom/android/internal/telephony/MMTelSSRequest;
 
     .prologue
-    .line 974
+    .line 993
     const/4 v10, -0x1
 
-    .line 975
+    .line 994
     .local v10, "reqNo":I
     const/4 v11, -0x1
 
-    .line 976
+    .line 995
     .local v11, "serialNo":I
     const/4 v0, 0x1
 
     new-array v9, v0, [I
 
-    .line 977
+    .line 996
     .local v9, "get_colr_response":[I
+    iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->setDataPosition(I)V
+
+    .line 997
+    iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v0}, Landroid/os/Parcel;->readInt()I
+
+    move-result v10
+
+    .line 998
+    iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
+
+    invoke-virtual {v0}, Landroid/os/Parcel;->readInt()I
+
+    move-result v11
+
+    .line 999
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v0}, Landroid/os/Parcel;->readInt()I
 
     move-result v6
 
-    .line 979
+    .line 1000
     .local v6, "phoneId":I
+    const-string v0, "MMTelSS"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "handleGetCOLR() reqNo = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " serialNo = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " phoneId = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1003
     invoke-static {v6}, Lcom/android/internal/telephony/MMTelSSUtils;->isPreferXcap(I)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 980
+    .line 1004
     const-string v0, "MMTelSS"
 
     const-string v1, "handleGetCOLR(): !isPreferXcap()"
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 981
+    .line 1005
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_0
 
-    .line 982
+    .line 1006
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -11884,17 +12208,17 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 983
+    .line 1007
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1058
+    .line 1082
     :cond_0
     :goto_0
     return-void
 
-    .line 989
+    .line 1013
     :cond_1
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -11905,7 +12229,7 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
 
-    .line 990
+    .line 1014
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     invoke-static {v6}, Lcom/android/internal/telephony/MMTelSSUtils;->getXcapRootUri(I)Ljava/lang/String;
@@ -11914,7 +12238,7 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
 
-    .line 991
+    .line 1015
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     invoke-static {v6}, Lcom/android/internal/telephony/MMTelSSUtils;->getXIntendedId(I)Ljava/lang/String;
@@ -11923,7 +12247,7 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
 
-    .line 993
+    .line 1017
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     iget-object v0, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
@@ -11934,7 +12258,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 994
+    .line 1018
     const-string v0, "MMTelSS"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -11961,12 +12285,12 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 995
+    .line 1019
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_0
 
-    .line 996
+    .line 1020
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -11977,7 +12301,7 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 997
+    .line 1021
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
@@ -11987,11 +12311,11 @@
 
     goto :goto_0
 
-    .line 1017
+    .line 1041
     :catch_0
     move-exception v13
 
-    .line 1018
+    .line 1042
     .local v13, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     const-string v0, "MMTelSS"
 
@@ -11999,29 +12323,29 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1019
+    .line 1043
     invoke-virtual {v13}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
 
-    .line 1020
+    .line 1044
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_3
 
-    .line 1021
+    .line 1045
     invoke-virtual {v13}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 1022
+    .line 1046
     const-string v0, "MMTelSS"
 
     const-string v1, "handleGetCOLR(): xcapException.isConnectionError()"
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1023
+    .line 1047
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -12032,13 +12356,13 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 1027
+    .line 1051
     :goto_1
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1028
+    .line 1052
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -12048,7 +12372,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1029
+    .line 1053
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -12060,7 +12384,7 @@
 
     goto/16 :goto_0
 
-    .line 1002
+    .line 1026
     .end local v13    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     :cond_2
     :try_start_1
@@ -12069,7 +12393,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v0, v6}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 1004
+    .line 1028
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     iget-object v1, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -12094,7 +12418,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 1006
+    .line 1030
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mSimservs:Lcom/mediatek/simservs/client/SimServs;
     invoke-static {}, Lcom/android/internal/telephony/MMTelSSTransport;->access$500()Lcom/mediatek/simservs/client/SimServs;
 
@@ -12113,7 +12437,7 @@
 
     move-result-object v12
 
-    .line 1008
+    .line 1032
     .local v12, "tir":Lcom/mediatek/simservs/client/TerminatingIdentityPresentationRestriction;
     const-string v0, "MMTelSS"
 
@@ -12141,14 +12465,14 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1009
+    .line 1033
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/TerminatingIdentityPresentationRestriction;->isActive()Z
 
     move-result v0
 
     if-eqz v0, :cond_5
 
-    .line 1011
+    .line 1035
     const/4 v0, 0x0
 
     const/4 v1, 0x1
@@ -12158,7 +12482,7 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 1048
+    .line 1072
     .end local v12    # "tir":Lcom/mediatek/simservs/client/TerminatingIdentityPresentationRestriction;
     :cond_3
     :goto_2
@@ -12166,19 +12490,19 @@
 
     if-eqz v0, :cond_4
 
-    .line 1051
+    .line 1075
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v9, v1}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 1052
+    .line 1076
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1055
+    .line 1079
     :cond_4
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
@@ -12189,7 +12513,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1056
+    .line 1080
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -12201,7 +12525,7 @@
 
     goto/16 :goto_0
 
-    .line 1014
+    .line 1038
     .restart local v12    # "tir":Lcom/mediatek/simservs/client/TerminatingIdentityPresentationRestriction;
     :cond_5
     const/4 v0, 0x0
@@ -12216,12 +12540,12 @@
 
     goto :goto_2
 
-    .line 1033
+    .line 1057
     .end local v12    # "tir":Lcom/mediatek/simservs/client/TerminatingIdentityPresentationRestriction;
     :catch_1
     move-exception v8
 
-    .line 1034
+    .line 1058
     .local v8, "e":Ljava/lang/Exception;
     const-string v0, "MMTelSS"
 
@@ -12229,22 +12553,22 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1035
+    .line 1059
     invoke-virtual {v8}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 1036
+    .line 1060
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_3
 
-    .line 1037
+    .line 1061
     const/4 v0, 0x2
 
     invoke-static {v0}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v7
 
-    .line 1038
+    .line 1062
     .local v7, "ce":Lcom/android/internal/telephony/CommandException;
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
@@ -12252,12 +12576,12 @@
 
     invoke-static {v0, v1, v7}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 1039
+    .line 1063
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1040
+    .line 1064
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -12267,7 +12591,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1041
+    .line 1065
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -12279,7 +12603,7 @@
 
     goto/16 :goto_0
 
-    .line 1025
+    .line 1049
     .end local v7    # "ce":Lcom/android/internal/telephony/CommandException;
     .end local v8    # "e":Ljava/lang/Exception;
     .restart local v13    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
@@ -12298,28 +12622,28 @@
     .param p1, "rr"    # Lcom/android/internal/telephony/MMTelSSRequest;
 
     .prologue
-    .line 1062
+    .line 1086
     const/16 v16, -0x1
 
-    .line 1063
+    .line 1087
     .local v16, "reqNo":I
     const/16 v17, -0x1
 
-    .line 1064
+    .line 1088
     .local v17, "serialNo":I
     const/4 v13, -0x1
 
-    .line 1065
+    .line 1089
     .local v13, "cwServiceClass":I
     const/4 v2, 0x2
 
     new-array v15, v2, [I
 
-    .line 1066
+    .line 1090
     .local v15, "get_cw_response":[I
     const/4 v8, 0x0
 
-    .line 1072
+    .line 1096
     .local v8, "phoneId":I
     :try_start_0
     move-object/from16 v0, p1
@@ -12330,7 +12654,7 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 1073
+    .line 1097
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -12339,7 +12663,7 @@
 
     move-result v16
 
-    .line 1074
+    .line 1098
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -12348,7 +12672,7 @@
 
     move-result v17
 
-    .line 1075
+    .line 1099
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -12357,7 +12681,7 @@
 
     move-result v13
 
-    .line 1076
+    .line 1100
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -12366,7 +12690,7 @@
 
     move-result v8
 
-    .line 1077
+    .line 1101
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -12389,21 +12713,21 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1079
+    .line 1103
     invoke-static {v8}, Lcom/android/internal/telephony/MMTelSSUtils;->isPreferXcap(I)Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 1080
+    .line 1104
     const-string v2, "MMTelSS"
 
     const-string v3, "handleGetCW(): !isPreferXcap()"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1081
+    .line 1105
     new-instance v2, Ljava/net/UnknownHostException;
 
     invoke-direct {v2}, Ljava/net/UnknownHostException;-><init>()V
@@ -12414,11 +12738,11 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 1136
+    .line 1160
     :catch_0
     move-exception v18
 
-    .line 1137
+    .line 1161
     .local v18, "unknownHostException":Ljava/net/UnknownHostException;
     move-object/from16 v0, p0
 
@@ -12429,7 +12753,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCache:Lcom/mediatek/simservs/client/CommunicationWaiting;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$702(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationWaiting;)Lcom/mediatek/simservs/client/CommunicationWaiting;
 
-    .line 1138
+    .line 1162
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -12439,7 +12763,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$902(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 1139
+    .line 1163
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -12449,14 +12773,14 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$802(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1141
+    .line 1165
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_3
 
-    .line 1142
+    .line 1166
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -12467,14 +12791,14 @@
 
     invoke-static {v2, v3, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 1143
+    .line 1167
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1144
+    .line 1168
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -12486,7 +12810,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1145
+    .line 1169
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -12498,29 +12822,29 @@
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 1225
+    .line 1249
     .end local v18    # "unknownHostException":Ljava/net/UnknownHostException;
     :cond_0
     :goto_0
     return-void
 
-    .line 1085
+    .line 1109
     :cond_1
     const/16 v2, 0x210
 
     if-ne v13, v2, :cond_2
 
-    .line 1086
+    .line 1110
     const/16 v13, 0x200
 
-    .line 1090
+    .line 1114
     :cond_2
     :try_start_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v10
 
-    .line 1091
+    .line 1115
     .local v10, "curTime":J
     const-string v2, "MMTelSS"
 
@@ -12582,7 +12906,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1093
+    .line 1117
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -12620,7 +12944,7 @@
 
     if-eqz v2, :cond_7
 
-    .line 1095
+    .line 1119
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -12652,7 +12976,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1096
+    .line 1120
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -12660,7 +12984,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 1097
+    .line 1121
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -12670,7 +12994,7 @@
 
     move-result-object v12
 
-    .line 1098
+    .line 1122
     .local v12, "cw":Lcom/mediatek/simservs/client/CommunicationWaiting;
     move-object/from16 v0, p0
 
@@ -12683,10 +13007,10 @@
 
     invoke-virtual {v12, v2}, Lcom/mediatek/simservs/client/CommunicationWaiting;->setNetwork(Landroid/net/Network;)V
 
-    .line 1099
+    .line 1123
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/CommunicationWaiting;->refresh()V
 
-    .line 1100
+    .line 1124
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -12694,7 +13018,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCacheLastQueried:J
     invoke-static {v2, v10, v11}, Lcom/android/internal/telephony/MMTelSSTransport;->access$802(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1128
+    .line 1152
     :goto_1
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/CommunicationWaiting;->isActive()Z
 
@@ -12702,14 +13026,14 @@
 
     if-eqz v2, :cond_a
 
-    .line 1129
+    .line 1153
     const/4 v2, 0x0
 
     const/4 v3, 0x1
 
     aput v3, v15, v2
 
-    .line 1134
+    .line 1158
     :goto_2
     const-string v2, "MMTelSS"
 
@@ -12741,7 +13065,7 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 1190
+    .line 1214
     .end local v10    # "curTime":J
     .end local v12    # "cw":Lcom/mediatek/simservs/client/CommunicationWaiting;
     :cond_3
@@ -12751,7 +13075,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 1193
+    .line 1217
     const/4 v2, 0x0
 
     aget v2, v15, v2
@@ -12760,10 +13084,10 @@
 
     if-ne v2, v3, :cond_5
 
-    .line 1203
+    .line 1227
     if-nez v13, :cond_c
 
-    .line 1206
+    .line 1230
     const/4 v2, 0x1
 
     aget v3, v15, v2
@@ -12772,7 +13096,7 @@
 
     aput v3, v15, v2
 
-    .line 1207
+    .line 1231
     const/4 v2, 0x1
 
     aget v3, v15, v2
@@ -12781,7 +13105,7 @@
 
     aput v3, v15, v2
 
-    .line 1216
+    .line 1240
     :cond_4
     :goto_3
     const-string v2, "MMTelSS"
@@ -12810,7 +13134,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1218
+    .line 1242
     :cond_5
     move-object/from16 v0, p1
 
@@ -12820,14 +13144,14 @@
 
     invoke-static {v2, v15, v3}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 1219
+    .line 1243
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1222
+    .line 1246
     :cond_6
     move-object/from16 v0, p0
 
@@ -12840,7 +13164,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1223
+    .line 1247
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -12854,7 +13178,7 @@
 
     goto/16 :goto_0
 
-    .line 1101
+    .line 1125
     .restart local v10    # "curTime":J
     :cond_7
     :try_start_2
@@ -12910,7 +13234,7 @@
 
     if-gez v2, :cond_8
 
-    .line 1104
+    .line 1128
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -12942,7 +13266,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1105
+    .line 1129
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -12955,7 +13279,7 @@
     .restart local v12    # "cw":Lcom/mediatek/simservs/client/CommunicationWaiting;
     goto/16 :goto_1
 
-    .line 1107
+    .line 1131
     .end local v12    # "cw":Lcom/mediatek/simservs/client/CommunicationWaiting;
     :cond_8
     move-object/from16 v0, p0
@@ -12965,7 +13289,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 1109
+    .line 1133
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -12976,7 +13300,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
 
-    .line 1110
+    .line 1134
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -12987,7 +13311,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
 
-    .line 1111
+    .line 1135
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -12998,7 +13322,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
 
-    .line 1113
+    .line 1137
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -13011,7 +13335,7 @@
 
     if-eqz v2, :cond_9
 
-    .line 1114
+    .line 1138
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -13040,7 +13364,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1115
+    .line 1139
     new-instance v2, Ljava/net/UnknownHostException;
 
     invoke-direct {v2}, Ljava/net/UnknownHostException;-><init>()V
@@ -13051,12 +13375,12 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_2 .. :try_end_2} :catch_1
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 1149
+    .line 1173
     .end local v10    # "curTime":J
     :catch_1
     move-exception v19
 
-    .line 1150
+    .line 1174
     .local v19, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     const-string v2, "MMTelSS"
 
@@ -13064,7 +13388,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1151
+    .line 1175
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -13074,7 +13398,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCache:Lcom/mediatek/simservs/client/CommunicationWaiting;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$702(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationWaiting;)Lcom/mediatek/simservs/client/CommunicationWaiting;
 
-    .line 1152
+    .line 1176
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -13084,7 +13408,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$902(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 1153
+    .line 1177
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -13094,31 +13418,31 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$802(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1155
+    .line 1179
     invoke-virtual/range {v19 .. v19}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
 
-    .line 1156
+    .line 1180
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_3
 
-    .line 1157
+    .line 1181
     invoke-virtual/range {v19 .. v19}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
 
     move-result v2
 
     if-eqz v2, :cond_b
 
-    .line 1158
+    .line 1182
     const-string v2, "MMTelSS"
 
     const-string v3, "handleGetCW(): xcapException.isConnectionError()"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1159
+    .line 1183
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -13131,7 +13455,7 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 1163
+    .line 1187
     :goto_4
     move-object/from16 v0, p1
 
@@ -13139,7 +13463,7 @@
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1164
+    .line 1188
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -13151,7 +13475,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1165
+    .line 1189
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -13165,7 +13489,7 @@
 
     goto/16 :goto_0
 
-    .line 1118
+    .line 1142
     .end local v19    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     .restart local v10    # "curTime":J
     :cond_9
@@ -13206,7 +13530,7 @@
 
     invoke-virtual/range {v2 .. v8}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 1120
+    .line 1144
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mSimservs:Lcom/mediatek/simservs/client/SimServs;
     invoke-static {}, Lcom/android/internal/telephony/MMTelSSTransport;->access$500()Lcom/mediatek/simservs/client/SimServs;
 
@@ -13227,7 +13551,7 @@
 
     move-result-object v12
 
-    .line 1121
+    .line 1145
     .restart local v12    # "cw":Lcom/mediatek/simservs/client/CommunicationWaiting;
     move-object/from16 v0, p0
 
@@ -13236,7 +13560,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCache:Lcom/mediatek/simservs/client/CommunicationWaiting;
     invoke-static {v2, v12}, Lcom/android/internal/telephony/MMTelSSTransport;->access$702(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationWaiting;)Lcom/mediatek/simservs/client/CommunicationWaiting;
 
-    .line 1122
+    .line 1146
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -13244,7 +13568,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCachePhoneId:I
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$902(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 1123
+    .line 1147
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -13252,7 +13576,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCacheLastQueried:J
     invoke-static {v2, v10, v11}, Lcom/android/internal/telephony/MMTelSSTransport;->access$802(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1124
+    .line 1148
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -13300,13 +13624,13 @@
 
     goto/16 :goto_1
 
-    .line 1169
+    .line 1193
     .end local v10    # "curTime":J
     .end local v12    # "cw":Lcom/mediatek/simservs/client/CommunicationWaiting;
     :catch_2
     move-exception v14
 
-    .line 1170
+    .line 1194
     .local v14, "e":Ljava/lang/Exception;
     const-string v2, "MMTelSS"
 
@@ -13314,7 +13638,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1171
+    .line 1195
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -13324,7 +13648,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCache:Lcom/mediatek/simservs/client/CommunicationWaiting;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$702(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationWaiting;)Lcom/mediatek/simservs/client/CommunicationWaiting;
 
-    .line 1172
+    .line 1196
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -13334,7 +13658,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$902(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 1173
+    .line 1197
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -13344,24 +13668,24 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$802(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 1175
+    .line 1199
     invoke-virtual {v14}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 1176
+    .line 1200
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_3
 
-    .line 1177
+    .line 1201
     const/4 v2, 0x2
 
     invoke-static {v2}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v9
 
-    .line 1178
+    .line 1202
     .local v9, "ce":Lcom/android/internal/telephony/CommandException;
     move-object/from16 v0, p1
 
@@ -13371,14 +13695,14 @@
 
     invoke-static {v2, v3, v9}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 1179
+    .line 1203
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1180
+    .line 1204
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -13390,7 +13714,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1181
+    .line 1205
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -13404,7 +13728,7 @@
 
     goto/16 :goto_0
 
-    .line 1132
+    .line 1156
     .end local v9    # "ce":Lcom/android/internal/telephony/CommandException;
     .end local v14    # "e":Ljava/lang/Exception;
     .restart local v10    # "curTime":J
@@ -13423,7 +13747,7 @@
 
     goto/16 :goto_2
 
-    .line 1161
+    .line 1185
     .end local v10    # "curTime":J
     .end local v12    # "cw":Lcom/mediatek/simservs/client/CommunicationWaiting;
     .restart local v19    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
@@ -13440,7 +13764,7 @@
 
     goto/16 :goto_4
 
-    .line 1209
+    .line 1233
     .end local v19    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     :cond_c
     const/4 v2, 0x1
@@ -13451,12 +13775,12 @@
 
     aput v3, v15, v2
 
-    .line 1210
+    .line 1234
     const/16 v2, 0x200
 
     if-ne v13, v2, :cond_4
 
-    .line 1213
+    .line 1237
     const/4 v2, 0x1
 
     aget v3, v15, v2
@@ -13477,7 +13801,7 @@
 
     const/16 v12, 0x19c
 
-    .line 4726
+    .line 4763
     iget-object v9, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v9, Lcom/android/internal/telephony/MMTelSSRequest;
@@ -13486,34 +13810,34 @@
 
     check-cast v7, Lcom/android/internal/telephony/MMTelSSRequest;
 
-    .line 4727
+    .line 4764
     .local v7, "rr":Lcom/android/internal/telephony/MMTelSSRequest;
     const/4 v5, 0x0
 
-    .line 4729
+    .line 4766
     .local v5, "req":Lcom/android/internal/telephony/MMTelSSRequest;
     iget v9, p1, Landroid/os/Message;->what:I
 
     packed-switch v9, :pswitch_data_0
 
-    .line 4900
+    .line 4937
     :cond_0
     :goto_0
     return-void
 
-    .line 4736
+    .line 4773
     :pswitch_0
     const/4 v1, 0x0
 
-    .line 4737
+    .line 4774
     .local v1, "alreadySubtracted":Z
     const/4 v6, -0x1
 
-    .line 4738
+    .line 4775
     .local v6, "reqNo":I
     const/4 v8, -0x1
 
-    .line 4740
+    .line 4777
     .local v8, "serialNo":I
     const-string v9, "MMTelSS"
 
@@ -13559,7 +13883,7 @@
 
     invoke-static {v9, v10}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4744
+    .line 4781
     :try_start_0
     iget-object v9, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
@@ -13570,7 +13894,7 @@
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 4745
+    .line 4782
     :try_start_1
     iget-object v9, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
@@ -13578,12 +13902,12 @@
 
     invoke-virtual {v9, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4746
+    .line 4783
     monitor-exit v10
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 4748
+    .line 4785
     :try_start_2
     iget-object v9, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
@@ -13593,10 +13917,10 @@
 
     iput v10, v9, Lcom/android/internal/telephony/MMTelSSTransport;->mRequestMessagesPending:I
 
-    .line 4749
+    .line 4786
     const/4 v1, 0x1
 
-    .line 4754
+    .line 4791
     iget-object v9, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     iget v10, v7, Lcom/android/internal/telephony/MMTelSSRequest;->mSerial:I
@@ -13604,7 +13928,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->findAndRemoveRequestFromList(I)Lcom/android/internal/telephony/MMTelSSRequest;
     invoke-static {v9, v10}, Lcom/android/internal/telephony/MMTelSSTransport;->access$2000(Lcom/android/internal/telephony/MMTelSSTransport;I)Lcom/android/internal/telephony/MMTelSSRequest;
 
-    .line 4757
+    .line 4794
     const-string v9, "MMTelSS"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -13633,12 +13957,12 @@
 
     invoke-static {v9, v10}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4759
+    .line 4796
     iget v9, v7, Lcom/android/internal/telephony/MMTelSSRequest;->mRequest:I
 
     packed-switch v9, :pswitch_data_1
 
-    .line 4827
+    .line 4864
     const-string v9, "MMTelSS"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -13663,7 +13987,7 @@
 
     invoke-static {v9, v10}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4828
+    .line 4865
     new-instance v9, Ljava/lang/RuntimeException;
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -13693,11 +14017,11 @@
     .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 4833
+    .line 4870
     :catch_0
     move-exception v3
 
-    .line 4834
+    .line 4871
     .local v3, "exc":Ljava/lang/RuntimeException;
     :try_start_3
     const-string v9, "MMTelSS"
@@ -13706,7 +14030,7 @@
 
     invoke-static {v9, v10, v3}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4835
+    .line 4872
     iget-object v9, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     iget v10, v7, Lcom/android/internal/telephony/MMTelSSRequest;->mSerial:I
@@ -13716,7 +14040,7 @@
 
     move-result-object v5
 
-    .line 4838
+    .line 4875
     const-string v9, "MMTelSS"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -13761,12 +14085,12 @@
 
     invoke-static {v9, v10}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4841
+    .line 4878
     if-nez v5, :cond_1
 
     if-nez v1, :cond_2
 
-    .line 4842
+    .line 4879
     :cond_1
     const/4 v9, 0x2
 
@@ -13774,24 +14098,24 @@
 
     invoke-virtual {v7, v9, v10}, Lcom/android/internal/telephony/MMTelSSRequest;->onError(ILjava/lang/Object;)V
 
-    .line 4843
+    .line 4880
     invoke-virtual {v7}, Lcom/android/internal/telephony/MMTelSSRequest;->release()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 4849
+    .line 4886
     :cond_2
     iget-object v9, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->releaseWakeLockIfDone()V
     invoke-static {v9}, Lcom/android/internal/telephony/MMTelSSTransport;->access$2100(Lcom/android/internal/telephony/MMTelSSTransport;)V
 
-    .line 4853
+    .line 4890
     .end local v3    # "exc":Ljava/lang/RuntimeException;
     :goto_1
     if-nez v1, :cond_3
 
-    .line 4854
+    .line 4891
     const-string v9, "MMTelSS"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -13836,7 +14160,7 @@
 
     invoke-static {v9, v10}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4857
+    .line 4894
     iget-object v9, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     iget v10, v9, Lcom/android/internal/telephony/MMTelSSTransport;->mRequestMessagesPending:I
@@ -13845,21 +14169,21 @@
 
     iput v10, v9, Lcom/android/internal/telephony/MMTelSSTransport;->mRequestMessagesPending:I
 
-    .line 4862
+    .line 4899
     :cond_3
     iget-object v9, v7, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
     if-eqz v9, :cond_4
 
-    .line 4863
+    .line 4900
     iget-object v9, v7, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v9}, Landroid/os/Parcel;->recycle()V
 
-    .line 4864
+    .line 4901
     iput-object v13, v7, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
-    .line 4867
+    .line 4904
     :cond_4
     iget-object v9, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
@@ -13877,7 +14201,7 @@
 
     if-eqz v9, :cond_0
 
-    .line 4868
+    .line 4905
     :cond_5
     const-string v9, "MMTelSS"
 
@@ -13925,7 +14249,7 @@
 
     goto/16 :goto_0
 
-    .line 4746
+    .line 4783
     :catchall_0
     move-exception v9
 
@@ -13940,7 +14264,7 @@
     .catch Ljava/lang/RuntimeException; {:try_start_5 .. :try_end_5} :catch_0
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 4849
+    .line 4886
     :catchall_1
     move-exception v9
 
@@ -13951,7 +14275,7 @@
 
     throw v9
 
-    .line 4761
+    .line 4798
     :pswitch_1
     :try_start_6
     invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCLIR(Lcom/android/internal/telephony/MMTelSSRequest;)I
@@ -13960,20 +14284,20 @@
 
     if-ne v12, v9, :cond_6
 
-    .line 4762
+    .line 4799
     const-string v9, "MMTelSS"
 
     const-string v10, "Cache out of date, handleSetCLIR() again"
 
     invoke-static {v9, v10}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4763
+    .line 4800
     invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCLIR(Lcom/android/internal/telephony/MMTelSSRequest;)I
     :try_end_6
     .catch Ljava/lang/RuntimeException; {:try_start_6 .. :try_end_6} :catch_0
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
-    .line 4849
+    .line 4886
     :cond_6
     :goto_2
     iget-object v9, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -13983,130 +14307,34 @@
 
     goto/16 :goto_1
 
-    .line 4767
+    .line 4804
     :pswitch_2
     :try_start_7
     invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleGetCLIR(Lcom/android/internal/telephony/MMTelSSRequest;)V
 
     goto :goto_2
 
-    .line 4770
+    .line 4807
     :pswitch_3
     invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleGetCLIP(Lcom/android/internal/telephony/MMTelSSRequest;)V
 
     goto :goto_2
 
-    .line 4773
+    .line 4810
     :pswitch_4
     invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleGetCOLP(Lcom/android/internal/telephony/MMTelSSRequest;)V
 
     goto :goto_2
 
-    .line 4776
+    .line 4813
     :pswitch_5
     invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleGetCOLR(Lcom/android/internal/telephony/MMTelSSRequest;)V
 
     goto :goto_2
 
-    .line 4779
+    .line 4816
     :pswitch_6
     invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCW(Lcom/android/internal/telephony/MMTelSSRequest;)I
-
-    move-result v9
-
-    if-ne v12, v9, :cond_6
-
-    .line 4780
-    const-string v9, "MMTelSS"
-
-    const-string v10, "Cache out of date, handleSetCW() again"
-
-    invoke-static {v9, v10}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 4781
-    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCW(Lcom/android/internal/telephony/MMTelSSRequest;)I
-
-    goto :goto_2
-
-    .line 4785
-    :pswitch_7
-    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleGetCW(Lcom/android/internal/telephony/MMTelSSRequest;)V
-
-    goto :goto_2
-
-    .line 4788
-    :pswitch_8
-    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCB(Lcom/android/internal/telephony/MMTelSSRequest;)I
-
-    move-result v9
-
-    if-ne v12, v9, :cond_6
-
-    .line 4789
-    const-string v9, "MMTelSS"
-
-    const-string v10, "Cache out of date, handleSetCB() again"
-
-    invoke-static {v9, v10}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 4790
-    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCB(Lcom/android/internal/telephony/MMTelSSRequest;)I
-
-    goto :goto_2
-
-    .line 4794
-    :pswitch_9
-    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleGetCB(Lcom/android/internal/telephony/MMTelSSRequest;)V
-
-    goto :goto_2
-
-    .line 4797
-    :pswitch_a
-    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCF(Lcom/android/internal/telephony/MMTelSSRequest;)I
-
-    move-result v9
-
-    if-ne v12, v9, :cond_6
-
-    .line 4798
-    const-string v9, "MMTelSS"
-
-    const-string v10, "Cache out of date, handleSetCF() again"
-
-    invoke-static {v9, v10}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 4799
-    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCF(Lcom/android/internal/telephony/MMTelSSRequest;)I
-
-    goto :goto_2
-
-    .line 4803
-    :pswitch_b
-    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleGetCF(Lcom/android/internal/telephony/MMTelSSRequest;)V
-
-    goto :goto_2
-
-    .line 4806
-    :pswitch_c
-    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCLIP(Lcom/android/internal/telephony/MMTelSSRequest;)V
-
-    goto :goto_2
-
-    .line 4809
-    :pswitch_d
-    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCOLP(Lcom/android/internal/telephony/MMTelSSRequest;)V
-
-    goto :goto_2
-
-    .line 4812
-    :pswitch_e
-    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCOLR(Lcom/android/internal/telephony/MMTelSSRequest;)V
-
-    goto :goto_2
-
-    .line 4816
-    :pswitch_f
-    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCFInTimeSlot(Lcom/android/internal/telephony/MMTelSSRequest;)I
 
     move-result v9
 
@@ -14115,16 +14343,112 @@
     .line 4817
     const-string v9, "MMTelSS"
 
+    const-string v10, "Cache out of date, handleSetCW() again"
+
+    invoke-static {v9, v10}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 4818
+    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCW(Lcom/android/internal/telephony/MMTelSSRequest;)I
+
+    goto :goto_2
+
+    .line 4822
+    :pswitch_7
+    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleGetCW(Lcom/android/internal/telephony/MMTelSSRequest;)V
+
+    goto :goto_2
+
+    .line 4825
+    :pswitch_8
+    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCB(Lcom/android/internal/telephony/MMTelSSRequest;)I
+
+    move-result v9
+
+    if-ne v12, v9, :cond_6
+
+    .line 4826
+    const-string v9, "MMTelSS"
+
+    const-string v10, "Cache out of date, handleSetCB() again"
+
+    invoke-static {v9, v10}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 4827
+    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCB(Lcom/android/internal/telephony/MMTelSSRequest;)I
+
+    goto :goto_2
+
+    .line 4831
+    :pswitch_9
+    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleGetCB(Lcom/android/internal/telephony/MMTelSSRequest;)V
+
+    goto :goto_2
+
+    .line 4834
+    :pswitch_a
+    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCF(Lcom/android/internal/telephony/MMTelSSRequest;)I
+
+    move-result v9
+
+    if-ne v12, v9, :cond_6
+
+    .line 4835
+    const-string v9, "MMTelSS"
+
+    const-string v10, "Cache out of date, handleSetCF() again"
+
+    invoke-static {v9, v10}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 4836
+    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCF(Lcom/android/internal/telephony/MMTelSSRequest;)I
+
+    goto :goto_2
+
+    .line 4840
+    :pswitch_b
+    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleGetCF(Lcom/android/internal/telephony/MMTelSSRequest;)V
+
+    goto :goto_2
+
+    .line 4843
+    :pswitch_c
+    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCLIP(Lcom/android/internal/telephony/MMTelSSRequest;)V
+
+    goto :goto_2
+
+    .line 4846
+    :pswitch_d
+    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCOLP(Lcom/android/internal/telephony/MMTelSSRequest;)V
+
+    goto :goto_2
+
+    .line 4849
+    :pswitch_e
+    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCOLR(Lcom/android/internal/telephony/MMTelSSRequest;)V
+
+    goto :goto_2
+
+    .line 4853
+    :pswitch_f
+    invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCFInTimeSlot(Lcom/android/internal/telephony/MMTelSSRequest;)I
+
+    move-result v9
+
+    if-ne v12, v9, :cond_6
+
+    .line 4854
+    const-string v9, "MMTelSS"
+
     const-string v10, "Cache out of date, handleSetCFInTimeSlot() again"
 
     invoke-static {v9, v10}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4819
+    .line 4856
     invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleSetCFInTimeSlot(Lcom/android/internal/telephony/MMTelSSRequest;)I
 
     goto :goto_2
 
-    .line 4823
+    .line 4860
     :pswitch_10
     invoke-virtual {p0, v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleGetCFInTimeSlot(Lcom/android/internal/telephony/MMTelSSRequest;)V
     :try_end_7
@@ -14133,7 +14457,7 @@
 
     goto :goto_2
 
-    .line 4878
+    .line 4915
     .end local v1    # "alreadySubtracted":Z
     .end local v6    # "reqNo":I
     .end local v8    # "serialNo":I
@@ -14144,7 +14468,7 @@
 
     monitor-enter v10
 
-    .line 4879
+    .line 4916
     :try_start_8
     iget-object v9, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
@@ -14156,7 +14480,7 @@
 
     if-eqz v9, :cond_8
 
-    .line 4881
+    .line 4918
     iget-object v9, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     iget-object v11, v9, Lcom/android/internal/telephony/MMTelSSTransport;->mRequestsList:Ljava/util/ArrayList;
@@ -14165,7 +14489,7 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
-    .line 4882
+    .line 4919
     :try_start_9
     iget-object v9, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
@@ -14175,7 +14499,7 @@
 
     move-result v2
 
-    .line 4883
+    .line 4920
     .local v2, "count":I
     const-string v9, "MMTelSS"
 
@@ -14213,14 +14537,14 @@
 
     invoke-static {v9, v12}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4887
+    .line 4924
     const/4 v4, 0x0
 
     .local v4, "i":I
     :goto_3
     if-ge v4, v2, :cond_7
 
-    .line 4888
+    .line 4925
     iget-object v9, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     iget-object v9, v9, Lcom/android/internal/telephony/MMTelSSTransport;->mRequestsList:Ljava/util/ArrayList;
@@ -14235,7 +14559,7 @@
 
     move-object v7, v0
 
-    .line 4889
+    .line 4926
     const-string v9, "MMTelSS"
 
     new-instance v12, Ljava/lang/StringBuilder;
@@ -14280,18 +14604,18 @@
 
     invoke-static {v9, v12}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4887
+    .line 4924
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_3
 
-    .line 4893
+    .line 4930
     :cond_7
     monitor-exit v11
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_3
 
-    .line 4895
+    .line 4932
     :try_start_a
     iget-object v9, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
@@ -14299,7 +14623,7 @@
 
     invoke-virtual {v9}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 4897
+    .line 4934
     .end local v2    # "count":I
     .end local v4    # "i":I
     :cond_8
@@ -14316,7 +14640,7 @@
 
     throw v9
 
-    .line 4893
+    .line 4930
     :catchall_3
     move-exception v9
 
@@ -14330,7 +14654,7 @@
     :try_end_c
     .catchall {:try_start_c .. :try_end_c} :catchall_2
 
-    .line 4729
+    .line 4766
     nop
 
     :pswitch_data_0
@@ -14339,7 +14663,7 @@
         :pswitch_11
     .end packed-switch
 
-    .line 4759
+    .line 4796
     :pswitch_data_1
     .packed-switch 0x1
         :pswitch_1
@@ -14366,7 +14690,7 @@
     .param p1, "rr"    # Lcom/android/internal/telephony/MMTelSSRequest;
 
     .prologue
-    .line 3436
+    .line 3471
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -14375,7 +14699,7 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 3437
+    .line 3472
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -14384,7 +14708,7 @@
 
     move-result v83
 
-    .line 3438
+    .line 3473
     .local v83, "reqNo":I
     move-object/from16 v0, p1
 
@@ -14394,7 +14718,7 @@
 
     move-result v85
 
-    .line 3439
+    .line 3474
     .local v85, "serialNo":I
     move-object/from16 v0, p1
 
@@ -14404,11 +14728,11 @@
 
     move-result-object v13
 
-    .line 3440
+    .line 3475
     .local v13, "facility":Ljava/lang/String;
     move-object/from16 v82, v13
 
-    .line 3441
+    .line 3476
     .local v82, "original_facility":Ljava/lang/String;
     move-object/from16 v0, p1
 
@@ -14418,7 +14742,7 @@
 
     move-result v14
 
-    .line 3442
+    .line 3477
     .local v14, "lockState":I
     move-object/from16 v0, p1
 
@@ -14428,7 +14752,7 @@
 
     move-result v15
 
-    .line 3443
+    .line 3478
     .local v15, "setCBServiceClass":I
     move-object/from16 v0, p1
 
@@ -14438,47 +14762,47 @@
 
     move-result v8
 
-    .line 3445
+    .line 3480
     .local v8, "phoneId":I
     const/16 v63, 0x0
 
-    .line 3446
+    .line 3481
     .local v63, "AddRuleForBAOCWithAllMediaType":Z
     const/16 v64, 0x0
 
-    .line 3447
+    .line 3482
     .local v64, "AddRuleForBAOICWithAllMediaType":Z
     const/16 v65, 0x0
 
-    .line 3448
+    .line 3483
     .local v65, "AddRuleForBAOICxHWithAllMediaType":Z
     const/16 v61, 0x0
 
-    .line 3449
+    .line 3484
     .local v61, "AddRuleForBAICWithAllMediaType":Z
     const/16 v62, 0x0
 
-    .line 3451
+    .line 3486
     .local v62, "AddRuleForBAICrWithAllMediaType":Z
     const-string v34, "AO"
 
-    .line 3452
+    .line 3487
     .local v34, "BAOC_RuleID":Ljava/lang/String;
     const-string v16, "OI"
 
-    .line 3453
+    .line 3488
     .local v16, "BAOIC_RuleID":Ljava/lang/String;
     const-string v26, "OX"
 
-    .line 3454
+    .line 3489
     .local v26, "BAOICExHC_RuleID":Ljava/lang/String;
     const-string v57, "AI"
 
-    .line 3455
+    .line 3490
     .local v57, "BAIC_RuleID":Ljava/lang/String;
     const-string v49, "IR"
 
-    .line 3457
+    .line 3492
     .local v49, "BAICR_RuleID":Ljava/lang/String;
     const-string v2, "MMTelSS"
 
@@ -14536,15 +14860,15 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3460
+    .line 3495
     const/16 v2, 0x210
 
     if-ne v15, v2, :cond_0
 
-    .line 3461
+    .line 3496
     const/16 v15, 0x200
 
-    .line 3464
+    .line 3499
     :cond_0
     invoke-static {v8}, Lcom/android/internal/telephony/MMTelSSUtils;->isPreferXcap(I)Z
 
@@ -14552,21 +14876,21 @@
 
     if-nez v2, :cond_2
 
-    .line 3465
+    .line 3500
     const-string v2, "MMTelSS"
 
     const-string v3, "handleSetCB(): !isPreferXcap()"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3466
+    .line 3501
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_1
 
-    .line 3467
+    .line 3502
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -14579,26 +14903,26 @@
 
     invoke-static {v2, v3, v5}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 3468
+    .line 3503
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 3470
+    .line 3505
     :cond_1
     const/4 v2, 0x0
 
-    .line 4096
+    .line 4131
     :goto_0
     return v2
 
-    .line 3486
+    .line 3521
     :cond_2
     const/16 v18, 0x1
 
-    .line 3487
+    .line 3522
     .local v18, "num_of_expansion":I
     :try_start_0
     const-string v2, "AB"
@@ -14613,10 +14937,10 @@
 
     if-nez v14, :cond_5
 
-    .line 3488
+    .line 3523
     const/16 v18, 0x5
 
-    .line 3495
+    .line 3530
     :cond_3
     :goto_1
     const-string v2, "AB"
@@ -14643,32 +14967,32 @@
 
     if-eqz v2, :cond_7
 
-    .line 3496
+    .line 3531
     :cond_4
     if-eqz v14, :cond_7
 
-    .line 3498
+    .line 3533
     const-string v2, "MMTelSS"
 
     const-string v3, "Not allow lockState=1 for AB(330)/AG(333)/AC(353)"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3502
+    .line 3537
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_7
 
-    .line 3503
+    .line 3538
     const/4 v2, 0x2
 
     invoke-static {v2}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v68
 
-    .line 3504
+    .line 3539
     .local v68, "ce":Lcom/android/internal/telephony/CommandException;
     move-object/from16 v0, p1
 
@@ -14680,19 +15004,19 @@
 
     invoke-static {v2, v3, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 3505
+    .line 3540
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 3506
+    .line 3541
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 3489
+    .line 3524
     .end local v68    # "ce":Lcom/android/internal/telephony/CommandException;
     :cond_5
     const-string v2, "AG"
@@ -14707,12 +15031,12 @@
 
     if-nez v14, :cond_6
 
-    .line 3490
+    .line 3525
     const/16 v18, 0x3
 
     goto :goto_1
 
-    .line 3491
+    .line 3526
     :cond_6
     const-string v2, "AC"
 
@@ -14726,26 +15050,26 @@
 
     if-nez v14, :cond_3
 
-    .line 3492
+    .line 3527
     const/16 v18, 0x2
 
     goto :goto_1
 
-    .line 3511
+    .line 3546
     :cond_7
     const/4 v10, 0x0
 
-    .line 3512
+    .line 3547
     .local v10, "ocb":Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     const/16 v75, 0x0
 
-    .line 3513
+    .line 3548
     .local v75, "icb":Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v70
 
-    .line 3514
+    .line 3549
     .local v70, "curTime":J
     const-string v2, "AO"
 
@@ -14779,7 +15103,7 @@
 
     if-eqz v2, :cond_b
 
-    .line 3518
+    .line 3553
     :cond_8
     const-string v2, "MMTelSS"
 
@@ -14863,7 +15187,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3522
+    .line 3557
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -14874,7 +15198,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
 
-    .line 3523
+    .line 3558
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -14885,7 +15209,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
 
-    .line 3524
+    .line 3559
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -14896,7 +15220,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
 
-    .line 3525
+    .line 3560
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -14909,7 +15233,7 @@
 
     if-eqz v2, :cond_a
 
-    .line 3526
+    .line 3561
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -14938,14 +15262,14 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3527
+    .line 3562
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_9
 
-    .line 3528
+    .line 3563
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -14958,20 +15282,20 @@
 
     invoke-static {v2, v3, v5}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 3530
+    .line 3565
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 3532
+    .line 3567
     :cond_9
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    .line 3534
+    .line 3569
     :cond_a
     move-object/from16 v0, p0
 
@@ -14980,7 +15304,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 3535
+    .line 3570
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15017,7 +15341,7 @@
 
     invoke-virtual/range {v2 .. v8}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 3538
+    .line 3573
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15055,7 +15379,7 @@
 
     if-eqz v2, :cond_e
 
-    .line 3540
+    .line 3575
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -15087,7 +15411,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3541
+    .line 3576
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15097,7 +15421,7 @@
 
     move-result-object v10
 
-    .line 3542
+    .line 3577
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15109,10 +15433,10 @@
 
     invoke-virtual {v10, v2}, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;->setNetwork(Landroid/net/Network;)V
 
-    .line 3543
+    .line 3578
     invoke-virtual {v10}, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;->refresh()V
 
-    .line 3544
+    .line 3579
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15122,7 +15446,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCacheLastQueried:J
     invoke-static {v2, v0, v1}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 3561
+    .line 3596
     :cond_b
     :goto_2
     const-string v2, "AI"
@@ -15149,7 +15473,7 @@
 
     if-eqz v2, :cond_12
 
-    .line 3564
+    .line 3599
     :cond_c
     const-string v2, "MMTelSS"
 
@@ -15233,7 +15557,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3569
+    .line 3604
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15244,7 +15568,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
 
-    .line 3570
+    .line 3605
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15255,7 +15579,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
 
-    .line 3571
+    .line 3606
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15266,7 +15590,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
 
-    .line 3573
+    .line 3608
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15279,7 +15603,7 @@
 
     if-eqz v2, :cond_11
 
-    .line 3574
+    .line 3609
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -15308,14 +15632,14 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3575
+    .line 3610
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_d
 
-    .line 3576
+    .line 3611
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -15328,20 +15652,20 @@
 
     invoke-static {v2, v3, v5}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 3578
+    .line 3613
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 3580
+    .line 3615
     :cond_d
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    .line 3545
+    .line 3580
     :cond_e
     move-object/from16 v0, p0
 
@@ -15395,7 +15719,7 @@
 
     if-gez v2, :cond_f
 
-    .line 3548
+    .line 3583
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -15427,7 +15751,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3549
+    .line 3584
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15437,7 +15761,7 @@
 
     move-result-object v10
 
-    .line 3550
+    .line 3585
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15454,14 +15778,14 @@
 
     goto/16 :goto_2
 
-    .line 4031
+    .line 4066
     .end local v10    # "ocb":Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     .end local v70    # "curTime":J
     .end local v75    # "icb":Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
     :catch_0
     move-exception v86
 
-    .line 4032
+    .line 4067
     .local v86, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     move-object/from16 v0, p0
 
@@ -15472,7 +15796,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCache:Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1002(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;)Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
 
-    .line 4033
+    .line 4068
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15482,7 +15806,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1202(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 4034
+    .line 4069
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15492,7 +15816,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCacheLastQueried:J
     invoke-static {v2, v6, v7}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 4035
+    .line 4070
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15502,7 +15826,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCache:Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1302(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/IncomingCommunicationBarring;)Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
 
-    .line 4036
+    .line 4071
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15512,7 +15836,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1502(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 4037
+    .line 4072
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15522,7 +15846,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCacheLastQueried:J
     invoke-static {v2, v6, v7}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1402(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 4038
+    .line 4073
     invoke-virtual/range {v86 .. v86}, Lcom/mediatek/simservs/xcap/XcapException;->getHttpErrorCode()I
 
     move-result v2
@@ -15531,19 +15855,19 @@
 
     if-ne v2, v3, :cond_5d
 
-    .line 4039
+    .line 4074
     const-string v2, "MMTelSS"
 
     const-string v3, "handleSetCB(): HTTP_ERROR_CODE_412"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4040
+    .line 4075
     const/16 v2, 0x19c
 
     goto/16 :goto_0
 
-    .line 3552
+    .line 3587
     .end local v86    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     .restart local v10    # "ocb":Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     .restart local v70    # "curTime":J
@@ -15570,7 +15894,7 @@
 
     move-result-object v10
 
-    .line 3553
+    .line 3588
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15578,7 +15902,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCache:Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     invoke-static {v2, v10}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1002(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;)Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
 
-    .line 3554
+    .line 3589
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15586,7 +15910,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCachePhoneId:I
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1202(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 3555
+    .line 3590
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15596,7 +15920,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCacheLastQueried:J
     invoke-static {v2, v0, v1}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 3556
+    .line 3591
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -15645,14 +15969,14 @@
 
     goto/16 :goto_2
 
-    .line 4057
+    .line 4092
     .end local v10    # "ocb":Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     .end local v70    # "curTime":J
     .end local v75    # "icb":Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
     :catch_1
     move-exception v72
 
-    .line 4061
+    .line 4096
     .local v72, "e":Ljava/lang/Exception;
     const-string v2, "MMTelSS"
 
@@ -15660,7 +15984,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4062
+    .line 4097
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15670,7 +15994,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCache:Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1002(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;)Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
 
-    .line 4063
+    .line 4098
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15680,7 +16004,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1202(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 4064
+    .line 4099
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15690,7 +16014,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOcbCacheLastQueried:J
     invoke-static {v2, v6, v7}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 4065
+    .line 4100
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15700,7 +16024,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCache:Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1302(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/IncomingCommunicationBarring;)Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
 
-    .line 4066
+    .line 4101
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15710,7 +16034,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1502(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 4067
+    .line 4102
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15720,24 +16044,24 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCacheLastQueried:J
     invoke-static {v2, v6, v7}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1402(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 4069
+    .line 4104
     invoke-virtual/range {v72 .. v72}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 4074
+    .line 4109
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_60
 
-    .line 4075
+    .line 4110
     const/4 v2, 0x2
 
     invoke-static {v2}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v68
 
-    .line 4076
+    .line 4111
     .restart local v68    # "ce":Lcom/android/internal/telephony/CommandException;
     move-object/from16 v0, p1
 
@@ -15749,14 +16073,14 @@
 
     invoke-static {v2, v3, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 4077
+    .line 4112
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4078
+    .line 4113
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15768,7 +16092,7 @@
 
     if-eqz v2, :cond_10
 
-    .line 4079
+    .line 4114
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15780,13 +16104,13 @@
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 4081
+    .line 4116
     :cond_10
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    .line 3582
+    .line 3617
     .end local v68    # "ce":Lcom/android/internal/telephony/CommandException;
     .end local v72    # "e":Ljava/lang/Exception;
     .restart local v10    # "ocb":Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
@@ -15801,7 +16125,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 3583
+    .line 3618
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15838,7 +16162,7 @@
 
     invoke-virtual/range {v2 .. v8}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 3586
+    .line 3621
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15876,7 +16200,7 @@
 
     if-eqz v2, :cond_18
 
-    .line 3588
+    .line 3623
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -15908,7 +16232,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3589
+    .line 3624
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15918,7 +16242,7 @@
 
     move-result-object v75
 
-    .line 3590
+    .line 3625
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15932,10 +16256,10 @@
 
     invoke-virtual {v0, v2}, Lcom/mediatek/simservs/client/IncomingCommunicationBarring;->setNetwork(Landroid/net/Network;)V
 
-    .line 3591
+    .line 3626
     invoke-virtual/range {v75 .. v75}, Lcom/mediatek/simservs/client/IncomingCommunicationBarring;->refresh()V
 
-    .line 3592
+    .line 3627
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -15945,7 +16269,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCacheLastQueried:J
     invoke-static {v2, v0, v1}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1402(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 3609
+    .line 3644
     :cond_12
     :goto_3
     const/16 v76, 0x0
@@ -15958,14 +16282,14 @@
 
     if-ge v0, v1, :cond_60
 
-    .line 3610
+    .line 3645
     const/4 v2, 0x1
 
     move/from16 v0, v18
 
     if-eq v0, v2, :cond_13
 
-    .line 3611
+    .line 3646
     const-string v2, "AG"
 
     move-object/from16 v0, v82
@@ -15976,12 +16300,12 @@
 
     if-eqz v2, :cond_1c
 
-    .line 3612
+    .line 3647
     if-nez v76, :cond_1a
 
     const-string v13, "OI"
 
-    .line 3629
+    .line 3664
     :cond_13
     :goto_5
     const-string v2, "MMTelSS"
@@ -16040,7 +16364,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3631
+    .line 3666
     const-string v2, "AO"
 
     invoke-virtual {v13, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -16065,40 +16389,40 @@
 
     if-eqz v2, :cond_3b
 
-    .line 3634
+    .line 3669
     :cond_14
     invoke-virtual {v10}, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;->getRuleSet()Lcom/mediatek/simservs/client/policy/RuleSet;
 
     move-result-object v80
 
-    .line 3635
+    .line 3670
     .local v80, "oRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     const/16 v84, 0x0
 
-    .line 3636
+    .line 3671
     .local v84, "ruleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
     invoke-virtual {v10}, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;->createNewRuleSet()Lcom/mediatek/simservs/client/policy/RuleSet;
 
     move-result-object v11
 
-    .line 3637
+    .line 3672
     .local v11, "newRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     const/16 v67, 0x0
 
-    .line 3639
+    .line 3674
     .local v67, "addedNewRule":Z
     if-eqz v80, :cond_23
 
-    .line 3640
+    .line 3675
     invoke-virtual/range {v80 .. v80}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
 
     move-result-object v84
 
-    .line 3646
+    .line 3681
     :goto_6
     if-eqz v84, :cond_33
 
-    .line 3647
+    .line 3682
     const/16 v73, 0x0
 
     .local v73, "i":I
@@ -16111,7 +16435,7 @@
 
     if-ge v0, v2, :cond_33
 
-    .line 3648
+    .line 3683
     move-object/from16 v0, v84
 
     move/from16 v1, v73
@@ -16122,27 +16446,27 @@
 
     check-cast v12, Lcom/mediatek/simservs/client/policy/Rule;
 
-    .line 3649
+    .line 3684
     .local v12, "r":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/policy/Rule;->getConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v69
 
-    .line 3650
+    .line 3685
     .local v69, "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/policy/Rule;->getActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v66
 
-    .line 3651
+    .line 3686
     .local v66, "action":Lcom/mediatek/simservs/client/policy/Actions;
     const/16 v77, 0x0
 
-    .line 3653
+    .line 3688
     .local v77, "mediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     if-eqz v69, :cond_26
 
-    .line 3654
+    .line 3689
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -16207,24 +16531,24 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3655
+    .line 3690
     invoke-virtual/range {v69 .. v69}, Lcom/mediatek/simservs/client/policy/Conditions;->getMedias()Ljava/util/List;
 
     move-result-object v77
 
-    .line 3656
+    .line 3691
     invoke-virtual/range {v69 .. v69}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendInternational()Z
 
     move-result v2
 
     if-eqz v2, :cond_24
 
-    .line 3657
+    .line 3692
     iget-object v0, v12, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
     move-object/from16 v16, v0
 
-    .line 3658
+    .line 3693
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -16249,7 +16573,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3684
+    .line 3719
     :cond_15
     :goto_8
     const-string v2, "OI"
@@ -16278,14 +16602,14 @@
 
     if-eqz v2, :cond_2a
 
-    .line 3688
+    .line 3723
     if-nez v15, :cond_16
 
     if-nez v15, :cond_29
 
     if-nez v64, :cond_29
 
-    .line 3689
+    .line 3724
     :cond_16
     move-object/from16 v0, p0
 
@@ -16304,7 +16628,7 @@
 
     move-result v67
 
-    .line 3693
+    .line 3728
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -16329,10 +16653,10 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3695
+    .line 3730
     if-eqz v15, :cond_28
 
-    .line 3696
+    .line 3731
     const/16 v24, -0x1
 
     const/16 v25, -0x1
@@ -16351,7 +16675,7 @@
 
     move-result-object v78
 
-    .line 3699
+    .line 3734
     .local v78, "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     if-eqz v78, :cond_17
 
@@ -16372,14 +16696,14 @@
 
     if-ne v2, v0, :cond_17
 
-    .line 3700
+    .line 3735
     move-object/from16 v0, v78
 
     iget-object v2, v0, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
     invoke-virtual {v10, v2}, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;->saveRule(Ljava/lang/String;)V
 
-    .line 3647
+    .line 3682
     .end local v78    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     :cond_17
     :goto_9
@@ -16387,7 +16711,7 @@
 
     goto/16 :goto_7
 
-    .line 3593
+    .line 3628
     .end local v11    # "newRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     .end local v12    # "r":Lcom/mediatek/simservs/client/policy/Rule;
     .end local v66    # "action":Lcom/mediatek/simservs/client/policy/Actions;
@@ -16451,7 +16775,7 @@
 
     if-gez v2, :cond_19
 
-    .line 3596
+    .line 3631
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -16483,7 +16807,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3597
+    .line 3632
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -16493,7 +16817,7 @@
 
     move-result-object v75
 
-    .line 3598
+    .line 3633
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -16509,7 +16833,7 @@
 
     goto/16 :goto_3
 
-    .line 3600
+    .line 3635
     :cond_19
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mSimservs:Lcom/mediatek/simservs/client/SimServs;
     invoke-static {}, Lcom/android/internal/telephony/MMTelSSTransport;->access$500()Lcom/mediatek/simservs/client/SimServs;
@@ -16531,7 +16855,7 @@
 
     move-result-object v75
 
-    .line 3601
+    .line 3636
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -16541,7 +16865,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCache:Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
     invoke-static {v2, v0}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1302(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/IncomingCommunicationBarring;)Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
 
-    .line 3602
+    .line 3637
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -16549,7 +16873,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCachePhoneId:I
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1502(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 3603
+    .line 3638
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -16559,7 +16883,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mIcbCacheLastQueried:J
     invoke-static {v2, v0, v1}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1402(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 3604
+    .line 3639
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -16605,7 +16929,7 @@
 
     goto/16 :goto_3
 
-    .line 3613
+    .line 3648
     .restart local v76    # "it":I
     :cond_1a
     const/4 v2, 0x1
@@ -16618,7 +16942,7 @@
 
     goto/16 :goto_5
 
-    .line 3614
+    .line 3649
     :cond_1b
     const/4 v2, 0x2
 
@@ -16630,7 +16954,7 @@
 
     goto/16 :goto_5
 
-    .line 3616
+    .line 3651
     :cond_1c
     const-string v2, "AC"
 
@@ -16642,14 +16966,14 @@
 
     if-eqz v2, :cond_1e
 
-    .line 3617
+    .line 3652
     if-nez v76, :cond_1d
 
     const-string v13, "IR"
 
     goto/16 :goto_5
 
-    .line 3618
+    .line 3653
     :cond_1d
     const/4 v2, 0x1
 
@@ -16661,7 +16985,7 @@
 
     goto/16 :goto_5
 
-    .line 3620
+    .line 3655
     :cond_1e
     const-string v2, "AB"
 
@@ -16673,14 +16997,14 @@
 
     if-eqz v2, :cond_13
 
-    .line 3621
+    .line 3656
     if-nez v76, :cond_1f
 
     const-string v13, "OI"
 
     goto/16 :goto_5
 
-    .line 3622
+    .line 3657
     :cond_1f
     const/4 v2, 0x1
 
@@ -16692,7 +17016,7 @@
 
     goto/16 :goto_5
 
-    .line 3623
+    .line 3658
     :cond_20
     const/4 v2, 0x2
 
@@ -16704,7 +17028,7 @@
 
     goto/16 :goto_5
 
-    .line 3624
+    .line 3659
     :cond_21
     const/4 v2, 0x3
 
@@ -16716,7 +17040,7 @@
 
     goto/16 :goto_5
 
-    .line 3625
+    .line 3660
     :cond_22
     const/4 v2, 0x4
 
@@ -16728,7 +17052,7 @@
 
     goto/16 :goto_5
 
-    .line 3642
+    .line 3677
     .restart local v11    # "newRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     .restart local v67    # "addedNewRule":Z
     .restart local v80    # "oRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
@@ -16742,7 +17066,7 @@
 
     goto/16 :goto_6
 
-    .line 3659
+    .line 3694
     .restart local v12    # "r":Lcom/mediatek/simservs/client/policy/Rule;
     .restart local v66    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .restart local v69    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
@@ -16755,12 +17079,12 @@
 
     if-eqz v2, :cond_25
 
-    .line 3660
+    .line 3695
     iget-object v0, v12, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
     move-object/from16 v26, v0
 
-    .line 3661
+    .line 3696
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -16787,13 +17111,13 @@
 
     goto/16 :goto_8
 
-    .line 3663
+    .line 3698
     :cond_25
     iget-object v0, v12, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
     move-object/from16 v34, v0
 
-    .line 3664
+    .line 3699
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -16820,7 +17144,7 @@
 
     goto/16 :goto_8
 
-    .line 3668
+    .line 3703
     :cond_26
     if-nez v69, :cond_27
 
@@ -16832,7 +17156,7 @@
 
     if-eqz v2, :cond_27
 
-    .line 3669
+    .line 3704
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -16869,10 +17193,10 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3670
+    .line 3705
     const/16 v77, 0x0
 
-    .line 3671
+    .line 3706
     const-string v2, "AO"
 
     move-object/from16 v0, v34
@@ -16883,12 +17207,12 @@
 
     if-eqz v2, :cond_15
 
-    .line 3672
+    .line 3707
     iget-object v0, v12, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
     move-object/from16 v34, v0
 
-    .line 3673
+    .line 3708
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -16915,7 +17239,7 @@
 
     goto/16 :goto_8
 
-    .line 3676
+    .line 3711
     :cond_27
     const-string v2, "MMTelSS"
 
@@ -16939,7 +17263,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3677
+    .line 3712
     const-string v2, "AO"
 
     move-object/from16 v0, v34
@@ -16950,12 +17274,12 @@
 
     if-eqz v2, :cond_15
 
-    .line 3678
+    .line 3713
     iget-object v0, v12, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
     move-object/from16 v34, v0
 
-    .line 3679
+    .line 3714
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -16982,13 +17306,13 @@
 
     goto/16 :goto_8
 
-    .line 3703
+    .line 3738
     :cond_28
     const/16 v64, 0x1
 
     goto/16 :goto_9
 
-    .line 3705
+    .line 3740
     :cond_29
     if-nez v15, :cond_17
 
@@ -16998,7 +17322,7 @@
 
     if-ne v0, v2, :cond_17
 
-    .line 3706
+    .line 3741
     const-string v2, "MMTelSS"
 
     const-string v3, "Already add rule for BAOIC with serviceClass=0 case previously"
@@ -17007,7 +17331,7 @@
 
     goto/16 :goto_9
 
-    .line 3709
+    .line 3744
     :cond_2a
     const-string v2, "OX"
 
@@ -17035,14 +17359,14 @@
 
     if-eqz v2, :cond_2e
 
-    .line 3713
+    .line 3748
     if-nez v15, :cond_2b
 
     if-nez v15, :cond_2d
 
     if-nez v65, :cond_2d
 
-    .line 3714
+    .line 3749
     :cond_2b
     move-object/from16 v0, p0
 
@@ -17075,7 +17399,7 @@
 
     move-result v67
 
-    .line 3718
+    .line 3753
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -17100,10 +17424,10 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3720
+    .line 3755
     if-eqz v15, :cond_2c
 
-    .line 3721
+    .line 3756
     const/16 v24, -0x1
 
     const/16 v25, -0x1
@@ -17122,7 +17446,7 @@
 
     move-result-object v78
 
-    .line 3724
+    .line 3759
     .restart local v78    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     if-eqz v78, :cond_17
 
@@ -17143,7 +17467,7 @@
 
     if-ne v2, v0, :cond_17
 
-    .line 3725
+    .line 3760
     move-object/from16 v0, v78
 
     iget-object v2, v0, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
@@ -17152,14 +17476,14 @@
 
     goto/16 :goto_9
 
-    .line 3729
+    .line 3764
     .end local v78    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     :cond_2c
     const/16 v65, 0x1
 
     goto/16 :goto_9
 
-    .line 3731
+    .line 3766
     :cond_2d
     if-nez v15, :cond_17
 
@@ -17169,7 +17493,7 @@
 
     if-ne v0, v2, :cond_17
 
-    .line 3732
+    .line 3767
     const-string v2, "MMTelSS"
 
     const-string v3, "Already add rule for BAOICxH with serviceClass=0 case previously"
@@ -17178,7 +17502,7 @@
 
     goto/16 :goto_9
 
-    .line 3735
+    .line 3770
     :cond_2e
     const-string v2, "AO"
 
@@ -17198,14 +17522,14 @@
 
     if-eqz v2, :cond_32
 
-    .line 3738
+    .line 3773
     if-nez v15, :cond_2f
 
     if-nez v15, :cond_31
 
     if-nez v63, :cond_31
 
-    .line 3739
+    .line 3774
     :cond_2f
     move-object/from16 v0, p0
 
@@ -17238,7 +17562,7 @@
 
     move-result v67
 
-    .line 3743
+    .line 3778
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -17263,10 +17587,10 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3745
+    .line 3780
     if-eqz v15, :cond_30
 
-    .line 3746
+    .line 3781
     const/16 v24, -0x1
 
     const/16 v25, -0x1
@@ -17285,7 +17609,7 @@
 
     move-result-object v78
 
-    .line 3749
+    .line 3784
     .restart local v78    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     if-eqz v78, :cond_17
 
@@ -17306,7 +17630,7 @@
 
     if-ne v2, v0, :cond_17
 
-    .line 3750
+    .line 3785
     move-object/from16 v0, v78
 
     iget-object v2, v0, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
@@ -17315,14 +17639,14 @@
 
     goto/16 :goto_9
 
-    .line 3753
+    .line 3788
     .end local v78    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     :cond_30
     const/16 v63, 0x1
 
     goto/16 :goto_9
 
-    .line 3755
+    .line 3790
     :cond_31
     if-nez v15, :cond_17
 
@@ -17332,7 +17656,7 @@
 
     if-ne v0, v2, :cond_17
 
-    .line 3756
+    .line 3791
     const-string v2, "MMTelSS"
 
     const-string v3, "Already add rule for BAOC with serviceClass=0 case previously"
@@ -17341,7 +17665,7 @@
 
     goto/16 :goto_9
 
-    .line 3761
+    .line 3796
     :cond_32
     const-string v2, "MMTelSS"
 
@@ -17349,7 +17673,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3762
+    .line 3797
     const/4 v2, -0x1
 
     const/4 v3, -0x1
@@ -17360,7 +17684,7 @@
 
     goto/16 :goto_9
 
-    .line 3771
+    .line 3806
     .end local v12    # "r":Lcom/mediatek/simservs/client/policy/Rule;
     .end local v66    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .end local v69    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
@@ -17369,7 +17693,7 @@
     :cond_33
     if-nez v67, :cond_35
 
-    .line 3775
+    .line 3810
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -17412,10 +17736,10 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3776
+    .line 3811
     const-string v41, ""
 
-    .line 3778
+    .line 3813
     .local v41, "newRuleID":Ljava/lang/String;
     const-string v2, "AO"
 
@@ -17425,10 +17749,10 @@
 
     if-eqz v2, :cond_37
 
-    .line 3779
+    .line 3814
     move-object/from16 v41, v34
 
-    .line 3785
+    .line 3820
     :cond_34
     :goto_a
     const-string v2, "MMTelSS"
@@ -17455,7 +17779,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3786
+    .line 3821
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -17485,7 +17809,7 @@
 
     move-result v67
 
-    .line 3793
+    .line 3828
     .end local v41    # "newRuleID":Ljava/lang/String;
     :cond_35
     invoke-virtual {v11}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
@@ -17494,7 +17818,7 @@
 
     if-eqz v2, :cond_39
 
-    .line 3794
+    .line 3829
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -17521,7 +17845,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3799
+    .line 3834
     :goto_b
     move-object/from16 v0, p0
 
@@ -17534,10 +17858,10 @@
 
     if-nez v2, :cond_3a
 
-    .line 3800
+    .line 3835
     invoke-virtual {v10}, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;->saveRuleSet()V
 
-    .line 3609
+    .line 3644
     .end local v11    # "newRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     .end local v67    # "addedNewRule":Z
     .end local v80    # "oRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
@@ -17547,7 +17871,7 @@
 
     goto/16 :goto_4
 
-    .line 3780
+    .line 3815
     .restart local v11    # "newRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     .restart local v41    # "newRuleID":Ljava/lang/String;
     .restart local v67    # "addedNewRule":Z
@@ -17561,12 +17885,12 @@
 
     if-eqz v2, :cond_38
 
-    .line 3781
+    .line 3816
     move-object/from16 v41, v16
 
     goto :goto_a
 
-    .line 3782
+    .line 3817
     :cond_38
     const-string v2, "OX"
 
@@ -17576,12 +17900,12 @@
 
     if-eqz v2, :cond_34
 
-    .line 3783
+    .line 3818
     move-object/from16 v41, v26
 
     goto :goto_a
 
-    .line 3796
+    .line 3831
     .end local v41    # "newRuleID":Ljava/lang/String;
     :cond_39
     const-string v2, "MMTelSS"
@@ -17592,7 +17916,7 @@
 
     goto :goto_b
 
-    .line 3802
+    .line 3837
     :cond_3a
     const/4 v2, 0x1
 
@@ -17600,16 +17924,16 @@
 
     if-le v0, v2, :cond_36
 
-    .line 3803
+    .line 3838
     const/16 v79, 0x0
 
-    .line 3804
+    .line 3839
     .local v79, "newRuleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
     invoke-virtual {v11}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
 
     move-result-object v79
 
-    .line 3805
+    .line 3840
     const/16 v73, 0x0
 
     .restart local v73    # "i":I
@@ -17622,7 +17946,7 @@
 
     if-ge v0, v2, :cond_36
 
-    .line 3806
+    .line 3841
     move-object/from16 v0, v79
 
     move/from16 v1, v73
@@ -17633,7 +17957,7 @@
 
     check-cast v78, Lcom/mediatek/simservs/client/policy/Rule;
 
-    .line 3807
+    .line 3842
     .restart local v78    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     move-object/from16 v0, v78
 
@@ -17641,12 +17965,12 @@
 
     invoke-virtual {v10, v2}, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;->saveRule(Ljava/lang/String;)V
 
-    .line 3805
+    .line 3840
     add-int/lit8 v73, v73, 0x1
 
     goto :goto_d
 
-    .line 3811
+    .line 3846
     .end local v11    # "newRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     .end local v67    # "addedNewRule":Z
     .end local v73    # "i":I
@@ -17671,40 +17995,40 @@
 
     if-eqz v2, :cond_50
 
-    .line 3814
+    .line 3849
     :cond_3c
     invoke-virtual/range {v75 .. v75}, Lcom/mediatek/simservs/client/IncomingCommunicationBarring;->getRuleSet()Lcom/mediatek/simservs/client/policy/RuleSet;
 
     move-result-object v74
 
-    .line 3815
+    .line 3850
     .local v74, "iRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     const/16 v84, 0x0
 
-    .line 3816
+    .line 3851
     .restart local v84    # "ruleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
     invoke-virtual/range {v75 .. v75}, Lcom/mediatek/simservs/client/IncomingCommunicationBarring;->createNewRuleSet()Lcom/mediatek/simservs/client/policy/RuleSet;
 
     move-result-object v11
 
-    .line 3817
+    .line 3852
     .restart local v11    # "newRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     const/16 v67, 0x0
 
-    .line 3819
+    .line 3854
     .restart local v67    # "addedNewRule":Z
     if-eqz v74, :cond_40
 
-    .line 3820
+    .line 3855
     invoke-virtual/range {v74 .. v74}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
 
     move-result-object v84
 
-    .line 3826
+    .line 3861
     :goto_e
     if-eqz v84, :cond_4a
 
-    .line 3827
+    .line 3862
     const/16 v73, 0x0
 
     .restart local v73    # "i":I
@@ -17717,7 +18041,7 @@
 
     if-ge v0, v2, :cond_4a
 
-    .line 3828
+    .line 3863
     move-object/from16 v0, v84
 
     move/from16 v1, v73
@@ -17728,27 +18052,27 @@
 
     check-cast v12, Lcom/mediatek/simservs/client/policy/Rule;
 
-    .line 3829
+    .line 3864
     .restart local v12    # "r":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/policy/Rule;->getConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v69
 
-    .line 3830
+    .line 3865
     .restart local v69    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/policy/Rule;->getActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v66
 
-    .line 3831
+    .line 3866
     .restart local v66    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     const/16 v77, 0x0
 
-    .line 3833
+    .line 3868
     .restart local v77    # "mediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     if-eqz v69, :cond_42
 
-    .line 3834
+    .line 3869
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -17813,24 +18137,24 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3835
+    .line 3870
     invoke-virtual/range {v69 .. v69}, Lcom/mediatek/simservs/client/policy/Conditions;->getMedias()Ljava/util/List;
 
     move-result-object v77
 
-    .line 3836
+    .line 3871
     invoke-virtual/range {v69 .. v69}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendRoaming()Z
 
     move-result v2
 
     if-eqz v2, :cond_41
 
-    .line 3837
+    .line 3872
     iget-object v0, v12, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
     move-object/from16 v49, v0
 
-    .line 3838
+    .line 3873
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -17855,7 +18179,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3851
+    .line 3886
     :cond_3d
     :goto_10
     const-string v2, "IR"
@@ -17886,14 +18210,14 @@
 
     if-eqz v2, :cond_45
 
-    .line 3855
+    .line 3890
     if-nez v15, :cond_3e
 
     if-nez v15, :cond_44
 
     if-nez v62, :cond_44
 
-    .line 3857
+    .line 3892
     :cond_3e
     move-object/from16 v0, p0
 
@@ -17926,7 +18250,7 @@
 
     move-result v67
 
-    .line 3861
+    .line 3896
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -17951,10 +18275,10 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3863
+    .line 3898
     if-eqz v15, :cond_43
 
-    .line 3864
+    .line 3899
     const/16 v24, -0x1
 
     const/16 v25, -0x1
@@ -17973,7 +18297,7 @@
 
     move-result-object v78
 
-    .line 3867
+    .line 3902
     .restart local v78    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     if-eqz v78, :cond_3f
 
@@ -17994,7 +18318,7 @@
 
     if-ne v2, v0, :cond_3f
 
-    .line 3868
+    .line 3903
     move-object/from16 v0, v78
 
     iget-object v2, v0, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
@@ -18003,7 +18327,7 @@
 
     invoke-virtual {v0, v2}, Lcom/mediatek/simservs/client/IncomingCommunicationBarring;->saveRule(Ljava/lang/String;)V
 
-    .line 3827
+    .line 3862
     .end local v78    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     :cond_3f
     :goto_11
@@ -18011,7 +18335,7 @@
 
     goto/16 :goto_f
 
-    .line 3822
+    .line 3857
     .end local v12    # "r":Lcom/mediatek/simservs/client/policy/Rule;
     .end local v66    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .end local v69    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
@@ -18026,7 +18350,7 @@
 
     goto/16 :goto_e
 
-    .line 3840
+    .line 3875
     .restart local v12    # "r":Lcom/mediatek/simservs/client/policy/Rule;
     .restart local v66    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .restart local v69    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
@@ -18037,7 +18361,7 @@
 
     move-object/from16 v57, v0
 
-    .line 3841
+    .line 3876
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -18064,7 +18388,7 @@
 
     goto/16 :goto_10
 
-    .line 3844
+    .line 3879
     :cond_42
     const-string v2, "MMTelSS"
 
@@ -18088,7 +18412,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3845
+    .line 3880
     const-string v2, "AI"
 
     move-object/from16 v0, v57
@@ -18099,12 +18423,12 @@
 
     if-eqz v2, :cond_3d
 
-    .line 3846
+    .line 3881
     iget-object v0, v12, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
     move-object/from16 v57, v0
 
-    .line 3847
+    .line 3882
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -18131,13 +18455,13 @@
 
     goto/16 :goto_10
 
-    .line 3871
+    .line 3906
     :cond_43
     const/16 v62, 0x1
 
     goto :goto_11
 
-    .line 3873
+    .line 3908
     :cond_44
     if-nez v15, :cond_3f
 
@@ -18147,7 +18471,7 @@
 
     if-ne v0, v2, :cond_3f
 
-    .line 3874
+    .line 3909
     const-string v2, "MMTelSS"
 
     const-string v3, "Already add rule for BAICr with serviceClass=0 case previously"
@@ -18156,7 +18480,7 @@
 
     goto :goto_11
 
-    .line 3877
+    .line 3912
     :cond_45
     const-string v2, "AI"
 
@@ -18186,14 +18510,14 @@
 
     if-eqz v2, :cond_49
 
-    .line 3881
+    .line 3916
     if-nez v15, :cond_46
 
     if-nez v15, :cond_48
 
     if-nez v61, :cond_48
 
-    .line 3882
+    .line 3917
     :cond_46
     move-object/from16 v0, p0
 
@@ -18226,7 +18550,7 @@
 
     move-result v67
 
-    .line 3886
+    .line 3921
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -18251,10 +18575,10 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3888
+    .line 3923
     if-eqz v15, :cond_47
 
-    .line 3889
+    .line 3924
     const/16 v24, -0x1
 
     const/16 v25, -0x1
@@ -18273,7 +18597,7 @@
 
     move-result-object v78
 
-    .line 3892
+    .line 3927
     .restart local v78    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     if-eqz v78, :cond_3f
 
@@ -18294,7 +18618,7 @@
 
     if-ne v2, v0, :cond_3f
 
-    .line 3893
+    .line 3928
     move-object/from16 v0, v78
 
     iget-object v2, v0, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
@@ -18305,14 +18629,14 @@
 
     goto/16 :goto_11
 
-    .line 3896
+    .line 3931
     .end local v78    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     :cond_47
     const/16 v61, 0x1
 
     goto/16 :goto_11
 
-    .line 3898
+    .line 3933
     :cond_48
     if-nez v15, :cond_3f
 
@@ -18322,7 +18646,7 @@
 
     if-ne v0, v2, :cond_3f
 
-    .line 3899
+    .line 3934
     const-string v2, "MMTelSS"
 
     const-string v3, "Already add rule for BAIC with serviceClass=0 case previously"
@@ -18331,7 +18655,7 @@
 
     goto/16 :goto_11
 
-    .line 3904
+    .line 3939
     :cond_49
     const-string v2, "MMTelSS"
 
@@ -18339,7 +18663,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3905
+    .line 3940
     const/4 v2, -0x1
 
     const/4 v3, -0x1
@@ -18350,7 +18674,7 @@
 
     goto/16 :goto_11
 
-    .line 3912
+    .line 3947
     .end local v12    # "r":Lcom/mediatek/simservs/client/policy/Rule;
     .end local v66    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .end local v69    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
@@ -18359,7 +18683,7 @@
     :cond_4a
     if-nez v67, :cond_4c
 
-    .line 3916
+    .line 3951
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -18402,10 +18726,10 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3917
+    .line 3952
     const-string v41, ""
 
-    .line 3919
+    .line 3954
     .restart local v41    # "newRuleID":Ljava/lang/String;
     const-string v2, "AI"
 
@@ -18415,10 +18739,10 @@
 
     if-eqz v2, :cond_4d
 
-    .line 3920
+    .line 3955
     move-object/from16 v41, v57
 
-    .line 3924
+    .line 3959
     :cond_4b
     :goto_12
     const-string v2, "MMTelSS"
@@ -18445,7 +18769,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3925
+    .line 3960
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -18475,7 +18799,7 @@
 
     move-result v67
 
-    .line 3932
+    .line 3967
     .end local v41    # "newRuleID":Ljava/lang/String;
     :cond_4c
     invoke-virtual {v11}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
@@ -18484,7 +18808,7 @@
 
     if-eqz v2, :cond_4e
 
-    .line 3933
+    .line 3968
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -18511,7 +18835,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3938
+    .line 3973
     :goto_13
     move-object/from16 v0, p0
 
@@ -18524,12 +18848,12 @@
 
     if-nez v2, :cond_4f
 
-    .line 3939
+    .line 3974
     invoke-virtual/range {v75 .. v75}, Lcom/mediatek/simservs/client/IncomingCommunicationBarring;->saveRuleSet()V
 
     goto/16 :goto_c
 
-    .line 3921
+    .line 3956
     .restart local v41    # "newRuleID":Ljava/lang/String;
     :cond_4d
     const-string v2, "IR"
@@ -18540,12 +18864,12 @@
 
     if-eqz v2, :cond_4b
 
-    .line 3922
+    .line 3957
     move-object/from16 v41, v49
 
     goto :goto_12
 
-    .line 3935
+    .line 3970
     .end local v41    # "newRuleID":Ljava/lang/String;
     :cond_4e
     const-string v2, "MMTelSS"
@@ -18556,7 +18880,7 @@
 
     goto :goto_13
 
-    .line 3941
+    .line 3976
     :cond_4f
     const/4 v2, 0x1
 
@@ -18564,16 +18888,16 @@
 
     if-le v0, v2, :cond_36
 
-    .line 3942
+    .line 3977
     const/16 v79, 0x0
 
-    .line 3943
+    .line 3978
     .restart local v79    # "newRuleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
     invoke-virtual {v11}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
 
     move-result-object v79
 
-    .line 3944
+    .line 3979
     const/16 v73, 0x0
 
     .restart local v73    # "i":I
@@ -18586,7 +18910,7 @@
 
     if-ge v0, v2, :cond_36
 
-    .line 3945
+    .line 3980
     move-object/from16 v0, v79
 
     move/from16 v1, v73
@@ -18597,7 +18921,7 @@
 
     check-cast v78, Lcom/mediatek/simservs/client/policy/Rule;
 
-    .line 3946
+    .line 3981
     .restart local v78    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     move-object/from16 v0, v78
 
@@ -18607,12 +18931,12 @@
 
     invoke-virtual {v0, v2}, Lcom/mediatek/simservs/client/IncomingCommunicationBarring;->saveRule(Ljava/lang/String;)V
 
-    .line 3944
+    .line 3979
     add-int/lit8 v73, v73, 0x1
 
     goto :goto_14
 
-    .line 3950
+    .line 3985
     .end local v11    # "newRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     .end local v67    # "addedNewRule":Z
     .end local v73    # "i":I
@@ -18631,45 +18955,45 @@
 
     if-nez v14, :cond_5c
 
-    .line 3952
+    .line 3987
     const/16 v21, 0x0
 
-    .line 3953
+    .line 3988
     .local v21, "iNewRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     const/4 v4, 0x0
 
-    .line 3954
+    .line 3989
     .local v4, "oNewRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     const/16 v81, 0x0
 
-    .line 3955
+    .line 3990
     .local v81, "oldRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     const/16 v84, 0x0
 
-    .line 3959
+    .line 3994
     .restart local v84    # "ruleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
     invoke-virtual {v10}, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;->getRuleSet()Lcom/mediatek/simservs/client/policy/RuleSet;
 
     move-result-object v81
 
-    .line 3960
+    .line 3995
     if-eqz v81, :cond_51
 
-    .line 3961
+    .line 3996
     invoke-virtual/range {v81 .. v81}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
 
     move-result-object v84
 
-    .line 3966
+    .line 4001
     :goto_15
     if-eqz v84, :cond_56
 
-    .line 3967
+    .line 4002
     invoke-virtual {v10}, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;->createNewRuleSet()Lcom/mediatek/simservs/client/policy/RuleSet;
 
     move-result-object v4
 
-    .line 3968
+    .line 4003
     const/16 v73, 0x0
 
     .restart local v73    # "i":I
@@ -18682,7 +19006,7 @@
 
     if-ge v0, v2, :cond_52
 
-    .line 3969
+    .line 4004
     move-object/from16 v0, v84
 
     move/from16 v1, v73
@@ -18693,7 +19017,7 @@
 
     check-cast v12, Lcom/mediatek/simservs/client/policy/Rule;
 
-    .line 3970
+    .line 4005
     .restart local v12    # "r":Lcom/mediatek/simservs/client/policy/Rule;
     const/4 v5, 0x1
 
@@ -18707,12 +19031,12 @@
 
     invoke-virtual/range {v2 .. v7}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->copyOldRuleToNewRuleSetWithDisabledCB(Lcom/mediatek/simservs/client/policy/Rule;Lcom/mediatek/simservs/client/policy/RuleSet;ZII)V
 
-    .line 3968
+    .line 4003
     add-int/lit8 v73, v73, 0x1
 
     goto :goto_16
 
-    .line 3963
+    .line 3998
     .end local v12    # "r":Lcom/mediatek/simservs/client/policy/Rule;
     .end local v73    # "i":I
     :cond_51
@@ -18724,7 +19048,7 @@
 
     goto :goto_15
 
-    .line 3973
+    .line 4008
     .restart local v73    # "i":I
     :cond_52
     invoke-virtual {v4}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
@@ -18733,7 +19057,7 @@
 
     if-eqz v2, :cond_54
 
-    .line 3974
+    .line 4009
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -18760,7 +19084,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3978
+    .line 4013
     :goto_17
     move-object/from16 v0, p0
 
@@ -18773,10 +19097,10 @@
 
     if-nez v2, :cond_55
 
-    .line 3979
+    .line 4014
     invoke-virtual {v10}, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;->saveRuleSet()V
 
-    .line 3992
+    .line 4027
     .end local v73    # "i":I
     :cond_53
     :goto_18
@@ -18784,24 +19108,24 @@
 
     move-result-object v81
 
-    .line 3993
+    .line 4028
     if-eqz v81, :cond_57
 
-    .line 3994
+    .line 4029
     invoke-virtual/range {v81 .. v81}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
 
     move-result-object v84
 
-    .line 3999
+    .line 4034
     :goto_19
     if-eqz v84, :cond_5b
 
-    .line 4000
+    .line 4035
     invoke-virtual/range {v75 .. v75}, Lcom/mediatek/simservs/client/IncomingCommunicationBarring;->createNewRuleSet()Lcom/mediatek/simservs/client/policy/RuleSet;
 
     move-result-object v21
 
-    .line 4001
+    .line 4036
     const/16 v73, 0x0
 
     .restart local v73    # "i":I
@@ -18814,7 +19138,7 @@
 
     if-ge v0, v2, :cond_58
 
-    .line 4002
+    .line 4037
     move-object/from16 v0, v84
 
     move/from16 v1, v73
@@ -18825,7 +19149,7 @@
 
     check-cast v12, Lcom/mediatek/simservs/client/policy/Rule;
 
-    .line 4003
+    .line 4038
     .restart local v12    # "r":Lcom/mediatek/simservs/client/policy/Rule;
     const/16 v22, 0x1
 
@@ -18839,12 +19163,12 @@
 
     invoke-virtual/range {v19 .. v24}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->copyOldRuleToNewRuleSetWithDisabledCB(Lcom/mediatek/simservs/client/policy/Rule;Lcom/mediatek/simservs/client/policy/RuleSet;ZII)V
 
-    .line 4001
+    .line 4036
     add-int/lit8 v73, v73, 0x1
 
     goto :goto_1a
 
-    .line 3976
+    .line 4011
     .end local v12    # "r":Lcom/mediatek/simservs/client/policy/Rule;
     :cond_54
     const-string v2, "MMTelSS"
@@ -18855,17 +19179,17 @@
 
     goto :goto_17
 
-    .line 3981
+    .line 4016
     :cond_55
     const/16 v79, 0x0
 
-    .line 3982
+    .line 4017
     .restart local v79    # "newRuleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
     invoke-virtual {v4}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
 
     move-result-object v79
 
-    .line 3983
+    .line 4018
     const/16 v73, 0x0
 
     :goto_1b
@@ -18877,7 +19201,7 @@
 
     if-ge v0, v2, :cond_53
 
-    .line 3984
+    .line 4019
     move-object/from16 v0, v79
 
     move/from16 v1, v73
@@ -18888,7 +19212,7 @@
 
     check-cast v78, Lcom/mediatek/simservs/client/policy/Rule;
 
-    .line 3985
+    .line 4020
     .restart local v78    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     move-object/from16 v0, v78
 
@@ -18896,12 +19220,12 @@
 
     invoke-virtual {v10, v2}, Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;->saveRule(Ljava/lang/String;)V
 
-    .line 3983
+    .line 4018
     add-int/lit8 v73, v73, 0x1
 
     goto :goto_1b
 
-    .line 3989
+    .line 4024
     .end local v73    # "i":I
     .end local v78    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     .end local v79    # "newRuleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
@@ -18914,7 +19238,7 @@
 
     goto :goto_18
 
-    .line 3996
+    .line 4031
     :cond_57
     const-string v2, "MMTelSS"
 
@@ -18924,7 +19248,7 @@
 
     goto :goto_19
 
-    .line 4006
+    .line 4041
     .restart local v73    # "i":I
     :cond_58
     invoke-virtual/range {v21 .. v21}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
@@ -18933,7 +19257,7 @@
 
     if-eqz v2, :cond_59
 
-    .line 4007
+    .line 4042
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -18960,7 +19284,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4011
+    .line 4046
     :goto_1c
     move-object/from16 v0, p0
 
@@ -18973,12 +19297,12 @@
 
     if-nez v2, :cond_5a
 
-    .line 4012
+    .line 4047
     invoke-virtual/range {v75 .. v75}, Lcom/mediatek/simservs/client/IncomingCommunicationBarring;->saveRuleSet()V
 
     goto/16 :goto_c
 
-    .line 4009
+    .line 4044
     :cond_59
     const-string v2, "MMTelSS"
 
@@ -18988,17 +19312,17 @@
 
     goto :goto_1c
 
-    .line 4014
+    .line 4049
     :cond_5a
     const/16 v79, 0x0
 
-    .line 4015
+    .line 4050
     .restart local v79    # "newRuleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
     invoke-virtual/range {v21 .. v21}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
 
     move-result-object v79
 
-    .line 4016
+    .line 4051
     const/16 v73, 0x0
 
     :goto_1d
@@ -19010,7 +19334,7 @@
 
     if-ge v0, v2, :cond_36
 
-    .line 4017
+    .line 4052
     move-object/from16 v0, v79
 
     move/from16 v1, v73
@@ -19021,7 +19345,7 @@
 
     check-cast v78, Lcom/mediatek/simservs/client/policy/Rule;
 
-    .line 4018
+    .line 4053
     .restart local v78    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     move-object/from16 v0, v78
 
@@ -19031,12 +19355,12 @@
 
     invoke-virtual {v0, v2}, Lcom/mediatek/simservs/client/IncomingCommunicationBarring;->saveRule(Ljava/lang/String;)V
 
-    .line 4016
+    .line 4051
     add-int/lit8 v73, v73, 0x1
 
     goto :goto_1d
 
-    .line 4022
+    .line 4057
     .end local v73    # "i":I
     .end local v78    # "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     .end local v79    # "newRuleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
@@ -19049,7 +19373,7 @@
 
     goto/16 :goto_c
 
-    .line 4027
+    .line 4062
     .end local v4    # "oNewRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     .end local v21    # "iNewRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     .end local v81    # "oldRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
@@ -19088,7 +19412,7 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_2 .. :try_end_2} :catch_0
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 4042
+    .line 4077
     .end local v10    # "ocb":Lcom/mediatek/simservs/client/OutgoingCommunicationBarring;
     .end local v70    # "curTime":J
     .end local v75    # "icb":Lcom/mediatek/simservs/client/IncomingCommunicationBarring;
@@ -19101,31 +19425,31 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4043
+    .line 4078
     invoke-virtual/range {v86 .. v86}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
 
-    .line 4044
+    .line 4079
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_60
 
-    .line 4045
+    .line 4080
     invoke-virtual/range {v86 .. v86}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
 
     move-result v2
 
     if-eqz v2, :cond_5f
 
-    .line 4046
+    .line 4081
     const-string v2, "MMTelSS"
 
     const-string v3, "handleSetCB(): xcapException.isConnectionError()"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4047
+    .line 4082
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -19138,7 +19462,7 @@
 
     invoke-static {v2, v3, v5}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 4051
+    .line 4086
     :goto_1e
     move-object/from16 v0, p1
 
@@ -19146,7 +19470,7 @@
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4052
+    .line 4087
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -19158,7 +19482,7 @@
 
     if-eqz v2, :cond_5e
 
-    .line 4053
+    .line 4088
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -19170,13 +19494,13 @@
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 4055
+    .line 4090
     :cond_5e
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    .line 4049
+    .line 4084
     :cond_5f
     move-object/from16 v0, p1
 
@@ -19190,7 +19514,7 @@
 
     goto :goto_1e
 
-    .line 4087
+    .line 4122
     .end local v86    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     :cond_60
     move-object/from16 v0, p1
@@ -19199,7 +19523,7 @@
 
     if-eqz v2, :cond_61
 
-    .line 4088
+    .line 4123
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -19210,14 +19534,14 @@
 
     invoke-static {v2, v3, v5}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 4089
+    .line 4124
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4092
+    .line 4127
     :cond_61
     move-object/from16 v0, p0
 
@@ -19230,7 +19554,7 @@
 
     if-eqz v2, :cond_62
 
-    .line 4093
+    .line 4128
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -19242,7 +19566,7 @@
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 4096
+    .line 4131
     :cond_62
     const/4 v2, 0x0
 
@@ -19254,7 +19578,7 @@
     .param p1, "rr"    # Lcom/android/internal/telephony/MMTelSSRequest;
 
     .prologue
-    .line 3021
+    .line 3054
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -19263,7 +19587,7 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 3022
+    .line 3055
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -19272,7 +19596,7 @@
 
     move-result v83
 
-    .line 3023
+    .line 3056
     .local v83, "reqNo":I
     move-object/from16 v0, p1
 
@@ -19282,7 +19606,7 @@
 
     move-result v87
 
-    .line 3025
+    .line 3058
     .local v87, "serialNo":I
     move-object/from16 v0, p1
 
@@ -19292,7 +19616,7 @@
 
     move-result v14
 
-    .line 3026
+    .line 3059
     .local v14, "setCFAction":I
     move-object/from16 v0, p1
 
@@ -19302,7 +19626,7 @@
 
     move-result v13
 
-    .line 3027
+    .line 3060
     .local v13, "setCFReason":I
     move-object/from16 v0, p1
 
@@ -19312,7 +19636,7 @@
 
     move-result v15
 
-    .line 3028
+    .line 3061
     .local v15, "setCFServiceClass":I
     move-object/from16 v0, p1
 
@@ -19322,7 +19646,7 @@
 
     move-result-object v16
 
-    .line 3029
+    .line 3062
     .local v16, "setCFNumber":Ljava/lang/String;
     move-object/from16 v0, p1
 
@@ -19332,7 +19656,7 @@
 
     move-result v17
 
-    .line 3030
+    .line 3063
     .local v17, "setCFTimeSeconds":I
     move-object/from16 v0, p1
 
@@ -19342,51 +19666,51 @@
 
     move-result v8
 
-    .line 3031
+    .line 3064
     .local v8, "phoneId":I
     const/16 v82, 0x0
 
-    .line 3033
+    .line 3066
     .local v82, "reportFlag":I
     const/16 v68, 0x0
 
-    .line 3034
+    .line 3067
     .local v68, "AddRuleForCFUWithAllMediaType":Z
     const/16 v64, 0x0
 
-    .line 3035
+    .line 3068
     .local v64, "AddRuleForCFBWithAllMediaType":Z
     const/16 v65, 0x0
 
-    .line 3036
+    .line 3069
     .local v65, "AddRuleForCFNoAnswerWithAllMediaType":Z
     const/16 v66, 0x0
 
-    .line 3037
+    .line 3070
     .local v66, "AddRuleForCFNotReachableWithAllMediaType":Z
     const/16 v67, 0x0
 
-    .line 3039
+    .line 3072
     .local v67, "AddRuleForCFNotRegisteredWithAllMediaType":Z
     const-string v60, "CFU"
 
-    .line 3040
+    .line 3073
     .local v60, "CFU_RuleID":Ljava/lang/String;
     const-string v18, "CFB"
 
-    .line 3041
+    .line 3074
     .local v18, "CFB_RuleID":Ljava/lang/String;
     const-string v30, "CFNoAnswer"
 
-    .line 3042
+    .line 3075
     .local v30, "CFNoAnswer_RuleID":Ljava/lang/String;
     const-string v40, "CFNotReachable"
 
-    .line 3043
+    .line 3076
     .local v40, "CFNotReachable_RuleID":Ljava/lang/String;
     const-string v50, "CFNotReachable"
 
-    .line 3045
+    .line 3078
     .local v50, "CFNotRegistered_RuleID":Ljava/lang/String;
     const-string v2, "MMTelSS"
 
@@ -19468,7 +19792,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3047
+    .line 3080
     const-string v2, "persist.radio.xcap.cfn"
 
     const-string v3, ""
@@ -19477,7 +19801,7 @@
 
     move-result-object v69
 
-    .line 3048
+    .line 3081
     .local v69, "XcapCFNum":Ljava/lang/String;
     const-string v2, "sip:"
 
@@ -19509,7 +19833,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 3049
+    .line 3082
     :cond_0
     const-string v2, "MMTelSS"
 
@@ -19535,7 +19859,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3050
+    .line 3083
     const-string v2, "persist.radio.ss.mode"
 
     const-string v3, "Prefer XCAP"
@@ -19544,7 +19868,7 @@
 
     move-result-object v88
 
-    .line 3051
+    .line 3084
     .local v88, "ss_mode":Ljava/lang/String;
     const-string v2, "MMTelSS"
 
@@ -19570,7 +19894,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3052
+    .line 3085
     const-string v2, "Prefer XCAP"
 
     move-object/from16 v0, v88
@@ -19581,20 +19905,20 @@
 
     if-eqz v2, :cond_1
 
-    .line 3053
+    .line 3086
     move-object/from16 v16, v69
 
-    .line 3058
+    .line 3091
     .end local v88    # "ss_mode":Ljava/lang/String;
     :cond_1
     const/16 v2, 0x210
 
     if-ne v15, v2, :cond_2
 
-    .line 3059
+    .line 3092
     const/16 v15, 0x200
 
-    .line 3062
+    .line 3095
     :cond_2
     invoke-static {v8}, Lcom/android/internal/telephony/MMTelSSUtils;->isPreferXcap(I)Z
 
@@ -19602,21 +19926,21 @@
 
     if-nez v2, :cond_4
 
-    .line 3063
+    .line 3096
     const-string v2, "MMTelSS"
 
     const-string v3, "handleSetCF(): !isPreferXcap()"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3064
+    .line 3097
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_3
 
-    .line 3065
+    .line 3098
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -19629,35 +19953,35 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 3066
+    .line 3099
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 3068
+    .line 3101
     :cond_3
     const/4 v2, 0x0
 
-    .line 3432
+    .line 3467
     :goto_0
     return v2
 
-    .line 3073
+    .line 3106
     :cond_4
     const/16 v20, 0x1
 
-    .line 3075
+    .line 3108
     .local v20, "num_of_expansion":I
     const/4 v2, 0x5
 
     if-ne v13, v2, :cond_7
 
-    .line 3077
+    .line 3110
     const/16 v20, 0x4
 
-    .line 3084
+    .line 3117
     :cond_5
     :goto_1
     :try_start_0
@@ -19665,7 +19989,7 @@
 
     move-result-wide v74
 
-    .line 3085
+    .line 3118
     .local v74, "curTime":J
     const-string v2, "MMTelSS"
 
@@ -19739,7 +20063,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3088
+    .line 3121
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -19750,7 +20074,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
 
-    .line 3089
+    .line 3122
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -19761,7 +20085,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
 
-    .line 3090
+    .line 3123
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -19772,7 +20096,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
 
-    .line 3092
+    .line 3125
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -19785,7 +20109,7 @@
 
     if-eqz v2, :cond_8
 
-    .line 3093
+    .line 3126
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -19814,14 +20138,14 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3094
+    .line 3127
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_6
 
-    .line 3095
+    .line 3128
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -19834,32 +20158,32 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 3096
+    .line 3129
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 3098
+    .line 3131
     :cond_6
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    .line 3078
+    .line 3111
     .end local v74    # "curTime":J
     :cond_7
     const/4 v2, 0x4
 
     if-ne v13, v2, :cond_5
 
-    .line 3080
+    .line 3113
     const/16 v20, 0x5
 
     goto/16 :goto_1
 
-    .line 3100
+    .line 3133
     .restart local v74    # "curTime":J
     :cond_8
     move-object/from16 v0, p0
@@ -19869,7 +20193,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 3101
+    .line 3134
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -19906,7 +20230,7 @@
 
     invoke-virtual/range {v2 .. v8}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 3103
+    .line 3136
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -19944,7 +20268,7 @@
 
     if-eqz v2, :cond_e
 
-    .line 3105
+    .line 3138
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -19976,7 +20300,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3106
+    .line 3139
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -19986,7 +20310,7 @@
 
     move-result-object v10
 
-    .line 3107
+    .line 3140
     .local v10, "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     move-object/from16 v0, p0
 
@@ -19999,10 +20323,10 @@
 
     invoke-virtual {v10, v2}, Lcom/mediatek/simservs/client/CommunicationDiversion;->setNetwork(Landroid/net/Network;)V
 
-    .line 3108
+    .line 3141
     invoke-virtual {v10}, Lcom/mediatek/simservs/client/CommunicationDiversion;->refresh()V
 
-    .line 3109
+    .line 3142
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -20012,7 +20336,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v2, v0, v1}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 3125
+    .line 3158
     :goto_2
     const/16 v78, 0x0
 
@@ -20024,19 +20348,19 @@
 
     if-ge v0, v1, :cond_40
 
-    .line 3126
+    .line 3159
     const/4 v2, 0x1
 
     move/from16 v0, v20
 
     if-eq v0, v2, :cond_9
 
-    .line 3127
+    .line 3160
     if-nez v78, :cond_11
 
     const/4 v13, 0x1
 
-    .line 3135
+    .line 3168
     :cond_9
     :goto_4
     add-int/lit8 v2, v20, -0x1
@@ -20045,10 +20369,10 @@
 
     if-ne v0, v2, :cond_a
 
-    .line 3136
+    .line 3169
     const/16 v82, 0x1
 
-    .line 3139
+    .line 3172
     :cond_a
     const-string v2, "MMTelSS"
 
@@ -20096,39 +20420,39 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3141
+    .line 3174
     invoke-virtual {v10}, Lcom/mediatek/simservs/client/CommunicationDiversion;->getRuleSet()Lcom/mediatek/simservs/client/policy/RuleSet;
 
     move-result-object v86
 
-    .line 3142
+    .line 3175
     .local v86, "ruleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     const/16 v85, 0x0
 
-    .line 3143
+    .line 3176
     .local v85, "ruleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
     invoke-virtual {v10}, Lcom/mediatek/simservs/client/CommunicationDiversion;->createNewRuleSet()Lcom/mediatek/simservs/client/policy/RuleSet;
 
     move-result-object v11
 
-    .line 3144
+    .line 3177
     .local v11, "newRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     const/16 v71, 0x0
 
-    .line 3147
+    .line 3180
     .local v71, "addedNewRule":Z
     if-eqz v86, :cond_15
 
-    .line 3148
+    .line 3181
     invoke-virtual/range {v86 .. v86}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
 
     move-result-object v85
 
-    .line 3154
+    .line 3187
     :goto_5
     if-eqz v85, :cond_2e
 
-    .line 3156
+    .line 3189
     const/16 v77, 0x0
 
     .local v77, "i":I
@@ -20141,7 +20465,7 @@
 
     if-ge v0, v2, :cond_2e
 
-    .line 3157
+    .line 3190
     move-object/from16 v0, v85
 
     move/from16 v1, v77
@@ -20152,32 +20476,32 @@
 
     check-cast v12, Lcom/mediatek/simservs/client/policy/Rule;
 
-    .line 3158
+    .line 3191
     .local v12, "r":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/policy/Rule;->getConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v73
 
-    .line 3159
+    .line 3192
     .local v73, "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/policy/Rule;->getActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v70
 
-    .line 3160
+    .line 3193
     .local v70, "action":Lcom/mediatek/simservs/client/policy/Actions;
     const/16 v79, 0x0
 
-    .line 3162
+    .line 3195
     .local v79, "mediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     if-eqz v73, :cond_1a
 
-    .line 3163
+    .line 3196
     invoke-virtual/range {v73 .. v73}, Lcom/mediatek/simservs/client/policy/Conditions;->getMedias()Ljava/util/List;
 
     move-result-object v79
 
-    .line 3164
+    .line 3197
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -20246,19 +20570,19 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3165
+    .line 3198
     invoke-virtual/range {v73 .. v73}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendBusy()Z
 
     move-result v2
 
     if-eqz v2, :cond_16
 
-    .line 3166
+    .line 3199
     iget-object v0, v12, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
     move-object/from16 v18, v0
 
-    .line 3167
+    .line 3200
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -20283,7 +20607,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3191
+    .line 3224
     :cond_b
     :goto_7
     const/4 v2, 0x1
@@ -20310,14 +20634,14 @@
 
     if-eqz v2, :cond_1c
 
-    .line 3195
+    .line 3228
     if-nez v15, :cond_c
 
     if-nez v15, :cond_1b
 
     if-nez v64, :cond_1b
 
-    .line 3196
+    .line 3229
     :cond_c
     move-object/from16 v0, p0
 
@@ -20336,7 +20660,7 @@
 
     move-result v71
 
-    .line 3200
+    .line 3233
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -20361,20 +20685,20 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3201
+    .line 3234
     if-nez v15, :cond_d
 
-    .line 3202
+    .line 3235
     const/16 v64, 0x1
 
-    .line 3156
+    .line 3189
     :cond_d
     :goto_8
     add-int/lit8 v77, v77, 0x1
 
     goto/16 :goto_6
 
-    .line 3110
+    .line 3143
     .end local v10    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     .end local v11    # "newRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     .end local v12    # "r":Lcom/mediatek/simservs/client/policy/Rule;
@@ -20439,7 +20763,7 @@
 
     if-gez v2, :cond_f
 
-    .line 3113
+    .line 3146
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -20471,7 +20795,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3114
+    .line 3147
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -20481,7 +20805,7 @@
 
     move-result-object v10
 
-    .line 3115
+    .line 3148
     .restart local v10    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     move-object/from16 v0, p0
 
@@ -20499,13 +20823,13 @@
 
     goto/16 :goto_2
 
-    .line 3378
+    .line 3413
     .end local v10    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     .end local v74    # "curTime":J
     :catch_0
     move-exception v89
 
-    .line 3379
+    .line 3414
     .local v89, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     move-object/from16 v0, p0
 
@@ -20516,7 +20840,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCache:Lcom/mediatek/simservs/client/CommunicationDiversion;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1602(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationDiversion;)Lcom/mediatek/simservs/client/CommunicationDiversion;
 
-    .line 3380
+    .line 3415
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -20526,7 +20850,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1802(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 3381
+    .line 3416
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -20536,7 +20860,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 3383
+    .line 3418
     invoke-virtual/range {v89 .. v89}, Lcom/mediatek/simservs/xcap/XcapException;->getHttpErrorCode()I
 
     move-result v2
@@ -20545,19 +20869,19 @@
 
     if-ne v2, v3, :cond_3d
 
-    .line 3384
+    .line 3419
     const-string v2, "MMTelSS"
 
     const-string v3, "handleSetCF(): HTTP_ERROR_CODE_412"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3385
+    .line 3420
     const/16 v2, 0x19c
 
     goto/16 :goto_0
 
-    .line 3117
+    .line 3150
     .end local v89    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     .restart local v74    # "curTime":J
     :cond_f
@@ -20582,7 +20906,7 @@
 
     move-result-object v10
 
-    .line 3118
+    .line 3151
     .restart local v10    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     move-object/from16 v0, p0
 
@@ -20591,7 +20915,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCache:Lcom/mediatek/simservs/client/CommunicationDiversion;
     invoke-static {v2, v10}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1602(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationDiversion;)Lcom/mediatek/simservs/client/CommunicationDiversion;
 
-    .line 3119
+    .line 3152
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -20599,7 +20923,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCachePhoneId:I
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1802(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 3120
+    .line 3153
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -20609,7 +20933,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v2, v0, v1}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 3121
+    .line 3154
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -20658,13 +20982,13 @@
 
     goto/16 :goto_2
 
-    .line 3402
+    .line 3437
     .end local v10    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     .end local v74    # "curTime":J
     :catch_1
     move-exception v76
 
-    .line 3405
+    .line 3440
     .local v76, "e":Ljava/lang/Exception;
     const-string v2, "MMTelSS"
 
@@ -20672,7 +20996,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3406
+    .line 3441
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -20682,7 +21006,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCache:Lcom/mediatek/simservs/client/CommunicationDiversion;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1602(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationDiversion;)Lcom/mediatek/simservs/client/CommunicationDiversion;
 
-    .line 3407
+    .line 3442
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -20692,7 +21016,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1802(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 3408
+    .line 3443
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -20702,10 +21026,10 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 3410
+    .line 3445
     invoke-virtual/range {v76 .. v76}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 3411
+    .line 3446
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -20718,14 +21042,14 @@
 
     if-ne v0, v2, :cond_40
 
-    .line 3412
+    .line 3447
     const/4 v2, 0x2
 
     invoke-static {v2}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v72
 
-    .line 3413
+    .line 3448
     .local v72, "ce":Lcom/android/internal/telephony/CommandException;
     move-object/from16 v0, p1
 
@@ -20737,14 +21061,14 @@
 
     invoke-static {v2, v3, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 3414
+    .line 3449
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 3415
+    .line 3450
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -20756,7 +21080,7 @@
 
     if-eqz v2, :cond_10
 
-    .line 3416
+    .line 3451
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -20768,13 +21092,13 @@
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 3418
+    .line 3453
     :cond_10
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    .line 3128
+    .line 3161
     .end local v72    # "ce":Lcom/android/internal/telephony/CommandException;
     .end local v76    # "e":Ljava/lang/Exception;
     .restart local v10    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
@@ -20791,7 +21115,7 @@
 
     goto/16 :goto_4
 
-    .line 3129
+    .line 3162
     :cond_12
     const/4 v2, 0x2
 
@@ -20803,7 +21127,7 @@
 
     goto/16 :goto_4
 
-    .line 3130
+    .line 3163
     :cond_13
     const/4 v2, 0x3
 
@@ -20815,7 +21139,7 @@
 
     goto/16 :goto_4
 
-    .line 3131
+    .line 3164
     :cond_14
     const/4 v2, 0x4
 
@@ -20827,7 +21151,7 @@
 
     goto/16 :goto_4
 
-    .line 3150
+    .line 3183
     .restart local v11    # "newRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     .restart local v71    # "addedNewRule":Z
     .restart local v85    # "ruleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
@@ -20842,7 +21166,7 @@
 
     goto/16 :goto_5
 
-    .line 3168
+    .line 3201
     .restart local v12    # "r":Lcom/mediatek/simservs/client/policy/Rule;
     .restart local v70    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .restart local v73    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
@@ -20855,12 +21179,12 @@
 
     if-eqz v2, :cond_17
 
-    .line 3169
+    .line 3202
     iget-object v0, v12, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
     move-object/from16 v30, v0
 
-    .line 3170
+    .line 3203
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -20887,7 +21211,7 @@
 
     goto/16 :goto_7
 
-    .line 3171
+    .line 3204
     :cond_17
     invoke-virtual/range {v73 .. v73}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendNotReachable()Z
 
@@ -20895,12 +21219,12 @@
 
     if-eqz v2, :cond_18
 
-    .line 3172
+    .line 3205
     iget-object v0, v12, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
     move-object/from16 v40, v0
 
-    .line 3173
+    .line 3206
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -20927,7 +21251,7 @@
 
     goto/16 :goto_7
 
-    .line 3174
+    .line 3207
     :cond_18
     invoke-virtual/range {v73 .. v73}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendNotRegistered()Z
 
@@ -20935,12 +21259,12 @@
 
     if-eqz v2, :cond_19
 
-    .line 3175
+    .line 3208
     iget-object v0, v12, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
     move-object/from16 v50, v0
 
-    .line 3176
+    .line 3209
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -20967,13 +21291,13 @@
 
     goto/16 :goto_7
 
-    .line 3178
+    .line 3211
     :cond_19
     iget-object v0, v12, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
     move-object/from16 v60, v0
 
-    .line 3179
+    .line 3212
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -21000,7 +21324,7 @@
 
     goto/16 :goto_7
 
-    .line 3182
+    .line 3215
     :cond_1a
     const-string v2, "MMTelSS"
 
@@ -21024,7 +21348,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3183
+    .line 3216
     const-string v2, "CFU"
 
     move-object/from16 v0, v60
@@ -21035,12 +21359,12 @@
 
     if-eqz v2, :cond_b
 
-    .line 3185
+    .line 3218
     iget-object v0, v12, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
     move-object/from16 v60, v0
 
-    .line 3186
+    .line 3219
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -21067,7 +21391,7 @@
 
     goto/16 :goto_7
 
-    .line 3204
+    .line 3237
     :cond_1b
     if-nez v15, :cond_d
 
@@ -21077,7 +21401,7 @@
 
     if-ne v0, v2, :cond_d
 
-    .line 3205
+    .line 3238
     const-string v2, "MMTelSS"
 
     const-string v3, "Already add rule for CFB with serviceClass=0 case previously"
@@ -21086,7 +21410,7 @@
 
     goto/16 :goto_8
 
-    .line 3208
+    .line 3241
     :cond_1c
     const/4 v2, 0x2
 
@@ -21112,14 +21436,14 @@
 
     if-eqz v2, :cond_22
 
-    .line 3212
+    .line 3245
     if-nez v15, :cond_1d
 
     if-nez v15, :cond_21
 
     if-nez v65, :cond_21
 
-    .line 3213
+    .line 3246
     :cond_1d
     move-object/from16 v0, p0
 
@@ -21156,7 +21480,7 @@
 
     move-result v71
 
-    .line 3217
+    .line 3250
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -21181,7 +21505,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3220
+    .line 3253
     const/4 v2, 0x1
 
     move/from16 v0, v71
@@ -21196,7 +21520,7 @@
 
     if-ne v14, v2, :cond_1f
 
-    .line 3221
+    .line 3254
     :cond_1e
     const-string v2, "MMTelSS"
 
@@ -21236,7 +21560,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3222
+    .line 3255
     if-lez v17, :cond_20
 
     invoke-virtual {v10}, Lcom/mediatek/simservs/client/CommunicationDiversion;->getNoReplyTimer()I
@@ -21247,22 +21571,22 @@
 
     if-le v2, v3, :cond_20
 
-    .line 3223
+    .line 3256
     move/from16 v0, v17
 
     invoke-virtual {v10, v0}, Lcom/mediatek/simservs/client/CommunicationDiversion;->setNoReplyTimer(I)V
 
-    .line 3230
+    .line 3263
     :cond_1f
     :goto_9
     if-nez v15, :cond_d
 
-    .line 3231
+    .line 3264
     const/16 v65, 0x1
 
     goto/16 :goto_8
 
-    .line 3225
+    .line 3258
     :cond_20
     const-string v2, "MMTelSS"
 
@@ -21290,7 +21614,7 @@
 
     goto :goto_9
 
-    .line 3233
+    .line 3266
     :cond_21
     if-nez v15, :cond_d
 
@@ -21300,7 +21624,7 @@
 
     if-ne v0, v2, :cond_d
 
-    .line 3234
+    .line 3267
     const-string v2, "MMTelSS"
 
     const-string v3, "Already add rule for CFNoAnswer with serviceClass=0 case previously"
@@ -21309,7 +21633,7 @@
 
     goto/16 :goto_8
 
-    .line 3237
+    .line 3270
     :cond_22
     const/4 v2, 0x3
 
@@ -21335,14 +21659,14 @@
 
     if-eqz v2, :cond_25
 
-    .line 3241
+    .line 3274
     if-nez v15, :cond_23
 
     if-nez v15, :cond_24
 
     if-nez v66, :cond_24
 
-    .line 3242
+    .line 3275
     :cond_23
     move-object/from16 v0, p0
 
@@ -21379,7 +21703,7 @@
 
     move-result v71
 
-    .line 3246
+    .line 3279
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -21404,15 +21728,15 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3247
+    .line 3280
     if-nez v15, :cond_d
 
-    .line 3248
+    .line 3281
     const/16 v66, 0x1
 
     goto/16 :goto_8
 
-    .line 3250
+    .line 3283
     :cond_24
     if-nez v15, :cond_d
 
@@ -21422,7 +21746,7 @@
 
     if-ne v0, v2, :cond_d
 
-    .line 3251
+    .line 3284
     const-string v2, "MMTelSS"
 
     const-string v3, "Already add rule for CFNoReachable with serviceClass=0 case previously"
@@ -21431,7 +21755,7 @@
 
     goto/16 :goto_8
 
-    .line 3254
+    .line 3287
     :cond_25
     const/4 v2, 0x6
 
@@ -21457,14 +21781,14 @@
 
     if-eqz v2, :cond_28
 
-    .line 3258
+    .line 3291
     if-nez v15, :cond_26
 
     if-nez v15, :cond_27
 
     if-nez v67, :cond_27
 
-    .line 3259
+    .line 3292
     :cond_26
     move-object/from16 v0, p0
 
@@ -21501,7 +21825,7 @@
 
     move-result v71
 
-    .line 3263
+    .line 3296
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -21526,15 +21850,15 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3264
+    .line 3297
     if-nez v15, :cond_d
 
-    .line 3265
+    .line 3298
     const/16 v67, 0x1
 
     goto/16 :goto_8
 
-    .line 3267
+    .line 3300
     :cond_27
     if-nez v15, :cond_d
 
@@ -21544,7 +21868,7 @@
 
     if-ne v0, v2, :cond_d
 
-    .line 3268
+    .line 3301
     const-string v2, "MMTelSS"
 
     const-string v3, "Already add rule for CFNoRegistered with serviceClass=0 case previously"
@@ -21553,7 +21877,7 @@
 
     goto/16 :goto_8
 
-    .line 3270
+    .line 3303
     :cond_28
     if-nez v13, :cond_2d
 
@@ -21597,14 +21921,14 @@
 
     if-eqz v2, :cond_2d
 
-    .line 3277
+    .line 3310
     if-nez v15, :cond_2b
 
     if-nez v15, :cond_2c
 
     if-nez v68, :cond_2c
 
-    .line 3278
+    .line 3311
     :cond_2b
     move-object/from16 v0, p0
 
@@ -21641,7 +21965,7 @@
 
     move-result v71
 
-    .line 3282
+    .line 3315
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -21666,15 +21990,21 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3283
+    .line 3316
     if-nez v15, :cond_d
 
-    .line 3284
+    invoke-static {v8}, Lcom/android/internal/telephony/MMTelSSUtils;->isOp01IccCard(I)Z
+
+    move-result v2
+
+    if-nez v2, :cond_d
+
+    .line 3319
     const/16 v68, 0x1
 
     goto/16 :goto_8
 
-    .line 3286
+    .line 3321
     :cond_2c
     if-nez v15, :cond_d
 
@@ -21684,7 +22014,7 @@
 
     if-ne v0, v2, :cond_d
 
-    .line 3287
+    .line 3322
     const-string v2, "MMTelSS"
 
     const-string v3, "Already add rule for CFU with serviceClass=0 case previously"
@@ -21693,7 +22023,7 @@
 
     goto/16 :goto_8
 
-    .line 3292
+    .line 3327
     :cond_2d
     const-string v2, "MMTelSS"
 
@@ -21701,14 +22031,14 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3293
+    .line 3328
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v12, v11, v14, v13}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->copyOldRuleToNewRuleSet(Lcom/mediatek/simservs/client/policy/Rule;Lcom/mediatek/simservs/client/policy/RuleSet;II)Lcom/mediatek/simservs/client/policy/Rule;
 
     goto/16 :goto_8
 
-    .line 3301
+    .line 3336
     .end local v12    # "r":Lcom/mediatek/simservs/client/policy/Rule;
     .end local v70    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .end local v73    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
@@ -21725,30 +22055,30 @@
 
     if-ne v14, v2, :cond_32
 
-    .line 3302
+    .line 3337
     :cond_2f
     const/16 v71, 0x1
 
-    .line 3303
+    .line 3338
     const-string v2, ""
 
     invoke-virtual {v11, v2}, Lcom/mediatek/simservs/client/policy/RuleSet;->createNewRule(Ljava/lang/String;)Lcom/mediatek/simservs/client/policy/Rule;
 
     move-result-object v84
 
-    .line 3304
+    .line 3339
     .local v84, "rule":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual/range {v84 .. v84}, Lcom/mediatek/simservs/client/policy/Rule;->createConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v73
 
-    .line 3305
+    .line 3340
     .restart local v73    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual/range {v84 .. v84}, Lcom/mediatek/simservs/client/policy/Rule;->createActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v70
 
-    .line 3306
+    .line 3341
     .restart local v70    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     invoke-static {v8}, Lcom/android/internal/telephony/MMTelSSUtils;->isOp01IccCard(I)Z
 
@@ -21762,7 +22092,7 @@
 
     if-eqz v2, :cond_34
 
-    .line 3307
+    .line 3342
     const/4 v2, 0x0
 
     move-object/from16 v0, v70
@@ -21771,7 +22101,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/mediatek/simservs/client/policy/Actions;->setFowardTo(Ljava/lang/String;Z)V
 
-    .line 3311
+    .line 3346
     :goto_a
     invoke-virtual/range {v70 .. v70}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
@@ -21781,7 +22111,7 @@
 
     invoke-virtual {v2, v3}, Lcom/mediatek/simservs/client/policy/ForwardTo;->setRevealIdentityToCaller(Z)V
 
-    .line 3312
+    .line 3347
     invoke-virtual/range {v70 .. v70}, Lcom/mediatek/simservs/client/policy/Actions;->getFowardTo()Lcom/mediatek/simservs/client/policy/ForwardTo;
 
     move-result-object v2
@@ -21790,7 +22120,7 @@
 
     invoke-virtual {v2, v3}, Lcom/mediatek/simservs/client/policy/ForwardTo;->setRevealIdentityToTarget(Z)V
 
-    .line 3314
+    .line 3349
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -21823,22 +22153,22 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3316
+    .line 3351
     const/4 v2, 0x1
 
     if-ne v13, v2, :cond_35
 
-    .line 3317
+    .line 3352
     move-object/from16 v0, v84
 
     move-object/from16 v1, v18
 
     invoke-virtual {v0, v1}, Lcom/mediatek/simservs/client/policy/Rule;->setId(Ljava/lang/String;)V
 
-    .line 3318
+    .line 3353
     invoke-virtual/range {v73 .. v73}, Lcom/mediatek/simservs/client/policy/Conditions;->addBusy()V
 
-    .line 3340
+    .line 3375
     :cond_30
     :goto_b
     invoke-static {v8}, Lcom/android/internal/telephony/MMTelSSUtils;->isOp06IccCard(I)Z
@@ -21853,19 +22183,19 @@
 
     if-nez v2, :cond_31
 
-    .line 3342
+    .line 3377
     const/4 v2, 0x1
 
     if-ne v15, v2, :cond_3a
 
-    .line 3343
+    .line 3378
     const-string v2, "audio"
 
     move-object/from16 v0, v73
 
     invoke-virtual {v0, v2}, Lcom/mediatek/simservs/client/policy/Conditions;->addMedia(Ljava/lang/String;)V
 
-    .line 3350
+    .line 3385
     :cond_31
     :goto_c
     move-object/from16 v0, p0
@@ -21885,14 +22215,14 @@
 
     if-ne v0, v2, :cond_32
 
-    .line 3351
+    .line 3386
     move-object/from16 v0, v84
 
     iget-object v2, v0, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
     invoke-virtual {v10, v2}, Lcom/mediatek/simservs/client/CommunicationDiversion;->saveRule(Ljava/lang/String;)V
 
-    .line 3357
+    .line 3392
     .end local v70    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .end local v73    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     .end local v84    # "rule":Lcom/mediatek/simservs/client/policy/Rule;
@@ -21903,7 +22233,7 @@
 
     if-eqz v2, :cond_3b
 
-    .line 3358
+    .line 3393
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -21930,7 +22260,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3363
+    .line 3398
     :goto_d
     move-object/from16 v0, p0
 
@@ -21943,16 +22273,16 @@
 
     if-nez v2, :cond_3c
 
-    .line 3364
+    .line 3399
     invoke-virtual {v10}, Lcom/mediatek/simservs/client/CommunicationDiversion;->saveRuleSet()V
 
-    .line 3125
+    .line 3158
     :cond_33
     add-int/lit8 v78, v78, 0x1
 
     goto/16 :goto_3
 
-    .line 3309
+    .line 3344
     .restart local v70    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .restart local v73    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     .restart local v84    # "rule":Lcom/mediatek/simservs/client/policy/Rule;
@@ -21967,13 +22297,13 @@
 
     goto/16 :goto_a
 
-    .line 3319
+    .line 3354
     :cond_35
     const/4 v2, 0x2
 
     if-ne v13, v2, :cond_37
 
-    .line 3321
+    .line 3356
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -22012,7 +22342,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3322
+    .line 3357
     if-lez v17, :cond_36
 
     invoke-virtual {v10}, Lcom/mediatek/simservs/client/CommunicationDiversion;->getNoReplyTimer()I
@@ -22023,12 +22353,12 @@
 
     if-le v2, v3, :cond_36
 
-    .line 3323
+    .line 3358
     move/from16 v0, v17
 
     invoke-virtual {v10, v0}, Lcom/mediatek/simservs/client/CommunicationDiversion;->setNoReplyTimer(I)V
 
-    .line 3328
+    .line 3363
     :goto_e
     move-object/from16 v0, v84
 
@@ -22036,12 +22366,12 @@
 
     invoke-virtual {v0, v1}, Lcom/mediatek/simservs/client/policy/Rule;->setId(Ljava/lang/String;)V
 
-    .line 3329
+    .line 3364
     invoke-virtual/range {v73 .. v73}, Lcom/mediatek/simservs/client/policy/Conditions;->addNoAnswer()V
 
     goto/16 :goto_b
 
-    .line 3325
+    .line 3360
     :cond_36
     const-string v2, "MMTelSS"
 
@@ -22069,47 +22399,47 @@
 
     goto :goto_e
 
-    .line 3330
+    .line 3365
     :cond_37
     const/4 v2, 0x3
 
     if-ne v13, v2, :cond_38
 
-    .line 3331
+    .line 3366
     move-object/from16 v0, v84
 
     move-object/from16 v1, v40
 
     invoke-virtual {v0, v1}, Lcom/mediatek/simservs/client/policy/Rule;->setId(Ljava/lang/String;)V
 
-    .line 3332
+    .line 3367
     invoke-virtual/range {v73 .. v73}, Lcom/mediatek/simservs/client/policy/Conditions;->addNotReachable()V
 
     goto/16 :goto_b
 
-    .line 3333
+    .line 3368
     :cond_38
     const/4 v2, 0x6
 
     if-ne v13, v2, :cond_39
 
-    .line 3334
+    .line 3369
     move-object/from16 v0, v84
 
     move-object/from16 v1, v50
 
     invoke-virtual {v0, v1}, Lcom/mediatek/simservs/client/policy/Rule;->setId(Ljava/lang/String;)V
 
-    .line 3335
+    .line 3370
     invoke-virtual/range {v73 .. v73}, Lcom/mediatek/simservs/client/policy/Conditions;->addNotRegistered()V
 
     goto/16 :goto_b
 
-    .line 3336
+    .line 3371
     :cond_39
     if-nez v13, :cond_30
 
-    .line 3337
+    .line 3372
     move-object/from16 v0, v84
 
     move-object/from16 v1, v60
@@ -22118,13 +22448,13 @@
 
     goto/16 :goto_b
 
-    .line 3344
+    .line 3379
     :cond_3a
     const/16 v2, 0x200
 
     if-ne v15, v2, :cond_31
 
-    .line 3346
+    .line 3381
     const-string v2, "video"
 
     move-object/from16 v0, v73
@@ -22133,7 +22463,7 @@
 
     goto/16 :goto_c
 
-    .line 3360
+    .line 3395
     .end local v70    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .end local v73    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     .end local v84    # "rule":Lcom/mediatek/simservs/client/policy/Rule;
@@ -22146,7 +22476,7 @@
 
     goto/16 :goto_d
 
-    .line 3366
+    .line 3401
     :cond_3c
     const/4 v2, 0x1
 
@@ -22154,16 +22484,16 @@
 
     if-le v0, v2, :cond_33
 
-    .line 3367
+    .line 3402
     const/16 v81, 0x0
 
-    .line 3368
+    .line 3403
     .local v81, "newRuleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
     invoke-virtual {v11}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
 
     move-result-object v81
 
-    .line 3369
+    .line 3404
     const/16 v77, 0x0
 
     .restart local v77    # "i":I
@@ -22176,7 +22506,7 @@
 
     if-ge v0, v2, :cond_33
 
-    .line 3370
+    .line 3405
     move-object/from16 v0, v81
 
     move/from16 v1, v77
@@ -22187,7 +22517,7 @@
 
     check-cast v80, Lcom/mediatek/simservs/client/policy/Rule;
 
-    .line 3371
+    .line 3406
     .local v80, "newRule":Lcom/mediatek/simservs/client/policy/Rule;
     move-object/from16 v0, v80
 
@@ -22198,12 +22528,12 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_2 .. :try_end_2} :catch_0
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 3369
+    .line 3404
     add-int/lit8 v77, v77, 0x1
 
     goto :goto_f
 
-    .line 3387
+    .line 3422
     .end local v10    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     .end local v11    # "newRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     .end local v71    # "addedNewRule":Z
@@ -22222,31 +22552,31 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3388
+    .line 3423
     invoke-virtual/range {v89 .. v89}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
 
-    .line 3389
+    .line 3424
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_40
 
-    .line 3390
+    .line 3425
     invoke-virtual/range {v89 .. v89}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
 
     move-result v2
 
     if-eqz v2, :cond_3f
 
-    .line 3391
+    .line 3426
     const-string v2, "MMTelSS"
 
     const-string v3, "handleSetCF(): xcapException.isConnectionError()"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3392
+    .line 3427
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -22259,7 +22589,7 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 3396
+    .line 3431
     :goto_10
     move-object/from16 v0, p1
 
@@ -22267,7 +22597,7 @@
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 3397
+    .line 3432
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -22279,7 +22609,7 @@
 
     if-eqz v2, :cond_3e
 
-    .line 3398
+    .line 3433
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -22291,13 +22621,13 @@
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 3400
+    .line 3435
     :cond_3e
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    .line 3394
+    .line 3429
     :cond_3f
     move-object/from16 v0, p1
 
@@ -22311,7 +22641,7 @@
 
     goto :goto_10
 
-    .line 3423
+    .line 3458
     .end local v89    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     :cond_40
     move-object/from16 v0, p1
@@ -22326,7 +22656,7 @@
 
     if-ne v0, v2, :cond_41
 
-    .line 3424
+    .line 3459
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -22337,14 +22667,14 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 3425
+    .line 3460
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 3428
+    .line 3463
     :cond_41
     move-object/from16 v0, p0
 
@@ -22357,7 +22687,7 @@
 
     if-eqz v2, :cond_42
 
-    .line 3429
+    .line 3464
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -22369,7 +22699,7 @@
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 3432
+    .line 3467
     :cond_42
     const/4 v2, 0x0
 
@@ -22381,7 +22711,7 @@
     .param p1, "rr"    # Lcom/android/internal/telephony/MMTelSSRequest;
 
     .prologue
-    .line 4364
+    .line 4399
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -22390,7 +22720,7 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 4365
+    .line 4400
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -22399,7 +22729,7 @@
 
     move-result v42
 
-    .line 4366
+    .line 4401
     .local v42, "reqNo":I
     move-object/from16 v0, p1
 
@@ -22409,7 +22739,7 @@
 
     move-result v45
 
-    .line 4368
+    .line 4403
     .local v45, "serialNo":I
     move-object/from16 v0, p1
 
@@ -22419,7 +22749,7 @@
 
     move-result v13
 
-    .line 4369
+    .line 4404
     .local v13, "setCFAction":I
     move-object/from16 v0, p1
 
@@ -22429,7 +22759,7 @@
 
     move-result v12
 
-    .line 4370
+    .line 4405
     .local v12, "setCFReason":I
     move-object/from16 v0, p1
 
@@ -22439,7 +22769,7 @@
 
     move-result v14
 
-    .line 4371
+    .line 4406
     .local v14, "setCFServiceClass":I
     move-object/from16 v0, p1
 
@@ -22449,7 +22779,7 @@
 
     move-result-object v15
 
-    .line 4372
+    .line 4407
     .local v15, "setCFNumber":Ljava/lang/String;
     move-object/from16 v0, p1
 
@@ -22459,7 +22789,7 @@
 
     move-result v16
 
-    .line 4373
+    .line 4408
     .local v16, "setCFTimeSeconds":I
     const/4 v2, 0x2
 
@@ -22467,7 +22797,7 @@
 
     move-object/from16 v47, v0
 
-    .line 4375
+    .line 4410
     .local v47, "timeSlot":[J
     :try_start_0
     move-object/from16 v0, p1
@@ -22480,7 +22810,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4379
+    .line 4414
     :goto_0
     move-object/from16 v0, p0
 
@@ -22490,7 +22820,7 @@
 
     move-result-object v17
 
-    .line 4380
+    .line 4415
     .local v17, "timeSlotString":Ljava/lang/String;
     move-object/from16 v0, p1
 
@@ -22500,15 +22830,15 @@
 
     move-result v8
 
-    .line 4382
+    .line 4417
     .local v8, "phoneId":I
     const/16 v33, 0x0
 
-    .line 4383
+    .line 4418
     .local v33, "addRuleForCFUWithAllMediaType":Z
     const-string v18, "CFU"
 
-    .line 4385
+    .line 4420
     .local v18, "cfuRuleID":Ljava/lang/String;
     const-string v2, "MMTelSS"
 
@@ -22600,7 +22930,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4391
+    .line 4426
     const-string v2, "persist.radio.xcap.cfn"
 
     const-string v3, ""
@@ -22609,7 +22939,7 @@
 
     move-result-object v48
 
-    .line 4392
+    .line 4427
     .local v48, "xcapCFNum":Ljava/lang/String;
     const-string v2, "sip:"
 
@@ -22641,7 +22971,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 4395
+    .line 4430
     :cond_0
     const-string v2, "MMTelSS"
 
@@ -22667,7 +22997,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4397
+    .line 4432
     const-string v2, "persist.radio.ss.mode"
 
     const-string v3, "Prefer XCAP"
@@ -22676,7 +23006,7 @@
 
     move-result-object v46
 
-    .line 4398
+    .line 4433
     .local v46, "ssMode":Ljava/lang/String;
     const-string v2, "MMTelSS"
 
@@ -22702,7 +23032,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4399
+    .line 4434
     const-string v2, "Prefer XCAP"
 
     move-object/from16 v0, v46
@@ -22713,20 +23043,20 @@
 
     if-eqz v2, :cond_1
 
-    .line 4400
+    .line 4435
     move-object/from16 v15, v48
 
-    .line 4405
+    .line 4440
     .end local v46    # "ssMode":Ljava/lang/String;
     :cond_1
     const/16 v2, 0x210
 
     if-ne v14, v2, :cond_2
 
-    .line 4407
+    .line 4442
     const/16 v14, 0x200
 
-    .line 4410
+    .line 4445
     :cond_2
     invoke-static {v8}, Lcom/android/internal/telephony/MMTelSSUtils;->isPreferXcap(I)Z
 
@@ -22734,21 +23064,21 @@
 
     if-nez v2, :cond_4
 
-    .line 4411
+    .line 4446
     const-string v2, "MMTelSS"
 
     const-string v3, "handleSetCFInTimeSlot(): !isPreferXcap()"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4412
+    .line 4447
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_3
 
-    .line 4413
+    .line 4448
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -22761,22 +23091,22 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 4414
+    .line 4449
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4416
+    .line 4451
     :cond_3
     const/4 v2, 0x0
 
-    .line 4631
+    .line 4667
     :goto_1
     return v2
 
-    .line 4376
+    .line 4411
     .end local v8    # "phoneId":I
     .end local v17    # "timeSlotString":Ljava/lang/String;
     .end local v18    # "cfuRuleID":Ljava/lang/String;
@@ -22785,13 +23115,13 @@
     :catch_0
     move-exception v37
 
-    .line 4377
+    .line 4412
     .local v37, "e":Ljava/lang/Exception;
     const/16 v47, 0x0
 
     goto/16 :goto_0
 
-    .line 4421
+    .line 4456
     .end local v37    # "e":Ljava/lang/Exception;
     .restart local v8    # "phoneId":I
     .restart local v17    # "timeSlotString":Ljava/lang/String;
@@ -22804,7 +23134,7 @@
 
     move-result-wide v38
 
-    .line 4422
+    .line 4457
     .local v38, "curTime":J
     const-string v2, "MMTelSS"
 
@@ -22878,7 +23208,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4426
+    .line 4461
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -22889,7 +23219,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
 
-    .line 4427
+    .line 4462
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -22900,7 +23230,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
 
-    .line 4428
+    .line 4463
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -22911,7 +23241,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
 
-    .line 4430
+    .line 4465
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -22924,7 +23254,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 4431
+    .line 4466
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -22953,14 +23283,14 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4432
+    .line 4467
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_5
 
-    .line 4433
+    .line 4468
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -22973,20 +23303,20 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 4434
+    .line 4469
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4436
+    .line 4471
     :cond_5
     const/4 v2, 0x0
 
     goto/16 :goto_1
 
-    .line 4438
+    .line 4473
     :cond_6
     move-object/from16 v0, p0
 
@@ -22995,7 +23325,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 4439
+    .line 4474
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -23032,7 +23362,7 @@
 
     invoke-virtual/range {v2 .. v8}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 4442
+    .line 4477
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -23070,7 +23400,7 @@
 
     if-eqz v2, :cond_d
 
-    .line 4444
+    .line 4479
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -23102,7 +23432,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4445
+    .line 4480
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -23112,7 +23442,7 @@
 
     move-result-object v10
 
-    .line 4446
+    .line 4481
     .local v10, "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     move-object/from16 v0, p0
 
@@ -23125,10 +23455,10 @@
 
     invoke-virtual {v10, v2}, Lcom/mediatek/simservs/client/CommunicationDiversion;->setNetwork(Landroid/net/Network;)V
 
-    .line 4447
+    .line 4482
     invoke-virtual {v10}, Lcom/mediatek/simservs/client/CommunicationDiversion;->refresh()V
 
-    .line 4448
+    .line 4483
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -23138,40 +23468,40 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v2, v0, v1}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 4464
+    .line 4499
     :goto_2
     invoke-virtual {v10}, Lcom/mediatek/simservs/client/CommunicationDiversion;->getRuleSet()Lcom/mediatek/simservs/client/policy/RuleSet;
 
     move-result-object v44
 
-    .line 4465
+    .line 4500
     .local v44, "ruleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     const/16 v43, 0x0
 
-    .line 4466
+    .line 4501
     .local v43, "ruleList":Ljava/util/List;, "Ljava/util/List<Lcom/mediatek/simservs/client/policy/Rule;>;"
     invoke-virtual {v10}, Lcom/mediatek/simservs/client/CommunicationDiversion;->createNewRuleSet()Lcom/mediatek/simservs/client/policy/RuleSet;
 
     move-result-object v11
 
-    .line 4467
+    .line 4502
     .local v11, "newRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     const/16 v34, 0x0
 
-    .line 4469
+    .line 4504
     .local v34, "addedNewRule":Z
     if-eqz v44, :cond_10
 
-    .line 4470
+    .line 4505
     invoke-virtual/range {v44 .. v44}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
 
     move-result-object v43
 
-    .line 4477
+    .line 4512
     :goto_3
     if-eqz v43, :cond_19
 
-    .line 4479
+    .line 4514
     const/16 v40, 0x0
 
     .local v40, "i":I
@@ -23184,7 +23514,7 @@
 
     if-ge v0, v2, :cond_19
 
-    .line 4480
+    .line 4515
     move-object/from16 v0, v43
 
     move/from16 v1, v40
@@ -23195,32 +23525,32 @@
 
     check-cast v22, Lcom/mediatek/simservs/client/policy/Rule;
 
-    .line 4481
+    .line 4516
     .local v22, "r":Lcom/mediatek/simservs/client/policy/Rule;
     invoke-virtual/range {v22 .. v22}, Lcom/mediatek/simservs/client/policy/Rule;->getConditions()Lcom/mediatek/simservs/client/policy/Conditions;
 
     move-result-object v36
 
-    .line 4482
+    .line 4517
     .local v36, "cond":Lcom/mediatek/simservs/client/policy/Conditions;
     invoke-virtual/range {v22 .. v22}, Lcom/mediatek/simservs/client/policy/Rule;->getActions()Lcom/mediatek/simservs/client/policy/Actions;
 
     move-result-object v32
 
-    .line 4483
+    .line 4518
     .local v32, "action":Lcom/mediatek/simservs/client/policy/Actions;
     const/16 v41, 0x0
 
-    .line 4485
+    .line 4520
     .local v41, "mediaList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     if-eqz v36, :cond_15
 
-    .line 4486
+    .line 4521
     invoke-virtual/range {v36 .. v36}, Lcom/mediatek/simservs/client/policy/Conditions;->getMedias()Ljava/util/List;
 
     move-result-object v41
 
-    .line 4487
+    .line 4522
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -23289,21 +23619,21 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4492
+    .line 4527
     invoke-virtual/range {v36 .. v36}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendBusy()Z
 
     move-result v2
 
     if-eqz v2, :cond_11
 
-    .line 4493
+    .line 4528
     const-string v2, "MMTelSS"
 
     const-string v3, "The rule is CFB"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4514
+    .line 4549
     :cond_7
     :goto_5
     if-nez v12, :cond_18
@@ -23348,14 +23678,14 @@
 
     if-eqz v2, :cond_18
 
-    .line 4521
+    .line 4556
     if-nez v14, :cond_a
 
     if-nez v14, :cond_17
 
     if-nez v33, :cond_17
 
-    .line 4524
+    .line 4559
     :cond_a
     const/4 v2, 0x1
 
@@ -23365,7 +23695,7 @@
 
     if-ne v13, v2, :cond_16
 
-    .line 4526
+    .line 4561
     :cond_b
     move-object/from16 v0, p0
 
@@ -23382,7 +23712,7 @@
 
     move-result v34
 
-    .line 4536
+    .line 4571
     :goto_6
     const-string v2, "MMTelSS"
 
@@ -23408,20 +23738,26 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4538
+    .line 4573
     if-nez v14, :cond_c
 
-    .line 4539
+    invoke-static {v8}, Lcom/android/internal/telephony/MMTelSSUtils;->isOp01IccCard(I)Z
+
+    move-result v2
+
+    if-nez v2, :cond_c
+
+    .line 4575
     const/16 v33, 0x1
 
-    .line 4479
+    .line 4514
     :cond_c
     :goto_7
     add-int/lit8 v40, v40, 0x1
 
     goto/16 :goto_4
 
-    .line 4449
+    .line 4484
     .end local v10    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     .end local v11    # "newRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     .end local v22    # "r":Lcom/mediatek/simservs/client/policy/Rule;
@@ -23485,7 +23821,7 @@
 
     if-gez v2, :cond_e
 
-    .line 4452
+    .line 4487
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -23517,7 +23853,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4453
+    .line 4488
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -23527,7 +23863,7 @@
 
     move-result-object v10
 
-    .line 4454
+    .line 4489
     .restart local v10    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     move-object/from16 v0, p0
 
@@ -23545,13 +23881,13 @@
 
     goto/16 :goto_2
 
-    .line 4577
+    .line 4613
     .end local v10    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     .end local v38    # "curTime":J
     :catch_1
     move-exception v49
 
-    .line 4578
+    .line 4614
     .local v49, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     move-object/from16 v0, p0
 
@@ -23562,7 +23898,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCache:Lcom/mediatek/simservs/client/CommunicationDiversion;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1602(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationDiversion;)Lcom/mediatek/simservs/client/CommunicationDiversion;
 
-    .line 4579
+    .line 4615
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -23572,7 +23908,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1802(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 4580
+    .line 4616
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -23582,7 +23918,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 4582
+    .line 4618
     invoke-virtual/range {v49 .. v49}, Lcom/mediatek/simservs/xcap/XcapException;->getHttpErrorCode()I
 
     move-result v2
@@ -23591,19 +23927,19 @@
 
     if-ne v2, v3, :cond_20
 
-    .line 4583
+    .line 4619
     const-string v2, "MMTelSS"
 
     const-string v3, "handleSetCFInTimeSlot(): HTTP_ERROR_CODE_412"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4584
+    .line 4620
     const/16 v2, 0x19c
 
     goto/16 :goto_1
 
-    .line 4456
+    .line 4491
     .end local v49    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     .restart local v38    # "curTime":J
     :cond_e
@@ -23628,7 +23964,7 @@
 
     move-result-object v10
 
-    .line 4457
+    .line 4492
     .restart local v10    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     move-object/from16 v0, p0
 
@@ -23637,7 +23973,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCache:Lcom/mediatek/simservs/client/CommunicationDiversion;
     invoke-static {v2, v10}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1602(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationDiversion;)Lcom/mediatek/simservs/client/CommunicationDiversion;
 
-    .line 4458
+    .line 4493
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -23645,7 +23981,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCachePhoneId:I
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1802(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 4459
+    .line 4494
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -23655,7 +23991,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v2, v0, v1}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 4460
+    .line 4495
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -23704,13 +24040,13 @@
 
     goto/16 :goto_2
 
-    .line 4601
+    .line 4637
     .end local v10    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     .end local v38    # "curTime":J
     :catch_2
     move-exception v37
 
-    .line 4604
+    .line 4640
     .restart local v37    # "e":Ljava/lang/Exception;
     const-string v2, "MMTelSS"
 
@@ -23718,7 +24054,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4605
+    .line 4641
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -23728,7 +24064,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCache:Lcom/mediatek/simservs/client/CommunicationDiversion;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1602(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationDiversion;)Lcom/mediatek/simservs/client/CommunicationDiversion;
 
-    .line 4606
+    .line 4642
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -23738,7 +24074,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1802(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 4607
+    .line 4643
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -23748,24 +24084,24 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCdCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$1702(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 4609
+    .line 4645
     invoke-virtual/range {v37 .. v37}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 4610
+    .line 4646
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_1c
 
-    .line 4611
+    .line 4647
     const/4 v2, 0x2
 
     invoke-static {v2}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v35
 
-    .line 4613
+    .line 4649
     .local v35, "ce":Lcom/android/internal/telephony/CommandException;
     move-object/from16 v0, p1
 
@@ -23777,14 +24113,14 @@
 
     invoke-static {v2, v3, v0}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 4614
+    .line 4650
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4615
+    .line 4651
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -23796,7 +24132,7 @@
 
     if-eqz v2, :cond_f
 
-    .line 4616
+    .line 4652
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -23808,13 +24144,13 @@
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 4618
+    .line 4654
     :cond_f
     const/4 v2, 0x0
 
     goto/16 :goto_1
 
-    .line 4472
+    .line 4507
     .end local v35    # "ce":Lcom/android/internal/telephony/CommandException;
     .end local v37    # "e":Ljava/lang/Exception;
     .restart local v10    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
@@ -23833,7 +24169,7 @@
 
     goto/16 :goto_3
 
-    .line 4494
+    .line 4529
     .restart local v22    # "r":Lcom/mediatek/simservs/client/policy/Rule;
     .restart local v32    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .restart local v36    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
@@ -23846,7 +24182,7 @@
 
     if-eqz v2, :cond_12
 
-    .line 4495
+    .line 4530
     const-string v2, "MMTelSS"
 
     const-string v3, "The rule is CFNoAnswer"
@@ -23855,7 +24191,7 @@
 
     goto/16 :goto_5
 
-    .line 4496
+    .line 4531
     :cond_12
     invoke-virtual/range {v36 .. v36}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendNotReachable()Z
 
@@ -23863,7 +24199,7 @@
 
     if-eqz v2, :cond_13
 
-    .line 4497
+    .line 4532
     const-string v2, "MMTelSS"
 
     const-string v3, "The rule is CFNotReachable"
@@ -23872,7 +24208,7 @@
 
     goto/16 :goto_5
 
-    .line 4498
+    .line 4533
     :cond_13
     invoke-virtual/range {v36 .. v36}, Lcom/mediatek/simservs/client/policy/Conditions;->comprehendNotRegistered()Z
 
@@ -23880,7 +24216,7 @@
 
     if-eqz v2, :cond_14
 
-    .line 4499
+    .line 4534
     const-string v2, "MMTelSS"
 
     const-string v3, "The rule is CFNotRegistered"
@@ -23889,7 +24225,7 @@
 
     goto/16 :goto_5
 
-    .line 4501
+    .line 4536
     :cond_14
     move-object/from16 v0, v22
 
@@ -23897,7 +24233,7 @@
 
     move-object/from16 v18, v0
 
-    .line 4502
+    .line 4537
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -23924,7 +24260,7 @@
 
     goto/16 :goto_5
 
-    .line 4505
+    .line 4540
     :cond_15
     const-string v2, "MMTelSS"
 
@@ -23950,7 +24286,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4507
+    .line 4542
     const-string v2, "CFU"
 
     move-object/from16 v0, v18
@@ -23961,14 +24297,14 @@
 
     if-eqz v2, :cond_7
 
-    .line 4509
+    .line 4544
     move-object/from16 v0, v22
 
     iget-object v0, v0, Lcom/mediatek/simservs/client/policy/Rule;->mId:Ljava/lang/String;
 
     move-object/from16 v18, v0
 
-    .line 4510
+    .line 4545
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -23995,7 +24331,7 @@
 
     goto/16 :goto_5
 
-    .line 4531
+    .line 4566
     :cond_16
     move-object/from16 v0, p0
 
@@ -24034,7 +24370,7 @@
 
     goto/16 :goto_6
 
-    .line 4541
+    .line 4577
     :cond_17
     if-nez v14, :cond_c
 
@@ -24044,7 +24380,7 @@
 
     if-ne v0, v2, :cond_c
 
-    .line 4543
+    .line 4579
     const-string v2, "MMTelSS"
 
     const-string v3, "Already add rule for CFU previously"
@@ -24053,7 +24389,7 @@
 
     goto/16 :goto_7
 
-    .line 4547
+    .line 4583
     :cond_18
     const-string v2, "MMTelSS"
 
@@ -24061,7 +24397,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4549
+    .line 4585
     move-object/from16 v0, p0
 
     move-object/from16 v1, v22
@@ -24070,7 +24406,7 @@
 
     goto/16 :goto_7
 
-    .line 4556
+    .line 4592
     .end local v22    # "r":Lcom/mediatek/simservs/client/policy/Rule;
     .end local v32    # "action":Lcom/mediatek/simservs/client/policy/Actions;
     .end local v36    # "cond":Lcom/mediatek/simservs/client/policy/Conditions;
@@ -24087,11 +24423,11 @@
 
     if-ne v13, v2, :cond_1b
 
-    .line 4559
+    .line 4595
     :cond_1a
     const/16 v34, 0x1
 
-    .line 4560
+    .line 4596
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -24105,7 +24441,7 @@
 
     invoke-virtual/range {v9 .. v19}, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->handleCreateNewRuleForCFInTimeSlot(Lcom/mediatek/simservs/client/CommunicationDiversion;Lcom/mediatek/simservs/client/policy/RuleSet;IIILjava/lang/String;ILjava/lang/String;Ljava/lang/String;Z)Z
 
-    .line 4568
+    .line 4604
     :cond_1b
     invoke-virtual {v11}, Lcom/mediatek/simservs/client/policy/RuleSet;->getRules()Ljava/util/List;
 
@@ -24113,7 +24449,7 @@
 
     if-eqz v2, :cond_1f
 
-    .line 4569
+    .line 4605
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -24140,7 +24476,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4574
+    .line 4610
     :goto_8
     move-object/from16 v0, p0
 
@@ -24153,13 +24489,13 @@
 
     if-nez v2, :cond_1c
 
-    .line 4575
+    .line 4611
     invoke-virtual {v10}, Lcom/mediatek/simservs/client/CommunicationDiversion;->saveRuleSet()V
     :try_end_3
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_3 .. :try_end_3} :catch_1
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 4623
+    .line 4659
     .end local v10    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     .end local v11    # "newRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     .end local v34    # "addedNewRule":Z
@@ -24173,7 +24509,7 @@
 
     if-eqz v2, :cond_1d
 
-    .line 4624
+    .line 4660
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -24184,14 +24520,14 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 4625
+    .line 4661
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4627
+    .line 4663
     :cond_1d
     move-object/from16 v0, p0
 
@@ -24204,7 +24540,7 @@
 
     if-eqz v2, :cond_1e
 
-    .line 4628
+    .line 4664
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -24216,13 +24552,13 @@
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 4631
+    .line 4667
     :cond_1e
     const/4 v2, 0x0
 
     goto/16 :goto_1
 
-    .line 4571
+    .line 4607
     .restart local v10    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     .restart local v11    # "newRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     .restart local v34    # "addedNewRule":Z
@@ -24242,7 +24578,7 @@
 
     goto :goto_8
 
-    .line 4586
+    .line 4622
     .end local v10    # "cd":Lcom/mediatek/simservs/client/CommunicationDiversion;
     .end local v11    # "newRuleSet":Lcom/mediatek/simservs/client/policy/RuleSet;
     .end local v34    # "addedNewRule":Z
@@ -24257,31 +24593,31 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4587
+    .line 4623
     invoke-virtual/range {v49 .. v49}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
 
-    .line 4588
+    .line 4624
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_1c
 
-    .line 4589
+    .line 4625
     invoke-virtual/range {v49 .. v49}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
 
     move-result v2
 
     if-eqz v2, :cond_22
 
-    .line 4590
+    .line 4626
     const-string v2, "MMTelSS"
 
     const-string v3, "handleSetCFInTimeSlot(): isConnectionError()"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4591
+    .line 4627
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -24294,7 +24630,7 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 4595
+    .line 4631
     :goto_9
     move-object/from16 v0, p1
 
@@ -24302,7 +24638,7 @@
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 4596
+    .line 4632
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -24314,7 +24650,7 @@
 
     if-eqz v2, :cond_21
 
-    .line 4597
+    .line 4633
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -24326,13 +24662,13 @@
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 4599
+    .line 4635
     :cond_21
     const/4 v2, 0x0
 
     goto/16 :goto_1
 
-    .line 4593
+    .line 4629
     :cond_22
     move-object/from16 v0, p1
 
@@ -24352,21 +24688,21 @@
     .param p1, "rr"    # Lcom/android/internal/telephony/MMTelSSRequest;
 
     .prologue
-    .line 2639
+    .line 2672
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 2640
+    .line 2673
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v0}, Landroid/os/Parcel;->readInt()I
 
     move-result v11
 
-    .line 2641
+    .line 2674
     .local v11, "reqNo":I
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
@@ -24374,7 +24710,7 @@
 
     move-result v12
 
-    .line 2643
+    .line 2676
     .local v12, "serialNo":I
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
@@ -24382,7 +24718,7 @@
 
     move-result v8
 
-    .line 2644
+    .line 2677
     .local v8, "clipEnable":I
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
@@ -24390,7 +24726,7 @@
 
     move-result v6
 
-    .line 2645
+    .line 2678
     .local v6, "phoneId":I
     const-string v0, "MMTelSS"
 
@@ -24414,26 +24750,26 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2647
+    .line 2680
     invoke-static {v6}, Lcom/android/internal/telephony/MMTelSSUtils;->isPreferXcap(I)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 2648
+    .line 2681
     const-string v0, "MMTelSS"
 
     const-string v1, "handleSetCLIP(): !isPreferXcap()"
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2649
+    .line 2682
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_0
 
-    .line 2650
+    .line 2683
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -24444,17 +24780,17 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2651
+    .line 2684
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2721
+    .line 2754
     :cond_0
     :goto_0
     return-void
 
-    .line 2657
+    .line 2690
     :cond_1
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -24465,7 +24801,7 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
 
-    .line 2658
+    .line 2691
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     invoke-static {v6}, Lcom/android/internal/telephony/MMTelSSUtils;->getXcapRootUri(I)Ljava/lang/String;
@@ -24474,7 +24810,7 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
 
-    .line 2659
+    .line 2692
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     invoke-static {v6}, Lcom/android/internal/telephony/MMTelSSUtils;->getXIntendedId(I)Ljava/lang/String;
@@ -24483,7 +24819,7 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
 
-    .line 2661
+    .line 2694
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     iget-object v0, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
@@ -24494,7 +24830,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2662
+    .line 2695
     const-string v0, "MMTelSS"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -24521,12 +24857,12 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2663
+    .line 2696
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_0
 
-    .line 2664
+    .line 2697
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -24537,7 +24873,7 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2665
+    .line 2698
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
@@ -24547,11 +24883,11 @@
 
     goto :goto_0
 
-    .line 2681
+    .line 2714
     :catch_0
     move-exception v13
 
-    .line 2682
+    .line 2715
     .local v13, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     const-string v0, "MMTelSS"
 
@@ -24559,29 +24895,29 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2683
+    .line 2716
     invoke-virtual {v13}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
 
-    .line 2684
+    .line 2717
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_3
 
-    .line 2685
+    .line 2718
     invoke-virtual {v13}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 2686
+    .line 2719
     const-string v0, "MMTelSS"
 
     const-string v1, "handleSetCLIP(): xcapException.isConnectionError()"
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2687
+    .line 2720
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -24592,13 +24928,13 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2691
+    .line 2724
     :goto_1
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2692
+    .line 2725
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -24608,7 +24944,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2693
+    .line 2726
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -24620,7 +24956,7 @@
 
     goto/16 :goto_0
 
-    .line 2670
+    .line 2703
     .end local v13    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     :cond_2
     :try_start_1
@@ -24629,7 +24965,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v0, v6}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 2672
+    .line 2705
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     iget-object v1, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -24654,7 +24990,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 2674
+    .line 2707
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mSimservs:Lcom/mediatek/simservs/client/SimServs;
     invoke-static {}, Lcom/android/internal/telephony/MMTelSSTransport;->access$500()Lcom/mediatek/simservs/client/SimServs;
 
@@ -24673,13 +25009,13 @@
 
     move-result-object v10
 
-    .line 2676
+    .line 2709
     .local v10, "oip":Lcom/mediatek/simservs/client/OriginatingIdentityPresentation;
     const/4 v0, 0x1
 
     if-ne v8, v0, :cond_5
 
-    .line 2677
+    .line 2710
     const/4 v0, 0x1
 
     invoke-virtual {v10, v0}, Lcom/mediatek/simservs/client/OriginatingIdentityPresentation;->setActive(Z)V
@@ -24687,7 +25023,7 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 2714
+    .line 2747
     .end local v10    # "oip":Lcom/mediatek/simservs/client/OriginatingIdentityPresentation;
     :cond_3
     :goto_2
@@ -24695,7 +25031,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 2715
+    .line 2748
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -24704,12 +25040,12 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2716
+    .line 2749
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2718
+    .line 2751
     :cond_4
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
@@ -24720,7 +25056,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2719
+    .line 2752
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -24732,7 +25068,7 @@
 
     goto/16 :goto_0
 
-    .line 2679
+    .line 2712
     .restart local v10    # "oip":Lcom/mediatek/simservs/client/OriginatingIdentityPresentation;
     :cond_5
     const/4 v0, 0x0
@@ -24745,12 +25081,12 @@
 
     goto :goto_2
 
-    .line 2697
+    .line 2730
     .end local v10    # "oip":Lcom/mediatek/simservs/client/OriginatingIdentityPresentation;
     :catch_1
     move-exception v9
 
-    .line 2700
+    .line 2733
     .local v9, "e":Ljava/lang/Exception;
     const-string v0, "MMTelSS"
 
@@ -24758,22 +25094,22 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2701
+    .line 2734
     invoke-virtual {v9}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 2702
+    .line 2735
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_3
 
-    .line 2703
+    .line 2736
     const/4 v0, 0x2
 
     invoke-static {v0}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v7
 
-    .line 2704
+    .line 2737
     .local v7, "ce":Lcom/android/internal/telephony/CommandException;
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
@@ -24781,12 +25117,12 @@
 
     invoke-static {v0, v1, v7}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2705
+    .line 2738
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2706
+    .line 2739
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -24796,7 +25132,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2707
+    .line 2740
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -24808,7 +25144,7 @@
 
     goto/16 :goto_0
 
-    .line 2689
+    .line 2722
     .end local v7    # "ce":Lcom/android/internal/telephony/CommandException;
     .end local v9    # "e":Ljava/lang/Exception;
     .restart local v13    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
@@ -24827,7 +25163,7 @@
     .param p1, "rr"    # Lcom/android/internal/telephony/MMTelSSRequest;
 
     .prologue
-    .line 2512
+    .line 2545
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -24836,7 +25172,7 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 2513
+    .line 2546
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -24845,7 +25181,7 @@
 
     move-result v15
 
-    .line 2514
+    .line 2547
     .local v15, "reqNo":I
     move-object/from16 v0, p1
 
@@ -24855,7 +25191,7 @@
 
     move-result v16
 
-    .line 2516
+    .line 2549
     .local v16, "serialNo":I
     move-object/from16 v0, p1
 
@@ -24865,7 +25201,7 @@
 
     move-result v10
 
-    .line 2517
+    .line 2550
     .local v10, "clirMode":I
     move-object/from16 v0, p1
 
@@ -24875,7 +25211,7 @@
 
     move-result v8
 
-    .line 2518
+    .line 2551
     .local v8, "phoneId":I
     const-string v2, "MMTelSS"
 
@@ -24899,28 +25235,28 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2520
+    .line 2553
     invoke-static {v8}, Lcom/android/internal/telephony/MMTelSSUtils;->isPreferXcap(I)Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 2521
+    .line 2554
     const-string v2, "MMTelSS"
 
     const-string v3, "handleSetCLIR(): !isPreferXcap()"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2522
+    .line 2555
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_0
 
-    .line 2523
+    .line 2556
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -24933,29 +25269,29 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2524
+    .line 2557
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2526
+    .line 2559
     :cond_0
     const/4 v2, 0x0
 
-    .line 2635
+    .line 2668
     :goto_0
     return v2
 
-    .line 2531
+    .line 2564
     :cond_1
     :try_start_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v12
 
-    .line 2532
+    .line 2565
     .local v12, "curTime":J
     const-string v2, "MMTelSS"
 
@@ -25027,7 +25363,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2535
+    .line 2568
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25038,7 +25374,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
 
-    .line 2536
+    .line 2569
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25049,7 +25385,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
 
-    .line 2537
+    .line 2570
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25060,7 +25396,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
 
-    .line 2538
+    .line 2571
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25073,7 +25409,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 2539
+    .line 2572
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -25102,14 +25438,14 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2540
+    .line 2573
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_2
 
-    .line 2541
+    .line 2574
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -25122,20 +25458,20 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2542
+    .line 2575
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2544
+    .line 2577
     :cond_2
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    .line 2546
+    .line 2579
     :cond_3
     move-object/from16 v0, p0
 
@@ -25144,7 +25480,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 2547
+    .line 2580
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25181,7 +25517,7 @@
 
     invoke-virtual/range {v2 .. v8}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 2550
+    .line 2583
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25219,7 +25555,7 @@
 
     if-eqz v2, :cond_7
 
-    .line 2552
+    .line 2585
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -25251,7 +25587,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2553
+    .line 2586
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25261,7 +25597,7 @@
 
     move-result-object v14
 
-    .line 2554
+    .line 2587
     .local v14, "oir":Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     move-object/from16 v0, p0
 
@@ -25274,10 +25610,10 @@
 
     invoke-virtual {v14, v2}, Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;->setNetwork(Landroid/net/Network;)V
 
-    .line 2555
+    .line 2588
     invoke-virtual {v14}, Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;->refresh()V
 
-    .line 2556
+    .line 2589
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25285,13 +25621,13 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCacheLastQueried:J
     invoke-static {v2, v12, v13}, Lcom/android/internal/telephony/MMTelSSTransport;->access$102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 2572
+    .line 2605
     :goto_1
     const/4 v2, 0x1
 
     if-ne v10, v2, :cond_a
 
-    .line 2573
+    .line 2606
     const/4 v2, 0x1
 
     invoke-virtual {v14, v2}, Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;->setDefaultPresentationRestricted(Z)V
@@ -25299,7 +25635,7 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 2627
+    .line 2660
     .end local v12    # "curTime":J
     .end local v14    # "oir":Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     :cond_4
@@ -25310,7 +25646,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 2628
+    .line 2661
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -25321,14 +25657,14 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2629
+    .line 2662
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2631
+    .line 2664
     :cond_5
     move-object/from16 v0, p0
 
@@ -25341,7 +25677,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 2632
+    .line 2665
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25353,13 +25689,13 @@
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 2635
+    .line 2668
     :cond_6
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    .line 2557
+    .line 2590
     .restart local v12    # "curTime":J
     :cond_7
     :try_start_1
@@ -25415,7 +25751,7 @@
 
     if-gez v2, :cond_8
 
-    .line 2560
+    .line 2593
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -25447,7 +25783,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2561
+    .line 2594
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25457,7 +25793,7 @@
 
     move-result-object v14
 
-    .line 2562
+    .line 2595
     .restart local v14    # "oir":Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     move-object/from16 v0, p0
 
@@ -25475,13 +25811,13 @@
 
     goto/16 :goto_1
 
-    .line 2579
+    .line 2612
     .end local v12    # "curTime":J
     .end local v14    # "oir":Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     :catch_0
     move-exception v17
 
-    .line 2580
+    .line 2613
     .local v17, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     move-object/from16 v0, p0
 
@@ -25492,7 +25828,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCache:Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$002(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;)Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
 
-    .line 2581
+    .line 2614
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25502,7 +25838,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$202(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 2582
+    .line 2615
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25512,7 +25848,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 2584
+    .line 2617
     invoke-virtual/range {v17 .. v17}, Lcom/mediatek/simservs/xcap/XcapException;->getHttpErrorCode()I
 
     move-result v2
@@ -25521,7 +25857,7 @@
 
     if-ne v2, v3, :cond_c
 
-    .line 2585
+    .line 2618
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25531,7 +25867,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCache:Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$002(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;)Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
 
-    .line 2586
+    .line 2619
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25541,7 +25877,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$202(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 2587
+    .line 2620
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25551,19 +25887,19 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 2588
+    .line 2621
     const-string v2, "MMTelSS"
 
     const-string v3, "handleSetCLIR(): HTTP_ERROR_CODE_412"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2589
+    .line 2622
     const/16 v2, 0x19c
 
     goto/16 :goto_0
 
-    .line 2564
+    .line 2597
     .end local v17    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     .restart local v12    # "curTime":J
     :cond_8
@@ -25588,7 +25924,7 @@
 
     move-result-object v14
 
-    .line 2565
+    .line 2598
     .restart local v14    # "oir":Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     move-object/from16 v0, p0
 
@@ -25597,7 +25933,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCache:Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     invoke-static {v2, v14}, Lcom/android/internal/telephony/MMTelSSTransport;->access$002(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;)Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
 
-    .line 2566
+    .line 2599
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25605,7 +25941,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCachePhoneId:I
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$202(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 2567
+    .line 2600
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25613,7 +25949,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCacheLastQueried:J
     invoke-static {v2, v12, v13}, Lcom/android/internal/telephony/MMTelSSTransport;->access$102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 2568
+    .line 2601
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -25660,13 +25996,13 @@
 
     goto/16 :goto_1
 
-    .line 2606
+    .line 2639
     .end local v12    # "curTime":J
     .end local v14    # "oir":Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     :catch_1
     move-exception v11
 
-    .line 2609
+    .line 2642
     .local v11, "e":Ljava/lang/Exception;
     const-string v2, "MMTelSS"
 
@@ -25674,7 +26010,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2610
+    .line 2643
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25684,7 +26020,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCache:Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$002(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;)Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
 
-    .line 2611
+    .line 2644
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25694,7 +26030,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$202(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 2612
+    .line 2645
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25704,24 +26040,24 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mOirCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$102(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 2614
+    .line 2647
     invoke-virtual {v11}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 2615
+    .line 2648
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_4
 
-    .line 2616
+    .line 2649
     const/4 v2, 0x2
 
     invoke-static {v2}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v9
 
-    .line 2617
+    .line 2650
     .local v9, "ce":Lcom/android/internal/telephony/CommandException;
     move-object/from16 v0, p1
 
@@ -25731,14 +26067,14 @@
 
     invoke-static {v2, v3, v9}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2618
+    .line 2651
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2619
+    .line 2652
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25750,7 +26086,7 @@
 
     if-eqz v2, :cond_9
 
-    .line 2620
+    .line 2653
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25762,13 +26098,13 @@
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 2622
+    .line 2655
     :cond_9
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    .line 2574
+    .line 2607
     .end local v9    # "ce":Lcom/android/internal/telephony/CommandException;
     .end local v11    # "e":Ljava/lang/Exception;
     .restart local v12    # "curTime":J
@@ -25778,7 +26114,7 @@
 
     if-ne v10, v2, :cond_b
 
-    .line 2575
+    .line 2608
     const/4 v2, 0x0
 
     :try_start_3
@@ -25786,7 +26122,7 @@
 
     goto/16 :goto_2
 
-    .line 2577
+    .line 2610
     :cond_b
     const/4 v2, 0x0
 
@@ -25797,7 +26133,7 @@
 
     goto/16 :goto_2
 
-    .line 2591
+    .line 2624
     .end local v12    # "curTime":J
     .end local v14    # "oir":Lcom/mediatek/simservs/client/OriginatingIdentityPresentationRestriction;
     .restart local v17    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
@@ -25808,31 +26144,31 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2592
+    .line 2625
     invoke-virtual/range {v17 .. v17}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
 
-    .line 2593
+    .line 2626
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_4
 
-    .line 2594
+    .line 2627
     invoke-virtual/range {v17 .. v17}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
 
     move-result v2
 
     if-eqz v2, :cond_e
 
-    .line 2595
+    .line 2628
     const-string v2, "MMTelSS"
 
     const-string v3, "handleSetCLIR(): xcapException.isConnectionError()"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2596
+    .line 2629
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -25845,7 +26181,7 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2600
+    .line 2633
     :goto_3
     move-object/from16 v0, p1
 
@@ -25853,7 +26189,7 @@
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2601
+    .line 2634
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25865,7 +26201,7 @@
 
     if-eqz v2, :cond_d
 
-    .line 2602
+    .line 2635
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -25877,13 +26213,13 @@
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 2604
+    .line 2637
     :cond_d
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    .line 2598
+    .line 2631
     :cond_e
     move-object/from16 v0, p1
 
@@ -25903,21 +26239,21 @@
     .param p1, "rr"    # Lcom/android/internal/telephony/MMTelSSRequest;
 
     .prologue
-    .line 2812
+    .line 2845
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 2813
+    .line 2846
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v0}, Landroid/os/Parcel;->readInt()I
 
     move-result v10
 
-    .line 2814
+    .line 2847
     .local v10, "reqNo":I
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
@@ -25925,7 +26261,7 @@
 
     move-result v11
 
-    .line 2816
+    .line 2849
     .local v11, "serialNo":I
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
@@ -25933,7 +26269,7 @@
 
     move-result v8
 
-    .line 2817
+    .line 2850
     .local v8, "colpEnable":I
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
@@ -25941,7 +26277,7 @@
 
     move-result v6
 
-    .line 2818
+    .line 2851
     .local v6, "phoneId":I
     const-string v0, "MMTelSS"
 
@@ -25965,26 +26301,26 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2820
+    .line 2853
     invoke-static {v6}, Lcom/android/internal/telephony/MMTelSSUtils;->isPreferXcap(I)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 2821
+    .line 2854
     const-string v0, "MMTelSS"
 
     const-string v1, "handleSetCOLP(): !isPreferXcap()"
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2822
+    .line 2855
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_0
 
-    .line 2823
+    .line 2856
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -25995,17 +26331,17 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2824
+    .line 2857
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2894
+    .line 2927
     :cond_0
     :goto_0
     return-void
 
-    .line 2830
+    .line 2863
     :cond_1
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -26016,7 +26352,7 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
 
-    .line 2831
+    .line 2864
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     invoke-static {v6}, Lcom/android/internal/telephony/MMTelSSUtils;->getXcapRootUri(I)Ljava/lang/String;
@@ -26025,7 +26361,7 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
 
-    .line 2832
+    .line 2865
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     invoke-static {v6}, Lcom/android/internal/telephony/MMTelSSUtils;->getXIntendedId(I)Ljava/lang/String;
@@ -26034,7 +26370,7 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
 
-    .line 2834
+    .line 2867
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     iget-object v0, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
@@ -26045,7 +26381,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2835
+    .line 2868
     const-string v0, "MMTelSS"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -26072,12 +26408,12 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2836
+    .line 2869
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_0
 
-    .line 2837
+    .line 2870
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -26088,7 +26424,7 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2838
+    .line 2871
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
@@ -26098,11 +26434,11 @@
 
     goto :goto_0
 
-    .line 2854
+    .line 2887
     :catch_0
     move-exception v13
 
-    .line 2855
+    .line 2888
     .local v13, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     const-string v0, "MMTelSS"
 
@@ -26110,29 +26446,29 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2856
+    .line 2889
     invoke-virtual {v13}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
 
-    .line 2857
+    .line 2890
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_3
 
-    .line 2858
+    .line 2891
     invoke-virtual {v13}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 2859
+    .line 2892
     const-string v0, "MMTelSS"
 
     const-string v1, "handleSetCOLP(): xcapException.isConnectionError()"
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2860
+    .line 2893
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -26143,13 +26479,13 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2864
+    .line 2897
     :goto_1
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2865
+    .line 2898
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -26159,7 +26495,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2866
+    .line 2899
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -26171,7 +26507,7 @@
 
     goto/16 :goto_0
 
-    .line 2843
+    .line 2876
     .end local v13    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     :cond_2
     :try_start_1
@@ -26180,7 +26516,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v0, v6}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 2845
+    .line 2878
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     iget-object v1, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -26205,7 +26541,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 2847
+    .line 2880
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mSimservs:Lcom/mediatek/simservs/client/SimServs;
     invoke-static {}, Lcom/android/internal/telephony/MMTelSSTransport;->access$500()Lcom/mediatek/simservs/client/SimServs;
 
@@ -26224,13 +26560,13 @@
 
     move-result-object v12
 
-    .line 2849
+    .line 2882
     .local v12, "tip":Lcom/mediatek/simservs/client/TerminatingIdentityPresentation;
     const/4 v0, 0x1
 
     if-ne v8, v0, :cond_5
 
-    .line 2850
+    .line 2883
     const/4 v0, 0x1
 
     invoke-virtual {v12, v0}, Lcom/mediatek/simservs/client/TerminatingIdentityPresentation;->setActive(Z)V
@@ -26238,7 +26574,7 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 2887
+    .line 2920
     .end local v12    # "tip":Lcom/mediatek/simservs/client/TerminatingIdentityPresentation;
     :cond_3
     :goto_2
@@ -26246,7 +26582,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 2888
+    .line 2921
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -26255,12 +26591,12 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2889
+    .line 2922
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2891
+    .line 2924
     :cond_4
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
@@ -26271,7 +26607,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2892
+    .line 2925
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -26283,7 +26619,7 @@
 
     goto/16 :goto_0
 
-    .line 2852
+    .line 2885
     .restart local v12    # "tip":Lcom/mediatek/simservs/client/TerminatingIdentityPresentation;
     :cond_5
     const/4 v0, 0x0
@@ -26296,12 +26632,12 @@
 
     goto :goto_2
 
-    .line 2870
+    .line 2903
     .end local v12    # "tip":Lcom/mediatek/simservs/client/TerminatingIdentityPresentation;
     :catch_1
     move-exception v9
 
-    .line 2873
+    .line 2906
     .local v9, "e":Ljava/lang/Exception;
     const-string v0, "MMTelSS"
 
@@ -26309,22 +26645,22 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2874
+    .line 2907
     invoke-virtual {v9}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 2875
+    .line 2908
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_3
 
-    .line 2876
+    .line 2909
     const/4 v0, 0x2
 
     invoke-static {v0}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v7
 
-    .line 2877
+    .line 2910
     .local v7, "ce":Lcom/android/internal/telephony/CommandException;
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
@@ -26332,12 +26668,12 @@
 
     invoke-static {v0, v1, v7}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2878
+    .line 2911
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2879
+    .line 2912
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -26347,7 +26683,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2880
+    .line 2913
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -26359,7 +26695,7 @@
 
     goto/16 :goto_0
 
-    .line 2862
+    .line 2895
     .end local v7    # "ce":Lcom/android/internal/telephony/CommandException;
     .end local v9    # "e":Ljava/lang/Exception;
     .restart local v13    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
@@ -26378,21 +26714,21 @@
     .param p1, "rr"    # Lcom/android/internal/telephony/MMTelSSRequest;
 
     .prologue
-    .line 2725
+    .line 2758
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 2726
+    .line 2759
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
     invoke-virtual {v0}, Landroid/os/Parcel;->readInt()I
 
     move-result v10
 
-    .line 2727
+    .line 2760
     .local v10, "reqNo":I
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
@@ -26400,7 +26736,7 @@
 
     move-result v11
 
-    .line 2729
+    .line 2762
     .local v11, "serialNo":I
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
@@ -26408,7 +26744,7 @@
 
     move-result v8
 
-    .line 2730
+    .line 2763
     .local v8, "colrMode":I
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
 
@@ -26416,7 +26752,7 @@
 
     move-result v6
 
-    .line 2731
+    .line 2764
     .local v6, "phoneId":I
     const-string v0, "MMTelSS"
 
@@ -26440,26 +26776,26 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2733
+    .line 2766
     invoke-static {v6}, Lcom/android/internal/telephony/MMTelSSUtils;->isPreferXcap(I)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 2734
+    .line 2767
     const-string v0, "MMTelSS"
 
     const-string v1, "handleSetCOLR(): !isPreferXcap()"
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2735
+    .line 2768
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_0
 
-    .line 2736
+    .line 2769
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -26470,17 +26806,17 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2737
+    .line 2770
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2809
+    .line 2842
     :cond_0
     :goto_0
     return-void
 
-    .line 2743
+    .line 2776
     :cond_1
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -26491,7 +26827,7 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
 
-    .line 2744
+    .line 2777
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     invoke-static {v6}, Lcom/android/internal/telephony/MMTelSSUtils;->getXcapRootUri(I)Ljava/lang/String;
@@ -26500,7 +26836,7 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
 
-    .line 2745
+    .line 2778
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     invoke-static {v6}, Lcom/android/internal/telephony/MMTelSSUtils;->getXIntendedId(I)Ljava/lang/String;
@@ -26509,7 +26845,7 @@
 
     iput-object v1, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
 
-    .line 2747
+    .line 2780
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     iget-object v0, v0, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
@@ -26520,7 +26856,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2748
+    .line 2781
     const-string v0, "MMTelSS"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -26547,12 +26883,12 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2749
+    .line 2782
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_0
 
-    .line 2750
+    .line 2783
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -26563,7 +26899,7 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2751
+    .line 2784
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
@@ -26573,11 +26909,11 @@
 
     goto :goto_0
 
-    .line 2769
+    .line 2802
     :catch_0
     move-exception v13
 
-    .line 2770
+    .line 2803
     .local v13, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     const-string v0, "MMTelSS"
 
@@ -26585,29 +26921,29 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2771
+    .line 2804
     invoke-virtual {v13}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
 
-    .line 2772
+    .line 2805
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_3
 
-    .line 2773
+    .line 2806
     invoke-virtual {v13}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
 
     move-result v0
 
     if-eqz v0, :cond_7
 
-    .line 2774
+    .line 2807
     const-string v0, "MMTelSS"
 
     const-string v1, "handleSetCOLR(): xcapException.isConnectionError()"
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2775
+    .line 2808
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -26618,13 +26954,13 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2779
+    .line 2812
     :goto_1
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2780
+    .line 2813
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -26634,7 +26970,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2781
+    .line 2814
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -26646,7 +26982,7 @@
 
     goto/16 :goto_0
 
-    .line 2756
+    .line 2789
     .end local v13    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     :cond_2
     :try_start_1
@@ -26655,7 +26991,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v0, v6}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 2758
+    .line 2791
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     iget-object v1, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -26680,7 +27016,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 2760
+    .line 2793
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mSimservs:Lcom/mediatek/simservs/client/SimServs;
     invoke-static {}, Lcom/android/internal/telephony/MMTelSSTransport;->access$500()Lcom/mediatek/simservs/client/SimServs;
 
@@ -26699,13 +27035,13 @@
 
     move-result-object v12
 
-    .line 2762
+    .line 2795
     .local v12, "tir":Lcom/mediatek/simservs/client/TerminatingIdentityPresentationRestriction;
     const/4 v0, 0x1
 
     if-ne v8, v0, :cond_5
 
-    .line 2763
+    .line 2796
     const/4 v0, 0x1
 
     invoke-virtual {v12, v0}, Lcom/mediatek/simservs/client/TerminatingIdentityPresentationRestriction;->setDefaultPresentationRestricted(Z)V
@@ -26713,7 +27049,7 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 2802
+    .line 2835
     .end local v12    # "tir":Lcom/mediatek/simservs/client/TerminatingIdentityPresentationRestriction;
     :cond_3
     :goto_2
@@ -26721,7 +27057,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 2803
+    .line 2836
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
@@ -26730,12 +27066,12 @@
 
     invoke-static {v0, v1, v2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2804
+    .line 2837
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2806
+    .line 2839
     :cond_4
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
@@ -26746,7 +27082,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2807
+    .line 2840
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -26758,14 +27094,14 @@
 
     goto/16 :goto_0
 
-    .line 2764
+    .line 2797
     .restart local v12    # "tir":Lcom/mediatek/simservs/client/TerminatingIdentityPresentationRestriction;
     :cond_5
     const/4 v0, 0x2
 
     if-ne v8, v0, :cond_6
 
-    .line 2765
+    .line 2798
     const/4 v0, 0x0
 
     :try_start_2
@@ -26776,12 +27112,12 @@
 
     goto :goto_2
 
-    .line 2785
+    .line 2818
     .end local v12    # "tir":Lcom/mediatek/simservs/client/TerminatingIdentityPresentationRestriction;
     :catch_1
     move-exception v9
 
-    .line 2788
+    .line 2821
     .local v9, "e":Ljava/lang/Exception;
     const-string v0, "MMTelSS"
 
@@ -26789,22 +27125,22 @@
 
     invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2789
+    .line 2822
     invoke-virtual {v9}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 2790
+    .line 2823
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_3
 
-    .line 2791
+    .line 2824
     const/4 v0, 0x2
 
     invoke-static {v0}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v7
 
-    .line 2792
+    .line 2825
     .local v7, "ce":Lcom/android/internal/telephony/CommandException;
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
@@ -26812,12 +27148,12 @@
 
     invoke-static {v0, v1, v7}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2793
+    .line 2826
     iget-object v0, p1, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2794
+    .line 2827
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -26827,7 +27163,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2795
+    .line 2828
     iget-object v0, p0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
 
     # getter for: Lcom/android/internal/telephony/MMTelSSTransport;->mXcapMobileDataNetworkManager:Lcom/android/internal/telephony/XcapMobileDataNetworkManager;
@@ -26839,7 +27175,7 @@
 
     goto/16 :goto_0
 
-    .line 2767
+    .line 2800
     .end local v7    # "ce":Lcom/android/internal/telephony/CommandException;
     .end local v9    # "e":Ljava/lang/Exception;
     .restart local v12    # "tir":Lcom/mediatek/simservs/client/TerminatingIdentityPresentationRestriction;
@@ -26854,7 +27190,7 @@
 
     goto :goto_2
 
-    .line 2777
+    .line 2810
     .end local v12    # "tir":Lcom/mediatek/simservs/client/TerminatingIdentityPresentationRestriction;
     .restart local v13    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     :cond_7
@@ -26872,7 +27208,7 @@
     .param p1, "rr"    # Lcom/android/internal/telephony/MMTelSSRequest;
 
     .prologue
-    .line 2899
+    .line 2932
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -26881,7 +27217,7 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 2900
+    .line 2933
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mp:Landroid/os/Parcel;
@@ -26890,7 +27226,7 @@
 
     move-result v15
 
-    .line 2901
+    .line 2934
     .local v15, "reqNo":I
     move-object/from16 v0, p1
 
@@ -26900,7 +27236,7 @@
 
     move-result v16
 
-    .line 2902
+    .line 2935
     .local v16, "serialNo":I
     move-object/from16 v0, p1
 
@@ -26910,7 +27246,7 @@
 
     move-result v14
 
-    .line 2903
+    .line 2936
     .local v14, "enabled":I
     move-object/from16 v0, p1
 
@@ -26920,7 +27256,7 @@
 
     move-result v17
 
-    .line 2904
+    .line 2937
     .local v17, "serviceClass":I
     move-object/from16 v0, p1
 
@@ -26930,7 +27266,7 @@
 
     move-result v8
 
-    .line 2906
+    .line 2939
     .local v8, "phoneId":I
     invoke-static {v8}, Lcom/android/internal/telephony/MMTelSSUtils;->isPreferXcap(I)Z
 
@@ -26938,21 +27274,21 @@
 
     if-nez v2, :cond_1
 
-    .line 2907
+    .line 2940
     const-string v2, "MMTelSS"
 
     const-string v3, "handleSetCW(): !isPreferXcap()"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2908
+    .line 2941
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_0
 
-    .line 2909
+    .line 2942
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -26965,29 +27301,29 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2910
+    .line 2943
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2912
+    .line 2945
     :cond_0
     const/4 v2, 0x0
 
-    .line 3017
+    .line 3050
     :goto_0
     return v2
 
-    .line 2917
+    .line 2950
     :cond_1
     :try_start_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v10
 
-    .line 2918
+    .line 2951
     .local v10, "curTime":J
     const-string v2, "MMTelSS"
 
@@ -27059,7 +27395,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2921
+    .line 2954
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27070,7 +27406,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXui:Ljava/lang/String;
 
-    .line 2922
+    .line 2955
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27081,7 +27417,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXcapRoot:Ljava/lang/String;
 
-    .line 2923
+    .line 2956
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27092,7 +27428,7 @@
 
     iput-object v3, v2, Lcom/android/internal/telephony/MMTelSSTransport;->mXIntendedId:Ljava/lang/String;
 
-    .line 2925
+    .line 2958
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27105,7 +27441,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 2926
+    .line 2959
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -27134,14 +27470,14 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2927
+    .line 2960
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_2
 
-    .line 2928
+    .line 2961
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -27154,20 +27490,20 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2929
+    .line 2962
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2931
+    .line 2964
     :cond_2
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    .line 2933
+    .line 2966
     :cond_3
     move-object/from16 v0, p0
 
@@ -27176,7 +27512,7 @@
     # invokes: Lcom/android/internal/telephony/MMTelSSTransport;->requestXcapNetwork(I)V
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$300(Lcom/android/internal/telephony/MMTelSSTransport;I)V
 
-    .line 2934
+    .line 2967
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27213,7 +27549,7 @@
 
     invoke-virtual/range {v2 .. v8}, Lcom/android/internal/telephony/MMTelSSTransport;->setSimservsInitParameters(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 2936
+    .line 2969
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27251,7 +27587,7 @@
 
     if-eqz v2, :cond_7
 
-    .line 2938
+    .line 2971
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -27283,7 +27619,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2939
+    .line 2972
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27293,7 +27629,7 @@
 
     move-result-object v12
 
-    .line 2940
+    .line 2973
     .local v12, "cw":Lcom/mediatek/simservs/client/CommunicationWaiting;
     move-object/from16 v0, p0
 
@@ -27306,10 +27642,10 @@
 
     invoke-virtual {v12, v2}, Lcom/mediatek/simservs/client/CommunicationWaiting;->setNetwork(Landroid/net/Network;)V
 
-    .line 2941
+    .line 2974
     invoke-virtual {v12}, Lcom/mediatek/simservs/client/CommunicationWaiting;->refresh()V
 
-    .line 2942
+    .line 2975
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27317,7 +27653,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCacheLastQueried:J
     invoke-static {v2, v10, v11}, Lcom/android/internal/telephony/MMTelSSTransport;->access$802(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 2957
+    .line 2990
     :goto_1
     const-string v2, "MMTelSS"
 
@@ -27341,12 +27677,12 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2958
+    .line 2991
     const/4 v2, 0x1
 
     if-ne v14, v2, :cond_a
 
-    .line 2959
+    .line 2992
     const/4 v2, 0x1
 
     invoke-virtual {v12, v2}, Lcom/mediatek/simservs/client/CommunicationWaiting;->setActive(Z)V
@@ -27354,7 +27690,7 @@
     .catch Lcom/mediatek/simservs/xcap/XcapException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 3008
+    .line 3041
     .end local v10    # "curTime":J
     .end local v12    # "cw":Lcom/mediatek/simservs/client/CommunicationWaiting;
     :cond_4
@@ -27365,7 +27701,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 3009
+    .line 3042
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -27376,14 +27712,14 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 3010
+    .line 3043
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 3013
+    .line 3046
     :cond_5
     move-object/from16 v0, p0
 
@@ -27396,7 +27732,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 3014
+    .line 3047
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27408,13 +27744,13 @@
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 3017
+    .line 3050
     :cond_6
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    .line 2943
+    .line 2976
     .restart local v10    # "curTime":J
     :cond_7
     :try_start_1
@@ -27470,7 +27806,7 @@
 
     if-gez v2, :cond_8
 
-    .line 2946
+    .line 2979
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -27502,7 +27838,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2947
+    .line 2980
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27512,7 +27848,7 @@
 
     move-result-object v12
 
-    .line 2948
+    .line 2981
     .restart local v12    # "cw":Lcom/mediatek/simservs/client/CommunicationWaiting;
     move-object/from16 v0, p0
 
@@ -27530,13 +27866,13 @@
 
     goto/16 :goto_1
 
-    .line 2963
+    .line 2996
     .end local v10    # "curTime":J
     .end local v12    # "cw":Lcom/mediatek/simservs/client/CommunicationWaiting;
     :catch_0
     move-exception v18
 
-    .line 2964
+    .line 2997
     .local v18, "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     move-object/from16 v0, p0
 
@@ -27547,7 +27883,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCache:Lcom/mediatek/simservs/client/CommunicationWaiting;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$702(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationWaiting;)Lcom/mediatek/simservs/client/CommunicationWaiting;
 
-    .line 2965
+    .line 2998
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27557,7 +27893,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$902(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 2966
+    .line 2999
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27567,7 +27903,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$802(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 2968
+    .line 3001
     invoke-virtual/range {v18 .. v18}, Lcom/mediatek/simservs/xcap/XcapException;->getHttpErrorCode()I
 
     move-result v2
@@ -27576,19 +27912,19 @@
 
     if-ne v2, v3, :cond_b
 
-    .line 2969
+    .line 3002
     const-string v2, "MMTelSS"
 
     const-string v3, "handleSetCW(): HTTP_ERROR_CODE_412"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2970
+    .line 3003
     const/16 v2, 0x19c
 
     goto/16 :goto_0
 
-    .line 2950
+    .line 2983
     .end local v18    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
     .restart local v10    # "curTime":J
     :cond_8
@@ -27613,7 +27949,7 @@
 
     move-result-object v12
 
-    .line 2951
+    .line 2984
     .restart local v12    # "cw":Lcom/mediatek/simservs/client/CommunicationWaiting;
     move-object/from16 v0, p0
 
@@ -27622,7 +27958,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCache:Lcom/mediatek/simservs/client/CommunicationWaiting;
     invoke-static {v2, v12}, Lcom/android/internal/telephony/MMTelSSTransport;->access$702(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationWaiting;)Lcom/mediatek/simservs/client/CommunicationWaiting;
 
-    .line 2952
+    .line 2985
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27630,7 +27966,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCachePhoneId:I
     invoke-static {v2, v8}, Lcom/android/internal/telephony/MMTelSSTransport;->access$902(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 2953
+    .line 2986
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27638,7 +27974,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCacheLastQueried:J
     invoke-static {v2, v10, v11}, Lcom/android/internal/telephony/MMTelSSTransport;->access$802(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 2954
+    .line 2987
     const-string v2, "MMTelSS"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -27685,13 +28021,13 @@
 
     goto/16 :goto_1
 
-    .line 2987
+    .line 3020
     .end local v10    # "curTime":J
     .end local v12    # "cw":Lcom/mediatek/simservs/client/CommunicationWaiting;
     :catch_1
     move-exception v13
 
-    .line 2990
+    .line 3023
     .local v13, "e":Ljava/lang/Exception;
     const-string v2, "MMTelSS"
 
@@ -27699,7 +28035,7 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2991
+    .line 3024
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27709,7 +28045,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCache:Lcom/mediatek/simservs/client/CommunicationWaiting;
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$702(Lcom/android/internal/telephony/MMTelSSTransport;Lcom/mediatek/simservs/client/CommunicationWaiting;)Lcom/mediatek/simservs/client/CommunicationWaiting;
 
-    .line 2992
+    .line 3025
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27719,7 +28055,7 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCachePhoneId:I
     invoke-static {v2, v3}, Lcom/android/internal/telephony/MMTelSSTransport;->access$902(Lcom/android/internal/telephony/MMTelSSTransport;I)I
 
-    .line 2993
+    .line 3026
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27729,24 +28065,24 @@
     # setter for: Lcom/android/internal/telephony/MMTelSSTransport;->mCwCacheLastQueried:J
     invoke-static {v2, v4, v5}, Lcom/android/internal/telephony/MMTelSSTransport;->access$802(Lcom/android/internal/telephony/MMTelSSTransport;J)J
 
-    .line 2995
+    .line 3028
     invoke-virtual {v13}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 2996
+    .line 3029
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_4
 
-    .line 2997
+    .line 3030
     const/4 v2, 0x2
 
     invoke-static {v2}, Lcom/android/internal/telephony/CommandException;->fromRilErrno(I)Lcom/android/internal/telephony/CommandException;
 
     move-result-object v9
 
-    .line 2998
+    .line 3031
     .local v9, "ce":Lcom/android/internal/telephony/CommandException;
     move-object/from16 v0, p1
 
@@ -27756,14 +28092,14 @@
 
     invoke-static {v2, v3, v9}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2999
+    .line 3032
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 3000
+    .line 3033
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27775,7 +28111,7 @@
 
     if-eqz v2, :cond_9
 
-    .line 3001
+    .line 3034
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27787,13 +28123,13 @@
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 3003
+    .line 3036
     :cond_9
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    .line 2961
+    .line 2994
     .end local v9    # "ce":Lcom/android/internal/telephony/CommandException;
     .end local v13    # "e":Ljava/lang/Exception;
     .restart local v10    # "curTime":J
@@ -27809,7 +28145,7 @@
 
     goto/16 :goto_2
 
-    .line 2972
+    .line 3005
     .end local v10    # "curTime":J
     .end local v12    # "cw":Lcom/mediatek/simservs/client/CommunicationWaiting;
     .restart local v18    # "xcapException":Lcom/mediatek/simservs/xcap/XcapException;
@@ -27820,31 +28156,31 @@
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2973
+    .line 3006
     invoke-virtual/range {v18 .. v18}, Lcom/mediatek/simservs/xcap/XcapException;->printStackTrace()V
 
-    .line 2974
+    .line 3007
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
 
     if-eqz v2, :cond_4
 
-    .line 2975
+    .line 3008
     invoke-virtual/range {v18 .. v18}, Lcom/mediatek/simservs/xcap/XcapException;->isConnectionError()Z
 
     move-result v2
 
     if-eqz v2, :cond_d
 
-    .line 2976
+    .line 3009
     const-string v2, "MMTelSS"
 
     const-string v3, "handleSetCW(): xcapException.isConnectionError()"
 
     invoke-static {v2, v3}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2977
+    .line 3010
     move-object/from16 v0, p1
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSRequest;->mResult:Landroid/os/Message;
@@ -27857,7 +28193,7 @@
 
     invoke-static {v2, v3, v4}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Landroid/os/AsyncResult;
 
-    .line 2981
+    .line 3014
     :goto_3
     move-object/from16 v0, p1
 
@@ -27865,7 +28201,7 @@
 
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2982
+    .line 3015
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27877,7 +28213,7 @@
 
     if-eqz v2, :cond_c
 
-    .line 2983
+    .line 3016
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/internal/telephony/MMTelSSTransport$MMTelSSTransmitter;->this$0:Lcom/android/internal/telephony/MMTelSSTransport;
@@ -27889,13 +28225,13 @@
 
     invoke-virtual {v2}, Lcom/android/internal/telephony/XcapMobileDataNetworkManager;->releaseNetwork()V
 
-    .line 2985
+    .line 3018
     :cond_c
     const/4 v2, 0x0
 
     goto/16 :goto_0
 
-    .line 2979
+    .line 3012
     :cond_d
     move-object/from16 v0, p1
 

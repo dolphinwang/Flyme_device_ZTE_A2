@@ -40,6 +40,8 @@
 
 .field private static final OPERATOR_OP09:Ljava/lang/String; = "OP09"
 
+.field private static final PLMN_NO_SERVICE:Ljava/lang/String; = "00000"
+
 .field private static final PROPERTY_3G_SIM:Ljava/lang/String; = "persist.radio.simswitch"
 
 .field private static final PROPERTY_DEFAULT_DATA_ICCID:Ljava/lang/String; = "persist.radio.data.iccid"
@@ -134,7 +136,7 @@
 
     const/4 v2, 0x0
 
-    .line 396
+    .line 405
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
@@ -233,22 +235,22 @@
 
     iput-object v3, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 379
+    .line 388
     new-instance v3, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$2;
 
     invoke-direct {v3, p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$2;-><init>(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)V
 
     iput-object v3, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mWorldModeReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 397
+    .line 406
     const-string v3, "DataSubSelector is created"
 
     invoke-direct {p0, v3}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 398
+    .line 407
     iput p2, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
-    .line 399
+    .line 408
     const-string v3, "ro.operator.optr"
 
     const-string v4, "OM"
@@ -259,7 +261,7 @@
 
     sput-object v3, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
 
-    .line 400
+    .line 409
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -282,76 +284,76 @@
 
     invoke-direct {p0, v3}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 402
+    .line 411
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 403
+    .line 412
     .local v0, "filter":Landroid/content/IntentFilter;
     const-string v3, "android.intent.action.SIM_STATE_CHANGED"
 
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 404
+    .line 413
     const-string v3, "android.intent.action.ACTION_SET_RADIO_CAPABILITY_DONE"
 
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 405
+    .line 414
     const-string v3, "android.intent.action.ACTION_SET_RADIO_CAPABILITY_FAILED"
 
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 406
+    .line 415
     const-string v3, "com.mediatek.phone.ACTION_SET_RADIO_TECHNOLOGY_DONE"
 
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 407
+    .line 416
     const-string v3, "mediatek.intent.action.LOCATED_PLMN_CHANGED"
 
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 408
+    .line 417
     const-string v3, "android.intent.action.AIRPLANE_MODE"
 
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 409
+    .line 418
     const-string v3, "android.intent.action.ACTION_DEFAULT_DATA_SUBSCRIPTION_CHANGED"
 
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 411
+    .line 420
     const-string v3, "android.intent.action.ACTION_SUBINFO_RECORD_UPDATED"
 
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 414
+    .line 423
     const-string v3, "com.mediatek.phone.ACTION_SET_RADIO_TECHNOLOGY_START"
 
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 416
+    .line 425
     const-string v3, "com.mediatek.intent.action.INTENT_ACTION_RF_OFF_IN_IDLE"
 
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 418
+    .line 427
     const-string v3, "android.intent.action.ACTION_SHUTDOWN_IPO"
 
     invoke-virtual {v0, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 419
+    .line 428
     iget-object v3, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p1, v3, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 420
+    .line 429
     iput-object p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mContext:Landroid/content/Context;
 
-    .line 421
+    .line 430
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v3
@@ -367,20 +369,20 @@
     :goto_0
     iput-boolean v1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mAirplaneModeOn:Z
 
-    .line 424
+    .line 433
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubId()I
 
     move-result v1
 
     invoke-direct {p0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setLastValidDefaultDataSub(I)V
 
-    .line 425
+    .line 434
     return-void
 
     :cond_0
     move v1, v2
 
-    .line 421
+    .line 430
     goto :goto_0
 .end method
 
@@ -407,17 +409,17 @@
     return v0
 .end method
 
-.method static synthetic access$1000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
+.method static synthetic access$1000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+    .locals 1
     .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-    .param p1, "x1"    # Ljava/lang/String;
-    .param p2, "x2"    # Ljava/lang/String;
 
     .prologue
     .line 42
-    invoke-direct {p0, p1, p2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNeedWaitUnlock(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->checkOp01CapSwitch6m()Z
 
-    return-void
+    move-result v0
+
+    return v0
 .end method
 
 .method static synthetic access$102(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
@@ -432,7 +434,34 @@
     return p1
 .end method
 
-.method static synthetic access$1100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+.method static synthetic access$1100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
+    .locals 1
+    .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+    .param p1, "x1"    # I
+
+    .prologue
+    .line 42
+    invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->checkOp02CapSwitch(I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$1200(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
+    .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+    .param p1, "x1"    # Ljava/lang/String;
+    .param p2, "x2"    # Ljava/lang/String;
+
+    .prologue
+    .line 42
+    invoke-direct {p0, p1, p2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNeedWaitUnlock(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method static synthetic access$1300(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
     .locals 0
     .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
     .param p1, "x1"    # Landroid/content/Intent;
@@ -444,7 +473,7 @@
     return-void
 .end method
 
-.method static synthetic access$1200(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+.method static synthetic access$1400(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
     .locals 0
     .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
     .param p1, "x1"    # Landroid/content/Intent;
@@ -456,7 +485,7 @@
     return-void
 .end method
 
-.method static synthetic access$1300(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)V
+.method static synthetic access$1500(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)V
     .locals 0
     .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
 
@@ -467,7 +496,7 @@
     return-void
 .end method
 
-.method static synthetic access$1400(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+.method static synthetic access$1600(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
     .locals 1
     .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
 
@@ -480,7 +509,7 @@
     return v0
 .end method
 
-.method static synthetic access$1500(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+.method static synthetic access$1700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
     .locals 0
     .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
     .param p1, "x1"    # Landroid/content/Intent;
@@ -492,7 +521,7 @@
     return-void
 .end method
 
-.method static synthetic access$1600(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+.method static synthetic access$1800(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
     .locals 0
     .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
     .param p1, "x1"    # Landroid/content/Intent;
@@ -504,41 +533,6 @@
     return-void
 .end method
 
-.method static synthetic access$1702(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
-    .locals 0
-    .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-    .param p1, "x1"    # Z
-
-    .prologue
-    .line 42
-    iput-boolean p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mRadioTechDone:Z
-
-    return p1
-.end method
-
-.method static synthetic access$1800(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
-    .locals 0
-    .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-    .param p1, "x1"    # Landroid/content/Intent;
-
-    .prologue
-    .line 42
-    invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForSvlte(Landroid/content/Intent;)V
-
-    return-void
-.end method
-
-.method static synthetic access$1900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
-    .locals 1
-    .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    .prologue
-    .line 42
-    iget-boolean v0, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mAirplaneModeOn:Z
-
-    return v0
-.end method
-
 .method static synthetic access$1902(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
     .locals 0
     .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -546,7 +540,7 @@
 
     .prologue
     .line 42
-    iput-boolean p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mAirplaneModeOn:Z
+    iput-boolean p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mRadioTechDone:Z
 
     return p1
 .end method
@@ -565,27 +559,16 @@
     return v0
 .end method
 
-.method static synthetic access$2000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
-    .locals 1
-    .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    .prologue
-    .line 42
-    iget-boolean v0, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOff:Z
-
-    return v0
-.end method
-
-.method static synthetic access$2002(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
+.method static synthetic access$2000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
     .locals 0
     .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-    .param p1, "x1"    # Z
+    .param p1, "x1"    # Landroid/content/Intent;
 
     .prologue
     .line 42
-    iput-boolean p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOff:Z
+    invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForSvlte(Landroid/content/Intent;)V
 
-    return p1
+    return-void
 .end method
 
 .method static synthetic access$2100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
@@ -594,7 +577,7 @@
 
     .prologue
     .line 42
-    iget-boolean v0, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOffRoaming:Z
+    iget-boolean v0, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mAirplaneModeOn:Z
 
     return v0
 .end method
@@ -606,7 +589,7 @@
 
     .prologue
     .line 42
-    iput-boolean p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOffRoaming:Z
+    iput-boolean p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mAirplaneModeOn:Z
 
     return p1
 .end method
@@ -617,7 +600,7 @@
 
     .prologue
     .line 42
-    iget-boolean v0, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsUserConfirmDefaultData:Z
+    iget-boolean v0, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOff:Z
 
     return v0
 .end method
@@ -629,12 +612,58 @@
 
     .prologue
     .line 42
+    iput-boolean p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOff:Z
+
+    return p1
+.end method
+
+.method static synthetic access$2300(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+    .locals 1
+    .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    .prologue
+    .line 42
+    iget-boolean v0, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOffRoaming:Z
+
+    return v0
+.end method
+
+.method static synthetic access$2302(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
+    .locals 0
+    .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+    .param p1, "x1"    # Z
+
+    .prologue
+    .line 42
+    iput-boolean p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOffRoaming:Z
+
+    return p1
+.end method
+
+.method static synthetic access$2400(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+    .locals 1
+    .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    .prologue
+    .line 42
+    iget-boolean v0, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsUserConfirmDefaultData:Z
+
+    return v0
+.end method
+
+.method static synthetic access$2402(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
+    .locals 0
+    .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+    .param p1, "x1"    # Z
+
+    .prologue
+    .line 42
     iput-boolean p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsUserConfirmDefaultData:Z
 
     return p1
 .end method
 
-.method static synthetic access$2300(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)V
+.method static synthetic access$2500(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)V
     .locals 0
     .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
 
@@ -645,7 +674,7 @@
     return-void
 .end method
 
-.method static synthetic access$2400(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)V
+.method static synthetic access$2600(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)V
     .locals 0
     .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
     .param p1, "x1"    # I
@@ -657,7 +686,7 @@
     return-void
 .end method
 
-.method static synthetic access$2500(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)I
+.method static synthetic access$2700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)I
     .locals 1
     .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
 
@@ -668,7 +697,7 @@
     return v0
 .end method
 
-.method static synthetic access$2600(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
+.method static synthetic access$2800(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
     .locals 1
     .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
     .param p1, "x1"    # I
@@ -682,7 +711,7 @@
     return v0
 .end method
 
-.method static synthetic access$2700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)I
+.method static synthetic access$2900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)I
     .locals 1
     .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
 
@@ -733,12 +762,36 @@
 
     .prologue
     .line 42
+    invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->isOP01OMSupport()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)V
+    .locals 0
+    .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    .prologue
+    .line 42
+    invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp01OM()V
+
+    return-void
+.end method
+
+.method static synthetic access$800(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+    .locals 1
+    .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    .prologue
+    .line 42
     iget-boolean v0, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsiRoaming:Z
 
     return v0
 .end method
 
-.method static synthetic access$602(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
+.method static synthetic access$802(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
     .locals 0
     .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
     .param p1, "x1"    # Z
@@ -750,7 +803,7 @@
     return p1
 .end method
 
-.method static synthetic access$700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
+.method static synthetic access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
     .locals 1
     .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
 
@@ -761,7 +814,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$702(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)Landroid/content/Intent;
+.method static synthetic access$902(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)Landroid/content/Intent;
     .locals 0
     .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
     .param p1, "x1"    # Landroid/content/Intent;
@@ -773,38 +826,11 @@
     return-object p1
 .end method
 
-.method static synthetic access$800(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
-    .locals 1
-    .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    .prologue
-    .line 42
-    invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->checkOp01CapSwitch6m()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static synthetic access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
-    .locals 1
-    .param p0, "x0"    # Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-    .param p1, "x1"    # I
-
-    .prologue
-    .line 42
-    invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->checkOp02CapSwitch(I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method private checkCdmaCardInsert()Z
     .locals 4
 
     .prologue
-    .line 503
+    .line 512
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v2
@@ -813,7 +839,7 @@
 
     move-result v1
 
-    .line 504
+    .line 513
     .local v1, "phoneCount":I
     const/4 v0, 0x0
 
@@ -821,7 +847,7 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 505
+    .line 514
     invoke-static {}, Lcom/mediatek/internal/telephony/uicc/SvlteUiccUtils;->getInstance()Lcom/mediatek/internal/telephony/uicc/SvlteUiccUtils;
 
     move-result-object v2
@@ -832,7 +858,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 506
+    .line 515
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -853,20 +879,20 @@
 
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 507
+    .line 516
     const/4 v2, 0x1
 
-    .line 510
+    .line 519
     :goto_1
     return v2
 
-    .line 504
+    .line 513
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 510
+    .line 519
     :cond_1
     const/4 v2, 0x0
 
@@ -877,7 +903,7 @@
     .locals 20
 
     .prologue
-    .line 1047
+    .line 1101
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
@@ -888,7 +914,7 @@
 
     new-array v15, v0, [I
 
-    .line 1048
+    .line 1102
     .local v15, "simOpInfo":[I
     move-object/from16 v0, p0
 
@@ -902,27 +928,27 @@
 
     move-object/from16 v16, v0
 
-    .line 1049
+    .line 1103
     .local v16, "simType":[I
     const/16 v17, -0x1
 
-    .line 1050
+    .line 1104
     .local v17, "targetSim":I
     const/4 v8, 0x0
 
-    .line 1051
+    .line 1105
     .local v8, "insertedSimCount":I
     const/4 v5, 0x0
 
-    .line 1052
+    .line 1106
     .local v5, "csimRuimCount":I
     const/4 v10, -0x1
 
-    .line 1053
+    .line 1107
     .local v10, "nonCsimRuimPhoneId":I
     const/4 v9, 0x0
 
-    .line 1054
+    .line 1108
     .local v9, "insertedStatus":I
     move-object/from16 v0, p0
 
@@ -934,7 +960,7 @@
 
     new-array v12, v0, [Z
 
-    .line 1055
+    .line 1109
     .local v12, "op01Usim":[Z
     move-object/from16 v0, p0
 
@@ -946,7 +972,7 @@
 
     new-array v11, v0, [Z
 
-    .line 1056
+    .line 1110
     .local v11, "op01Sim":[Z
     move-object/from16 v0, p0
 
@@ -958,7 +984,7 @@
 
     new-array v14, v0, [Z
 
-    .line 1057
+    .line 1111
     .local v14, "overseaUsim":[Z
     move-object/from16 v0, p0
 
@@ -970,7 +996,7 @@
 
     new-array v13, v0, [Z
 
-    .line 1058
+    .line 1112
     .local v13, "overseaSim":[Z
     const-string v18, "persist.radio.simswitch.iccid"
 
@@ -978,7 +1004,7 @@
 
     move-result-object v3
 
-    .line 1059
+    .line 1113
     .local v3, "capabilitySimIccid":Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -990,7 +1016,7 @@
 
     new-array v6, v0, [Ljava/lang/String;
 
-    .line 1061
+    .line 1115
     .local v6, "currIccId":[Ljava/lang/String;
     const-string v18, "checkOp01CapSwitch start"
 
@@ -1000,7 +1026,7 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1063
+    .line 1117
     const/4 v7, 0x0
 
     .local v7, "i":I
@@ -1015,7 +1041,7 @@
 
     if-ge v7, v0, :cond_3
 
-    .line 1064
+    .line 1118
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->PROPERTY_ICCID:[Ljava/lang/String;
@@ -1030,7 +1056,7 @@
 
     aput-object v18, v6, v7
 
-    .line 1065
+    .line 1119
     aget-object v18, v6, v7
 
     if-eqz v18, :cond_0
@@ -1045,7 +1071,7 @@
 
     if-eqz v18, :cond_1
 
-    .line 1066
+    .line 1120
     :cond_0
     const-string v18, "error: iccid not found, wait for next sub ready"
 
@@ -1055,14 +1081,14 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1067
+    .line 1121
     const/16 v18, 0x0
 
-    .line 1214
+    .line 1268
     :goto_1
     return v18
 
-    .line 1069
+    .line 1123
     :cond_1
     const-string v18, "N/A"
 
@@ -1074,23 +1100,23 @@
 
     if-nez v18, :cond_2
 
-    .line 1070
+    .line 1124
     add-int/lit8 v8, v8, 0x1
 
-    .line 1071
+    .line 1125
     const/16 v18, 0x1
 
     shl-int v18, v18, v7
 
     or-int v9, v9, v18
 
-    .line 1063
+    .line 1117
     :cond_2
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
-    .line 1075
+    .line 1129
     :cond_3
     new-instance v18, Ljava/lang/StringBuilder;
 
@@ -1130,7 +1156,7 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1077
+    .line 1131
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
@@ -1143,7 +1169,7 @@
 
     if-eqz v18, :cond_4
 
-    .line 1078
+    .line 1132
     const-string v18, "checkOp01CapSwitch: sim locked"
 
     move-object/from16 v0, p0
@@ -1152,7 +1178,7 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1079
+    .line 1133
     const-string v18, "persist.radio.unlock"
 
     const-string v19, "true"
@@ -1165,7 +1191,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNeedWaitUnlock(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1084
+    .line 1138
     :goto_2
     move-object/from16 v0, v16
 
@@ -1175,12 +1201,12 @@
 
     if-nez v18, :cond_5
 
-    .line 1085
+    .line 1139
     const/16 v18, 0x0
 
     goto :goto_1
 
-    .line 1081
+    .line 1135
     :cond_4
     const-string v18, "checkOp01CapSwitch: no sim locked"
 
@@ -1190,7 +1216,7 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1082
+    .line 1136
     const-string v18, "persist.radio.unlock"
 
     const-string v19, "false"
@@ -1205,7 +1231,7 @@
 
     goto :goto_2
 
-    .line 1088
+    .line 1142
     :cond_5
     const-string v18, "persist.radio.simswitch"
 
@@ -1225,7 +1251,7 @@
 
     add-int/lit8 v4, v18, -0x1
 
-    .line 1090
+    .line 1144
     .local v4, "capabilitySimId":I
     new-instance v18, Ljava/lang/StringBuilder;
 
@@ -1265,7 +1291,7 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1092
+    .line 1146
     const/4 v7, 0x0
 
     :goto_3
@@ -1279,7 +1305,7 @@
 
     if-ge v7, v0, :cond_c
 
-    .line 1094
+    .line 1148
     aget v18, v15, v7
 
     const/16 v19, 0x2
@@ -1290,17 +1316,17 @@
 
     if-ne v0, v1, :cond_9
 
-    .line 1095
+    .line 1149
     aget v18, v16, v7
 
     if-eqz v18, :cond_8
 
-    .line 1096
+    .line 1150
     const/16 v18, 0x1
 
     aput-boolean v18, v12, v7
 
-    .line 1108
+    .line 1162
     :cond_6
     :goto_4
     aget v18, v16, v7
@@ -1317,17 +1343,17 @@
 
     if-ne v0, v1, :cond_b
 
-    .line 1110
+    .line 1164
     :cond_7
     move v10, v7
 
-    .line 1092
+    .line 1146
     :goto_5
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_3
 
-    .line 1098
+    .line 1152
     :cond_8
     const/16 v18, 0x1
 
@@ -1335,7 +1361,7 @@
 
     goto :goto_4
 
-    .line 1100
+    .line 1154
     :cond_9
     aget v18, v15, v7
 
@@ -1347,19 +1373,19 @@
 
     if-ne v0, v1, :cond_6
 
-    .line 1101
+    .line 1155
     aget v18, v16, v7
 
     if-eqz v18, :cond_a
 
-    .line 1102
+    .line 1156
     const/16 v18, 0x1
 
     aput-boolean v18, v14, v7
 
     goto :goto_4
 
-    .line 1104
+    .line 1158
     :cond_a
     const/16 v18, 0x1
 
@@ -1367,13 +1393,13 @@
 
     goto :goto_4
 
-    .line 1112
+    .line 1166
     :cond_b
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_5
 
-    .line 1116
+    .line 1170
     :cond_c
     new-instance v18, Ljava/lang/StringBuilder;
 
@@ -1403,7 +1429,7 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1117
+    .line 1171
     new-instance v18, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
@@ -1432,7 +1458,7 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1118
+    .line 1172
     new-instance v18, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
@@ -1461,7 +1487,7 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1119
+    .line 1173
     new-instance v18, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
@@ -1490,7 +1516,7 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1121
+    .line 1175
     new-instance v18, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
@@ -1517,7 +1543,7 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1122
+    .line 1176
     new-instance v18, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
@@ -1544,14 +1570,14 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1125
+    .line 1179
     invoke-static {}, Lcom/mediatek/internal/telephony/RadioCapabilitySwitchUtil;->isOp01LCProject()Z
 
     move-result v18
 
     if-eqz v18, :cond_e
 
-    .line 1126
+    .line 1180
     const/16 v18, 0x2
 
     move/from16 v0, v18
@@ -1564,10 +1590,10 @@
 
     if-ne v5, v0, :cond_e
 
-    .line 1127
+    .line 1181
     if-eq v10, v4, :cond_d
 
-    .line 1128
+    .line 1182
     const-string v18, "op01-L+C: current capability SIM is on CSIM/RUIM, change!"
 
     move-object/from16 v0, p0
@@ -1576,18 +1602,18 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1129
+    .line 1183
     move-object/from16 v0, p0
 
     invoke-direct {v0, v10}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
-    .line 1131
+    .line 1185
     :cond_d
     const/16 v18, 0x1
 
     goto/16 :goto_1
 
-    .line 1134
+    .line 1188
     :cond_e
     const/4 v7, 0x0
 
@@ -1602,7 +1628,7 @@
 
     if-ge v7, v0, :cond_1c
 
-    .line 1135
+    .line 1189
     aget-object v18, v6, v7
 
     move-object/from16 v0, v18
@@ -1613,12 +1639,12 @@
 
     if-eqz v18, :cond_1b
 
-    .line 1136
+    .line 1190
     invoke-static {v7, v12, v11, v14, v13}, Lcom/mediatek/internal/telephony/RadioCapabilitySwitchUtil;->getHigherPrioritySimForOp01(I[Z[Z[Z[Z)I
 
     move-result v17
 
-    .line 1138
+    .line 1192
     new-instance v18, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
@@ -1671,7 +1697,7 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1140
+    .line 1194
     aget-boolean v18, v12, v7
 
     const/16 v19, 0x1
@@ -1682,7 +1708,7 @@
 
     if-ne v0, v1, :cond_10
 
-    .line 1141
+    .line 1195
     const-string v18, "op01-C1: cur is old op01 USIM, no change"
 
     move-object/from16 v0, p0
@@ -1691,10 +1717,10 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1142
+    .line 1196
     if-eq v4, v7, :cond_f
 
-    .line 1143
+    .line 1197
     const-string v18, "op01-C1a: old op01 USIM change slot, change!"
 
     move-object/from16 v0, p0
@@ -1703,18 +1729,18 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1144
+    .line 1198
     move-object/from16 v0, p0
 
     invoke-direct {v0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
-    .line 1146
+    .line 1200
     :cond_f
     const/16 v18, 0x1
 
     goto/16 :goto_1
 
-    .line 1147
+    .line 1201
     :cond_10
     aget-boolean v18, v11, v7
 
@@ -1726,7 +1752,7 @@
 
     if-ne v0, v1, :cond_13
 
-    .line 1148
+    .line 1202
     const/16 v18, -0x1
 
     move/from16 v0, v17
@@ -1735,7 +1761,7 @@
 
     if-eq v0, v1, :cond_12
 
-    .line 1149
+    .line 1203
     const-string v18, "op01-C2: cur is old op01 SIM but find op01 USIM, change!"
 
     move-object/from16 v0, p0
@@ -1744,25 +1770,25 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1150
+    .line 1204
     move-object/from16 v0, p0
 
     move/from16 v1, v17
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
-    .line 1155
+    .line 1209
     :cond_11
     :goto_7
     const/16 v18, 0x1
 
     goto/16 :goto_1
 
-    .line 1151
+    .line 1205
     :cond_12
     if-eq v4, v7, :cond_11
 
-    .line 1152
+    .line 1206
     const-string v18, "op01-C2a: old op01 SIM change slot, change!"
 
     move-object/from16 v0, p0
@@ -1771,14 +1797,14 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1153
+    .line 1207
     move-object/from16 v0, p0
 
     invoke-direct {v0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
     goto :goto_7
 
-    .line 1156
+    .line 1210
     :cond_13
     aget-boolean v18, v14, v7
 
@@ -1790,7 +1816,7 @@
 
     if-ne v0, v1, :cond_16
 
-    .line 1157
+    .line 1211
     const/16 v18, -0x1
 
     move/from16 v0, v17
@@ -1799,7 +1825,7 @@
 
     if-eq v0, v1, :cond_15
 
-    .line 1158
+    .line 1212
     const-string v18, "op01-C3: cur is old OS USIM but find op01 SIMs, change!"
 
     move-object/from16 v0, p0
@@ -1808,25 +1834,25 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1159
+    .line 1213
     move-object/from16 v0, p0
 
     move/from16 v1, v17
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
-    .line 1164
+    .line 1218
     :cond_14
     :goto_8
     const/16 v18, 0x1
 
     goto/16 :goto_1
 
-    .line 1160
+    .line 1214
     :cond_15
     if-eq v4, v7, :cond_14
 
-    .line 1161
+    .line 1215
     const-string v18, "op01-C3a: old OS USIM change slot, change!"
 
     move-object/from16 v0, p0
@@ -1835,14 +1861,14 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1162
+    .line 1216
     move-object/from16 v0, p0
 
     invoke-direct {v0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
     goto :goto_8
 
-    .line 1165
+    .line 1219
     :cond_16
     aget-boolean v18, v13, v7
 
@@ -1854,7 +1880,7 @@
 
     if-ne v0, v1, :cond_19
 
-    .line 1166
+    .line 1220
     const/16 v18, -0x1
 
     move/from16 v0, v17
@@ -1863,7 +1889,7 @@
 
     if-eq v0, v1, :cond_18
 
-    .line 1167
+    .line 1221
     const-string v18, "op01-C4: cur is old OS SIM but find op01 SIMs/OS USIM, change!"
 
     move-object/from16 v0, p0
@@ -1872,25 +1898,25 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1168
+    .line 1222
     move-object/from16 v0, p0
 
     move/from16 v1, v17
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
-    .line 1173
+    .line 1227
     :cond_17
     :goto_9
     const/16 v18, 0x1
 
     goto/16 :goto_1
 
-    .line 1169
+    .line 1223
     :cond_18
     if-eq v4, v7, :cond_17
 
-    .line 1170
+    .line 1224
     const-string v18, "op01-C4a: old OS SIM change slot, change!"
 
     move-object/from16 v0, p0
@@ -1899,14 +1925,14 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1171
+    .line 1225
     move-object/from16 v0, p0
 
     invoke-direct {v0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
     goto :goto_9
 
-    .line 1174
+    .line 1228
     :cond_19
     const/16 v18, -0x1
 
@@ -1916,7 +1942,7 @@
 
     if-eq v0, v1, :cond_1a
 
-    .line 1175
+    .line 1229
     const-string v18, "op01-C5: cur is old non-op01 SIM/USIM but find higher SIM, change!"
 
     move-object/from16 v0, p0
@@ -1925,19 +1951,19 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1176
+    .line 1230
     move-object/from16 v0, p0
 
     move/from16 v1, v17
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
-    .line 1177
+    .line 1231
     const/16 v18, 0x1
 
     goto/16 :goto_1
 
-    .line 1179
+    .line 1233
     :cond_1a
     const-string v18, "op01-C6: no higher priority SIM, no cahnge"
 
@@ -1947,24 +1973,24 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1180
+    .line 1234
     const/16 v18, 0x1
 
     goto/16 :goto_1
 
-    .line 1134
+    .line 1188
     :cond_1b
     add-int/lit8 v7, v7, 0x1
 
     goto/16 :goto_6
 
-    .line 1184
+    .line 1238
     :cond_1c
     invoke-static {v4, v12, v11, v14, v13}, Lcom/mediatek/internal/telephony/RadioCapabilitySwitchUtil;->getHigherPrioritySimForOp01(I[Z[Z[Z[Z)I
 
     move-result v17
 
-    .line 1186
+    .line 1240
     new-instance v18, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
@@ -1993,7 +2019,7 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1187
+    .line 1241
     aget-boolean v18, v12, v4
 
     const/16 v19, 0x1
@@ -2004,7 +2030,7 @@
 
     if-ne v0, v1, :cond_1d
 
-    .line 1188
+    .line 1242
     const-string v18, "op01-C7: cur is new op01 USIM, no change"
 
     move-object/from16 v0, p0
@@ -2013,12 +2039,12 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1189
+    .line 1243
     const/16 v18, 0x1
 
     goto/16 :goto_1
 
-    .line 1190
+    .line 1244
     :cond_1d
     aget-boolean v18, v11, v4
 
@@ -2030,7 +2056,7 @@
 
     if-ne v0, v1, :cond_1f
 
-    .line 1191
+    .line 1245
     const/16 v18, -0x1
 
     move/from16 v0, v17
@@ -2039,7 +2065,7 @@
 
     if-eq v0, v1, :cond_1e
 
-    .line 1192
+    .line 1246
     const-string v18, "op01-C8: cur is new op01 SIM but find op01 USIM, change!"
 
     move-object/from16 v0, p0
@@ -2048,20 +2074,20 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1193
+    .line 1247
     move-object/from16 v0, p0
 
     move/from16 v1, v17
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
-    .line 1195
+    .line 1249
     :cond_1e
     const/16 v18, 0x1
 
     goto/16 :goto_1
 
-    .line 1196
+    .line 1250
     :cond_1f
     aget-boolean v18, v14, v4
 
@@ -2073,7 +2099,7 @@
 
     if-ne v0, v1, :cond_21
 
-    .line 1197
+    .line 1251
     const/16 v18, -0x1
 
     move/from16 v0, v17
@@ -2082,7 +2108,7 @@
 
     if-eq v0, v1, :cond_20
 
-    .line 1198
+    .line 1252
     const-string v18, "op01-C9: cur is new OS USIM but find op01 SIMs, change!"
 
     move-object/from16 v0, p0
@@ -2091,20 +2117,20 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1199
+    .line 1253
     move-object/from16 v0, p0
 
     move/from16 v1, v17
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
-    .line 1201
+    .line 1255
     :cond_20
     const/16 v18, 0x1
 
     goto/16 :goto_1
 
-    .line 1202
+    .line 1256
     :cond_21
     aget-boolean v18, v13, v4
 
@@ -2116,7 +2142,7 @@
 
     if-ne v0, v1, :cond_23
 
-    .line 1203
+    .line 1257
     const/16 v18, -0x1
 
     move/from16 v0, v17
@@ -2125,7 +2151,7 @@
 
     if-eq v0, v1, :cond_22
 
-    .line 1204
+    .line 1258
     const-string v18, "op01-C10: cur is new OS SIM but find op01 SIMs/OS USIM, change!"
 
     move-object/from16 v0, p0
@@ -2134,20 +2160,20 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1205
+    .line 1259
     move-object/from16 v0, p0
 
     move/from16 v1, v17
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
-    .line 1207
+    .line 1261
     :cond_22
     const/16 v18, 0x1
 
     goto/16 :goto_1
 
-    .line 1208
+    .line 1262
     :cond_23
     const/16 v18, -0x1
 
@@ -2157,7 +2183,7 @@
 
     if-eq v0, v1, :cond_24
 
-    .line 1209
+    .line 1263
     const-string v18, "op01-C11: cur is non-op01 but find higher priority SIM, change!"
 
     move-object/from16 v0, p0
@@ -2166,20 +2192,20 @@
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1210
+    .line 1264
     move-object/from16 v0, p0
 
     move/from16 v1, v17
 
     invoke-direct {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
-    .line 1214
+    .line 1268
     :goto_a
     const/16 v18, 0x1
 
     goto/16 :goto_1
 
-    .line 1212
+    .line 1266
     :cond_24
     const-string v18, "op01-C12: no higher priority SIM, no cahnge"
 
@@ -2196,42 +2222,42 @@
     .locals 13
 
     .prologue
-    .line 1220
+    .line 1274
     iget v11, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
     new-array v8, v11, [I
 
-    .line 1221
+    .line 1275
     .local v8, "simOpInfo":[I
     iget v11, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
     new-array v9, v11, [I
 
-    .line 1222
+    .line 1276
     .local v9, "simType":[I
     const/4 v10, -0x1
 
-    .line 1223
+    .line 1277
     .local v10, "targetPhoneId":I
     const/4 v4, 0x0
 
-    .line 1224
+    .line 1278
     .local v4, "insertedSimCount":I
     const/4 v5, 0x0
 
-    .line 1226
+    .line 1280
     .local v5, "insertedStatus":I
     iget v11, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
     new-array v0, v11, [Ljava/lang/String;
 
-    .line 1227
+    .line 1281
     .local v0, "currIccId":[Ljava/lang/String;
     iget v11, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
     new-array v6, v11, [I
 
-    .line 1228
+    .line 1282
     .local v6, "priority":[I
     invoke-static {}, Lcom/android/internal/telephony/SubscriptionController;->getInstance()Lcom/android/internal/telephony/SubscriptionController;
 
@@ -2241,13 +2267,13 @@
 
     move-result v2
 
-    .line 1229
+    .line 1283
     .local v2, "defDataSubId":I
     invoke-static {v2}, Landroid/telephony/SubscriptionManager;->getPhoneId(I)I
 
     move-result v1
 
-    .line 1230
+    .line 1284
     .local v1, "defDataPhoneId":I
     if-ltz v1, :cond_1
 
@@ -2255,7 +2281,7 @@
 
     if-ge v1, v11, :cond_1
 
-    .line 1232
+    .line 1286
     new-instance v11, Ljava/lang/StringBuilder;
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
@@ -2276,13 +2302,13 @@
 
     invoke-direct {p0, v11}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1238
+    .line 1292
     :goto_0
     const-string v11, "checkOp01CapSwitch6m start"
 
     invoke-direct {p0, v11}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1240
+    .line 1294
     const/4 v3, 0x0
 
     .local v3, "i":I
@@ -2291,7 +2317,7 @@
 
     if-ge v3, v11, :cond_4
 
-    .line 1241
+    .line 1295
     iget-object v11, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->PROPERTY_ICCID:[Ljava/lang/String;
 
     aget-object v11, v11, v3
@@ -2302,7 +2328,7 @@
 
     aput-object v11, v0, v3
 
-    .line 1242
+    .line 1296
     aget-object v11, v0, v3
 
     if-eqz v11, :cond_0
@@ -2317,20 +2343,20 @@
 
     if-eqz v11, :cond_2
 
-    .line 1243
+    .line 1297
     :cond_0
     const-string v11, "error: iccid not found, wait for next sub ready"
 
     invoke-direct {p0, v11}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1244
+    .line 1298
     const/4 v11, 0x0
 
-    .line 1293
+    .line 1347
     :goto_2
     return v11
 
-    .line 1234
+    .line 1288
     .end local v3    # "i":I
     :cond_1
     new-instance v11, Ljava/lang/StringBuilder;
@@ -2353,12 +2379,12 @@
 
     invoke-direct {p0, v11}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1235
+    .line 1289
     const/4 v1, -0x1
 
     goto :goto_0
 
-    .line 1246
+    .line 1300
     .restart local v3    # "i":I
     :cond_2
     const-string v11, "N/A"
@@ -2371,23 +2397,23 @@
 
     if-nez v11, :cond_3
 
-    .line 1247
+    .line 1301
     add-int/lit8 v4, v4, 0x1
 
-    .line 1248
+    .line 1302
     const/4 v11, 0x1
 
     shl-int/2addr v11, v3
 
     or-int/2addr v5, v11
 
-    .line 1240
+    .line 1294
     :cond_3
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 1253
+    .line 1307
     :cond_4
     const/4 v3, 0x0
 
@@ -2396,13 +2422,13 @@
 
     if-ge v3, v11, :cond_7
 
-    .line 1254
+    .line 1308
     if-nez v3, :cond_6
 
-    .line 1255
+    .line 1309
     const-string v7, "gsm.sim.ril.mcc.mnc"
 
-    .line 1259
+    .line 1313
     .local v7, "propStr":Ljava/lang/String;
     :goto_4
     const-string v11, ""
@@ -2419,7 +2445,7 @@
 
     if-eqz v11, :cond_5
 
-    .line 1260
+    .line 1314
     new-instance v11, Ljava/lang/StringBuilder;
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
@@ -2446,20 +2472,20 @@
 
     invoke-direct {p0, v11}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1261
+    .line 1315
     const-string v11, "persist.radio.unlock"
 
     const-string v12, "true"
 
     invoke-direct {p0, v11, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNeedWaitUnlock(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1253
+    .line 1307
     :cond_5
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_3
 
-    .line 1257
+    .line 1311
     .end local v7    # "propStr":Ljava/lang/String;
     :cond_6
     new-instance v11, Ljava/lang/StringBuilder;
@@ -2485,7 +2511,7 @@
     .restart local v7    # "propStr":Ljava/lang/String;
     goto :goto_4
 
-    .line 1264
+    .line 1318
     .end local v7    # "propStr":Ljava/lang/String;
     :cond_7
     invoke-static {v8, v9, v5}, Lcom/mediatek/internal/telephony/RadioCapabilitySwitchUtil;->getSimInfo([I[II)Z
@@ -2494,12 +2520,12 @@
 
     if-nez v11, :cond_8
 
-    .line 1265
+    .line 1319
     const/4 v11, 0x0
 
     goto/16 :goto_2
 
-    .line 1268
+    .line 1322
     :cond_8
     const/4 v3, 0x0
 
@@ -2508,46 +2534,46 @@
 
     if-ge v3, v11, :cond_c
 
-    .line 1269
+    .line 1323
     aget v11, v8, v3
 
     const/4 v12, 0x2
 
     if-ne v11, v12, :cond_b
 
-    .line 1270
+    .line 1324
     aget v11, v9, v3
 
     const/4 v12, 0x1
 
     if-ne v11, v12, :cond_a
 
-    .line 1271
+    .line 1325
     const/4 v11, 0x0
 
     aput v11, v6, v3
 
-    .line 1268
+    .line 1322
     :cond_9
     :goto_6
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_5
 
-    .line 1272
+    .line 1326
     :cond_a
     aget v11, v9, v3
 
     if-nez v11, :cond_9
 
-    .line 1273
+    .line 1327
     const/4 v11, 0x1
 
     aput v11, v6, v3
 
     goto :goto_6
 
-    .line 1276
+    .line 1330
     :cond_b
     const/4 v11, 0x2
 
@@ -2555,7 +2581,7 @@
 
     goto :goto_6
 
-    .line 1280
+    .line 1334
     :cond_c
     new-instance v11, Ljava/lang/StringBuilder;
 
@@ -2581,12 +2607,12 @@
 
     invoke-direct {p0, v11}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1283
+    .line 1337
     invoke-static {v1, v6}, Lcom/mediatek/internal/telephony/RadioCapabilitySwitchUtil;->getHighestPriorityPhone(I[I)I
 
     move-result v10
 
-    .line 1285
+    .line 1339
     new-instance v11, Ljava/lang/StringBuilder;
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
@@ -2607,26 +2633,26 @@
 
     invoke-direct {p0, v11}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1286
+    .line 1340
     const/4 v11, -0x1
 
     if-eq v10, v11, :cond_d
 
-    .line 1287
+    .line 1341
     const-string v11, "op01-6m: highest priority SIM determined, change!"
 
     invoke-direct {p0, v11}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1288
+    .line 1342
     invoke-direct {p0, v10}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
-    .line 1293
+    .line 1347
     :goto_7
     const/4 v11, 0x1
 
     goto/16 :goto_2
 
-    .line 1290
+    .line 1344
     :cond_d
     const-string v11, "op01-6m: can\'t determine highest priority SIM, no change"
 
@@ -2644,56 +2670,56 @@
 
     const/4 v11, 0x1
 
-    .line 1742
+    .line 1796
     iget v12, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
     new-array v7, v12, [I
 
-    .line 1743
+    .line 1797
     .local v7, "simOpInfo":[I
     iget v12, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
     new-array v8, v12, [I
 
-    .line 1744
+    .line 1798
     .local v8, "simType":[I
     const/4 v3, 0x0
 
-    .line 1745
+    .line 1799
     .local v3, "insertedStatus":I
     const/4 v2, 0x0
 
-    .line 1746
+    .line 1800
     .local v2, "insertedSimCount":I
     iget v12, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
     new-array v0, v12, [Ljava/lang/String;
 
-    .line 1747
+    .line 1801
     .local v0, "currIccId":[Ljava/lang/String;
     new-instance v9, Ljava/util/ArrayList;
 
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1748
+    .line 1802
     .local v9, "usimIndexList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1749
+    .line 1803
     .local v6, "simIndexList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1750
+    .line 1804
     .local v4, "op02IndexList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1752
+    .line 1806
     .local v5, "otherIndexList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     const/4 v1, 0x0
 
@@ -2703,7 +2729,7 @@
 
     if-ge v1, v12, :cond_4
 
-    .line 1753
+    .line 1807
     iget-object v12, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->PROPERTY_ICCID:[Ljava/lang/String;
 
     aget-object v12, v12, v1
@@ -2714,7 +2740,7 @@
 
     aput-object v12, v0, v1
 
-    .line 1754
+    .line 1808
     aget-object v12, v0, v1
 
     if-eqz v12, :cond_0
@@ -2729,18 +2755,18 @@
 
     if-eqz v12, :cond_2
 
-    .line 1755
+    .line 1809
     :cond_0
     const-string v11, "error: iccid not found, wait for next sub ready"
 
     invoke-direct {p0, v11}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1824
+    .line 1878
     :cond_1
     :goto_1
     return v10
 
-    .line 1758
+    .line 1812
     :cond_2
     const-string v12, "N/A"
 
@@ -2752,21 +2778,21 @@
 
     if-nez v12, :cond_3
 
-    .line 1759
+    .line 1813
     add-int/lit8 v2, v2, 0x1
 
-    .line 1760
+    .line 1814
     shl-int v12, v11, v1
 
     or-int/2addr v3, v12
 
-    .line 1752
+    .line 1806
     :cond_3
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1763
+    .line 1817
     :cond_4
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -2798,7 +2824,7 @@
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1767
+    .line 1821
     iget v12, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
     invoke-static {v12}, Lcom/mediatek/internal/telephony/RadioCapabilitySwitchUtil;->isAnySimLocked(I)Z
@@ -2807,22 +2833,22 @@
 
     if-eqz v12, :cond_7
 
-    .line 1768
+    .line 1822
     const-string v12, "checkOp02CapSwitch: sim locked"
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1769
+    .line 1823
     if-nez p1, :cond_6
 
-    .line 1770
+    .line 1824
     const-string v12, "persist.radio.unlock"
 
     const-string v13, "true"
 
     invoke-direct {p0, v12, v13}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNeedWaitUnlock(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1782
+    .line 1836
     :goto_2
     invoke-static {v7, v8, v3}, Lcom/mediatek/internal/telephony/RadioCapabilitySwitchUtil;->getSimInfo([I[II)Z
 
@@ -2830,23 +2856,23 @@
 
     if-eqz v12, :cond_1
 
-    .line 1786
+    .line 1840
     iget-boolean v12, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mAirplaneModeOn:Z
 
     if-eqz v12, :cond_5
 
-    .line 1787
+    .line 1841
     const-string v12, "DataSubSelector for OP02: do not switch because of mAirplaneModeOn"
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1788
+    .line 1842
     if-nez p1, :cond_9
 
-    .line 1789
+    .line 1843
     iput-boolean v11, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOff:Z
 
-    .line 1795
+    .line 1849
     :cond_5
     :goto_3
     const/4 v1, 0x0
@@ -2856,40 +2882,40 @@
 
     if-ge v1, v12, :cond_c
 
-    .line 1796
+    .line 1850
     const/4 v12, 0x3
 
     aget v13, v7, v1
 
     if-ne v12, v13, :cond_a
 
-    .line 1797
+    .line 1851
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v12
 
     invoke-virtual {v4, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1801
+    .line 1855
     :goto_5
     aget v12, v8, v1
 
     if-ne v11, v12, :cond_b
 
-    .line 1802
+    .line 1856
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v12
 
     invoke-virtual {v9, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1795
+    .line 1849
     :goto_6
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_4
 
-    .line 1772
+    .line 1826
     :cond_6
     const-string v12, "persist.radio.unlock.roaming"
 
@@ -2899,16 +2925,16 @@
 
     goto :goto_2
 
-    .line 1775
+    .line 1829
     :cond_7
     const-string v12, "checkOp02CapSwitch: no sim locked"
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1776
+    .line 1830
     if-nez p1, :cond_8
 
-    .line 1777
+    .line 1831
     const-string v12, "persist.radio.unlock"
 
     const-string v13, "false"
@@ -2917,7 +2943,7 @@
 
     goto :goto_2
 
-    .line 1779
+    .line 1833
     :cond_8
     const-string v12, "persist.radio.unlock.roaming"
 
@@ -2927,16 +2953,16 @@
 
     goto :goto_2
 
-    .line 1790
+    .line 1844
     :cond_9
     if-ne v11, p1, :cond_5
 
-    .line 1791
+    .line 1845
     iput-boolean v11, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOffRoaming:Z
 
     goto :goto_3
 
-    .line 1799
+    .line 1853
     :cond_a
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -2946,7 +2972,7 @@
 
     goto :goto_5
 
-    .line 1804
+    .line 1858
     :cond_b
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -2956,7 +2982,7 @@
 
     goto :goto_6
 
-    .line 1807
+    .line 1861
     :cond_c
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -2982,7 +3008,7 @@
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1808
+    .line 1862
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
@@ -3007,7 +3033,7 @@
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1809
+    .line 1863
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
@@ -3028,13 +3054,13 @@
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1811
+    .line 1865
     iput-boolean v10, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsUserConfirmDefaultData:Z
 
-    .line 1813
+    .line 1867
     packed-switch p1, :pswitch_data_0
 
-    .line 1821
+    .line 1875
     const-string v10, "Should NOT be here"
 
     invoke-direct {p0, v10}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->loge(Ljava/lang/String;)V
@@ -3042,22 +3068,22 @@
     :goto_7
     move v10, v11
 
-    .line 1824
+    .line 1878
     goto/16 :goto_1
 
-    .line 1815
+    .line 1869
     :pswitch_0
     invoke-direct {p0, v9, v4, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->executeOp02HomePolicy(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
     goto :goto_7
 
-    .line 1818
+    .line 1872
     :pswitch_1
     invoke-direct {p0, v9, v4, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->executeOp02RoamingPolocy(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
     goto :goto_7
 
-    .line 1813
+    .line 1867
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -3091,20 +3117,20 @@
     .local p3, "simIndexList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     const/4 v5, 0x1
 
-    .line 1829
+    .line 1883
     const/4 v2, -0x1
 
-    .line 1830
+    .line 1884
     .local v2, "phoneId":I
     const/4 v1, 0x0
 
-    .line 1832
+    .line 1886
     .local v1, "op02CardCount":I
     const-string v3, "Enter op02HomePolicy"
 
     invoke-direct {p0, v3}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1834
+    .line 1888
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v3
@@ -3113,7 +3139,7 @@
 
     if-lt v3, v4, :cond_4
 
-    .line 1836
+    .line 1890
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -3124,7 +3150,7 @@
 
     if-ge v0, v3, :cond_1
 
-    .line 1837
+    .line 1891
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -3135,23 +3161,23 @@
 
     if-eqz v3, :cond_0
 
-    .line 1838
+    .line 1892
     add-int/lit8 v1, v1, 0x1
 
-    .line 1839
+    .line 1893
     move v2, v0
 
-    .line 1836
+    .line 1890
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1843
+    .line 1897
     :cond_1
     if-ne v1, v5, :cond_3
 
-    .line 1848
+    .line 1902
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3172,45 +3198,45 @@
 
     invoke-direct {p0, v3}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1850
+    .line 1904
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
     move-result v3
 
     if-eqz v3, :cond_2
 
-    .line 1851
+    .line 1905
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDefaultData(I)V
 
-    .line 1852
+    .line 1906
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->handleDataEnableForOp02()V
 
-    .line 1904
+    .line 1958
     .end local v0    # "i":I
     :cond_2
     :goto_1
     return-void
 
-    .line 1857
+    .line 1911
     .restart local v0    # "i":I
     :cond_3
     const-string v3, "C3: More than two OP02 cards or other operator cards inserted,Display dialog"
 
     invoke-direct {p0, v3}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1859
+    .line 1913
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubId()I
 
     move-result v3
 
     invoke-direct {p0, v3}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setLastValidDefaultDataSub(I)V
 
-    .line 1860
+    .line 1914
     iput-boolean v5, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsUserConfirmDefaultData:Z
 
     goto :goto_1
 
-    .line 1862
+    .line 1916
     .end local v0    # "i":I
     :cond_4
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -3219,7 +3245,7 @@
 
     if-ne v3, v5, :cond_5
 
-    .line 1867
+    .line 1921
     const/4 v3, 0x0
 
     invoke-virtual {p1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3232,7 +3258,7 @@
 
     move-result v2
 
-    .line 1868
+    .line 1922
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3253,22 +3279,22 @@
 
     invoke-direct {p0, v3}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1870
+    .line 1924
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
     move-result v3
 
     if-eqz v3, :cond_2
 
-    .line 1871
+    .line 1925
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDefaultData(I)V
 
-    .line 1872
+    .line 1926
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->handleDataEnableForOp02()V
 
     goto :goto_1
 
-    .line 1877
+    .line 1931
     :cond_5
     const/4 v0, 0x0
 
@@ -3280,7 +3306,7 @@
 
     if-ge v0, v3, :cond_7
 
-    .line 1878
+    .line 1932
     invoke-virtual {p3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -3291,23 +3317,23 @@
 
     if-eqz v3, :cond_6
 
-    .line 1879
+    .line 1933
     add-int/lit8 v1, v1, 0x1
 
-    .line 1880
+    .line 1934
     move v2, v0
 
-    .line 1877
+    .line 1931
     :cond_6
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 1884
+    .line 1938
     :cond_7
     if-ne v1, v5, :cond_8
 
-    .line 1889
+    .line 1943
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3328,35 +3354,35 @@
 
     invoke-direct {p0, v3}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1891
+    .line 1945
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
     move-result v3
 
     if-eqz v3, :cond_2
 
-    .line 1892
+    .line 1946
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDefaultData(I)V
 
-    .line 1893
+    .line 1947
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->handleDataEnableForOp02()V
 
     goto :goto_1
 
-    .line 1898
+    .line 1952
     :cond_8
     const-string v3, "C6: More than two OP02 cards or other operator cards inserted,display dialog"
 
     invoke-direct {p0, v3}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1900
+    .line 1954
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubId()I
 
     move-result v3
 
     invoke-direct {p0, v3}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setLastValidDefaultDataSub(I)V
 
-    .line 1901
+    .line 1955
     iput-boolean v5, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsUserConfirmDefaultData:Z
 
     goto/16 :goto_1
@@ -3390,30 +3416,30 @@
 
     const/4 v7, 0x1
 
-    .line 1908
+    .line 1962
     const/4 v2, -0x1
 
-    .line 1909
+    .line 1963
     .local v2, "phoneId":I
     const/4 v4, 0x0
 
-    .line 1911
+    .line 1965
     .local v4, "usimCount":I
     const-string v5, "Enter op02RoamingPolocy"
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1913
+    .line 1967
     iget-object v5, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mContext:Landroid/content/Context;
 
     if-nez v5, :cond_0
 
-    .line 1914
+    .line 1968
     const-string v5, "mContext is null, return"
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->loge(Ljava/lang/String;)V
 
-    .line 1918
+    .line 1972
     :cond_0
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -3423,7 +3449,7 @@
 
     if-lt v5, v6, :cond_6
 
-    .line 1920
+    .line 1974
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -3434,7 +3460,7 @@
 
     if-ge v1, v5, :cond_2
 
-    .line 1921
+    .line 1975
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -3445,23 +3471,23 @@
 
     if-eqz v5, :cond_1
 
-    .line 1922
+    .line 1976
     add-int/lit8 v4, v4, 0x1
 
-    .line 1923
+    .line 1977
     move v2, v1
 
-    .line 1920
+    .line 1974
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1927
+    .line 1981
     :cond_2
     if-ne v4, v7, :cond_5
 
-    .line 1932
+    .line 1986
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -3482,20 +3508,20 @@
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1934
+    .line 1988
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
     move-result v5
 
     if-eqz v5, :cond_3
 
-    .line 1935
+    .line 1989
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDefaultData(I)V
 
-    .line 1936
+    .line 1990
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->handleDataEnableForOp02()V
 
-    .line 1987
+    .line 2041
     .end local v1    # "i":I
     :cond_3
     :goto_1
@@ -3507,35 +3533,35 @@
 
     move-result-object v3
 
-    .line 1989
+    .line 2043
     .local v3, "preferenceRoaming":Landroid/content/SharedPreferences;
     invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 1990
+    .line 2044
     .local v0, "editorRoaming":Landroid/content/SharedPreferences$Editor;
     const-string v5, "need_to_execute_roaming"
 
     invoke-interface {v0, v5, v8}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 1991
+    .line 2045
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     move-result v5
 
     if-nez v5, :cond_4
 
-    .line 1992
+    .line 2046
     const-string v5, "write sharedPreference ERROR"
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->loge(Ljava/lang/String;)V
 
-    .line 1994
+    .line 2048
     :cond_4
     return-void
 
-    .line 1941
+    .line 1995
     .end local v0    # "editorRoaming":Landroid/content/SharedPreferences$Editor;
     .end local v3    # "preferenceRoaming":Landroid/content/SharedPreferences;
     .restart local v1    # "i":I
@@ -3544,19 +3570,19 @@
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1942
+    .line 1996
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubId()I
 
     move-result v5
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setLastValidDefaultDataSub(I)V
 
-    .line 1943
+    .line 1997
     iput-boolean v7, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsUserConfirmDefaultData:Z
 
     goto :goto_1
 
-    .line 1945
+    .line 1999
     .end local v1    # "i":I
     :cond_6
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
@@ -3565,7 +3591,7 @@
 
     if-ne v5, v7, :cond_7
 
-    .line 1950
+    .line 2004
     invoke-virtual {p2, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -3576,7 +3602,7 @@
 
     move-result v2
 
-    .line 1951
+    .line 2005
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -3597,22 +3623,22 @@
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1953
+    .line 2007
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
     move-result v5
 
     if-eqz v5, :cond_3
 
-    .line 1954
+    .line 2008
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDefaultData(I)V
 
-    .line 1955
+    .line 2009
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->handleDataEnableForOp02()V
 
     goto :goto_1
 
-    .line 1960
+    .line 2014
     :cond_7
     const/4 v1, 0x0
 
@@ -3624,7 +3650,7 @@
 
     if-ge v1, v5, :cond_9
 
-    .line 1961
+    .line 2015
     invoke-virtual {p3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -3635,23 +3661,23 @@
 
     if-eqz v5, :cond_8
 
-    .line 1962
+    .line 2016
     add-int/lit8 v4, v4, 0x1
 
-    .line 1963
+    .line 2017
     move v2, v1
 
-    .line 1960
+    .line 2014
     :cond_8
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 1967
+    .line 2021
     :cond_9
     if-ne v4, v7, :cond_a
 
-    .line 1972
+    .line 2026
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -3672,35 +3698,35 @@
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1974
+    .line 2028
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
     move-result v5
 
     if-eqz v5, :cond_3
 
-    .line 1975
+    .line 2029
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDefaultData(I)V
 
-    .line 1976
+    .line 2030
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->handleDataEnableForOp02()V
 
     goto/16 :goto_1
 
-    .line 1981
+    .line 2035
     :cond_a
     const-string v5, "C6: More than two USIM cards or all SIM cards inserted, diaplay dialog"
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1982
+    .line 2036
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubId()I
 
     move-result v5
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setLastValidDefaultDataSub(I)V
 
-    .line 1983
+    .line 2037
     iput-boolean v7, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsUserConfirmDefaultData:Z
 
     goto/16 :goto_1
@@ -3711,7 +3737,7 @@
     .param p1, "nSubId"    # I
 
     .prologue
-    .line 2131
+    .line 2189
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -3732,10 +3758,10 @@
 
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 2133
+    .line 2191
     const/4 v0, 0x0
 
-    .line 2135
+    .line 2193
     .local v0, "retVal":Z
     iget-object v2, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mContext:Landroid/content/Context;
 
@@ -3749,13 +3775,13 @@
 
     if-nez v2, :cond_1
 
-    .line 2136
+    .line 2194
     :cond_0
     const-string v2, "getDataEnabledFromSetting, context or resolver is null, return"
 
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->loge(Ljava/lang/String;)V
 
-    .line 2146
+    .line 2204
     :goto_0
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -3777,10 +3803,10 @@
 
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 2147
+    .line 2205
     return v0
 
-    .line 2140
+    .line 2198
     :cond_1
     :try_start_0
     iget-object v2, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mContext:Landroid/content/Context;
@@ -3825,11 +3851,11 @@
 
     goto :goto_1
 
-    .line 2142
+    .line 2200
     :catch_0
     move-exception v1
 
-    .line 2143
+    .line 2201
     .local v1, "snfe":Landroid/provider/Settings$SettingNotFoundException;
     const-string v2, "data enabled settings not found!"
 
@@ -3842,12 +3868,12 @@
     .locals 5
 
     .prologue
-    .line 2108
+    .line 2162
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubId()I
 
     move-result v1
 
-    .line 2109
+    .line 2163
     .local v1, "subId":I
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -3869,7 +3895,7 @@
 
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 2110
+    .line 2164
     iget-object v2, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -3900,7 +3926,7 @@
 
     move-result v0
 
-    .line 2112
+    .line 2166
     .local v0, "enabled":I
     return v0
 .end method
@@ -3909,12 +3935,12 @@
     .locals 2
 
     .prologue
-    .line 2068
+    .line 2122
     const-string v0, "getNewSimSlot"
 
     invoke-direct {p0, v0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 2069
+    .line 2123
     const-string v0, "persist.radio.new.sim.slot"
 
     const/4 v1, 0x0
@@ -3930,12 +3956,12 @@
     .locals 2
 
     .prologue
-    .line 2048
+    .line 2102
     const-string v0, "getSimStatus"
 
     invoke-direct {p0, v0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 2049
+    .line 2103
     const-string v0, "persist.radio.sim.status"
 
     const/4 v1, 0x0
@@ -3951,12 +3977,12 @@
     .locals 7
 
     .prologue
-    .line 1997
+    .line 2051
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubId()I
 
     move-result v1
 
-    .line 1998
+    .line 2052
     .local v1, "defaultDataSub":I
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -3978,12 +4004,12 @@
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 2000
+    .line 2054
     invoke-static {v1}, Landroid/telephony/SubscriptionManager;->getPhoneId(I)I
 
     move-result v4
 
-    .line 2002
+    .line 2056
     .local v4, "phoneId":I
     iget v5, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mLastValidDefaultDataSubId:I
 
@@ -3993,14 +4019,14 @@
 
     if-eqz v5, :cond_1
 
-    .line 2003
+    .line 2057
     iget v5, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mLastValidDefaultDataSubId:I
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->getDataEnabledFromSetting(I)Z
 
     move-result v0
 
-    .line 2004
+    .line 2058
     .local v0, "dataEnabled":Z
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -4034,10 +4060,10 @@
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 2006
+    .line 2060
     invoke-direct {p0, v4, v0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDataEnabled(IZ)V
 
-    .line 2013
+    .line 2067
     .end local v0    # "dataEnabled":Z
     :goto_0
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
@@ -4048,7 +4074,7 @@
 
     move-result v3
 
-    .line 2014
+    .line 2068
     .local v3, "phoneCount":I
     const/4 v2, 0x0
 
@@ -4056,21 +4082,21 @@
     :goto_1
     if-ge v2, v3, :cond_2
 
-    .line 2015
+    .line 2069
     if-eq v2, v4, :cond_0
 
-    .line 2016
+    .line 2070
     const/4 v5, 0x0
 
     invoke-direct {p0, v2, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDataEnabled(IZ)V
 
-    .line 2014
+    .line 2068
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 2008
+    .line 2062
     .end local v2    # "i":I
     .end local v3    # "phoneCount":I
     :cond_1
@@ -4078,14 +4104,14 @@
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 2009
+    .line 2063
     const/4 v5, 0x1
 
     invoke-direct {p0, v4, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDataEnabled(IZ)V
 
     goto :goto_0
 
-    .line 2021
+    .line 2075
     .restart local v2    # "i":I
     .restart local v3    # "phoneCount":I
     :cond_2
@@ -4095,7 +4121,7 @@
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setLastValidDefaultDataSub(I)V
 
-    .line 2022
+    .line 2076
     return-void
 .end method
 
@@ -4104,10 +4130,30 @@
     .param p1, "prop"    # Ljava/lang/String;
 
     .prologue
-    .line 2025
+    .line 2079
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method private isOP01OMSupport()Z
+    .locals 2
+
+    .prologue
+    .line 2185
+    const-string v0, "ro.cmcc_light_cust_support"
+
+    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "1"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -4118,7 +4164,7 @@
     .locals 3
 
     .prologue
-    .line 2126
+    .line 2180
     const-string v0, "OP09"
 
     const-string v1, "ro.operator.optr"
@@ -4167,12 +4213,12 @@
     .param p1, "txt"    # Ljava/lang/String;
 
     .prologue
-    .line 2094
+    .line 2148
     const-string v0, "DataSubSelector"
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2096
+    .line 2150
     return-void
 .end method
 
@@ -4181,12 +4227,12 @@
     .param p1, "txt"    # Ljava/lang/String;
 
     .prologue
-    .line 2100
+    .line 2154
     const-string v0, "DataSubSelector"
 
     invoke-static {v0, p1}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2102
+    .line 2156
     return-void
 .end method
 
@@ -4194,41 +4240,41 @@
     .locals 3
 
     .prologue
-    .line 2073
+    .line 2127
     iget-object v1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mContext:Landroid/content/Context;
 
     if-nez v1, :cond_0
 
-    .line 2074
+    .line 2128
     const-string v1, "registerWorldModeReceiver, context is null => return"
 
     invoke-direct {p0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 2077
+    .line 2131
     :cond_0
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 2078
+    .line 2132
     .local v0, "filter":Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.ACTION_WORLD_MODE_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 2079
+    .line 2133
     iget-object v1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mWorldModeReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 2080
+    .line 2134
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mHasRegisterWorldModeReceiver:Z
 
-    .line 2081
+    .line 2135
     return-void
 .end method
 
@@ -4236,19 +4282,19 @@
     .locals 2
 
     .prologue
-    .line 2063
+    .line 2117
     const-string v0, "resetNewSimSlot"
 
     invoke-direct {p0, v0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 2064
+    .line 2118
     const-string v0, "persist.radio.new.sim.slot"
 
     const-string v1, ""
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2065
+    .line 2119
     return-void
 .end method
 
@@ -4256,19 +4302,19 @@
     .locals 2
 
     .prologue
-    .line 2043
+    .line 2097
     const-string v0, "resetSimStatus"
 
     invoke-direct {p0, v0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 2044
+    .line 2098
     const-string v0, "persist.radio.sim.status"
 
     const-string v1, ""
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2045
+    .line 2099
     return-void
 .end method
 
@@ -4277,16 +4323,16 @@
     .param p1, "phoneId"    # I
 
     .prologue
-    .line 1674
+    .line 1728
     iget v10, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
     new-array v8, v10, [I
 
-    .line 1675
+    .line 1729
     .local v8, "phoneRat":[I
     const/4 v7, 0x1
 
-    .line 1677
+    .line 1731
     .local v7, "isSwitchSuccess":Z
     new-instance v10, Ljava/lang/StringBuilder;
 
@@ -4308,7 +4354,7 @@
 
     invoke-direct {p0, v10}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1679
+    .line 1733
     const-string v10, "persist.radio.simswitch"
 
     const-string v11, ""
@@ -4317,7 +4363,7 @@
 
     move-result-object v1
 
-    .line 1680
+    .line 1734
     .local v1, "curr3GSim":Ljava/lang/String;
     new-instance v10, Ljava/lang/StringBuilder;
 
@@ -4339,7 +4385,7 @@
 
     invoke-direct {p0, v10}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1682
+    .line 1736
     if-eqz v1, :cond_0
 
     const-string v10, ""
@@ -4350,30 +4396,30 @@
 
     if-nez v10, :cond_0
 
-    .line 1683
+    .line 1737
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 1684
+    .line 1738
     .local v0, "curr3GPhoneId":I
     add-int/lit8 v10, p1, 0x1
 
     if-ne v0, v10, :cond_0
 
-    .line 1685
+    .line 1739
     const-string v10, "Current 3G phone equals target phone, don\'t trigger switch"
 
     invoke-direct {p0, v10}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
     move v10, v7
 
-    .line 1738
+    .line 1792
     .end local v0    # "curr3GPhoneId":I
     :goto_0
     return v10
 
-    .line 1691
+    .line 1745
     :cond_0
     :try_start_0
     const-string v10, "phone"
@@ -4386,7 +4432,7 @@
 
     move-result-object v5
 
-    .line 1693
+    .line 1747
     .local v5, "iTel":Lcom/android/internal/telephony/ITelephony;
     const-string v10, "phoneEx"
 
@@ -4398,30 +4444,30 @@
 
     move-result-object v6
 
-    .line 1695
+    .line 1749
     .local v6, "iTelEx":Lcom/mediatek/internal/telephony/ITelephonyEx;
     if-eqz v5, :cond_1
 
     if-nez v6, :cond_2
 
-    .line 1696
+    .line 1750
     :cond_1
     const-string v10, "Can not get phone service"
 
     invoke-direct {p0, v10}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->loge(Ljava/lang/String;)V
 
-    .line 1697
+    .line 1751
     const/4 v10, 0x0
 
     goto :goto_0
 
-    .line 1700
+    .line 1754
     :cond_2
     invoke-interface {v5, p1}, Lcom/android/internal/telephony/ITelephony;->getRadioAccessFamily(I)I
 
     move-result v2
 
-    .line 1701
+    .line 1755
     .local v2, "currRat":I
     new-instance v10, Ljava/lang/StringBuilder;
 
@@ -4443,12 +4489,12 @@
 
     invoke-direct {p0, v10}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1703
+    .line 1757
     iget v10, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
     new-array v9, v10, [Landroid/telephony/RadioAccessFamily;
 
-    .line 1704
+    .line 1758
     .local v9, "rat":[Landroid/telephony/RadioAccessFamily;
     const/4 v4, 0x0
 
@@ -4458,10 +4504,10 @@
 
     if-ge v4, v10, :cond_6
 
-    .line 1705
+    .line 1759
     if-ne p1, v4, :cond_3
 
-    .line 1706
+    .line 1760
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -4482,12 +4528,12 @@
 
     invoke-direct {p0, v10}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1707
+    .line 1761
     const v10, 0x14008
 
     aput v10, v8, v4
 
-    .line 1713
+    .line 1767
     :goto_2
     new-instance v10, Landroid/telephony/RadioAccessFamily;
 
@@ -4497,12 +4543,12 @@
 
     aput-object v10, v9, v4
 
-    .line 1704
+    .line 1758
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
-    .line 1711
+    .line 1765
     :cond_3
     const/high16 v10, 0x10000
 
@@ -4512,7 +4558,7 @@
 
     goto :goto_2
 
-    .line 1719
+    .line 1773
     .end local v2    # "currRat":I
     .end local v4    # "i":I
     .end local v5    # "iTel":Lcom/android/internal/telephony/ITelephony;
@@ -4521,50 +4567,50 @@
     :catch_0
     move-exception v3
 
-    .line 1720
+    .line 1774
     .local v3, "ex":Landroid/os/RemoteException;
     const-string v10, "Set phone rat fail!!!"
 
     invoke-direct {p0, v10}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1721
+    .line 1775
     invoke-virtual {v3}, Landroid/os/RemoteException;->printStackTrace()V
 
-    .line 1722
+    .line 1776
     const/4 v7, 0x0
 
-    .line 1725
+    .line 1779
     .end local v3    # "ex":Landroid/os/RemoteException;
     :cond_4
     :goto_3
     if-nez v7, :cond_7
 
-    .line 1726
+    .line 1780
     invoke-static {}, Lcom/mediatek/internal/telephony/worldphone/WorldPhoneUtil;->isWorldPhoneSwitching()Z
 
     move-result v10
 
     if-eqz v10, :cond_5
 
-    .line 1727
+    .line 1781
     const-string v10, "world mode switching!"
 
     invoke-direct {p0, v10}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1728
+    .line 1782
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->registerWorldModeReceiver()V
 
-    .line 1729
+    .line 1783
     iput p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneId:I
 
     :cond_5
     :goto_4
     move v10, v7
 
-    .line 1738
+    .line 1792
     goto/16 :goto_0
 
-    .line 1715
+    .line 1769
     .restart local v2    # "currRat":I
     .restart local v4    # "i":I
     .restart local v5    # "iTel":Lcom/android/internal/telephony/ITelephony;
@@ -4578,19 +4624,19 @@
 
     if-nez v10, :cond_4
 
-    .line 1716
+    .line 1770
     const-string v10, "Set phone rat fail!!!"
 
     invoke-direct {p0, v10}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 1717
+    .line 1771
     const/4 v7, 0x0
 
     goto :goto_3
 
-    .line 1732
+    .line 1786
     .end local v2    # "currRat":I
     .end local v4    # "i":I
     .end local v5    # "iTel":Lcom/android/internal/telephony/ITelephony;
@@ -4601,10 +4647,10 @@
 
     if-eqz v10, :cond_5
 
-    .line 1733
+    .line 1787
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->unRegisterWorldModeReceiver()V
 
-    .line 1734
+    .line 1788
     const/4 v10, -0x1
 
     iput v10, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneId:I
@@ -4617,25 +4663,25 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 1629
+    .line 1683
     const-string v6, "DataSubSelector for setCapabilityForC2K6M: only for capability switch"
 
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1632
+    .line 1686
     const/4 v5, -0x1
 
-    .line 1633
+    .line 1687
     .local v5, "phoneId":I
     iget v6, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
     new-array v0, v6, [Ljava/lang/String;
 
-    .line 1639
+    .line 1693
     .local v0, "currIccId":[Ljava/lang/String;
     const-string v3, ""
 
-    .line 1640
+    .line 1694
     .local v3, "defaultIccid":Ljava/lang/String;
     invoke-static {}, Lcom/android/internal/telephony/SubscriptionController;->getInstance()Lcom/android/internal/telephony/SubscriptionController;
 
@@ -4645,24 +4691,24 @@
 
     move-result v2
 
-    .line 1641
+    .line 1695
     .local v2, "defDataSubId":I
     invoke-static {v2}, Landroid/telephony/SubscriptionManager;->getPhoneId(I)I
 
     move-result v1
 
-    .line 1642
+    .line 1696
     .local v1, "defDataPhoneId":I
     if-ltz v1, :cond_0
 
-    .line 1643
+    .line 1697
     iget-object v6, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->PROPERTY_ICCID_SIM:[Ljava/lang/String;
 
     array-length v6, v6
 
     if-lt v1, v6, :cond_3
 
-    .line 1644
+    .line 1698
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -4683,7 +4729,7 @@
 
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1650
+    .line 1704
     :cond_0
     :goto_0
     new-instance v6, Ljava/lang/StringBuilder;
@@ -4706,7 +4752,7 @@
 
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1651
+    .line 1705
     const-string v6, ""
 
     invoke-virtual {v6, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -4723,18 +4769,18 @@
 
     if-eqz v6, :cond_4
 
-    .line 1652
+    .line 1706
     :cond_1
     const-string v6, "Default data Iccid N/A or null,return"
 
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1671
+    .line 1725
     :cond_2
     :goto_1
     return-void
 
-    .line 1646
+    .line 1700
     :cond_3
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -4756,7 +4802,7 @@
 
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1647
+    .line 1701
     iget-object v6, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->PROPERTY_ICCID_SIM:[Ljava/lang/String;
 
     aget-object v6, v6, v1
@@ -4767,7 +4813,7 @@
 
     goto :goto_0
 
-    .line 1655
+    .line 1709
     :cond_4
     const/4 v4, 0x0
 
@@ -4777,7 +4823,7 @@
 
     if-ge v4, v6, :cond_7
 
-    .line 1656
+    .line 1710
     iget-object v6, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->PROPERTY_ICCID:[Ljava/lang/String;
 
     aget-object v6, v6, v4
@@ -4788,7 +4834,7 @@
 
     aput-object v6, v0, v4
 
-    .line 1657
+    .line 1711
     aget-object v6, v0, v4
 
     if-eqz v6, :cond_5
@@ -4803,7 +4849,7 @@
 
     if-eqz v6, :cond_6
 
-    .line 1658
+    .line 1712
     :cond_5
     const-string v6, "error: iccid not found, wait for next sub ready"
 
@@ -4811,7 +4857,7 @@
 
     goto :goto_1
 
-    .line 1661
+    .line 1715
     :cond_6
     aget-object v6, v0, v4
 
@@ -4821,10 +4867,10 @@
 
     if-eqz v6, :cond_8
 
-    .line 1662
+    .line 1716
     move v5, v4
 
-    .line 1666
+    .line 1720
     :cond_7
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -4846,17 +4892,17 @@
 
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1667
+    .line 1721
     const/4 v6, -0x1
 
     if-eq v5, v6, :cond_2
 
-    .line 1669
+    .line 1723
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
     goto :goto_1
 
-    .line 1655
+    .line 1709
     :cond_8
     add-int/lit8 v4, v4, 0x1
 
@@ -4868,7 +4914,7 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 1621
+    .line 1675
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4903,7 +4949,7 @@
 
     invoke-direct {p0, v0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1623
+    .line 1677
     iget-boolean v0, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsSubReady:Z
 
     if-eqz v0, :cond_0
@@ -4912,10 +4958,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 1624
+    .line 1678
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapabilityForC2K6M(Landroid/content/Intent;)V
 
-    .line 1626
+    .line 1680
     :cond_0
     return-void
 .end method
@@ -4926,7 +4972,7 @@
     .param p2, "enable"    # Z
 
     .prologue
-    .line 1480
+    .line 1534
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -4957,37 +5003,37 @@
 
     invoke-direct {p0, v3}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1482
+    .line 1536
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v2
 
-    .line 1483
+    .line 1537
     .local v2, "telephony":Landroid/telephony/TelephonyManager;
     if-eqz v2, :cond_0
 
-    .line 1484
+    .line 1538
     const/4 v3, -0x1
 
     if-ne p1, v3, :cond_1
 
-    .line 1485
+    .line 1539
     invoke-virtual {v2, p2}, Landroid/telephony/TelephonyManager;->setDataEnabled(Z)V
 
-    .line 1506
+    .line 1560
     :cond_0
     :goto_0
     return-void
 
-    .line 1487
+    .line 1541
     :cond_1
     const/4 v1, 0x0
 
-    .line 1488
+    .line 1542
     .local v1, "phoneSubId":I
     if-nez p2, :cond_2
 
-    .line 1489
+    .line 1543
     invoke-static {p1}, Lcom/android/internal/telephony/PhoneFactory;->getPhone(I)Lcom/android/internal/telephony/Phone;
 
     move-result-object v3
@@ -4996,7 +5042,7 @@
 
     move-result v1
 
-    .line 1490
+    .line 1544
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -5023,12 +5069,12 @@
 
     invoke-direct {p0, v3}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1491
+    .line 1545
     invoke-virtual {v2, v1, p2}, Landroid/telephony/TelephonyManager;->setDataEnabled(IZ)V
 
     goto :goto_0
 
-    .line 1493
+    .line 1547
     :cond_2
     const/4 v0, 0x0
 
@@ -5038,7 +5084,7 @@
 
     if-ge v0, v3, :cond_0
 
-    .line 1494
+    .line 1548
     invoke-static {v0}, Lcom/android/internal/telephony/PhoneFactory;->getPhone(I)Lcom/android/internal/telephony/Phone;
 
     move-result-object v3
@@ -5047,10 +5093,10 @@
 
     move-result v1
 
-    .line 1495
+    .line 1549
     if-eq v0, p1, :cond_3
 
-    .line 1496
+    .line 1550
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -5077,18 +5123,18 @@
 
     invoke-direct {p0, v3}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1497
+    .line 1551
     const/4 v3, 0x0
 
     invoke-virtual {v2, v1, v3}, Landroid/telephony/TelephonyManager;->setDataEnabled(IZ)V
 
-    .line 1493
+    .line 1547
     :goto_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 1499
+    .line 1553
     :cond_3
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -5116,7 +5162,7 @@
 
     invoke-direct {p0, v3}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1500
+    .line 1554
     const/4 v3, 0x1
 
     invoke-virtual {v2, v1, v3}, Landroid/telephony/TelephonyManager;->setDataEnabled(IZ)V
@@ -5129,28 +5175,28 @@
     .param p1, "phoneId"    # I
 
     .prologue
-    .line 1580
+    .line 1634
     invoke-static {}, Lcom/android/internal/telephony/SubscriptionController;->getInstance()Lcom/android/internal/telephony/SubscriptionController;
 
     move-result-object v2
 
-    .line 1581
+    .line 1635
     .local v2, "subController":Lcom/android/internal/telephony/SubscriptionController;
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->getSubIdUsingPhoneId(I)I
 
     move-result v1
 
-    .line 1582
+    .line 1636
     .local v1, "sub":I
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultDataSubId()I
 
     move-result v0
 
-    .line 1584
+    .line 1638
     .local v0, "currSub":I
     invoke-direct {p0, v0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setLastValidDefaultDataSub(I)V
 
-    .line 1586
+    .line 1640
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -5181,17 +5227,17 @@
 
     invoke-direct {p0, v3}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1587
+    .line 1641
     if-eq v1, v0, :cond_0
 
-    .line 1588
+    .line 1642
     invoke-virtual {v2, v1}, Lcom/android/internal/telephony/SubscriptionController;->setDefaultDataSubIdWithoutCapabilitySwitch(I)V
 
-    .line 1592
+    .line 1646
     :goto_0
     return-void
 
-    .line 1590
+    .line 1644
     :cond_0
     const-string v3, "setDefaultData: default data unchanged"
 
@@ -5205,14 +5251,14 @@
     .param p1, "subId"    # I
 
     .prologue
-    .line 2116
+    .line 2170
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->isValidSubscriptionId(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 2117
+    .line 2171
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -5233,14 +5279,14 @@
 
     invoke-direct {p0, v0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 2118
+    .line 2172
     iput p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mLastValidDefaultDataSubId:I
 
-    .line 2123
+    .line 2177
     :goto_0
     return-void
 
-    .line 2120
+    .line 2174
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -5273,10 +5319,10 @@
     .param p2, "value"    # Ljava/lang/String;
 
     .prologue
-    .line 2029
+    .line 2083
     invoke-static {p1, p2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2030
+    .line 2084
     return-void
 .end method
 
@@ -5285,25 +5331,25 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 2053
+    .line 2107
     if-nez p1, :cond_0
 
-    .line 2054
+    .line 2108
     const-string v1, "setNewSimSlot, intent is null => return"
 
     invoke-direct {p0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 2060
+    .line 2114
     :goto_0
     return-void
 
-    .line 2057
+    .line 2111
     :cond_0
     const-string v1, "setNewSimSlot"
 
     invoke-direct {p0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 2058
+    .line 2112
     const-string v1, "newSIMSlot"
 
     const/4 v2, 0x0
@@ -5312,7 +5358,7 @@
 
     move-result v0
 
-    .line 2059
+    .line 2113
     .local v0, "newSimStatus":I
     const-string v1, "persist.radio.new.sim.slot"
 
@@ -5330,25 +5376,25 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 2033
+    .line 2087
     if-nez p1, :cond_0
 
-    .line 2034
+    .line 2088
     const-string v1, "setSimStatus, intent is null => return"
 
     invoke-direct {p0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 2040
+    .line 2094
     :goto_0
     return-void
 
-    .line 2037
+    .line 2091
     :cond_0
     const-string v1, "setSimStatus"
 
     invoke-direct {p0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 2038
+    .line 2092
     const-string v1, "simDetectStatus"
 
     const/4 v2, 0x0
@@ -5357,7 +5403,7 @@
 
     move-result v0
 
-    .line 2039
+    .line 2093
     .local v0, "detectedType":I
     const-string v1, "persist.radio.sim.status"
 
@@ -5375,21 +5421,21 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 514
+    .line 523
     const-string v7, "DataSubSelector for OM: only for capability switch; for default data, use google"
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 517
+    .line 526
     const/4 v5, -0x1
 
-    .line 518
+    .line 527
     .local v5, "phoneId":I
     iget v7, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
     new-array v0, v7, [Ljava/lang/String;
 
-    .line 522
+    .line 531
     .local v0, "currIccId":[Ljava/lang/String;
     invoke-static {}, Lcom/mediatek/internal/telephony/cdma/CdmaFeatureOptionUtils;->isCdmaLteDcSupport()Z
 
@@ -5397,14 +5443,14 @@
 
     if-nez v7, :cond_0
 
-    .line 523
+    .line 532
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->turnOffNewSimData(Landroid/content/Intent;)V
 
-    .line 530
+    .line 539
     :cond_0
     const-string v3, ""
 
-    .line 531
+    .line 540
     .local v3, "defaultIccid":Ljava/lang/String;
     invoke-static {}, Lcom/android/internal/telephony/SubscriptionController;->getInstance()Lcom/android/internal/telephony/SubscriptionController;
 
@@ -5414,24 +5460,24 @@
 
     move-result v2
 
-    .line 532
+    .line 541
     .local v2, "defDataSubId":I
     invoke-static {v2}, Landroid/telephony/SubscriptionManager;->getPhoneId(I)I
 
     move-result v1
 
-    .line 533
+    .line 542
     .local v1, "defDataPhoneId":I
     if-ltz v1, :cond_1
 
-    .line 534
+    .line 543
     iget-object v7, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->PROPERTY_ICCID_SIM:[Ljava/lang/String;
 
     array-length v7, v7
 
     if-lt v1, v7, :cond_3
 
-    .line 535
+    .line 544
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -5452,7 +5498,7 @@
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 541
+    .line 550
     :cond_1
     :goto_0
     new-instance v7, Ljava/lang/StringBuilder;
@@ -5475,7 +5521,7 @@
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 550
+    .line 559
     const/4 v4, 0x0
 
     .local v4, "i":I
@@ -5484,7 +5530,7 @@
 
     if-ge v4, v7, :cond_5
 
-    .line 551
+    .line 560
     iget-object v7, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->PROPERTY_ICCID:[Ljava/lang/String;
 
     aget-object v7, v7, v4
@@ -5495,7 +5541,7 @@
 
     aput-object v7, v0, v4
 
-    .line 552
+    .line 561
     aget-object v7, v0, v4
 
     if-eqz v7, :cond_2
@@ -5510,17 +5556,17 @@
 
     if-eqz v7, :cond_4
 
-    .line 553
+    .line 562
     :cond_2
     const-string v7, "error: iccid not found, wait for next sub ready"
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 603
+    .line 612
     :goto_2
     return-void
 
-    .line 537
+    .line 546
     .end local v4    # "i":I
     :cond_3
     new-instance v7, Ljava/lang/StringBuilder;
@@ -5543,7 +5589,7 @@
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 538
+    .line 547
     iget-object v7, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->PROPERTY_ICCID_SIM:[Ljava/lang/String;
 
     aget-object v7, v7, v1
@@ -5554,7 +5600,7 @@
 
     goto :goto_0
 
-    .line 556
+    .line 565
     .restart local v4    # "i":I
     :cond_4
     aget-object v7, v0, v4
@@ -5565,10 +5611,10 @@
 
     if-eqz v7, :cond_6
 
-    .line 557
+    .line 566
     move v5, v4
 
-    .line 573
+    .line 582
     :cond_5
     iget v7, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
@@ -5578,30 +5624,30 @@
 
     if-eqz v7, :cond_9
 
-    .line 574
+    .line 583
     const-string v7, "DataSubSelector for OM: do not switch because of sim locking"
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 575
+    .line 584
     const-string v7, "persist.radio.unlock"
 
     const-string v8, "true"
 
     invoke-direct {p0, v7, v8}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNeedWaitUnlock(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 576
+    .line 585
     iput-object p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
 
-    .line 577
+    .line 586
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setSimStatus(Landroid/content/Intent;)V
 
-    .line 578
+    .line 587
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNewSimSlot(Landroid/content/Intent;)V
 
     goto :goto_2
 
-    .line 561
+    .line 570
     :cond_6
     const-string v7, "N/A"
 
@@ -5613,7 +5659,7 @@
 
     if-eqz v7, :cond_7
 
-    .line 562
+    .line 571
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -5634,27 +5680,27 @@
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 564
+    .line 573
     if-nez v4, :cond_8
 
-    .line 565
+    .line 574
     const-string v6, "gsm.sim.ril.mcc.mnc"
 
-    .line 569
+    .line 578
     .local v6, "propStr":Ljava/lang/String;
     :goto_3
     const-string v7, ""
 
     invoke-static {v6, v7}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 550
+    .line 559
     .end local v6    # "propStr":Ljava/lang/String;
     :cond_7
     add-int/lit8 v4, v4, 0x1
 
     goto/16 :goto_1
 
-    .line 567
+    .line 576
     :cond_8
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -5679,47 +5725,47 @@
     .restart local v6    # "propStr":Ljava/lang/String;
     goto :goto_3
 
-    .line 581
+    .line 590
     .end local v6    # "propStr":Ljava/lang/String;
     :cond_9
     const-string v7, "DataSubSelector for OM: no pin lock"
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 582
+    .line 591
     const-string v7, "persist.radio.unlock"
 
     const-string v8, "false"
 
     invoke-direct {p0, v7, v8}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNeedWaitUnlock(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 584
+    .line 593
     iget-boolean v7, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mAirplaneModeOn:Z
 
     if-eqz v7, :cond_a
 
-    .line 585
+    .line 594
     const-string v7, "DataSubSelector for OM: do not switch because of mAirplaneModeOn"
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 586
+    .line 595
     const/4 v7, 0x1
 
     iput-boolean v7, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOff:Z
 
-    .line 587
+    .line 596
     iput-object p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
 
-    .line 588
+    .line 597
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setSimStatus(Landroid/content/Intent;)V
 
-    .line 589
+    .line 598
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNewSimSlot(Landroid/content/Intent;)V
 
     goto/16 :goto_2
 
-    .line 593
+    .line 602
     :cond_a
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -5741,22 +5787,22 @@
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 594
+    .line 603
     const/4 v7, -0x1
 
     if-eq v5, v7, :cond_b
 
-    .line 596
+    .line 605
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
-    .line 599
+    .line 608
     :cond_b
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->updateDataEnableProperty()V
 
-    .line 601
+    .line 610
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->resetSimStatus()V
 
-    .line 602
+    .line 611
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->resetNewSimSlot()V
 
     goto/16 :goto_2
@@ -5769,18 +5815,18 @@
     .prologue
     const/4 v10, 0x1
 
-    .line 949
+    .line 1003
     const/4 v6, -0x1
 
-    .line 950
+    .line 1004
     .local v6, "phoneId":I
     const/4 v4, 0x0
 
-    .line 951
+    .line 1005
     .local v4, "insertedSimCount":I
     const/4 v5, 0x0
 
-    .line 952
+    .line 1006
     .local v5, "insertedStatus":I
     if-nez p1, :cond_1
 
@@ -5788,20 +5834,20 @@
 
     move-result v2
 
-    .line 954
+    .line 1008
     .local v2, "detectedType":I
     :goto_0
     iget v8, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
     new-array v0, v8, [Ljava/lang/String;
 
-    .line 956
+    .line 1010
     .local v0, "currIccId":[Ljava/lang/String;
     const-string v8, "DataSubSelector for op01"
 
     invoke-direct {p0, v8}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 958
+    .line 1012
     const/4 v3, 0x0
 
     .local v3, "i":I
@@ -5810,7 +5856,7 @@
 
     if-ge v3, v8, :cond_5
 
-    .line 959
+    .line 1013
     iget-object v8, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->PROPERTY_ICCID:[Ljava/lang/String;
 
     aget-object v8, v8, v3
@@ -5821,7 +5867,7 @@
 
     aput-object v8, v0, v3
 
-    .line 960
+    .line 1014
     aget-object v8, v0, v3
 
     if-eqz v8, :cond_0
@@ -5836,17 +5882,17 @@
 
     if-eqz v8, :cond_2
 
-    .line 961
+    .line 1015
     :cond_0
     const-string v8, "error: iccid not found, wait for next sub ready"
 
     invoke-direct {p0, v8}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1042
+    .line 1096
     :goto_2
     return-void
 
-    .line 952
+    .line 1006
     .end local v0    # "currIccId":[Ljava/lang/String;
     .end local v2    # "detectedType":I
     .end local v3    # "i":I
@@ -5861,7 +5907,7 @@
 
     goto :goto_0
 
-    .line 964
+    .line 1018
     .restart local v0    # "currIccId":[Ljava/lang/String;
     .restart local v2    # "detectedType":I
     .restart local v3    # "i":I
@@ -5898,7 +5944,7 @@
 
     invoke-direct {p0, v8}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 965
+    .line 1019
     const-string v8, "N/A"
 
     aget-object v9, v0, v3
@@ -5909,21 +5955,21 @@
 
     if-nez v8, :cond_3
 
-    .line 966
+    .line 1020
     add-int/lit8 v4, v4, 0x1
 
-    .line 967
+    .line 1021
     shl-int v8, v10, v3
 
     or-int/2addr v5, v8
 
-    .line 958
+    .line 1012
     :goto_3
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 969
+    .line 1023
     :cond_3
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -5945,13 +5991,13 @@
 
     invoke-direct {p0, v8}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 971
+    .line 1025
     if-nez v3, :cond_4
 
-    .line 972
+    .line 1026
     const-string v7, "gsm.sim.ril.mcc.mnc"
 
-    .line 976
+    .line 1030
     .local v7, "propStr":Ljava/lang/String;
     :goto_4
     const-string v8, ""
@@ -5960,7 +6006,7 @@
 
     goto :goto_3
 
-    .line 974
+    .line 1028
     .end local v7    # "propStr":Ljava/lang/String;
     :cond_4
     new-instance v8, Ljava/lang/StringBuilder;
@@ -5986,7 +6032,7 @@
     .restart local v7    # "propStr":Ljava/lang/String;
     goto :goto_4
 
-    .line 980
+    .line 1034
     .end local v7    # "propStr":Ljava/lang/String;
     :cond_5
     iget v8, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
@@ -5997,67 +6043,67 @@
 
     if-eqz v8, :cond_6
 
-    .line 981
+    .line 1035
     const-string v8, "DataSubSelector for OP01: do not switch because of sim locking"
 
     invoke-direct {p0, v8}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 982
+    .line 1036
     const-string v8, "persist.radio.unlock"
 
     const-string v9, "true"
 
     invoke-direct {p0, v8, v9}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNeedWaitUnlock(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 983
+    .line 1037
     iput-object p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
 
-    .line 984
+    .line 1038
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setSimStatus(Landroid/content/Intent;)V
 
-    .line 985
+    .line 1039
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNewSimSlot(Landroid/content/Intent;)V
 
     goto/16 :goto_2
 
-    .line 988
+    .line 1042
     :cond_6
     const-string v8, "DataSubSelector for OP01: no pin lock"
 
     invoke-direct {p0, v8}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 989
+    .line 1043
     const-string v8, "persist.radio.unlock"
 
     const-string v9, "false"
 
     invoke-direct {p0, v8, v9}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNeedWaitUnlock(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 991
+    .line 1045
     iget-boolean v8, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mAirplaneModeOn:Z
 
     if-eqz v8, :cond_7
 
-    .line 992
+    .line 1046
     const-string v8, "DataSubSelector for OP01: do not switch because of mAirplaneModeOn"
 
     invoke-direct {p0, v8}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 993
+    .line 1047
     iput-boolean v10, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOff:Z
 
-    .line 994
+    .line 1048
     iput-object p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
 
-    .line 995
+    .line 1049
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setSimStatus(Landroid/content/Intent;)V
 
-    .line 996
+    .line 1050
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNewSimSlot(Landroid/content/Intent;)V
 
     goto/16 :goto_2
 
-    .line 1000
+    .line 1054
     :cond_7
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -6089,14 +6135,14 @@
 
     invoke-direct {p0, v8}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1003
+    .line 1057
     const-string v8, "persist.radio.data.iccid"
 
     invoke-static {v8}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1004
+    .line 1058
     .local v1, "defaultIccid":Ljava/lang/String;
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -6118,29 +6164,29 @@
 
     invoke-direct {p0, v8}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1006
+    .line 1060
     if-nez v4, :cond_9
 
-    .line 1008
+    .line 1062
     const-string v8, "OP01 C0: No SIM inserted, do nothing"
 
     invoke-direct {p0, v8}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1040
+    .line 1094
     :cond_8
     :goto_5
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->resetSimStatus()V
 
-    .line 1041
+    .line 1095
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->resetNewSimSlot()V
 
     goto/16 :goto_2
 
-    .line 1009
+    .line 1063
     :cond_9
     if-ne v4, v10, :cond_d
 
-    .line 1010
+    .line 1064
     const/4 v3, 0x0
 
     :goto_6
@@ -6148,17 +6194,17 @@
 
     if-ge v3, v8, :cond_a
 
-    .line 1011
+    .line 1065
     shl-int v8, v10, v3
 
     and-int/2addr v8, v5
 
     if-eqz v8, :cond_c
 
-    .line 1012
+    .line 1066
     move v6, v3
 
-    .line 1017
+    .line 1071
     :cond_a
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -6180,60 +6226,326 @@
 
     invoke-direct {p0, v8}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1018
+    .line 1072
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
     move-result v8
 
     if-eqz v8, :cond_b
 
-    .line 1019
+    .line 1073
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDefaultData(I)V
 
-    .line 1022
+    .line 1076
     :cond_b
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->turnOffNewSimData(Landroid/content/Intent;)V
 
     goto :goto_5
 
-    .line 1010
+    .line 1064
     :cond_c
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_6
 
-    .line 1023
+    .line 1077
     :cond_d
     const/4 v8, 0x2
 
     if-lt v4, v8, :cond_8
 
-    .line 1026
+    .line 1080
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->turnOffNewSimData(Landroid/content/Intent;)V
 
-    .line 1027
+    .line 1081
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->updateDataEnableProperty()V
 
-    .line 1029
+    .line 1083
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->checkOp01CapSwitch6m()Z
 
     move-result v8
 
     if-nez v8, :cond_8
 
-    .line 1031
+    .line 1085
     iput-boolean v10, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsi:Z
 
-    .line 1032
+    .line 1086
     iput-object p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
 
-    .line 1033
+    .line 1087
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setSimStatus(Landroid/content/Intent;)V
 
-    .line 1034
+    .line 1088
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNewSimSlot(Landroid/content/Intent;)V
 
     goto/16 :goto_2
+.end method
+
+.method private subSelectorForOp01OM()V
+    .locals 8
+
+    .prologue
+    const/4 v7, 0x1
+
+    .line 958
+    const/4 v4, -0x1
+
+    .line 959
+    .local v4, "phoneId":I
+    const/4 v2, 0x0
+
+    .line 960
+    .local v2, "insertedSimCount":I
+    const/4 v3, 0x0
+
+    .line 961
+    .local v3, "insertedStatus":I
+    iget v5, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
+
+    new-array v0, v5, [Ljava/lang/String;
+
+    .line 963
+    .local v0, "currIccId":[Ljava/lang/String;
+    const-string v5, "DataSubSelector for op01OM"
+
+    invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
+
+    .line 965
+    const/4 v1, 0x0
+
+    .local v1, "i":I
+    :goto_0
+    iget v5, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
+
+    if-ge v1, v5, :cond_4
+
+    .line 966
+    iget-object v5, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->PROPERTY_ICCID:[Ljava/lang/String;
+
+    aget-object v5, v5, v1
+
+    invoke-static {v5}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    aput-object v5, v0, v1
+
+    .line 967
+    aget-object v5, v0, v1
+
+    if-eqz v5, :cond_0
+
+    const-string v5, ""
+
+    aget-object v6, v0, v1
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_2
+
+    .line 968
+    :cond_0
+    const-string v5, "error: iccid not found, wait for next sub ready"
+
+    invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
+
+    .line 1000
+    :cond_1
+    :goto_1
+    return-void
+
+    .line 971
+    :cond_2
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "currIccId["
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, "] : "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    aget-object v6, v0, v1
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
+
+    .line 972
+    const-string v5, "N/A"
+
+    aget-object v6, v0, v1
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_3
+
+    .line 973
+    add-int/lit8 v2, v2, 0x1
+
+    .line 974
+    shl-int v5, v7, v1
+
+    or-int/2addr v3, v5
+
+    .line 965
+    :cond_3
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 977
+    :cond_4
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Inserted SIM count: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, ", insertedStatus: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
+
+    .line 978
+    if-eq v2, v7, :cond_5
+
+    .line 979
+    const-string v5, "DataSubSelector for OP01OM: do not switch because of SimCount != 1"
+
+    invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
+
+    goto :goto_1
+
+    .line 982
+    :cond_5
+    iget v5, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
+
+    invoke-static {v5}, Lcom/mediatek/internal/telephony/RadioCapabilitySwitchUtil;->isAnySimLocked(I)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_6
+
+    .line 983
+    const-string v5, "DataSubSelector for OP01OM: do not switch because of sim locking"
+
+    invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
+
+    goto :goto_1
+
+    .line 986
+    :cond_6
+    iget-boolean v5, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mAirplaneModeOn:Z
+
+    if-eqz v5, :cond_7
+
+    .line 987
+    const-string v5, "DataSubSelector for OP01OM: do not switch because of mAirplaneModeOn"
+
+    invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
+
+    goto :goto_1
+
+    .line 990
+    :cond_7
+    const/4 v1, 0x0
+
+    :goto_2
+    iget v5, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
+
+    if-ge v1, v5, :cond_8
+
+    .line 991
+    shl-int v5, v7, v1
+
+    and-int/2addr v5, v3
+
+    if-eqz v5, :cond_9
+
+    .line 992
+    move v4, v1
+
+    .line 996
+    :cond_8
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "OP01OM: Single SIM: Set Default data to phone:"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
+
+    .line 997
+    invoke-direct {p0, v4}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    .line 998
+    invoke-direct {p0, v4}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDefaultData(I)V
+
+    goto/16 :goto_1
+
+    .line 990
+    :cond_9
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2
 .end method
 
 .method private subSelectorForOp02()V
@@ -6242,30 +6554,30 @@
     .prologue
     const/4 v8, 0x1
 
-    .line 871
+    .line 880
     const/4 v4, -0x1
 
-    .line 872
+    .line 881
     .local v4, "phoneId":I
     const/4 v2, 0x0
 
-    .line 873
+    .line 882
     .local v2, "insertedSimCount":I
     const/4 v3, 0x0
 
-    .line 874
+    .line 883
     .local v3, "insertedStatus":I
     iget v6, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
     new-array v0, v6, [Ljava/lang/String;
 
-    .line 876
+    .line 885
     .local v0, "currIccId":[Ljava/lang/String;
     const-string v6, "DataSubSelector for op02 (subSelectorForOp02)"
 
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 878
+    .line 887
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -6274,7 +6586,7 @@
 
     if-ge v1, v6, :cond_4
 
-    .line 879
+    .line 888
     iget-object v6, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->PROPERTY_ICCID:[Ljava/lang/String;
 
     aget-object v6, v6, v1
@@ -6285,7 +6597,7 @@
 
     aput-object v6, v0, v1
 
-    .line 880
+    .line 889
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -6318,7 +6630,7 @@
 
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 881
+    .line 890
     aget-object v6, v0, v1
 
     if-eqz v6, :cond_0
@@ -6333,17 +6645,17 @@
 
     if-eqz v6, :cond_1
 
-    .line 882
+    .line 891
     :cond_0
     const-string v6, "error: iccid not found, wait for next sub ready"
 
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 946
+    .line 955
     :goto_1
     return-void
 
-    .line 885
+    .line 894
     :cond_1
     const-string v6, "N/A"
 
@@ -6355,21 +6667,21 @@
 
     if-nez v6, :cond_2
 
-    .line 886
+    .line 895
     add-int/lit8 v2, v2, 0x1
 
-    .line 887
+    .line 896
     shl-int v6, v8, v1
 
     or-int/2addr v3, v6
 
-    .line 878
+    .line 887
     :goto_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 889
+    .line 898
     :cond_2
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -6391,20 +6703,20 @@
 
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 891
+    .line 900
     if-nez v1, :cond_3
 
-    .line 892
+    .line 901
     const-string v5, "gsm.sim.ril.mcc.mnc"
 
-    .line 896
+    .line 905
     .local v5, "propStr":Ljava/lang/String;
     :goto_3
     const-string v6, ""
 
     invoke-static {v5, v6}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 897
+    .line 906
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -6433,7 +6745,7 @@
 
     goto :goto_2
 
-    .line 894
+    .line 903
     .end local v5    # "propStr":Ljava/lang/String;
     :cond_3
     new-instance v6, Ljava/lang/StringBuilder;
@@ -6459,7 +6771,7 @@
     .restart local v5    # "propStr":Ljava/lang/String;
     goto :goto_3
 
-    .line 901
+    .line 910
     .end local v5    # "propStr":Ljava/lang/String;
     :cond_4
     iget v6, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
@@ -6470,12 +6782,12 @@
 
     if-eqz v6, :cond_5
 
-    .line 902
+    .line 911
     const-string v6, "DataSubSelector for OP02: do not switch because of sim locking"
 
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 903
+    .line 912
     const-string v6, "persist.radio.unlock"
 
     const-string v7, "true"
@@ -6484,35 +6796,35 @@
 
     goto :goto_1
 
-    .line 906
+    .line 915
     :cond_5
     const-string v6, "DataSubSelector for OP02: no pin lock"
 
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 907
+    .line 916
     const-string v6, "persist.radio.unlock"
 
     const-string v7, "false"
 
     invoke-direct {p0, v6, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNeedWaitUnlock(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 909
+    .line 918
     iget-boolean v6, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mAirplaneModeOn:Z
 
     if-eqz v6, :cond_6
 
-    .line 910
+    .line 919
     const-string v6, "DataSubSelector for OP02: do not switch because of mAirplaneModeOn"
 
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 911
+    .line 920
     iput-boolean v8, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOff:Z
 
     goto/16 :goto_1
 
-    .line 915
+    .line 924
     :cond_6
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -6544,26 +6856,26 @@
 
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 917
+    .line 926
     if-nez v2, :cond_8
 
-    .line 922
+    .line 931
     const-string v6, "C0: No SIM inserted: do nothing"
 
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 945
+    .line 954
     :cond_7
     :goto_4
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->updateDataEnableProperty()V
 
     goto/16 :goto_1
 
-    .line 923
+    .line 932
     :cond_8
     if-ne v2, v8, :cond_b
 
-    .line 924
+    .line 933
     const/4 v1, 0x0
 
     :goto_5
@@ -6571,17 +6883,17 @@
 
     if-ge v1, v6, :cond_9
 
-    .line 925
+    .line 934
     shl-int v6, v8, v1
 
     and-int/2addr v6, v3
 
     if-eqz v6, :cond_a
 
-    .line 926
+    .line 935
     move v4, v1
 
-    .line 934
+    .line 943
     :cond_9
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -6603,34 +6915,34 @@
 
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 935
+    .line 944
     invoke-direct {p0, v4}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
     move-result v6
 
     if-eqz v6, :cond_7
 
-    .line 936
+    .line 945
     invoke-direct {p0, v4}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDefaultData(I)V
 
-    .line 937
+    .line 946
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->handleDataEnableForOp02()V
 
     goto :goto_4
 
-    .line 924
+    .line 933
     :cond_a
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_5
 
-    .line 939
+    .line 948
     :cond_b
     const/4 v6, 0x2
 
     if-lt v2, v6, :cond_7
 
-    .line 940
+    .line 949
     const/4 v6, 0x0
 
     invoke-direct {p0, v6}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->checkOp02CapSwitch(I)Z
@@ -6639,7 +6951,7 @@
 
     if-nez v6, :cond_7
 
-    .line 941
+    .line 950
     iput-boolean v8, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsi:Z
 
     goto :goto_4
@@ -6654,18 +6966,18 @@
 
     const/4 v9, 0x1
 
-    .line 787
+    .line 796
     const/4 v5, -0x1
 
-    .line 788
+    .line 797
     .local v5, "phoneId":I
     const/4 v3, 0x0
 
-    .line 789
+    .line 798
     .local v3, "insertedSimCount":I
     const/4 v4, 0x0
 
-    .line 790
+    .line 799
     .local v4, "insertedStatus":I
     const-string v7, "simDetectStatus"
 
@@ -6673,19 +6985,19 @@
 
     move-result v1
 
-    .line 791
+    .line 800
     .local v1, "detectedType":I
     iget v7, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
     new-array v0, v7, [Ljava/lang/String;
 
-    .line 793
+    .line 802
     .local v0, "currIccId":[Ljava/lang/String;
     const-string v7, "DataSubSelector for OP02"
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 795
+    .line 804
     const/4 v2, 0x0
 
     .local v2, "i":I
@@ -6694,7 +7006,7 @@
 
     if-ge v2, v7, :cond_4
 
-    .line 796
+    .line 805
     iget-object v7, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->PROPERTY_ICCID:[Ljava/lang/String;
 
     aget-object v7, v7, v2
@@ -6705,7 +7017,7 @@
 
     aput-object v7, v0, v2
 
-    .line 797
+    .line 806
     aget-object v7, v0, v2
 
     if-eqz v7, :cond_0
@@ -6720,17 +7032,17 @@
 
     if-eqz v7, :cond_1
 
-    .line 798
+    .line 807
     :cond_0
     const-string v7, "error: iccid not found, wait for next sub ready"
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 868
+    .line 877
     :goto_1
     return-void
 
-    .line 801
+    .line 810
     :cond_1
     const-string v7, "N/A"
 
@@ -6742,21 +7054,21 @@
 
     if-nez v7, :cond_2
 
-    .line 802
+    .line 811
     add-int/lit8 v3, v3, 0x1
 
-    .line 803
+    .line 812
     shl-int v7, v9, v2
 
     or-int/2addr v4, v7
 
-    .line 795
+    .line 804
     :goto_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 805
+    .line 814
     :cond_2
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -6778,13 +7090,13 @@
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 807
+    .line 816
     if-nez v2, :cond_3
 
-    .line 808
+    .line 817
     const-string v6, "gsm.sim.ril.mcc.mnc"
 
-    .line 812
+    .line 821
     .local v6, "propStr":Ljava/lang/String;
     :goto_3
     const-string v7, ""
@@ -6793,7 +7105,7 @@
 
     goto :goto_2
 
-    .line 810
+    .line 819
     .end local v6    # "propStr":Ljava/lang/String;
     :cond_3
     new-instance v7, Ljava/lang/StringBuilder;
@@ -6819,7 +7131,7 @@
     .restart local v6    # "propStr":Ljava/lang/String;
     goto :goto_3
 
-    .line 816
+    .line 825
     .end local v6    # "propStr":Ljava/lang/String;
     :cond_4
     iget v7, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
@@ -6830,55 +7142,55 @@
 
     if-eqz v7, :cond_5
 
-    .line 817
+    .line 826
     const-string v7, "DataSubSelector for OP02: do not switch because of sim locking"
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 818
+    .line 827
     const-string v7, "persist.radio.unlock"
 
     const-string v8, "true"
 
     invoke-direct {p0, v7, v8}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNeedWaitUnlock(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 819
+    .line 828
     iput-object p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
 
     goto :goto_1
 
-    .line 822
+    .line 831
     :cond_5
     const-string v7, "DataSubSelector for OP02: no pin lock"
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 823
+    .line 832
     const-string v7, "persist.radio.unlock"
 
     const-string v8, "false"
 
     invoke-direct {p0, v7, v8}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNeedWaitUnlock(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 825
+    .line 834
     iget-boolean v7, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mAirplaneModeOn:Z
 
     if-eqz v7, :cond_6
 
-    .line 826
+    .line 835
     const-string v7, "DataSubSelector for OP02: do not switch because of mAirplaneModeOn"
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 827
+    .line 836
     iput-boolean v9, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOff:Z
 
-    .line 828
+    .line 837
     iput-object p1, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
 
     goto :goto_1
 
-    .line 832
+    .line 841
     :cond_6
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -6910,39 +7222,39 @@
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 834
+    .line 843
     const/4 v7, 0x4
 
     if-ne v1, v7, :cond_8
 
-    .line 836
+    .line 845
     const-string v7, "OP02 C0: Inserted status no change, do nothing"
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 867
+    .line 876
     :cond_7
     :goto_4
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->updateDataEnableProperty()V
 
     goto/16 :goto_1
 
-    .line 837
+    .line 846
     :cond_8
     if-nez v3, :cond_9
 
-    .line 842
+    .line 851
     const-string v7, "OP02 C1: No SIM inserted, do noting"
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
     goto :goto_4
 
-    .line 843
+    .line 852
     :cond_9
     if-ne v3, v9, :cond_c
 
-    .line 844
+    .line 853
     const/4 v2, 0x0
 
     :goto_5
@@ -6950,17 +7262,17 @@
 
     if-ge v2, v7, :cond_a
 
-    .line 845
+    .line 854
     shl-int v7, v9, v2
 
     and-int/2addr v7, v4
 
     if-eqz v7, :cond_b
 
-    .line 846
+    .line 855
     move v5, v2
 
-    .line 854
+    .line 863
     :cond_a
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -6982,35 +7294,35 @@
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 855
+    .line 864
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDefaultData(I)V
 
-    .line 856
+    .line 865
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->handleDataEnableForOp02()V
 
     goto :goto_4
 
-    .line 844
+    .line 853
     :cond_b
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_5
 
-    .line 857
+    .line 866
     :cond_c
     const/4 v7, 0x2
 
     if-lt v3, v7, :cond_7
 
-    .line 862
+    .line 871
     const-string v7, "OP02 C3: Multi SIM: Set Default data to phone1"
 
     invoke-direct {p0, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 863
+    .line 872
     invoke-direct {p0, v10}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDefaultData(I)V
 
-    .line 864
+    .line 873
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->handleDataEnableForOp02()V
 
     goto :goto_4
@@ -7021,18 +7333,18 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 1297
+    .line 1351
     const/4 v10, -0x1
 
-    .line 1298
+    .line 1352
     .local v10, "phoneId":I
     const/4 v4, 0x0
 
-    .line 1299
+    .line 1353
     .local v4, "insertedSimCount":I
     const/4 v5, 0x0
 
-    .line 1300
+    .line 1354
     .local v5, "insertedStatus":I
     if-nez p1, :cond_1
 
@@ -7040,20 +7352,20 @@
 
     move-result v2
 
-    .line 1302
+    .line 1356
     .local v2, "detectedType":I
     :goto_0
     iget v12, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
     new-array v0, v12, [Ljava/lang/String;
 
-    .line 1304
+    .line 1358
     .local v0, "currIccId":[Ljava/lang/String;
     const-string v12, "DataSubSelector for op09"
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1306
+    .line 1360
     const/4 v3, 0x0
 
     .local v3, "i":I
@@ -7062,7 +7374,7 @@
 
     if-ge v3, v12, :cond_4
 
-    .line 1307
+    .line 1361
     iget-object v12, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->PROPERTY_ICCID:[Ljava/lang/String;
 
     aget-object v12, v12, v3
@@ -7073,7 +7385,7 @@
 
     aput-object v12, v0, v3
 
-    .line 1308
+    .line 1362
     aget-object v12, v0, v3
 
     if-eqz v12, :cond_0
@@ -7088,17 +7400,17 @@
 
     if-eqz v12, :cond_2
 
-    .line 1309
+    .line 1363
     :cond_0
     const-string v12, "error: iccid not found, wait for next sub ready"
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1477
+    .line 1531
     :goto_2
     return-void
 
-    .line 1300
+    .line 1354
     .end local v0    # "currIccId":[Ljava/lang/String;
     .end local v2    # "detectedType":I
     .end local v3    # "i":I
@@ -7113,7 +7425,7 @@
 
     goto :goto_0
 
-    .line 1312
+    .line 1366
     .restart local v0    # "currIccId":[Ljava/lang/String;
     .restart local v2    # "detectedType":I
     .restart local v3    # "i":I
@@ -7122,7 +7434,7 @@
 
     move-result v11
 
-    .line 1313
+    .line 1367
     .local v11, "subId":I
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -7166,7 +7478,7 @@
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1314
+    .line 1368
     const-string v12, "N/A"
 
     aget-object v13, v0, v3
@@ -7183,23 +7495,23 @@
 
     if-eqz v12, :cond_3
 
-    .line 1317
+    .line 1371
     add-int/lit8 v4, v4, 0x1
 
-    .line 1318
+    .line 1372
     const/4 v12, 0x1
 
     shl-int/2addr v12, v3
 
     or-int/2addr v5, v12
 
-    .line 1306
+    .line 1360
     :cond_3
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 1322
+    .line 1376
     .end local v11    # "subId":I
     :cond_4
     new-instance v12, Ljava/lang/StringBuilder;
@@ -7232,14 +7544,14 @@
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1325
+    .line 1379
     const-string v12, "persist.radio.data.iccid"
 
     invoke-static {v12}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1326
+    .line 1380
     .local v1, "defaultIccid":Ljava/lang/String;
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -7261,34 +7573,34 @@
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1328
+    .line 1382
     if-nez v4, :cond_6
 
-    .line 1333
+    .line 1387
     const-string v12, "OP09 C0: No SIM inserted."
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1473
+    .line 1527
     :cond_5
     :goto_3
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->updateDataEnableProperty()V
 
-    .line 1475
+    .line 1529
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->resetSimStatus()V
 
-    .line 1476
+    .line 1530
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->resetNewSimSlot()V
 
     goto/16 :goto_2
 
-    .line 1334
+    .line 1388
     :cond_6
     const/4 v12, 0x1
 
     if-ne v4, v12, :cond_c
 
-    .line 1335
+    .line 1389
     const/4 v3, 0x0
 
     :goto_4
@@ -7296,7 +7608,7 @@
 
     if-ge v3, v12, :cond_7
 
-    .line 1336
+    .line 1390
     const/4 v12, 0x1
 
     shl-int/2addr v12, v3
@@ -7305,35 +7617,35 @@
 
     if-eqz v12, :cond_8
 
-    .line 1337
+    .line 1391
     move v10, v3
 
-    .line 1342
+    .line 1396
     :cond_7
     const/4 v12, 0x4
 
     if-ne v2, v12, :cond_9
 
-    .line 1343
+    .line 1397
     const-string v12, "OP09 C1: Single SIM unchange: do nothing"
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
     goto :goto_3
 
-    .line 1335
+    .line 1389
     :cond_8
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_4
 
-    .line 1344
+    .line 1398
     :cond_9
     const/4 v12, 0x1
 
     if-ne v2, v12, :cond_a
 
-    .line 1348
+    .line 1402
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
@@ -7354,27 +7666,27 @@
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1349
+    .line 1403
     invoke-direct {p0, v10}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDefaultData(I)V
 
-    .line 1350
+    .line 1404
     const/4 v12, 0x1
 
     invoke-direct {p0, v10, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDataEnabled(IZ)V
 
     goto :goto_3
 
-    .line 1355
+    .line 1409
     :cond_a
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->getLastDataEnabled()I
 
     move-result v7
 
-    .line 1356
+    .line 1410
     .local v7, "isLastDataEnabled":I
     invoke-direct {p0, v10}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDefaultData(I)V
 
-    .line 1358
+    .line 1412
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
@@ -7395,17 +7707,17 @@
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1362
+    .line 1416
     if-eqz v7, :cond_b
 
-    .line 1363
+    .line 1417
     const/4 v12, 0x1
 
     invoke-direct {p0, v10, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDataEnabled(IZ)V
 
     goto :goto_3
 
-    .line 1365
+    .line 1419
     :cond_b
     const/4 v12, 0x0
 
@@ -7413,31 +7725,31 @@
 
     goto :goto_3
 
-    .line 1368
+    .line 1422
     .end local v7    # "isLastDataEnabled":I
     :cond_c
     const/4 v12, 0x2
 
     if-lt v4, v12, :cond_5
 
-    .line 1369
+    .line 1423
     const/4 v12, 0x1
 
     if-ne v2, v12, :cond_18
 
-    .line 1370
+    .line 1424
     if-nez p1, :cond_e
 
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->getNewSimSlot()I
 
     move-result v8
 
-    .line 1373
+    .line 1427
     .local v8, "newSimStatus":I
     :goto_5
     const/4 v6, 0x1
 
-    .line 1374
+    .line 1428
     .local v6, "isAllNewSim":Z
     const/4 v3, 0x0
 
@@ -7446,7 +7758,7 @@
 
     if-ge v3, v12, :cond_f
 
-    .line 1375
+    .line 1429
     const/4 v12, 0x1
 
     shl-int/2addr v12, v3
@@ -7455,16 +7767,16 @@
 
     if-nez v12, :cond_d
 
-    .line 1376
+    .line 1430
     const/4 v6, 0x0
 
-    .line 1374
+    .line 1428
     :cond_d
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_6
 
-    .line 1370
+    .line 1424
     .end local v6    # "isAllNewSim":Z
     .end local v8    # "newSimStatus":I
     :cond_e
@@ -7478,23 +7790,23 @@
 
     goto :goto_5
 
-    .line 1380
+    .line 1434
     .restart local v6    # "isAllNewSim":Z
     .restart local v8    # "newSimStatus":I
     :cond_f
     if-eqz v6, :cond_10
 
-    .line 1385
+    .line 1439
     const-string v12, "C4: Multi SIM + All New SIM: Set 34G to sub1"
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1386
+    .line 1440
     const/4 v12, 0x0
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDefaultData(I)V
 
-    .line 1387
+    .line 1441
     const/4 v12, 0x0
 
     const/4 v13, 0x1
@@ -7503,7 +7815,7 @@
 
     goto/16 :goto_3
 
-    .line 1390
+    .line 1444
     :cond_10
     if-eqz v1, :cond_11
 
@@ -7515,18 +7827,18 @@
 
     if-eqz v12, :cond_12
 
-    .line 1395
+    .line 1449
     :cond_11
     const-string v12, "C6: Multi SIM + New SIM + Non Default SIM: No Change"
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1396
+    .line 1450
     const/4 v12, 0x0
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDefaultData(I)V
 
-    .line 1398
+    .line 1452
     const/4 v12, 0x1
 
     const/4 v13, 0x0
@@ -7535,7 +7847,7 @@
 
     goto/16 :goto_3
 
-    .line 1400
+    .line 1454
     :cond_12
     const/4 v3, 0x0
 
@@ -7544,7 +7856,7 @@
 
     if-ge v3, v12, :cond_13
 
-    .line 1401
+    .line 1455
     aget-object v12, v0, v3
 
     invoke-virtual {v1, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -7553,16 +7865,16 @@
 
     if-eqz v12, :cond_14
 
-    .line 1402
+    .line 1456
     move v10, v3
 
-    .line 1407
+    .line 1461
     :cond_13
     const/4 v12, -0x1
 
     if-eq v10, v12, :cond_16
 
-    .line 1411
+    .line 1465
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
@@ -7583,17 +7895,17 @@
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1415
+    .line 1469
     const/4 v9, 0x0
 
-    .line 1416
+    .line 1470
     .local v9, "nonDefaultPhoneId":I
     if-nez v10, :cond_15
 
-    .line 1417
+    .line 1471
     const/4 v9, 0x1
 
-    .line 1421
+    .line 1475
     :goto_8
     const/4 v12, 0x0
 
@@ -7601,28 +7913,28 @@
 
     goto/16 :goto_3
 
-    .line 1400
+    .line 1454
     .end local v9    # "nonDefaultPhoneId":I
     :cond_14
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_7
 
-    .line 1419
+    .line 1473
     .restart local v9    # "nonDefaultPhoneId":I
     :cond_15
     const/4 v9, 0x0
 
     goto :goto_8
 
-    .line 1426
+    .line 1480
     .end local v9    # "nonDefaultPhoneId":I
     :cond_16
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->getLastDataEnabled()I
 
     move-result v7
 
-    .line 1427
+    .line 1481
     .restart local v7    # "isLastDataEnabled":I
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -7644,12 +7956,12 @@
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1429
+    .line 1483
     const/4 v12, 0x0
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDefaultData(I)V
 
-    .line 1430
+    .line 1484
     const/4 v13, 0x0
 
     if-nez v7, :cond_17
@@ -7659,7 +7971,7 @@
     :goto_9
     invoke-direct {p0, v13, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDataEnabled(IZ)V
 
-    .line 1433
+    .line 1487
     const/4 v12, 0x1
 
     const/4 v13, 0x0
@@ -7668,13 +7980,13 @@
 
     goto/16 :goto_3
 
-    .line 1430
+    .line 1484
     :cond_17
     const/4 v12, 0x1
 
     goto :goto_9
 
-    .line 1438
+    .line 1492
     .end local v6    # "isAllNewSim":Z
     .end local v7    # "isLastDataEnabled":I
     .end local v8    # "newSimStatus":I
@@ -7689,7 +8001,7 @@
 
     if-eqz v12, :cond_1a
 
-    .line 1441
+    .line 1495
     :cond_19
     const-string v12, "C8: Do nothing"
 
@@ -7697,7 +8009,7 @@
 
     goto/16 :goto_3
 
-    .line 1443
+    .line 1497
     :cond_1a
     const/4 v3, 0x0
 
@@ -7706,7 +8018,7 @@
 
     if-ge v3, v12, :cond_1b
 
-    .line 1444
+    .line 1498
     aget-object v12, v0, v3
 
     invoke-virtual {v1, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -7715,16 +8027,16 @@
 
     if-eqz v12, :cond_1c
 
-    .line 1445
+    .line 1499
     move v10, v3
 
-    .line 1449
+    .line 1503
     :cond_1b
     const/4 v12, -0x1
 
     if-eq v10, v12, :cond_1e
 
-    .line 1453
+    .line 1507
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
@@ -7745,17 +8057,17 @@
 
     invoke-direct {p0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1457
+    .line 1511
     const/4 v9, 0x0
 
-    .line 1458
+    .line 1512
     .restart local v9    # "nonDefaultPhoneId":I
     if-nez v10, :cond_1d
 
-    .line 1459
+    .line 1513
     const/4 v9, 0x1
 
-    .line 1463
+    .line 1517
     :goto_b
     const/4 v12, 0x0
 
@@ -7763,21 +8075,21 @@
 
     goto/16 :goto_3
 
-    .line 1443
+    .line 1497
     .end local v9    # "nonDefaultPhoneId":I
     :cond_1c
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_a
 
-    .line 1461
+    .line 1515
     .restart local v9    # "nonDefaultPhoneId":I
     :cond_1d
     const/4 v9, 0x0
 
     goto :goto_b
 
-    .line 1467
+    .line 1521
     .end local v9    # "nonDefaultPhoneId":I
     :cond_1e
     const-string v12, "C8: Do nothing"
@@ -7792,21 +8104,21 @@
     .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 468
+    .line 477
     const-string v4, "DataSubSelector for C2K om solution 1.5: capability maybe diff with default data"
 
     invoke-direct {p0, v4}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 471
+    .line 480
     const/4 v3, -0x1
 
-    .line 472
+    .line 481
     .local v3, "phoneId":I
     iget v4, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
 
     new-array v1, v4, [Ljava/lang/String;
 
-    .line 476
+    .line 485
     .local v1, "currIccId":[Ljava/lang/String;
     invoke-static {}, Lcom/mediatek/internal/telephony/cdma/CdmaFeatureOptionUtils;->isCdmaLteDcSupport()Z
 
@@ -7814,10 +8126,10 @@
 
     if-nez v4, :cond_0
 
-    .line 477
+    .line 486
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->turnOffNewSimData(Landroid/content/Intent;)V
 
-    .line 481
+    .line 490
     :cond_0
     const-string v4, "persist.radio.simswitch.iccid"
 
@@ -7825,7 +8137,7 @@
 
     move-result-object v0
 
-    .line 482
+    .line 491
     .local v0, "capabilityIccid":Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -7847,7 +8159,7 @@
 
     invoke-direct {p0, v4}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 483
+    .line 492
     const/4 v2, 0x0
 
     .local v2, "i":I
@@ -7856,7 +8168,7 @@
 
     if-ge v2, v4, :cond_4
 
-    .line 484
+    .line 493
     iget-object v4, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->PROPERTY_ICCID:[Ljava/lang/String;
 
     aget-object v4, v4, v2
@@ -7867,7 +8179,7 @@
 
     aput-object v4, v1, v2
 
-    .line 485
+    .line 494
     aget-object v4, v1, v2
 
     if-eqz v4, :cond_1
@@ -7892,18 +8204,18 @@
 
     if-eqz v4, :cond_3
 
-    .line 486
+    .line 495
     :cond_1
     const-string v4, "error: iccid not found, wait for next sub ready"
 
     invoke-direct {p0, v4}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 500
+    .line 509
     :cond_2
     :goto_1
     return-void
 
-    .line 489
+    .line 498
     :cond_3
     aget-object v4, v1, v2
 
@@ -7913,10 +8225,10 @@
 
     if-eqz v4, :cond_5
 
-    .line 490
+    .line 499
     move v3, v2
 
-    .line 495
+    .line 504
     :cond_4
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -7938,17 +8250,17 @@
 
     invoke-direct {p0, v4}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 496
+    .line 505
     const/4 v4, -0x1
 
     if-eq v3, v4, :cond_2
 
-    .line 498
+    .line 507
     invoke-direct {p0, v3}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
     goto :goto_1
 
-    .line 483
+    .line 492
     :cond_5
     add-int/lit8 v2, v2, 0x1
 
@@ -7962,7 +8274,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1539
+    .line 1593
     const-string v2, "ro.mtk.c2k.slot2.support"
 
     const-string v3, "0"
@@ -7979,7 +8291,7 @@
 
     move-result v0
 
-    .line 1541
+    .line 1595
     .local v0, "c2kP2":I
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -8001,33 +8313,33 @@
 
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1543
+    .line 1597
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->isOP09ASupport()Z
 
     move-result v2
 
     if-eqz v2, :cond_3
 
-    .line 1544
+    .line 1598
     invoke-static {v4}, Lcom/mediatek/internal/telephony/RadioCapabilitySwitchUtil;->isSimContainsCdmaApp(I)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 1545
+    .line 1599
     const-string v2, "CDMA sim is inserted in slot1, always set to SIM1"
 
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1546
+    .line 1600
     invoke-direct {p0, v4}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
-    .line 1577
+    .line 1631
     :goto_0
     return-void
 
-    .line 1549
+    .line 1603
     :cond_0
     invoke-static {}, Lcom/mediatek/internal/telephony/ltedc/svlte/SvlteModeController;->getRadioTechnologyMode()I
 
@@ -8037,7 +8349,7 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 1553
+    .line 1607
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v2
@@ -8048,7 +8360,7 @@
 
     new-array v1, v2, [I
 
-    .line 1554
+    .line 1608
     .local v1, "cardType":[I
     invoke-static {}, Lcom/android/internal/telephony/uicc/UiccController;->getInstance()Lcom/android/internal/telephony/uicc/UiccController;
 
@@ -8058,7 +8370,7 @@
 
     move-result-object v1
 
-    .line 1555
+    .line 1609
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -8081,37 +8393,37 @@
 
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1556
+    .line 1610
     aget v2, v1, v4
 
     if-nez v2, :cond_1
 
-    .line 1557
+    .line 1611
     const-string v2, "SIM 1 is empty, don\'t change capability"
 
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 1559
+    .line 1613
     :cond_1
     const-string v2, "SIM 1 is inserted, change capability"
 
     invoke-direct {p0, v2}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1560
+    .line 1614
     invoke-direct {p0, v4}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
 
     goto :goto_0
 
-    .line 1564
+    .line 1618
     .end local v1    # "cardType":[I
     :cond_2
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOm(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 1570
+    .line 1624
     :cond_3
     if-nez v0, :cond_4
 
@@ -8121,12 +8433,12 @@
 
     if-eqz v2, :cond_4
 
-    .line 1571
+    .line 1625
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForSolution15(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 1573
+    .line 1627
     :cond_4
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOm(Landroid/content/Intent;)V
 
@@ -8142,14 +8454,14 @@
 
     const/4 v7, 0x0
 
-    .line 1595
+    .line 1649
     if-nez p1, :cond_1
 
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->getSimStatus()I
 
     move-result v1
 
-    .line 1597
+    .line 1651
     .local v1, "detectedType":I
     :goto_0
     new-instance v5, Ljava/lang/StringBuilder;
@@ -8172,17 +8484,17 @@
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1600
+    .line 1654
     if-ne v1, v8, :cond_3
 
-    .line 1601
+    .line 1655
     if-nez p1, :cond_2
 
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->getNewSimSlot()I
 
     move-result v4
 
-    .line 1604
+    .line 1658
     .local v4, "newSimSlot":I
     :goto_1
     new-instance v5, Ljava/lang/StringBuilder;
@@ -8205,7 +8517,7 @@
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1605
+    .line 1659
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -8232,7 +8544,7 @@
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1607
+    .line 1661
     const/4 v2, 0x0
 
     .local v2, "i":I
@@ -8241,21 +8553,21 @@
 
     if-ge v2, v5, :cond_3
 
-    .line 1608
+    .line 1662
     shl-int v5, v8, v2
 
     and-int/2addr v5, v4
 
     if-eqz v5, :cond_0
 
-    .line 1609
+    .line 1663
     const-string v5, "persist.radio.data.iccid"
 
     invoke-static {v5}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1610
+    .line 1664
     .local v0, "defaultIccid":Ljava/lang/String;
     iget-object v5, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->PROPERTY_ICCID:[Ljava/lang/String;
 
@@ -8265,7 +8577,7 @@
 
     move-result-object v3
 
-    .line 1611
+    .line 1665
     .local v3, "newSimIccid":Ljava/lang/String;
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -8273,7 +8585,7 @@
 
     if-nez v5, :cond_0
 
-    .line 1612
+    .line 1666
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -8300,10 +8612,10 @@
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1613
+    .line 1667
     invoke-direct {p0, v2, v7}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setDataEnabled(IZ)V
 
-    .line 1607
+    .line 1661
     .end local v0    # "defaultIccid":Ljava/lang/String;
     .end local v3    # "newSimIccid":Ljava/lang/String;
     :cond_0
@@ -8311,7 +8623,7 @@
 
     goto :goto_2
 
-    .line 1595
+    .line 1649
     .end local v1    # "detectedType":I
     .end local v2    # "i":I
     .end local v4    # "newSimSlot":I
@@ -8324,7 +8636,7 @@
 
     goto/16 :goto_0
 
-    .line 1601
+    .line 1655
     .restart local v1    # "detectedType":I
     :cond_2
     const-string v5, "newSIMSlot"
@@ -8335,7 +8647,7 @@
 
     goto :goto_1
 
-    .line 1618
+    .line 1672
     :cond_3
     return-void
 .end method
@@ -8344,17 +8656,17 @@
     .locals 2
 
     .prologue
-    .line 2084
+    .line 2138
     iget-object v0, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mContext:Landroid/content/Context;
 
     if-nez v0, :cond_0
 
-    .line 2085
+    .line 2139
     const-string v0, "unRegisterWorldModeReceiver, context is null => return"
 
     invoke-direct {p0, v0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 2088
+    .line 2142
     :cond_0
     iget-object v0, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mContext:Landroid/content/Context;
 
@@ -8362,12 +8674,12 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 2089
+    .line 2143
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mHasRegisterWorldModeReceiver:Z
 
-    .line 2090
+    .line 2144
     return-void
 .end method
 
@@ -8375,24 +8687,24 @@
     .locals 7
 
     .prologue
-    .line 1509
+    .line 1563
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v4
 
-    .line 1510
+    .line 1564
     .local v4, "telephony":Landroid/telephony/TelephonyManager;
     const/4 v0, 0x0
 
-    .line 1511
+    .line 1565
     .local v0, "dataEnabled":Z
     const-string v1, "0"
 
-    .line 1512
+    .line 1566
     .local v1, "dataOnIccid":Ljava/lang/String;
     const/4 v3, 0x0
 
-    .line 1514
+    .line 1568
     .local v3, "subId":I
     const/4 v2, 0x0
 
@@ -8402,7 +8714,7 @@
 
     if-ge v2, v5, :cond_3
 
-    .line 1516
+    .line 1570
     invoke-static {v2}, Lcom/android/internal/telephony/PhoneFactory;->getPhone(I)Lcom/android/internal/telephony/Phone;
 
     move-result-object v5
@@ -8411,32 +8723,32 @@
 
     move-result v3
 
-    .line 1517
+    .line 1571
     invoke-static {}, Lcom/mediatek/internal/telephony/cdma/CdmaFeatureOptionUtils;->isCdmaLteDcSupport()Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    .line 1518
+    .line 1572
     invoke-static {v3}, Lcom/mediatek/internal/telephony/ltedc/svlte/SvlteUtils;->getSvlteSubIdBySubId(I)I
 
     move-result v3
 
-    .line 1521
+    .line 1575
     :cond_0
     if-eqz v4, :cond_1
 
-    .line 1522
+    .line 1576
     invoke-virtual {v4, v3}, Landroid/telephony/TelephonyManager;->getDataEnabled(I)Z
 
     move-result v0
 
-    .line 1525
+    .line 1579
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 1526
+    .line 1580
     iget-object v5, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->PROPERTY_ICCID:[Ljava/lang/String;
 
     aget-object v5, v5, v2
@@ -8447,7 +8759,7 @@
 
     move-result-object v1
 
-    .line 1532
+    .line 1586
     :goto_1
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -8469,25 +8781,25 @@
 
     invoke-direct {p0, v5}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 1533
+    .line 1587
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     const-string v5, "persist.radio.mobile.data"
 
     invoke-static {v2, v5, v1}, Landroid/telephony/TelephonyManager;->setTelephonyProperty(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 1514
+    .line 1568
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1528
+    .line 1582
     :cond_2
     const-string v1, "0"
 
     goto :goto_1
 
-    .line 1536
+    .line 1590
     :cond_3
     return-void
 .end method
@@ -8503,25 +8815,25 @@
 
     const/4 v2, 0x1
 
-    .line 432
+    .line 441
     iput-boolean v3, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsi:Z
 
-    .line 434
+    .line 443
     sget-boolean v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->BSP_PACKAGE:Z
 
     if-eqz v0, :cond_1
 
-    .line 435
+    .line 444
     const-string v0, "Don\'t support BSP Package."
 
     invoke-direct {p0, v0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
 
-    .line 465
+    .line 474
     :cond_0
     :goto_0
     return-void
 
-    .line 439
+    .line 448
     :cond_1
     sget-object v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
 
@@ -8533,12 +8845,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 440
+    .line 449
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp01(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 441
+    .line 450
     :cond_2
     sget-object v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
 
@@ -8550,7 +8862,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 442
+    .line 451
     const-string v0, "ro.mtk_disable_cap_switch"
 
     invoke-static {v0, v3}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
@@ -8559,18 +8871,18 @@
 
     if-ne v0, v2, :cond_3
 
-    .line 443
+    .line 452
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp02(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 445
+    .line 454
     :cond_3
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp02()V
 
     goto :goto_0
 
-    .line 447
+    .line 456
     :cond_4
     invoke-direct {p0}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->isOP09ASupport()Z
 
@@ -8584,26 +8896,26 @@
 
     if-eqz v0, :cond_6
 
-    .line 448
+    .line 457
     :cond_5
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp09(Landroid/content/Intent;)V
 
-    .line 449
+    .line 458
     invoke-static {}, Lcom/mediatek/internal/telephony/cdma/CdmaFeatureOptionUtils;->isCT6MSupport()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 450
+    .line 459
     iput-boolean v2, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsSubReady:Z
 
-    .line 451
+    .line 460
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapabilityIfNeeded(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 453
+    .line 462
     :cond_6
     invoke-static {}, Lcom/mediatek/internal/telephony/cdma/CdmaFeatureOptionUtils;->isCdmaLteDcSupport()Z
 
@@ -8611,7 +8923,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 456
+    .line 465
     const-string v0, "OM"
 
     sget-object v1, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
@@ -8622,19 +8934,19 @@
 
     if-eqz v0, :cond_7
 
-    .line 457
+    .line 466
     iput-boolean v2, p0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsSubReady:Z
 
-    .line 458
+    .line 467
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapabilityIfNeeded(Landroid/content/Intent;)V
 
-    .line 461
+    .line 470
     :cond_7
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->turnOffNewSimData(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 463
+    .line 472
     :cond_8
     invoke-direct {p0, p1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOm(Landroid/content/Intent;)V
 

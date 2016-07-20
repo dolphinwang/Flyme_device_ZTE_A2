@@ -48,7 +48,7 @@
     .local v3, "action":Ljava/lang/String;
     if-nez v3, :cond_1
 
-    .line 376
+    .line 385
     :cond_0
     :goto_0
     return-void
@@ -93,7 +93,7 @@
 
     move-result v17
 
-    if-eqz v17, :cond_12
+    if-eqz v17, :cond_13
 
     .line 124
     const-string v17, "ss"
@@ -286,7 +286,7 @@
 
     move-result v17
 
-    if-eqz v17, :cond_10
+    if-eqz v17, :cond_11
 
     .line 136
     const-string v17, "1"
@@ -300,48 +300,8 @@
 
     move-object/from16 v17, v0
 
-    # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsi:Z
-    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
-
-    move-result v17
-
-    const/16 v18, 0x1
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-eq v0, v1, :cond_4
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsiRoaming:Z
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->isOP01OMSupport()Z
     invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$600(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
-
-    move-result v17
-
-    const/16 v18, 0x1
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-ne v0, v1, :cond_8
-
-    .line 139
-    :cond_4
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsi:Z
-    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
 
     move-result v17
 
@@ -353,7 +313,97 @@
 
     if-ne v0, v1, :cond_5
 
+    .line 139
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    const-string v18, "sub for OP01 open market"
+
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
+
     .line 140
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp01OM()V
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)V
+
+    .line 201
+    :cond_4
+    :goto_1
+    invoke-static/range {v16 .. v16}, Lcom/mediatek/internal/telephony/RadioCapabilitySwitchUtil;->clearRilMccMnc(I)V
+
+    goto/16 :goto_0
+
+    .line 141
+    :cond_5
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsi:Z
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+
+    move-result v17
+
+    const/16 v18, 0x1
+
+    move/from16 v0, v17
+
+    move/from16 v1, v18
+
+    if-eq v0, v1, :cond_6
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsiRoaming:Z
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$800(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+
+    move-result v17
+
+    const/16 v18, 0x1
+
+    move/from16 v0, v17
+
+    move/from16 v1, v18
+
+    if-ne v0, v1, :cond_9
+
+    .line 142
+    :cond_6
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsi:Z
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+
+    move-result v17
+
+    const/16 v18, 0x1
+
+    move/from16 v0, v17
+
+    move/from16 v1, v18
+
+    if-ne v0, v1, :cond_7
+
+    .line 143
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -365,8 +415,151 @@
     # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsi:Z
     invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$102(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
 
-    .line 141
+    .line 144
     const-string v17, "OP01"
+
+    # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
+    invoke-static {}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$300()Ljava/lang/String;
+
+    move-result-object v18
+
+    invoke-virtual/range {v17 .. v18}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v17
+
+    if-eqz v17, :cond_8
+
+    .line 145
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, p2
+
+    # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
+    invoke-static {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$902(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)Landroid/content/Intent;
+
+    .line 146
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    const-string v18, "get imsi and need to check op01 again"
+
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
+
+    .line 147
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->checkOp01CapSwitch6m()Z
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+
+    move-result v17
+
+    if-nez v17, :cond_7
+
+    .line 148
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    const/16 v18, 0x1
+
+    # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsi:Z
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$102(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
+
+    .line 157
+    :cond_7
+    :goto_2
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsiRoaming:Z
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$800(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+
+    move-result v17
+
+    const/16 v18, 0x1
+
+    move/from16 v0, v17
+
+    move/from16 v1, v18
+
+    if-ne v0, v1, :cond_4
+
+    .line 158
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    const/16 v18, 0x0
+
+    # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsiRoaming:Z
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$802(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
+
+    .line 159
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    const-string v18, "get imsi and need to check op02Roaming again"
+
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
+
+    .line 160
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    const/16 v18, 0x1
+
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->checkOp02CapSwitch(I)Z
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
+
+    move-result v17
+
+    if-nez v17, :cond_4
+
+    .line 161
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    const/16 v18, 0x1
+
+    # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsiRoaming:Z
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$802(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
+
+    goto/16 :goto_1
+
+    .line 150
+    :cond_8
+    const-string v17, "OP02"
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
     invoke-static {}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$300()Ljava/lang/String;
@@ -379,155 +572,7 @@
 
     if-eqz v17, :cond_7
 
-    .line 142
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, p2
-
-    # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
-    invoke-static {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$702(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)Landroid/content/Intent;
-
-    .line 143
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    const-string v18, "get imsi and need to check op01 again"
-
-    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
-
-    .line 144
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->checkOp01CapSwitch6m()Z
-    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$800(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
-
-    move-result v17
-
-    if-nez v17, :cond_5
-
-    .line 145
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    const/16 v18, 0x1
-
-    # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsi:Z
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$102(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
-
-    .line 154
-    :cond_5
-    :goto_1
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsiRoaming:Z
-    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$600(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
-
-    move-result v17
-
-    const/16 v18, 0x1
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-ne v0, v1, :cond_6
-
-    .line 155
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    const/16 v18, 0x0
-
-    # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsiRoaming:Z
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$602(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
-
-    .line 156
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    const-string v18, "get imsi and need to check op02Roaming again"
-
-    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
-
-    .line 157
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    const/16 v18, 0x1
-
-    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->checkOp02CapSwitch(I)Z
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
-
-    move-result v17
-
-    if-nez v17, :cond_6
-
-    .line 158
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    const/16 v18, 0x1
-
-    # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsiRoaming:Z
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$602(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
-
-    .line 198
-    :cond_6
-    :goto_2
-    invoke-static/range {v16 .. v16}, Lcom/mediatek/internal/telephony/RadioCapabilitySwitchUtil;->clearRilMccMnc(I)V
-
-    goto/16 :goto_0
-
-    .line 147
-    :cond_7
-    const-string v17, "OP02"
-
-    # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
-    invoke-static {}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$300()Ljava/lang/String;
-
-    move-result-object v18
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v17
-
-    if-eqz v17, :cond_5
-
-    .line 148
+    .line 151
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -539,7 +584,7 @@
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
     invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
 
-    .line 149
+    .line 152
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -549,13 +594,13 @@
     const/16 v18, 0x0
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->checkOp02CapSwitch(I)Z
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
 
     move-result v17
 
-    if-nez v17, :cond_5
+    if-nez v17, :cond_7
 
-    .line 150
+    .line 153
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -567,10 +612,10 @@
     # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsi:Z
     invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$102(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
 
-    goto :goto_1
+    goto :goto_2
 
-    .line 161
-    :cond_8
+    .line 164
+    :cond_9
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -584,7 +629,7 @@
 
     move-result v17
 
-    if-nez v17, :cond_9
+    if-nez v17, :cond_a
 
     move-object/from16 v0, p0
 
@@ -599,10 +644,10 @@
 
     move-result v17
 
-    if-eqz v17, :cond_6
+    if-eqz v17, :cond_4
 
-    .line 163
-    :cond_9
+    .line 166
+    :cond_a
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -614,7 +659,7 @@
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
     invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
 
-    .line 165
+    .line 168
     const-string v17, "phoneEx"
 
     invoke-static/range {v17 .. v17}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -625,19 +670,19 @@
 
     move-result-object v10
 
-    .line 167
+    .line 170
     .local v10, "iTelEx":Lcom/mediatek/internal/telephony/ITelephonyEx;
-    if-eqz v10, :cond_6
+    if-eqz v10, :cond_4
 
-    .line 169
+    .line 172
     :try_start_0
     invoke-interface {v10}, Lcom/mediatek/internal/telephony/ITelephonyEx;->isCapabilitySwitching()Z
 
     move-result v17
 
-    if-nez v17, :cond_6
+    if-nez v17, :cond_4
 
-    .line 172
+    .line 175
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -651,9 +696,9 @@
 
     move-result v17
 
-    if-eqz v17, :cond_a
+    if-eqz v17, :cond_b
 
-    .line 173
+    .line 176
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -665,9 +710,9 @@
     const-string v19, "false"
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNeedWaitUnlock(Ljava/lang/String;Ljava/lang/String;)V
-    invoke-static/range {v17 .. v19}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static/range {v17 .. v19}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1200(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 174
+    .line 177
     const-string v17, "OP01"
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
@@ -679,120 +724,7 @@
 
     move-result v17
 
-    if-eqz v17, :cond_b
-
-    .line 175
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v18, v0
-
-    # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
-    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
-
-    move-result-object v18
-
-    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp01(Landroid/content/Intent;)V
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
-
-    .line 188
-    :cond_a
-    :goto_3
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    const-string v18, "persist.radio.unlock.roaming"
-
-    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->isNeedWaitUnlock(Ljava/lang/String;)Z
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$200(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)Z
-
-    move-result v17
-
-    if-eqz v17, :cond_6
-
-    .line 189
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    const-string v18, "persist.radio.unlock.roaming"
-
-    const-string v19, "false"
-
-    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNeedWaitUnlock(Ljava/lang/String;Ljava/lang/String;)V
-    invoke-static/range {v17 .. v19}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 190
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    const/16 v18, 0x1
-
-    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->checkOp02CapSwitch(I)Z
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto/16 :goto_2
-
-    .line 193
-    :catch_0
-    move-exception v7
-
-    .line 194
-    .local v7, "e":Landroid/os/RemoteException;
-    invoke-virtual {v7}, Landroid/os/RemoteException;->printStackTrace()V
-
-    goto/16 :goto_2
-
-    .line 176
-    .end local v7    # "e":Landroid/os/RemoteException;
-    :cond_b
-    :try_start_1
-    const-string v17, "OP02"
-
-    # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
-    invoke-static {}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$300()Ljava/lang/String;
-
-    move-result-object v18
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v17
-
-    if-eqz v17, :cond_d
-
-    .line 177
-    const-string v17, "ro.mtk_disable_cap_switch"
-
-    const/16 v18, 0x0
-
-    invoke-static/range {v17 .. v18}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v17
-
-    const/16 v18, 0x1
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-ne v0, v1, :cond_c
+    if-eqz v17, :cond_c
 
     .line 178
     move-object/from16 v0, p0
@@ -808,51 +740,106 @@
     move-object/from16 v18, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
-    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
+    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
 
     move-result-object v18
 
-    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp02(Landroid/content/Intent;)V
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1200(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp01(Landroid/content/Intent;)V
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1300(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
 
-    goto :goto_3
+    .line 191
+    :cond_b
+    :goto_3
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    const-string v18, "persist.radio.unlock.roaming"
+
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->isNeedWaitUnlock(Ljava/lang/String;)Z
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$200(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)Z
+
+    move-result v17
+
+    if-eqz v17, :cond_4
+
+    .line 192
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    const-string v18, "persist.radio.unlock.roaming"
+
+    const-string v19, "false"
+
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNeedWaitUnlock(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static/range {v17 .. v19}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1200(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 193
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    const/16 v18, 0x1
+
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->checkOp02CapSwitch(I)Z
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto/16 :goto_1
+
+    .line 196
+    :catch_0
+    move-exception v7
+
+    .line 197
+    .local v7, "e":Landroid/os/RemoteException;
+    invoke-virtual {v7}, Landroid/os/RemoteException;->printStackTrace()V
+
+    goto/16 :goto_1
+
+    .line 179
+    .end local v7    # "e":Landroid/os/RemoteException;
+    :cond_c
+    :try_start_1
+    const-string v17, "OP02"
+
+    # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
+    invoke-static {}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$300()Ljava/lang/String;
+
+    move-result-object v18
+
+    invoke-virtual/range {v17 .. v18}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v17
+
+    if-eqz v17, :cond_e
 
     .line 180
-    :cond_c
-    move-object/from16 v0, p0
+    const-string v17, "ro.mtk_disable_cap_switch"
 
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+    const/16 v18, 0x0
 
-    move-object/from16 v17, v0
-
-    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp02()V
-    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1300(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)V
-
-    goto :goto_3
-
-    .line 182
-    :cond_d
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->isOP09ASupport()Z
-    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1400(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+    invoke-static/range {v17 .. v18}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v17
 
-    if-nez v17, :cond_e
+    const/16 v18, 0x1
 
-    invoke-static {}, Lcom/mediatek/internal/telephony/cdma/CdmaFeatureOptionUtils;->isCT6MSupport()Z
+    move/from16 v0, v17
 
-    move-result v17
+    move/from16 v1, v18
 
-    if-eqz v17, :cond_f
+    if-ne v0, v1, :cond_d
 
-    .line 183
-    :cond_e
+    .line 181
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -866,17 +853,75 @@
     move-object/from16 v18, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
-    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
+    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
+
+    move-result-object v18
+
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp02(Landroid/content/Intent;)V
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1400(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+
+    goto :goto_3
+
+    .line 183
+    :cond_d
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp02()V
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1500(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)V
+
+    goto :goto_3
+
+    .line 185
+    :cond_e
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->isOP09ASupport()Z
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1600(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+
+    move-result v17
+
+    if-nez v17, :cond_f
+
+    invoke-static {}, Lcom/mediatek/internal/telephony/cdma/CdmaFeatureOptionUtils;->isCT6MSupport()Z
+
+    move-result v17
+
+    if-eqz v17, :cond_10
+
+    .line 186
+    :cond_f
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v18, v0
+
+    # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
+    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
 
     move-result-object v18
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp09(Landroid/content/Intent;)V
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1500(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
 
     goto/16 :goto_3
 
-    .line 184
-    :cond_f
+    .line 187
+    :cond_10
     const-string v17, "OM"
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
@@ -888,9 +933,9 @@
 
     move-result v17
 
-    if-eqz v17, :cond_a
+    if-eqz v17, :cond_b
 
-    .line 185
+    .line 188
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -904,20 +949,20 @@
     move-object/from16 v18, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
-    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
+    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
 
     move-result-object v18
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOm(Landroid/content/Intent;)V
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1600(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1800(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
     goto/16 :goto_3
 
-    .line 199
+    .line 202
     .end local v10    # "iTelEx":Lcom/mediatek/internal/telephony/ITelephonyEx;
-    :cond_10
+    :cond_11
     const-string v17, "ABSENT"
 
     move-object/from16 v0, v17
@@ -926,20 +971,20 @@
 
     move-result v17
 
-    if-eqz v17, :cond_11
+    if-eqz v17, :cond_12
 
-    .line 200
+    .line 203
     const-string v17, "0"
 
     invoke-static/range {v16 .. v17}, Lcom/mediatek/internal/telephony/RadioCapabilitySwitchUtil;->updateSimImsiStatus(ILjava/lang/String;)V
 
-    .line 202
+    .line 205
     invoke-static/range {v16 .. v16}, Lcom/mediatek/internal/telephony/RadioCapabilitySwitchUtil;->clearRilMccMnc(I)V
 
     goto/16 :goto_0
 
-    .line 203
-    :cond_11
+    .line 206
+    :cond_12
     const-string v17, "NOT_READY"
 
     move-object/from16 v0, v17
@@ -950,17 +995,17 @@
 
     if-eqz v17, :cond_0
 
-    .line 204
+    .line 207
     const-string v17, "0"
 
     invoke-static/range {v16 .. v17}, Lcom/mediatek/internal/telephony/RadioCapabilitySwitchUtil;->updateSimImsiStatus(ILjava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 207
+    .line 210
     .end local v15    # "simStatus":Ljava/lang/String;
     .end local v16    # "slotId":I
-    :cond_12
+    :cond_13
     const-string v17, "android.intent.action.ACTION_SET_RADIO_CAPABILITY_DONE"
 
     move-object/from16 v0, v17
@@ -969,7 +1014,7 @@
 
     move-result v17
 
-    if-nez v17, :cond_13
+    if-nez v17, :cond_14
 
     const-string v17, "android.intent.action.ACTION_SET_RADIO_CAPABILITY_FAILED"
 
@@ -979,10 +1024,10 @@
 
     move-result v17
 
-    if-eqz v17, :cond_1b
+    if-eqz v17, :cond_1c
 
-    .line 209
-    :cond_13
+    .line 212
+    :cond_14
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1046,7 +1091,7 @@
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
     invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
 
-    .line 212
+    .line 215
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1060,7 +1105,7 @@
 
     move-result v17
 
-    if-nez v17, :cond_14
+    if-nez v17, :cond_15
 
     move-object/from16 v0, p0
 
@@ -1077,8 +1122,8 @@
 
     if-eqz v17, :cond_0
 
-    .line 214
-    :cond_14
+    .line 217
+    :cond_15
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1092,9 +1137,9 @@
 
     move-result v17
 
-    if-eqz v17, :cond_15
+    if-eqz v17, :cond_16
 
-    .line 215
+    .line 218
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1106,9 +1151,9 @@
     const-string v19, "false"
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNeedWaitUnlock(Ljava/lang/String;Ljava/lang/String;)V
-    invoke-static/range {v17 .. v19}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static/range {v17 .. v19}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1200(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 216
+    .line 219
     const-string v17, "OP01"
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
@@ -1120,9 +1165,9 @@
 
     move-result v17
 
-    if-eqz v17, :cond_16
+    if-eqz v17, :cond_17
 
-    .line 217
+    .line 220
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1136,15 +1181,15 @@
     move-object/from16 v18, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
-    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
+    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
 
     move-result-object v18
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp01(Landroid/content/Intent;)V
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1300(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
 
-    .line 230
-    :cond_15
+    .line 233
+    :cond_16
     :goto_4
     move-object/from16 v0, p0
 
@@ -1161,7 +1206,7 @@
 
     if-eqz v17, :cond_0
 
-    .line 231
+    .line 234
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1173,9 +1218,9 @@
     const-string v19, "false"
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setNeedWaitUnlock(Ljava/lang/String;Ljava/lang/String;)V
-    invoke-static/range {v17 .. v19}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static/range {v17 .. v19}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1200(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 232
+    .line 235
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1185,12 +1230,12 @@
     const/16 v18, 0x1
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->checkOp02CapSwitch(I)Z
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
 
     goto/16 :goto_0
 
-    .line 218
-    :cond_16
+    .line 221
+    :cond_17
     const-string v17, "OP02"
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
@@ -1202,9 +1247,9 @@
 
     move-result v17
 
-    if-eqz v17, :cond_18
+    if-eqz v17, :cond_19
 
-    .line 219
+    .line 222
     const-string v17, "ro.mtk_disable_cap_switch"
 
     const/16 v18, 0x0
@@ -1219,9 +1264,9 @@
 
     move/from16 v1, v18
 
-    if-ne v0, v1, :cond_17
+    if-ne v0, v1, :cond_18
 
-    .line 220
+    .line 223
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1235,29 +1280,16 @@
     move-object/from16 v18, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
-    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
+    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
 
     move-result-object v18
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp02(Landroid/content/Intent;)V
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1200(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1400(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
 
     goto :goto_4
 
-    .line 222
-    :cond_17
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp02()V
-    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1300(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)V
-
-    goto :goto_4
-
-    .line 224
+    .line 225
     :cond_18
     move-object/from16 v0, p0
 
@@ -1265,21 +1297,34 @@
 
     move-object/from16 v17, v0
 
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp02()V
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1500(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)V
+
+    goto :goto_4
+
+    .line 227
+    :cond_19
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->isOP09ASupport()Z
-    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1400(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1600(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
 
     move-result v17
 
-    if-nez v17, :cond_19
+    if-nez v17, :cond_1a
 
     invoke-static {}, Lcom/mediatek/internal/telephony/cdma/CdmaFeatureOptionUtils;->isCT6MSupport()Z
 
     move-result v17
 
-    if-eqz v17, :cond_1a
+    if-eqz v17, :cond_1b
 
-    .line 225
-    :cond_19
+    .line 228
+    :cond_1a
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1293,17 +1338,17 @@
     move-object/from16 v18, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
-    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
+    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
 
     move-result-object v18
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp09(Landroid/content/Intent;)V
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1500(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
 
     goto/16 :goto_4
 
-    .line 226
-    :cond_1a
+    .line 229
+    :cond_1b
     const-string v17, "OM"
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
@@ -1315,9 +1360,9 @@
 
     move-result v17
 
-    if-eqz v17, :cond_15
+    if-eqz v17, :cond_16
 
-    .line 227
+    .line 230
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1331,17 +1376,17 @@
     move-object/from16 v18, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
-    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
+    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
 
     move-result-object v18
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOm(Landroid/content/Intent;)V
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1600(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1800(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
 
     goto/16 :goto_4
 
-    .line 235
-    :cond_1b
+    .line 238
+    :cond_1c
     const-string v17, "com.mediatek.phone.ACTION_SET_RADIO_TECHNOLOGY_DONE"
 
     move-object/from16 v0, v17
@@ -1350,12 +1395,12 @@
 
     move-result v17
 
-    if-eqz v17, :cond_1e
+    if-eqz v17, :cond_1f
 
-    .line 236
+    .line 239
     const/4 v11, 0x0
 
-    .line 237
+    .line 240
     .local v11, "isSvlteModeSwitching":Z
     invoke-static {}, Lcom/mediatek/internal/telephony/ltedc/svlte/SvlteModeController;->getInstance()Lcom/mediatek/internal/telephony/ltedc/svlte/SvlteModeController;
 
@@ -1365,7 +1410,7 @@
 
     move-result v11
 
-    .line 238
+    .line 241
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1395,7 +1440,7 @@
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
     invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
 
-    .line 239
+    .line 242
     if-nez v11, :cond_0
 
     sget-object v17, Lcom/mediatek/internal/telephony/ltedc/svlte/SvlteModeController$RfOffState;->RF_OFF_IN_IDLE:Lcom/mediatek/internal/telephony/ltedc/svlte/SvlteModeController$RfOffState;
@@ -1414,12 +1459,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 244
+    .line 247
     invoke-static {}, Lcom/mediatek/internal/telephony/cdma/CdmaFeatureOptionUtils;->isCdmaLteDcSupport()Z
 
     move-result v17
 
-    if-eqz v17, :cond_1c
+    if-eqz v17, :cond_1d
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
     invoke-static {}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$300()Ljava/lang/String;
@@ -1432,9 +1477,9 @@
 
     move-result v17
 
-    if-eqz v17, :cond_1c
+    if-eqz v17, :cond_1d
 
-    .line 246
+    .line 249
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1446,17 +1491,17 @@
     move-object/from16 v1, p2
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp01(Landroid/content/Intent;)V
-    invoke-static {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+    invoke-static {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1300(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
 
-    .line 248
-    :cond_1c
+    .line 251
+    :cond_1d
     invoke-static {}, Lcom/mediatek/internal/telephony/cdma/CdmaFeatureOptionUtils;->isCT6MSupport()Z
 
     move-result v17
 
-    if-eqz v17, :cond_1d
+    if-eqz v17, :cond_1e
 
-    .line 249
+    .line 252
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1466,9 +1511,9 @@
     const/16 v18, 0x1
 
     # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mRadioTechDone:Z
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1702(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1902(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
 
-    .line 250
+    .line 253
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1484,8 +1529,8 @@
 
     goto/16 :goto_0
 
-    .line 251
-    :cond_1d
+    .line 254
+    :cond_1e
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
     invoke-static {}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$300()Ljava/lang/String;
 
@@ -1499,7 +1544,7 @@
 
     if-eqz v17, :cond_0
 
-    .line 252
+    .line 255
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1509,9 +1554,9 @@
     const/16 v18, 0x1
 
     # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mRadioTechDone:Z
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1702(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1902(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
 
-    .line 253
+    .line 256
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1523,13 +1568,13 @@
     move-object/from16 v1, p2
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForSvlte(Landroid/content/Intent;)V
-    invoke-static {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1800(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+    invoke-static {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
 
     goto/16 :goto_0
 
-    .line 255
+    .line 258
     .end local v11    # "isSvlteModeSwitching":Z
-    :cond_1e
+    :cond_1f
     const-string v17, "mediatek.intent.action.LOCATED_PLMN_CHANGED"
 
     move-object/from16 v0, v17
@@ -1538,9 +1583,9 @@
 
     move-result v17
 
-    if-eqz v17, :cond_21
+    if-eqz v17, :cond_22
 
-    .line 256
+    .line 259
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1552,7 +1597,7 @@
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
     invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
 
-    .line 257
+    .line 260
     const-string v17, "ro.mtk_disable_cap_switch"
 
     const/16 v18, 0x0
@@ -1563,7 +1608,7 @@
 
     if-nez v17, :cond_0
 
-    .line 258
+    .line 261
     const-string v17, "OP02"
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
@@ -1577,7 +1622,7 @@
 
     if-eqz v17, :cond_0
 
-    .line 259
+    .line 262
     const-string v17, "plmn"
 
     move-object/from16 v0, p2
@@ -1588,7 +1633,7 @@
 
     move-result-object v13
 
-    .line 260
+    .line 263
     .local v13, "plmn":Ljava/lang/String;
     if-eqz v13, :cond_0
 
@@ -1602,7 +1647,17 @@
 
     if-nez v17, :cond_0
 
-    .line 261
+    const-string v17, "00000"
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v13, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v17
+
+    if-nez v17, :cond_0
+
+    .line 266
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1632,7 +1687,7 @@
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
     invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
 
-    .line 262
+    .line 267
     const-string v17, "first_time_roaming"
 
     const/16 v18, 0x0
@@ -1647,13 +1702,13 @@
 
     move-result-object v14
 
-    .line 264
+    .line 269
     .local v14, "preference":Landroid/content/SharedPreferences;
     invoke-interface {v14}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v8
 
-    .line 265
+    .line 270
     .local v8, "editor":Landroid/content/SharedPreferences$Editor;
     const-string v17, "need_to_execute_roaming"
 
@@ -1667,7 +1722,7 @@
 
     move-result v9
 
-    .line 267
+    .line 272
     .local v9, "firstTimeRoaming":Z
     const-string v17, "460"
 
@@ -1677,16 +1732,16 @@
 
     move-result v17
 
-    if-nez v17, :cond_20
+    if-nez v17, :cond_21
 
-    .line 268
+    .line 273
     const/16 v17, 0x1
 
     move/from16 v0, v17
 
     if-ne v9, v0, :cond_0
 
-    .line 269
+    .line 274
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1698,9 +1753,9 @@
 
     move-result v17
 
-    if-nez v17, :cond_1f
+    if-nez v17, :cond_20
 
-    .line 270
+    .line 275
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1710,12 +1765,12 @@
     const/16 v18, 0x1
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->checkOp02CapSwitch(I)Z
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
 
     goto/16 :goto_0
 
-    .line 274
-    :cond_1f
+    .line 279
+    :cond_20
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1725,15 +1780,15 @@
     const/16 v18, 0x1
 
     # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitImsiRoaming:Z
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$602(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$802(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
 
     goto/16 :goto_0
 
-    .line 279
-    :cond_20
+    .line 284
+    :cond_21
     if-nez v9, :cond_0
 
-    .line 281
+    .line 286
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1745,20 +1800,20 @@
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
     invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
 
-    .line 282
+    .line 287
     invoke-interface {v8}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;
 
-    .line 283
+    .line 288
     invoke-interface {v8}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     goto/16 :goto_0
 
-    .line 289
+    .line 294
     .end local v8    # "editor":Landroid/content/SharedPreferences$Editor;
     .end local v9    # "firstTimeRoaming":Z
     .end local v13    # "plmn":Ljava/lang/String;
     .end local v14    # "preference":Landroid/content/SharedPreferences;
-    :cond_21
+    :cond_22
     const-string v17, "android.intent.action.AIRPLANE_MODE"
 
     move-object/from16 v0, v17
@@ -1767,9 +1822,9 @@
 
     move-result v17
 
-    if-eqz v17, :cond_29
+    if-eqz v17, :cond_2a
 
-    .line 290
+    .line 295
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1790,7 +1845,7 @@
 
     move-result v17
 
-    if-eqz v17, :cond_23
+    if-eqz v17, :cond_24
 
     const/16 v17, 0x1
 
@@ -1800,9 +1855,9 @@
     move/from16 v1, v17
 
     # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mAirplaneModeOn:Z
-    invoke-static {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1902(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
+    invoke-static {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2102(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
 
-    .line 291
+    .line 296
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1826,7 +1881,7 @@
     move-object/from16 v19, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mAirplaneModeOn:Z
-    invoke-static/range {v19 .. v19}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+    invoke-static/range {v19 .. v19}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
 
     move-result v19
 
@@ -1841,7 +1896,7 @@
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
     invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
 
-    .line 292
+    .line 297
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1849,13 +1904,13 @@
     move-object/from16 v17, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mAirplaneModeOn:Z
-    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
 
     move-result v17
 
     if-nez v17, :cond_0
 
-    .line 293
+    .line 298
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1863,13 +1918,13 @@
     move-object/from16 v17, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOff:Z
-    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2200(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
 
     move-result v17
 
-    if-eqz v17, :cond_22
+    if-eqz v17, :cond_23
 
-    .line 294
+    .line 299
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1879,9 +1934,9 @@
     const/16 v18, 0x0
 
     # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOff:Z
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2002(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2202(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
 
-    .line 295
+    .line 300
     const-string v17, "OP01"
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
@@ -1893,9 +1948,9 @@
 
     move-result v17
 
-    if-eqz v17, :cond_24
+    if-eqz v17, :cond_25
 
-    .line 296
+    .line 301
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1909,15 +1964,15 @@
     move-object/from16 v18, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
-    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
+    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
 
     move-result-object v18
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp01(Landroid/content/Intent;)V
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1300(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
 
-    .line 309
-    :cond_22
+    .line 314
+    :cond_23
     :goto_6
     move-object/from16 v0, p0
 
@@ -1926,13 +1981,13 @@
     move-object/from16 v17, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOffRoaming:Z
-    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2300(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
 
     move-result v17
 
     if-eqz v17, :cond_0
 
-    .line 310
+    .line 315
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1942,9 +1997,9 @@
     const/16 v18, 0x0
 
     # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsNeedWaitAirplaneModeOffRoaming:Z
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2102(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2302(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
 
-    .line 311
+    .line 316
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -1954,18 +2009,18 @@
     const/16 v18, 0x1
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->checkOp02CapSwitch(I)Z
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
 
     goto/16 :goto_0
 
-    .line 290
-    :cond_23
+    .line 295
+    :cond_24
     const/16 v17, 0x0
 
     goto/16 :goto_5
 
-    .line 297
-    :cond_24
+    .line 302
+    :cond_25
     const-string v17, "OP02"
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
@@ -1977,9 +2032,9 @@
 
     move-result v17
 
-    if-eqz v17, :cond_26
+    if-eqz v17, :cond_27
 
-    .line 298
+    .line 303
     const-string v17, "ro.mtk_disable_cap_switch"
 
     const/16 v18, 0x0
@@ -1994,9 +2049,9 @@
 
     move/from16 v1, v18
 
-    if-ne v0, v1, :cond_25
+    if-ne v0, v1, :cond_26
 
-    .line 299
+    .line 304
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -2010,29 +2065,16 @@
     move-object/from16 v18, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
-    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
+    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
 
     move-result-object v18
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp02(Landroid/content/Intent;)V
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1200(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1400(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
 
     goto :goto_6
 
-    .line 301
-    :cond_25
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp02()V
-    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1300(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)V
-
-    goto :goto_6
-
-    .line 303
+    .line 306
     :cond_26
     move-object/from16 v0, p0
 
@@ -2040,21 +2082,34 @@
 
     move-object/from16 v17, v0
 
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp02()V
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1500(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)V
+
+    goto :goto_6
+
+    .line 308
+    :cond_27
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->isOP09ASupport()Z
-    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1400(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1600(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
 
     move-result v17
 
-    if-nez v17, :cond_27
+    if-nez v17, :cond_28
 
     invoke-static {}, Lcom/mediatek/internal/telephony/cdma/CdmaFeatureOptionUtils;->isCT6MSupport()Z
 
     move-result v17
 
-    if-eqz v17, :cond_28
+    if-eqz v17, :cond_29
 
-    .line 304
-    :cond_27
+    .line 309
+    :cond_28
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -2068,17 +2123,17 @@
     move-object/from16 v18, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
-    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
+    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
 
     move-result-object v18
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp09(Landroid/content/Intent;)V
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1500(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
 
     goto/16 :goto_6
 
-    .line 305
-    :cond_28
+    .line 310
+    :cond_29
     const-string v17, "OM"
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
@@ -2090,9 +2145,9 @@
 
     move-result v17
 
-    if-eqz v17, :cond_22
+    if-eqz v17, :cond_23
 
-    .line 306
+    .line 311
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -2106,17 +2161,17 @@
     move-object/from16 v18, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIntent:Landroid/content/Intent;
-    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
+    invoke-static/range {v18 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$900(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Landroid/content/Intent;
 
     move-result-object v18
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOm(Landroid/content/Intent;)V
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1600(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1800(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
 
     goto/16 :goto_6
 
-    .line 314
-    :cond_29
+    .line 319
+    :cond_2a
     const-string v17, "android.intent.action.ACTION_DEFAULT_DATA_SUBSCRIPTION_CHANGED"
 
     move-object/from16 v0, v17
@@ -2125,9 +2180,9 @@
 
     move-result v17
 
-    if-eqz v17, :cond_2b
+    if-eqz v17, :cond_2c
 
-    .line 315
+    .line 320
     const-string v17, "subscription"
 
     const/16 v18, -0x1
@@ -2142,7 +2197,7 @@
 
     move-result v12
 
-    .line 317
+    .line 322
     .local v12, "nDefaultDataSubId":I
     move-object/from16 v0, p0
 
@@ -2151,19 +2206,19 @@
     move-object/from16 v17, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsUserConfirmDefaultData:Z
-    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2200(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2400(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
 
     move-result v17
 
-    if-eqz v17, :cond_2a
+    if-eqz v17, :cond_2b
 
     invoke-static {v12}, Landroid/telephony/SubscriptionManager;->isValidSubscriptionId(I)Z
 
     move-result v17
 
-    if-eqz v17, :cond_2a
+    if-eqz v17, :cond_2b
 
-    .line 319
+    .line 324
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -2171,9 +2226,9 @@
     move-object/from16 v17, v0
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->handleDataEnableForOp02()V
-    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2300(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)V
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2500(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)V
 
-    .line 320
+    .line 325
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -2183,10 +2238,10 @@
     const/16 v18, 0x0
 
     # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsUserConfirmDefaultData:Z
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2202(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2402(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
 
-    .line 322
-    :cond_2a
+    .line 327
+    :cond_2b
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -2196,13 +2251,13 @@
     move-object/from16 v0, v17
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setLastValidDefaultDataSub(I)V
-    invoke-static {v0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2400(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)V
+    invoke-static {v0, v12}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2600(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)V
 
     goto/16 :goto_0
 
-    .line 323
+    .line 328
     .end local v12    # "nDefaultDataSubId":I
-    :cond_2b
+    :cond_2c
     const-string v17, "android.intent.action.ACTION_SUBINFO_RECORD_UPDATED"
 
     move-object/from16 v0, v17
@@ -2211,9 +2266,9 @@
 
     move-result v17
 
-    if-eqz v17, :cond_30
+    if-eqz v17, :cond_32
 
-    .line 324
+    .line 329
     const-string v17, "simDetectStatus"
 
     const/16 v18, 0x4
@@ -2228,7 +2283,7 @@
 
     move-result v6
 
-    .line 326
+    .line 331
     .local v6, "detectedType":I
     move-object/from16 v0, p0
 
@@ -2259,12 +2314,12 @@
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
     invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
 
-    .line 328
+    .line 333
     invoke-static {}, Lcom/mediatek/internal/telephony/cdma/CdmaFeatureOptionUtils;->isCdmaLteDcSupport()Z
 
     move-result v17
 
-    if-eqz v17, :cond_2c
+    if-eqz v17, :cond_2d
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
     invoke-static {}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$300()Ljava/lang/String;
@@ -2277,16 +2332,16 @@
 
     move-result v17
 
-    if-eqz v17, :cond_2c
+    if-eqz v17, :cond_2d
 
-    .line 330
+    .line 335
     const/16 v17, 0x4
 
     move/from16 v0, v17
 
-    if-ne v6, v0, :cond_2c
+    if-ne v6, v0, :cond_2d
 
-    .line 331
+    .line 336
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -2298,21 +2353,21 @@
     move-object/from16 v1, p2
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp01(Landroid/content/Intent;)V
-    invoke-static {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1100(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
+    invoke-static {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1300(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
 
-    .line 337
-    :cond_2c
+    .line 342
+    :cond_2d
     invoke-static {}, Lcom/mediatek/internal/telephony/cdma/CdmaFeatureOptionUtils;->isCdmaLteDcSupport()Z
 
     move-result v17
 
-    if-eqz v17, :cond_2e
+    if-eqz v17, :cond_2f
 
     invoke-static {}, Lcom/mediatek/internal/telephony/cdma/CdmaFeatureOptionUtils;->isCT6MSupport()Z
 
     move-result v17
 
-    if-nez v17, :cond_2d
+    if-nez v17, :cond_2e
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
     invoke-static {}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$300()Ljava/lang/String;
@@ -2325,17 +2380,17 @@
 
     move-result v17
 
-    if-eqz v17, :cond_2e
+    if-eqz v17, :cond_2f
 
-    .line 339
-    :cond_2d
+    .line 344
+    :cond_2e
     const/16 v17, 0x4
 
     move/from16 v0, v17
 
-    if-ne v6, v0, :cond_2e
+    if-ne v6, v0, :cond_2f
 
-    .line 340
+    .line 345
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -2347,7 +2402,7 @@
     # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mIsSubReady:Z
     invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$402(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
 
-    .line 341
+    .line 346
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -2361,8 +2416,8 @@
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapabilityIfNeeded(Landroid/content/Intent;)V
     invoke-static {v0, v1}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$500(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Landroid/content/Intent;)V
 
-    .line 345
-    :cond_2e
+    .line 350
+    :cond_2f
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
     invoke-static {}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$300()Ljava/lang/String;
 
@@ -2374,15 +2429,15 @@
 
     move-result v17
 
-    if-eqz v17, :cond_0
+    if-eqz v17, :cond_30
 
     const/16 v17, 0x4
 
     move/from16 v0, v17
 
-    if-ne v6, v0, :cond_0
+    if-ne v6, v0, :cond_30
 
-    .line 346
+    .line 351
     const-string v17, "ro.mtk_disable_cap_switch"
 
     const/16 v18, 0x0
@@ -2391,9 +2446,9 @@
 
     move-result v17
 
-    if-nez v17, :cond_0
+    if-nez v17, :cond_30
 
-    .line 348
+    .line 353
     invoke-static {}, Lcom/android/internal/telephony/SubscriptionController;->getInstance()Lcom/android/internal/telephony/SubscriptionController;
 
     move-result-object v17
@@ -2402,15 +2457,15 @@
 
     move-result v5
 
-    .line 349
+    .line 354
     .local v5, "defDataSubId":I
     invoke-static {v5}, Landroid/telephony/SubscriptionManager;->getPhoneId(I)I
 
     move-result v4
 
-    .line 350
+    .line 355
     .local v4, "defDataPhoneId":I
-    if-ltz v4, :cond_2f
+    if-ltz v4, :cond_31
 
     move-object/from16 v0, p0
 
@@ -2419,15 +2474,15 @@
     move-object/from16 v17, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
-    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2500(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)I
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)I
 
     move-result v17
 
     move/from16 v0, v17
 
-    if-ge v4, v0, :cond_2f
+    if-ge v4, v0, :cond_31
 
-    .line 352
+    .line 357
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -2457,7 +2512,7 @@
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
     invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
 
-    .line 353
+    .line 358
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -2467,12 +2522,60 @@
     move-object/from16 v0, v17
 
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->setCapability(I)Z
-    invoke-static {v0, v4}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2600(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
+    invoke-static {v0, v4}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2800(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;I)Z
+
+    .line 364
+    .end local v4    # "defDataPhoneId":I
+    .end local v5    # "defDataSubId":I
+    :cond_30
+    :goto_7
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->isOP01OMSupport()Z
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$600(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)Z
+
+    move-result v17
+
+    const/16 v18, 0x1
+
+    move/from16 v0, v17
+
+    move/from16 v1, v18
+
+    if-ne v0, v1, :cond_0
+
+    .line 365
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    const-string v18, "sub for OP01 open market"
+
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
+
+    .line 366
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->subSelectorForOp01OM()V
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)V
 
     goto/16 :goto_0
 
-    .line 355
-    :cond_2f
+    .line 360
+    .restart local v4    # "defDataPhoneId":I
+    .restart local v5    # "defDataSubId":I
+    :cond_31
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -2502,61 +2605,14 @@
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
     invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
 
-    goto/16 :goto_0
+    goto :goto_7
 
-    .line 359
+    .line 368
     .end local v4    # "defDataPhoneId":I
     .end local v5    # "defDataSubId":I
     .end local v6    # "detectedType":I
-    :cond_30
-    const-string v17, "com.mediatek.phone.ACTION_SET_RADIO_TECHNOLOGY_START"
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v17
-
-    if-eqz v17, :cond_32
-
-    .line 361
-    invoke-static {}, Lcom/mediatek/internal/telephony/cdma/CdmaFeatureOptionUtils;->isCT6MSupport()Z
-
-    move-result v17
-
-    if-nez v17, :cond_31
-
-    # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
-    invoke-static {}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$300()Ljava/lang/String;
-
-    move-result-object v17
-
-    const-string v18, "OM"
-
-    invoke-virtual/range {v17 .. v18}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v17
-
-    if-eqz v17, :cond_0
-
-    .line 362
-    :cond_31
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
-
-    move-object/from16 v17, v0
-
-    const/16 v18, 0x0
-
-    # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mRadioTechDone:Z
-    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1702(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
-
-    goto/16 :goto_0
-
-    .line 364
     :cond_32
-    const-string v17, "com.mediatek.intent.action.INTENT_ACTION_RF_OFF_IN_IDLE"
+    const-string v17, "com.mediatek.phone.ACTION_SET_RADIO_TECHNOLOGY_START"
 
     move-object/from16 v0, v17
 
@@ -2566,7 +2622,7 @@
 
     if-eqz v17, :cond_34
 
-    .line 365
+    .line 370
     invoke-static {}, Lcom/mediatek/internal/telephony/cdma/CdmaFeatureOptionUtils;->isCT6MSupport()Z
 
     move-result v17
@@ -2586,8 +2642,55 @@
 
     if-eqz v17, :cond_0
 
-    .line 366
+    .line 371
     :cond_33
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
+
+    move-object/from16 v17, v0
+
+    const/16 v18, 0x0
+
+    # setter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mRadioTechDone:Z
+    invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$1902(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Z)Z
+
+    goto/16 :goto_0
+
+    .line 373
+    :cond_34
+    const-string v17, "com.mediatek.intent.action.INTENT_ACTION_RF_OFF_IN_IDLE"
+
+    move-object/from16 v0, v17
+
+    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v17
+
+    if-eqz v17, :cond_36
+
+    .line 374
+    invoke-static {}, Lcom/mediatek/internal/telephony/cdma/CdmaFeatureOptionUtils;->isCT6MSupport()Z
+
+    move-result v17
+
+    if-nez v17, :cond_35
+
+    # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mOperatorSpec:Ljava/lang/String;
+    invoke-static {}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$300()Ljava/lang/String;
+
+    move-result-object v17
+
+    const-string v18, "OM"
+
+    invoke-virtual/range {v17 .. v18}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v17
+
+    if-eqz v17, :cond_0
+
+    .line 375
+    :cond_35
     sget-object v17, Lcom/mediatek/internal/telephony/ltedc/svlte/SvlteModeController$RfOffState;->RF_OFF_IN_IDLE:Lcom/mediatek/internal/telephony/ltedc/svlte/SvlteModeController$RfOffState;
 
     invoke-static {}, Lcom/mediatek/internal/telephony/ltedc/svlte/SvlteModeController;->getInstance()Lcom/mediatek/internal/telephony/ltedc/svlte/SvlteModeController;
@@ -2604,7 +2707,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 368
+    .line 377
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -2620,8 +2723,8 @@
 
     goto/16 :goto_0
 
-    .line 371
-    :cond_34
+    .line 380
+    :cond_36
     const-string v17, "android.intent.action.ACTION_SHUTDOWN_IPO"
 
     move-object/from16 v0, v17
@@ -2632,7 +2735,7 @@
 
     if-eqz v17, :cond_0
 
-    .line 372
+    .line 381
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -2644,10 +2747,10 @@
     # invokes: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->log(Ljava/lang/String;)V
     invoke-static/range {v17 .. v18}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$000(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;Ljava/lang/String;)V
 
-    .line 373
+    .line 382
     invoke-static {}, Lcom/mediatek/internal/telephony/RadioCapabilitySwitchUtil;->clearAllSimImsiStatus()V
 
-    .line 374
+    .line 383
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector$1;->this$0:Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;
@@ -2655,7 +2758,7 @@
     move-object/from16 v17, v0
 
     # getter for: Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->mPhoneNum:I
-    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2500(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)I
+    invoke-static/range {v17 .. v17}, Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;->access$2700(Lcom/mediatek/internal/telephony/dataconnection/DataSubSelector;)I
 
     move-result v17
 

@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 10017
+    .line 10022
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$10;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -37,10 +37,10 @@
     .locals 6
 
     .prologue
-    .line 10020
+    .line 10025
     monitor-enter p0
 
-    .line 10021
+    .line 10026
     :try_start_0
     iget-object v3, p0, Lcom/android/server/am/ActivityManagerService$10;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -50,7 +50,7 @@
 
     move-result v0
 
-    .line 10022
+    .line 10027
     .local v0, "N":I
     const-string v3, "ActivityManager"
 
@@ -58,14 +58,14 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 10023
+    .line 10028
     add-int/lit8 v1, v0, -0x1
 
     .local v1, "i":I
     :goto_0
     if-lez v1, :cond_2
 
-    .line 10024
+    .line 10029
     iget-object v3, p0, Lcom/android/server/am/ActivityManagerService$10;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v3, v3, Lcom/android/server/am/ActivityManagerService;->tmpRecentTasks:Ljava/util/ArrayList;
@@ -76,11 +76,11 @@
 
     check-cast v2, Lcom/android/server/am/TaskRecord;
 
-    .line 10025
+    .line 10030
     .local v2, "tr":Lcom/android/server/am/TaskRecord;
     if-eqz v2, :cond_0
 
-    .line 10026
+    .line 10031
     iget-object v3, p0, Lcom/android/server/am/ActivityManagerService$10;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v3, v3, Lcom/android/server/am/ActivityManagerService;->mRecentTasks:Ljava/util/ArrayList;
@@ -91,7 +91,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 10027
+    .line 10032
     const-string v3, "ActivityManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -114,18 +114,18 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 10023
+    .line 10028
     :cond_0
     :goto_1
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
-    .line 10030
+    .line 10035
     :cond_1
     invoke-virtual {v2}, Lcom/android/server/am/TaskRecord;->removeTaskActivitiesLocked()V
 
-    .line 10031
+    .line 10036
     iget-object v3, p0, Lcom/android/server/am/ActivityManagerService$10;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     const/4 v4, 0x1
@@ -133,12 +133,12 @@
     # invokes: Lcom/android/server/am/ActivityManagerService;->cleanUpRemovedTaskLocked(Lcom/android/server/am/TaskRecord;Z)V
     invoke-static {v3, v2, v4}, Lcom/android/server/am/ActivityManagerService;->access$1200(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/TaskRecord;Z)V
 
-    .line 10032
+    .line 10037
     iget-boolean v3, v2, Lcom/android/server/am/TaskRecord;->isPersistable:Z
 
     if-eqz v3, :cond_0
 
-    .line 10033
+    .line 10038
     iget-object v3, p0, Lcom/android/server/am/ActivityManagerService$10;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     const/4 v4, 0x0
@@ -149,7 +149,7 @@
 
     goto :goto_1
 
-    .line 10038
+    .line 10043
     .end local v0    # "N":I
     .end local v1    # "i":I
     .end local v2    # "tr":Lcom/android/server/am/TaskRecord;
@@ -162,7 +162,7 @@
 
     throw v3
 
-    .line 10037
+    .line 10042
     .restart local v0    # "N":I
     .restart local v1    # "i":I
     :cond_2
@@ -173,11 +173,11 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 10038
+    .line 10043
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 10039
+    .line 10044
     return-void
 .end method

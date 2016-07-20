@@ -40,7 +40,7 @@
 
     const/4 v2, 0x0
 
-    .line 2613
+    .line 2618
     new-instance v0, Lcom/android/internal/telephony/Phone$FeatureType;
 
     const-string v1, "VOLTE_ENHANCED_CONFERENCE"
@@ -49,7 +49,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Phone$FeatureType;->VOLTE_ENHANCED_CONFERENCE:Lcom/android/internal/telephony/Phone$FeatureType;
 
-    .line 2616
+    .line 2621
     new-instance v0, Lcom/android/internal/telephony/Phone$FeatureType;
 
     const-string v1, "VOLTE_CONF_REMOVE_MEMBER"
@@ -58,7 +58,7 @@
 
     sput-object v0, Lcom/android/internal/telephony/Phone$FeatureType;->VOLTE_CONF_REMOVE_MEMBER:Lcom/android/internal/telephony/Phone$FeatureType;
 
-    .line 2611
+    .line 2616
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/android/internal/telephony/Phone$FeatureType;
@@ -85,7 +85,7 @@
     .end annotation
 
     .prologue
-    .line 2611
+    .line 2616
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -96,7 +96,7 @@
     .param p0, "name"    # Ljava/lang/String;
 
     .prologue
-    .line 2611
+    .line 2616
     const-class v0, Lcom/android/internal/telephony/Phone$FeatureType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -112,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 2611
+    .line 2616
     sget-object v0, Lcom/android/internal/telephony/Phone$FeatureType;->$VALUES:[Lcom/android/internal/telephony/Phone$FeatureType;
 
     invoke-virtual {v0}, [Lcom/android/internal/telephony/Phone$FeatureType;->clone()Ljava/lang/Object;

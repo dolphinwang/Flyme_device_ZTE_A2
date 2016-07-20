@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 5082
+    .line 5101
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$21;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,25 +37,121 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 6
 
     .prologue
-    .line 5084
-    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$21;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
+    .line 5104
+    new-instance v2, Landroid/view/KeyEvent;
 
-    const/4 v1, 0x0
+    const/4 v3, 0x1
 
-    # invokes: Lcom/android/internal/policy/impl/PhoneWindowManager;->showRecentApps(Z)V
-    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$200(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)V
+    const/4 v4, 0x4
 
-    .line 5086
-    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$21;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
+    invoke-direct {v2, v3, v4}, Landroid/view/KeyEvent;-><init>(II)V
 
-    const/4 v1, 0x1
+    .line 5105
+    .local v2, "keyEvent":Landroid/view/KeyEvent;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$21;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    # setter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyRemappingVolumeUpLongPressed:Z
-    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$2602(Lcom/android/internal/policy/impl/PhoneWindowManager;Z)Z
+    iget-object v3, v3, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
 
-    .line 5087
+    const-string v4, "input"
+
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/hardware/input/InputManager;
+
+    .line 5106
+    .local v1, "inputManager":Landroid/hardware/input/InputManager;
+    const-string v3, "WindowManager"
+
+    const-string v4, ">>>>>>>> InjectEvent Start"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 5107
+    const/4 v3, 0x2
+
+    invoke-virtual {v1, v2, v3}, Landroid/hardware/input/InputManager;->injectInputEvent(Landroid/view/InputEvent;I)Z
+
+    .line 5109
+    :try_start_0
+    const-string v3, "WindowManager"
+
+    const-string v4, "***** Sleeping."
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 5110
+    const-wide/16 v4, 0x2710
+
+    invoke-static {v4, v5}, Ljava/lang/Thread;->sleep(J)V
+
+    .line 5111
+    const-string v3, "WindowManager"
+
+    const-string v4, "***** Waking up."
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_2
+
+    .line 5119
+    :goto_0
+    const-string v3, "WindowManager"
+
+    const-string v4, "<<<<<<<< InjectEvent End"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 5120
     return-void
+
+    .line 5112
+    :catch_0
+    move-exception v0
+
+    .line 5113
+    .local v0, "e":Ljava/lang/IllegalArgumentException;
+    const-string v3, "WindowManager"
+
+    const-string v4, "IllegalArgumentException: "
+
+    invoke-static {v3, v4, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+
+    .line 5114
+    .end local v0    # "e":Ljava/lang/IllegalArgumentException;
+    :catch_1
+    move-exception v0
+
+    .line 5115
+    .local v0, "e":Ljava/lang/SecurityException;
+    const-string v3, "WindowManager"
+
+    const-string v4, "SecurityException: "
+
+    invoke-static {v3, v4, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+
+    .line 5116
+    .end local v0    # "e":Ljava/lang/SecurityException;
+    :catch_2
+    move-exception v0
+
+    .line 5117
+    .local v0, "e":Ljava/lang/InterruptedException;
+    const-string v3, "WindowManager"
+
+    const-string v4, "InterruptedException: "
+
+    invoke-static {v3, v4, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
 .end method

@@ -663,12 +663,12 @@
     .line 180
     const/4 v0, -0x1
 
-    iput-boolean v0, p0, Lcom/android/internal/telephony/BaseCommands;->mIsSmsSimFull:Z
+    iput v0, p0, Lcom/android/internal/telephony/BaseCommands;->mRilVersion:I
 
     .line 182
     const/4 v0, 0x1
 
-    iput v0, p0, Lcom/android/internal/telephony/BaseCommands;->mPreferredNetworkType:I
+    iput v0, p0, Lcom/android/internal/telephony/BaseCommands;->mSupportedRaf:I
 
     .line 185
     new-instance v0, Landroid/os/RegistrantList;
@@ -792,10 +792,10 @@
     iput-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mCfuReturnValue:Ljava/lang/Object;
 
     .line 216
-    iput v2, p0, Lcom/android/internal/telephony/BaseCommands;->mSupportedRaf:I
+    iput-boolean v2, p0, Lcom/android/internal/telephony/BaseCommands;->mIsSmsSimFull:Z
 
     .line 217
-    iput v2, p0, Lcom/android/internal/telephony/BaseCommands;->mStkSwitchMode:I
+    iput-boolean v2, p0, Lcom/android/internal/telephony/BaseCommands;->mIsSmsReady:Z
 
     .line 218
     new-instance v0, Landroid/os/RegistrantList;
@@ -1022,7 +1022,7 @@
     iput-object v0, p0, Lcom/android/internal/telephony/BaseCommands;->mEusimReady:Landroid/os/RegistrantList;
 
     .line 1273
-    iput v2, p0, Lcom/android/internal/telephony/BaseCommands;->mRilVersion:I
+    iput-boolean v2, p0, Lcom/android/internal/telephony/BaseCommands;->mIsEusimReady:Z
 
     .line 1274
     iput-object v1, p0, Lcom/android/internal/telephony/BaseCommands;->mCdmaCardTypeValue:Ljava/lang/Object;

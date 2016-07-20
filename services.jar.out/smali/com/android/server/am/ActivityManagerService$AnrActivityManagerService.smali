@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 22792
+    .line 22790
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$AnrActivityManagerService;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
     .end annotation
 
     .prologue
-    .line 22825
+    .line 22823
     .local p2, "firstPids":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     .local p4, "lastPids":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/lang/Boolean;>;"
     invoke-static {p1, p2, p3, p4, p5}, Lcom/android/server/am/ActivityManagerService;->dumpStackTraces(ZLjava/util/ArrayList;Lcom/android/internal/os/ProcessCpuTracker;Landroid/util/SparseArray;[Ljava/lang/String;)Ljava/io/File;
@@ -83,7 +83,7 @@
     .end annotation
 
     .prologue
-    .line 22818
+    .line 22816
     sget-object v0, Lcom/android/server/am/ActivityManagerService;->mInterestingPids:Ljava/util/ArrayList;
 
     return-object v0
@@ -93,7 +93,7 @@
     .locals 1
 
     .prologue
-    .line 22831
+    .line 22829
     const/4 v0, 0x1
 
     return v0
@@ -118,7 +118,7 @@
     .end annotation
 
     .prologue
-    .line 22801
+    .line 22799
     .local p3, "firstPids":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     .local p4, "lastPids":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/lang/Boolean;>;"
     iget-object v3, p0, Lcom/android/server/am/ActivityManagerService$AnrActivityManagerService;->this$0:Lcom/android/server/am/ActivityManagerService;
@@ -135,7 +135,7 @@
     :goto_0
     if-ltz v0, :cond_2
 
-    .line 22802
+    .line 22800
     iget-object v3, p0, Lcom/android/server/am/ActivityManagerService$AnrActivityManagerService;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v3, v3, Lcom/android/server/am/ActivityManagerService;->mLruProcesses:Ljava/util/ArrayList;
@@ -146,7 +146,7 @@
 
     check-cast v2, Lcom/android/server/am/ProcessRecord;
 
-    .line 22803
+    .line 22801
     .local v2, "r":Lcom/android/server/am/ProcessRecord;
     if-eqz v2, :cond_0
 
@@ -154,10 +154,10 @@
 
     if-eqz v3, :cond_0
 
-    .line 22804
+    .line 22802
     iget v1, v2, Lcom/android/server/am/ProcessRecord;->pid:I
 
-    .line 22805
+    .line 22803
     .local v1, "pid":I
     if-lez v1, :cond_0
 
@@ -169,19 +169,19 @@
 
     if-eq v1, v3, :cond_0
 
-    .line 22806
+    .line 22804
     iget-boolean v3, v2, Lcom/android/server/am/ProcessRecord;->persistent:Z
 
     if-eqz v3, :cond_1
 
-    .line 22807
+    .line 22805
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
     invoke-virtual {p3, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 22801
+    .line 22799
     .end local v1    # "pid":I
     :cond_0
     :goto_1
@@ -189,7 +189,7 @@
 
     goto :goto_0
 
-    .line 22809
+    .line 22807
     .restart local v1    # "pid":I
     :cond_1
     sget-object v3, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
@@ -198,7 +198,7 @@
 
     goto :goto_1
 
-    .line 22814
+    .line 22812
     .end local v1    # "pid":I
     .end local v2    # "r":Lcom/android/server/am/ProcessRecord;
     :cond_2
@@ -209,7 +209,7 @@
     .locals 1
 
     .prologue
-    .line 22841
+    .line 22839
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$AnrActivityManagerService;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mProcessCpuTracker:Lcom/android/internal/os/ProcessCpuTracker;
@@ -222,16 +222,16 @@
     .param p1, "obj"    # Ljava/lang/Object;
 
     .prologue
-    .line 22846
+    .line 22844
     if-eqz p1, :cond_0
 
-    .line 22847
+    .line 22845
     check-cast p1, Lcom/android/server/am/ProcessRecord;
 
     .end local p1    # "obj":Ljava/lang/Object;
     iget v0, p1, Lcom/android/server/am/ProcessRecord;->pid:I
 
-    .line 22849
+    .line 22847
     :goto_0
     return v0
 
@@ -246,7 +246,7 @@
     .locals 1
 
     .prologue
-    .line 22795
+    .line 22793
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$AnrActivityManagerService;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-boolean v0, v0, Lcom/android/server/am/ActivityManagerService;->mShuttingDown:Z
@@ -258,11 +258,11 @@
     .locals 1
 
     .prologue
-    .line 22836
+    .line 22834
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$AnrActivityManagerService;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/am/ActivityManagerService;->updateCpuStatsNow()V
 
-    .line 22837
+    .line 22835
     return-void
 .end method

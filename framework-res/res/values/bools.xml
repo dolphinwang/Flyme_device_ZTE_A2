@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <bool name="config_device_volte_available">false</bool>
     <bool name="kg_enable_camera_default_widget">true</bool>
     <bool name="kg_center_small_widgets_vertically">false</bool>
     <bool name="kg_top_align_page_shrink_on_bouncer_visible">true</bool>
@@ -125,7 +126,6 @@
     <bool name="skipHoldBeforeMerge">true</bool>
     <bool name="useImsAlwaysForEmergencyCall">true</bool>
     <bool name="imsServiceAllowTurnOff">true</bool>
-    <bool name="config_device_volte_available">false</bool>
     <bool name="config_carrier_volte_available">false</bool>
     <bool name="config_carrier_volte_provisioned">false</bool>
     <bool name="config_carrier_volte_tty_supported">true</bool>

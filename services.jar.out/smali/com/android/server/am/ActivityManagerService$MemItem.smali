@@ -50,28 +50,28 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 15816
+    .line 15821
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 15817
+    .line 15822
     iput-boolean v0, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->isProc:Z
 
-    .line 15818
+    .line 15823
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->label:Ljava/lang/String;
 
-    .line 15819
+    .line 15824
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->shortLabel:Ljava/lang/String;
 
-    .line 15820
+    .line 15825
     iput-wide p3, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
-    .line 15821
+    .line 15826
     iput p5, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->id:I
 
-    .line 15822
+    .line 15827
     iput-boolean v0, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->hasActivities:Z
 
-    .line 15823
+    .line 15828
     return-void
 .end method
 
@@ -84,29 +84,29 @@
     .param p6, "_hasActivities"    # Z
 
     .prologue
-    .line 15807
+    .line 15812
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 15808
+    .line 15813
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->isProc:Z
 
-    .line 15809
+    .line 15814
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->label:Ljava/lang/String;
 
-    .line 15810
+    .line 15815
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->shortLabel:Ljava/lang/String;
 
-    .line 15811
+    .line 15816
     iput-wide p3, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
-    .line 15812
+    .line 15817
     iput p5, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->id:I
 
-    .line 15813
+    .line 15818
     iput-boolean p6, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->hasActivities:Z
 
-    .line 15814
+    .line 15819
     return-void
 .end method

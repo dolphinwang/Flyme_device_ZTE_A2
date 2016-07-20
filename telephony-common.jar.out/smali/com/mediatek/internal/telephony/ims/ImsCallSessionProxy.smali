@@ -885,53 +885,53 @@
 
     const/4 v6, 0x0
 
-    .line 1689
+    .line 1694
     if-nez p1, :cond_1
 
     move-object v3, v5
 
-    .line 1722
+    .line 1727
     :cond_0
     :goto_0
     return-object v3
 
-    .line 1693
+    .line 1698
     :cond_1
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v2
 
-    .line 1698
+    .line 1703
     .local v2, "uri":Landroid/net/Uri;
     invoke-virtual {v2}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1699
+    .line 1704
     .local v0, "address":Ljava/lang/String;
     if-nez v0, :cond_2
 
     move-object v3, v5
 
-    .line 1700
+    .line 1705
     goto :goto_0
 
-    .line 1705
+    .line 1710
     :cond_2
     invoke-static {v0}, Landroid/telephony/PhoneNumberUtils;->getUsernameFromUriNumber(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1706
+    .line 1711
     .local v3, "userName":Ljava/lang/String;
     if-nez v3, :cond_3
 
     move-object v3, v5
 
-    .line 1707
+    .line 1712
     goto :goto_0
 
-    .line 1712
+    .line 1717
     :cond_3
     const/16 v5, 0x3b
 
@@ -939,7 +939,7 @@
 
     move-result v1
 
-    .line 1713
+    .line 1718
     .local v1, "pIndex":I
     const/16 v5, 0x2c
 
@@ -947,13 +947,13 @@
 
     move-result v4
 
-    .line 1715
+    .line 1720
     .local v4, "wIndex":I
     if-ltz v1, :cond_4
 
     if-ltz v4, :cond_4
 
-    .line 1716
+    .line 1721
     invoke-static {v1, v4}, Ljava/lang/Math;->min(II)I
 
     move-result v5
@@ -964,22 +964,22 @@
 
     goto :goto_0
 
-    .line 1717
+    .line 1722
     :cond_4
     if-ltz v1, :cond_5
 
-    .line 1718
+    .line 1723
     invoke-virtual {v3, v6, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v3
 
     goto :goto_0
 
-    .line 1719
+    .line 1724
     :cond_5
     if-ltz v4, :cond_0
 
-    .line 1720
+    .line 1725
     invoke-virtual {v3, v6, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v3
@@ -1375,17 +1375,17 @@
     .param p4, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 1739
+    .line 1744
     if-eqz p1, :cond_0
 
     if-nez p2, :cond_1
 
-    .line 1757
+    .line 1762
     :cond_0
     :goto_0
     return-void
 
-    .line 1744
+    .line 1749
     :cond_1
     new-instance v1, Lcom/mediatek/telecom/FormattedLog$Builder;
 
@@ -1431,11 +1431,11 @@
 
     move-result-object v0
 
-    .line 1754
+    .line 1759
     .local v0, "formattedLog":Lcom/mediatek/telecom/FormattedLog;
     if-eqz v0, :cond_0
 
-    .line 1755
+    .line 1760
     const-string v1, "ImsCallSessionProxy"
 
     invoke-virtual {v0}, Lcom/mediatek/telecom/FormattedLog;->toString()Ljava/lang/String;

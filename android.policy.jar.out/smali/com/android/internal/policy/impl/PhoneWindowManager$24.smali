@@ -1,9 +1,6 @@
 .class Lcom/android/internal/policy/impl/PhoneWindowManager$24;
-.super Ljava/lang/Object;
+.super Landroid/widget/ImageView;
 .source "PhoneWindowManager.java"
-
-# interfaces
-.implements Landroid/graphics/drawable/AnimationDrawable$AnimationListener;
 
 
 # annotations
@@ -20,55 +17,53 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-.field final synthetic val$anim:Landroid/widget/ImageView;
-
-.field final synthetic val$wm:Landroid/view/WindowManager;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/view/WindowManager;Landroid/widget/ImageView;)V
+.method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/content/Context;)V
     .locals 0
+    .param p2, "x0"    # Landroid/content/Context;
 
     .prologue
-    .line 5277
+    .line 5308
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$24;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    iput-object p2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$24;->val$wm:Landroid/view/WindowManager;
-
-    iput-object p3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$24;->val$anim:Landroid/widget/ImageView;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd()V
+.method protected onAttachedToWindow()V
     .locals 2
 
     .prologue
-    .line 5289
-    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$24;->val$wm:Landroid/view/WindowManager;
+    .line 5310
+    invoke-super {p0}, Landroid/widget/ImageView;->onAttachedToWindow()V
 
-    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$24;->val$anim:Landroid/widget/ImageView;
-
-    invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
-
-    .line 5290
+    .line 5311
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$24;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    const/4 v1, 0x0
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/PhoneWindowManager$24;->getWindowToken()Landroid/os/IBinder;
+
+    move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mAnimationWindowToken:Landroid/os/IBinder;
 
-    .line 5292
+    .line 5312
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$24;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    const/4 v1, -0x1
+    iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenOnListener:Landroid/view/WindowManagerPolicy$ScreenOnListener;
 
-    iput v1, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mGestureKeyCode:I
+    if-eqz v0, :cond_0
 
-    .line 5293
+    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$24;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
+
+    iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mAnimationWindowToken:Landroid/os/IBinder;
+
+    if-eqz v0, :cond_0
+
+    .line 5315
+    :cond_0
     return-void
 .end method

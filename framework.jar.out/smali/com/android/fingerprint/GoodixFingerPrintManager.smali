@@ -67,6 +67,8 @@
 
 .field private mIsSetServiceReceiver:Z
 
+.field private mIsStartNavigation:Z
+
 .field private mService:Lcom/android/fingerprint/IGoodixFingerPrintService;
 
 .field private mServiceReceiver:Lcom/android/fingerprint/IGoodixFingerPrintServiceReceiver;
@@ -90,17 +92,17 @@
 .end method
 
 .method public constructor <init>(Lcom/android/fingerprint/IGoodixFingerPrintService;)V
-    .locals 2
+    .locals 3
     .param p1, "service"    # Lcom/android/fingerprint/IGoodixFingerPrintService;
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     .line 414
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 47
-    iput-boolean v1, p0, Lcom/android/fingerprint/GoodixFingerPrintManager;->mIsSetServiceReceiver:Z
+    iput-boolean v2, p0, Lcom/android/fingerprint/GoodixFingerPrintManager;->mIsSetServiceReceiver:Z
 
     .line 48
     new-instance v0, Landroid/os/Binder;
@@ -110,13 +112,13 @@
     iput-object v0, p0, Lcom/android/fingerprint/GoodixFingerPrintManager;->mToken:Landroid/os/IBinder;
 
     .line 57
-    iput v1, p0, Lcom/android/fingerprint/GoodixFingerPrintManager;->mState:I
+    iput v2, p0, Lcom/android/fingerprint/GoodixFingerPrintManager;->mState:I
 
     .line 58
-    iput-boolean v1, p0, Lcom/android/fingerprint/GoodixFingerPrintManager;->mIsSaveEnroll:Z
+    iput-boolean v2, p0, Lcom/android/fingerprint/GoodixFingerPrintManager;->mIsSaveEnroll:Z
 
     .line 59
-    iput v1, p0, Lcom/android/fingerprint/GoodixFingerPrintManager;->mFpId:I
+    iput v2, p0, Lcom/android/fingerprint/GoodixFingerPrintManager;->mFpId:I
 
     .line 88
     new-instance v0, Lcom/android/fingerprint/GoodixFingerPrintManager$1;
@@ -135,6 +137,9 @@
     invoke-direct {v0, p0}, Lcom/android/fingerprint/GoodixFingerPrintManager$2;-><init>(Lcom/android/fingerprint/GoodixFingerPrintManager;)V
 
     iput-object v0, p0, Lcom/android/fingerprint/GoodixFingerPrintManager;->mServiceReceiver:Lcom/android/fingerprint/IGoodixFingerPrintServiceReceiver;
+
+    .line 889
+    iput-boolean v2, p0, Lcom/android/fingerprint/GoodixFingerPrintManager;->mIsStartNavigation:Z
 
     .line 415
     iput-object p1, p0, Lcom/android/fingerprint/GoodixFingerPrintManager;->mService:Lcom/android/fingerprint/IGoodixFingerPrintService;
@@ -1443,6 +1448,57 @@
 
     .line 512
     :cond_2
+    invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
+
+    goto :goto_0
+.end method
+
+.method public startNavigation()I
+    .locals 4
+
+    .prologue
+    .line 893
+    const-string v2, "GoodixFingerPrintManager"
+
+    const-string/jumbo v3, "startNavigation"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 894
+    const/4 v1, -0x1
+
+    .line 896
+    .local v1, "ret":I
+    :try_start_0
+    iget-object v2, p0, Lcom/android/fingerprint/GoodixFingerPrintManager;->mService:Lcom/android/fingerprint/IGoodixFingerPrintService;
+
+    iget-object v3, p0, Lcom/android/fingerprint/GoodixFingerPrintManager;->mToken:Landroid/os/IBinder;
+
+    invoke-interface {v2, v3}, Lcom/android/fingerprint/IGoodixFingerPrintService;->startNavigation(Landroid/os/IBinder;)I
+
+    move-result v1
+
+    .line 897
+    if-nez v1, :cond_0
+
+    .line 898
+    const/4 v2, 0x1
+
+    iput-boolean v2, p0, Lcom/android/fingerprint/GoodixFingerPrintManager;->mIsStartNavigation:Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 903
+    :cond_0
+    :goto_0
+    return v1
+
+    .line 900
+    :catch_0
+    move-exception v0
+
+    .line 901
+    .local v0, "e":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->printStackTrace()V
 
     goto :goto_0

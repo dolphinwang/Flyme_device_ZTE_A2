@@ -73,5 +73,8 @@
 .method public abstract startIdentify2(Lcom/alipay/security/mobile/alipayauthenticatorservice/adapter/AbstractFingerprint$IdentifyListener;I[II)I
 .end method
 
+.method public abstract startNavigation()I
+.end method
+
 .method public abstract updateTA(Ljava/lang/String;Ljava/lang/String;)Z
 .end method

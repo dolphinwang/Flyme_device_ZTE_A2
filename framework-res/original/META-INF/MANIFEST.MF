@@ -1246,7 +1246,7 @@ Name: res/drawable-xhdpi-v4/ic_menu_mylocation.png
 SHA1-Digest: sygySgEfnIWMcljF9JcWB1JIF9Q=
 
 Name: res/drawable-xhdpi-v4/list_divider_mtrl_alpha.9.png
-SHA1-Digest: f5w1/P3BOViOfigUbV/eR0uuTmE=
+SHA1-Digest: jMh+i4CqIBTLM6A94Da5WlUr3I8=
 
 Name: res/drawable-xhdpi-v4/list_selector_background_longpress.9.png
 SHA1-Digest: uGAprDUUrvLWBXy6S/zpOxD877E=
@@ -2223,7 +2223,7 @@ Name: res/anim/screen_rotate_start_frame.xml
 SHA1-Digest: qJy8BzvlDEMrjS9CEJHn3SNPIKY=
 
 Name: res/drawable-xhdpi-v4/tab_selected_bar_right_v4.9.png
-SHA1-Digest: kpNPbmRLHcgC+0KGb3frTLAa2QA=
+SHA1-Digest: C+7q2uHMZaL8hmUB+uGLnu7/YeQ=
 
 Name: res/drawable-xhdpi-v4/edit_query_background_pressed.9.png
 SHA1-Digest: 9/YFFDcQK7EYRvx8+tbHlhOlwIE=
@@ -2435,7 +2435,7 @@ Name: res/drawable-xhdpi-v4/scrubber_control_to_pressed_mtrl_005.png
 SHA1-Digest: VyxMaY4GkM7F0rJ6OUhPiMeP/GU=
 
 Name: AndroidManifest.xml
-SHA1-Digest: VhUFiOWtyKSbZRpkzX38c7HzNeI=
+SHA1-Digest: DVpCa2+FQHV6K9UK70EcZQPz3gM=
 
 Name: res/drawable-xhdpi-v4/stat_sys_download_anim3.png
 SHA1-Digest: A8j2KDGadEbJBSfNDVWFY+HhbO4=
@@ -3012,7 +3012,7 @@ Name: res/drawable-xhdpi-v4/tab_pressed_holo.9.png
 SHA1-Digest: R7wKfHG+A7KNH04LgIIc4A3WLZs=
 
 Name: res/layout/alert_dialog_material.xml
-SHA1-Digest: iiUwZBwC0dV79QONN9/D3izl1uo=
+SHA1-Digest: XumtyOUAOOpX21jqZZ7NPeve3Ic=
 
 Name: res/drawable-xhdpi-v4/ic_clear_search_api_disabled_holo_light.pn
  g
@@ -6254,7 +6254,7 @@ Name: res/drawable-xhdpi-v4/divider_vertical_bright_opaque.9.png
 SHA1-Digest: EgI9Am9R1Y+7oEjdMTYFcn7gmfM=
 
 Name: res/drawable-xhdpi-v4/tab_selected_bar_left_v4.9.png
-SHA1-Digest: kpNPbmRLHcgC+0KGb3frTLAa2QA=
+SHA1-Digest: C+7q2uHMZaL8hmUB+uGLnu7/YeQ=
 
 Name: res/drawable-xhdpi-v4/btn_radio_to_on_mtrl_002.png
 SHA1-Digest: Tu9eaZSVZYeG1nB50TCFlAQC4iw=
@@ -7107,7 +7107,7 @@ Name: res/drawable/settings_header.xml
 SHA1-Digest: kOjq3oewISucZWxINyH3fhV4AuQ=
 
 Name: resources.arsc
-SHA1-Digest: V5gmJv2ukq7wz628nvL9rDdf9QU=
+SHA1-Digest: iji5eXipYE3d+NPJCHzgFkwm0jM=
 
 Name: res/drawable/notification_material_media_action_background.xml
 SHA1-Digest: 0KoC86strAQ5VYXD4wkbluo2Lg8=

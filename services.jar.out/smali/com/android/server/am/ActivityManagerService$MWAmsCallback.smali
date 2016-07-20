@@ -23,12 +23,12 @@
     .locals 0
 
     .prologue
-    .line 22891
+    .line 22889
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$MWAmsCallback;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Lcom/mediatek/common/multiwindow/IMWAmsCallback$Stub;-><init>()V
 
-    .line 22893
+    .line 22891
     return-void
 .end method
 
@@ -39,29 +39,29 @@
     .param p1, "iBinder"    # Landroid/os/IBinder;
 
     .prologue
-    .line 22956
+    .line 22954
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$MWAmsCallback;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v2
 
-    .line 22957
+    .line 22955
     :try_start_0
     invoke-static {p1}, Lcom/android/server/am/ActivityRecord;->forToken(Landroid/os/IBinder;)Lcom/android/server/am/ActivityRecord;
 
     move-result-object v0
 
-    .line 22958
+    .line 22956
     .local v0, "r":Lcom/android/server/am/ActivityRecord;
     if-eqz v0, :cond_0
 
-    .line 22959
+    .line 22957
     iget-object v1, v0, Lcom/android/server/am/ActivityRecord;->appInfo:Landroid/content/pm/ApplicationInfo;
 
     iget-object v1, v1, Landroid/content/pm/ApplicationInfo;->processName:Ljava/lang/String;
 
     monitor-exit v2
 
-    .line 22961
+    .line 22959
     :goto_0
     return-object v1
 
@@ -72,7 +72,7 @@
 
     goto :goto_0
 
-    .line 22962
+    .line 22960
     .end local v0    # "r":Lcom/android/server/am/ActivityRecord;
     :catchall_0
     move-exception v1
@@ -89,12 +89,12 @@
     .param p1, "taskId"    # I
 
     .prologue
-    .line 22978
+    .line 22976
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$MWAmsCallback;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v2
 
-    .line 22979
+    .line 22977
     :try_start_0
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$MWAmsCallback;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -102,7 +102,7 @@
 
     move-result-object v0
 
-    .line 22980
+    .line 22978
     .local v0, "tr":Lcom/android/server/am/TaskRecord;
     if-eqz v0, :cond_0
 
@@ -110,27 +110,27 @@
 
     if-eqz v1, :cond_0
 
-    .line 22981
+    .line 22979
     iget-object v1, v0, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
 
     iget v1, v1, Lcom/android/server/am/ActivityStack;->mStackId:I
 
     monitor-exit v2
 
-    .line 22983
+    .line 22981
     :goto_0
     return v1
 
-    .line 22982
+    .line 22980
     :cond_0
     monitor-exit v2
 
-    .line 22983
+    .line 22981
     const/4 v1, -0x1
 
     goto :goto_0
 
-    .line 22982
+    .line 22980
     .end local v0    # "tr":Lcom/android/server/am/TaskRecord;
     :catchall_0
     move-exception v1
@@ -147,18 +147,18 @@
     .param p1, "token"    # Landroid/os/IBinder;
 
     .prologue
-    .line 22966
+    .line 22964
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$MWAmsCallback;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v2
 
-    .line 22967
+    .line 22965
     :try_start_0
     invoke-static {p1}, Lcom/android/server/am/ActivityRecord;->forToken(Landroid/os/IBinder;)Lcom/android/server/am/ActivityRecord;
 
     move-result-object v0
 
-    .line 22968
+    .line 22966
     .local v0, "r":Lcom/android/server/am/ActivityRecord;
     const-string v1, "ActivityManager"
 
@@ -166,7 +166,7 @@
 
     invoke-static {v1, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 22969
+    .line 22967
     if-eqz v0, :cond_0
 
     iget-object v1, v0, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
@@ -179,7 +179,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 22970
+    .line 22968
     iget-object v1, v0, Lcom/android/server/am/ActivityRecord;->task:Lcom/android/server/am/TaskRecord;
 
     iget-object v1, v1, Lcom/android/server/am/TaskRecord;->stack:Lcom/android/server/am/ActivityStack;
@@ -188,20 +188,20 @@
 
     monitor-exit v2
 
-    .line 22973
+    .line 22971
     :goto_0
     return v1
 
-    .line 22972
+    .line 22970
     :cond_0
     monitor-exit v2
 
-    .line 22973
+    .line 22971
     const/4 v1, -0x1
 
     goto :goto_0
 
-    .line 22972
+    .line 22970
     .end local v0    # "r":Lcom/android/server/am/ActivityRecord;
     :catchall_0
     move-exception v1
@@ -218,35 +218,35 @@
     .param p1, "token"    # Landroid/os/IBinder;
 
     .prologue
-    .line 22898
+    .line 22896
     iget-object v4, p0, Lcom/android/server/am/ActivityManagerService$MWAmsCallback;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     const-string v5, "moveActivityTaskToFront"
 
     invoke-virtual {v4, v5}, Lcom/android/server/am/ActivityManagerService;->enforceNotIsolatedCaller(Ljava/lang/String;)V
 
-    .line 22899
+    .line 22897
     const/4 v3, 0x0
 
-    .line 22900
+    .line 22898
     .local v3, "res":Z
     iget-object v5, p0, Lcom/android/server/am/ActivityManagerService$MWAmsCallback;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v5
 
-    .line 22901
+    .line 22899
     :try_start_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 22902
+    .line 22900
     .local v0, "origId":J
     invoke-static {p1}, Lcom/android/server/am/ActivityRecord;->forToken(Landroid/os/IBinder;)Lcom/android/server/am/ActivityRecord;
 
     move-result-object v2
 
-    .line 22903
+    .line 22901
     .local v2, "r":Lcom/android/server/am/ActivityRecord;
     if-eqz v2, :cond_0
 
@@ -260,7 +260,7 @@
 
     if-nez v4, :cond_0
 
-    .line 22904
+    .line 22902
     iget-object v4, p0, Lcom/android/server/am/ActivityManagerService$MWAmsCallback;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v4, v4, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
@@ -275,20 +275,20 @@
 
     invoke-virtual {v4, v6, v7, v8, v9}, Lcom/android/server/am/ActivityStackSupervisor;->findTaskToMoveToFrontLocked(Lcom/android/server/am/TaskRecord;ILandroid/os/Bundle;Ljava/lang/String;)V
 
-    .line 22905
+    .line 22903
     const/4 v3, 0x1
 
-    .line 22907
+    .line 22905
     :cond_0
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 22908
+    .line 22906
     monitor-exit v5
 
-    .line 22909
+    .line 22907
     return v3
 
-    .line 22908
+    .line 22906
     .end local v0    # "origId":J
     .end local v2    # "r":Lcom/android/server/am/ActivityRecord;
     :catchall_0
@@ -309,17 +309,17 @@
     .prologue
     const/4 v9, 0x1
 
-    .line 22915
+    .line 22913
     iget-object v6, p0, Lcom/android/server/am/ActivityManagerService$MWAmsCallback;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     const-string v7, "restoreStack"
 
     invoke-virtual {v6, v7}, Lcom/android/server/am/ActivityManagerService;->enforceNotIsolatedCaller(Ljava/lang/String;)V
 
-    .line 22916
+    .line 22914
     const/4 v5, 0x0
 
-    .line 22917
+    .line 22915
     .local v5, "res":Z
     const-string v6, "ActivityManager"
 
@@ -353,47 +353,47 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 22918
+    .line 22916
     iget-object v6, p0, Lcom/android/server/am/ActivityManagerService$MWAmsCallback;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v6, v6, Lcom/android/server/am/ActivityManagerService;->mMultiWindowProxy:Lcom/mediatek/multiwindow/MultiWindowProxy;
 
     if-nez v6, :cond_0
 
-    .line 22952
+    .line 22950
     :goto_0
     return-void
 
-    .line 22920
+    .line 22918
     :cond_0
     iget-object v7, p0, Lcom/android/server/am/ActivityManagerService$MWAmsCallback;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v7
 
-    .line 22921
+    .line 22919
     :try_start_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v2
 
-    .line 22922
+    .line 22920
     .local v2, "origId":J
     const/4 v4, 0x0
 
-    .line 22923
+    .line 22921
     .local v4, "r":Lcom/android/server/am/ActivityRecord;
     if-eqz p1, :cond_4
 
-    .line 22924
+    .line 22922
     invoke-static {p1}, Lcom/android/server/am/ActivityRecord;->forToken(Landroid/os/IBinder;)Lcom/android/server/am/ActivityRecord;
 
     move-result-object v4
 
-    .line 22929
+    .line 22927
     :goto_1
     if-eqz v4, :cond_3
 
-    .line 22930
+    .line 22928
     if-eqz p2, :cond_5
 
     iget-object v6, p0, Lcom/android/server/am/ActivityManagerService$MWAmsCallback;->this$0:Lcom/android/server/am/ActivityManagerService;
@@ -414,7 +414,7 @@
 
     if-eqz v6, :cond_5
 
-    .line 22932
+    .line 22930
     iget-object v6, p0, Lcom/android/server/am/ActivityManagerService$MWAmsCallback;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v6, v6, Lcom/android/server/am/ActivityManagerService;->mMultiWindowProxy:Lcom/mediatek/multiwindow/MultiWindowProxy;
@@ -429,18 +429,18 @@
 
     move-result v1
 
-    .line 22933
+    .line 22931
     .local v1, "killapp":Z
     if-eqz v1, :cond_1
 
-    .line 22934
+    .line 22932
     iget-object v6, v4, Lcom/android/server/am/ActivityRecord;->app:Lcom/android/server/am/ProcessRecord;
 
     iget v6, v6, Lcom/android/server/am/ProcessRecord;->pid:I
 
     invoke-static {v6}, Landroid/os/Process;->killProcess(I)V
 
-    .line 22936
+    .line 22934
     :cond_1
     iget-object v6, p0, Lcom/android/server/am/ActivityManagerService$MWAmsCallback;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -454,17 +454,17 @@
 
     invoke-virtual {v6, v8, v9}, Lcom/android/server/am/ActivityStackSupervisor;->moveFloatingStackToAppStackLocked(Lcom/android/server/am/ActivityStack;Z)Lcom/android/server/am/ActivityStack;
 
-    .line 22948
+    .line 22946
     .end local v1    # "killapp":Z
     :cond_2
     :goto_2
     const/4 v5, 0x1
 
-    .line 22950
+    .line 22948
     :cond_3
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 22951
+    .line 22949
     monitor-exit v7
 
     goto :goto_0
@@ -480,7 +480,7 @@
 
     throw v6
 
-    .line 22926
+    .line 22924
     .restart local v2    # "origId":J
     .restart local v4    # "r":Lcom/android/server/am/ActivityRecord;
     :cond_4
@@ -491,7 +491,7 @@
 
     goto :goto_1
 
-    .line 22937
+    .line 22935
     :cond_5
     if-nez p2, :cond_2
 
@@ -505,7 +505,7 @@
 
     if-nez v6, :cond_2
 
-    .line 22938
+    .line 22936
     iget-object v6, p0, Lcom/android/server/am/ActivityManagerService$MWAmsCallback;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v6, v6, Lcom/android/server/am/ActivityManagerService;->mMwActivityMonitor:Lcom/android/server/am/MwActivityMonitor;
@@ -516,7 +516,7 @@
 
     move-result v0
 
-    .line 22940
+    .line 22938
     .local v0, "blockRet":I
     iget-object v6, p0, Lcom/android/server/am/ActivityManagerService$MWAmsCallback;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -532,22 +532,22 @@
 
     move-result v1
 
-    .line 22941
+    .line 22939
     .restart local v1    # "killapp":Z
     if-eqz v1, :cond_6
 
-    .line 22942
+    .line 22940
     iget-object v6, v4, Lcom/android/server/am/ActivityRecord;->app:Lcom/android/server/am/ProcessRecord;
 
     iget v6, v6, Lcom/android/server/am/ProcessRecord;->pid:I
 
     invoke-static {v6}, Landroid/os/Process;->killProcess(I)V
 
-    .line 22944
+    .line 22942
     :cond_6
     if-eq v0, v9, :cond_2
 
-    .line 22945
+    .line 22943
     iget-object v6, p0, Lcom/android/server/am/ActivityManagerService$MWAmsCallback;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v6, v6, Lcom/android/server/am/ActivityManagerService;->mStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;

@@ -352,21 +352,21 @@
 
     move-object/from16 v0, p0
 
-    iput v15, v0, Landroid/widget/NumberPicker;->mCurrentScrollOffset:I
+    iput v15, v0, Landroid/widget/NumberPicker;->mInitialScrollOffset:I
 
     .line 433
     const/4 v15, 0x0
 
     move-object/from16 v0, p0
 
-    iput v15, v0, Landroid/widget/NumberPicker;->mMaxValue:I
+    iput v15, v0, Landroid/widget/NumberPicker;->mScrollState:I
 
     .line 484
     const/4 v15, -0x1
 
     move-object/from16 v0, p0
 
-    iput-boolean v15, v0, Landroid/widget/NumberPicker;->mDecrementVirtualButtonPressed:Z
+    iput v15, v0, Landroid/widget/NumberPicker;->mLastHandledDownDpadKeyCode:I
 
     .line 610
     sget-object v15, Lcom/android/internal/R$styleable;->NumberPicker:[I
@@ -406,7 +406,7 @@
     :goto_0
     move-object/from16 v0, p0
 
-    iput v15, v0, Landroid/widget/NumberPicker;->mSolidColor:I
+    iput-boolean v15, v0, Landroid/widget/NumberPicker;->mHasSelectorWheel:Z
 
     .line 617
     const/16 v15, 0xa
@@ -421,7 +421,7 @@
 
     move-object/from16 v0, p0
 
-    iput v15, v0, Landroid/widget/NumberPicker;->mTextSize:I
+    iput-boolean v15, v0, Landroid/widget/NumberPicker;->mHideWheelUntilFocused:Z
 
     .line 620
     const/4 v15, 0x0
@@ -436,7 +436,7 @@
 
     move-object/from16 v0, p0
 
-    iput v15, v0, Landroid/widget/NumberPicker;->mMinWidth:I
+    iput v15, v0, Landroid/widget/NumberPicker;->mSolidColor:I
 
     .line 622
     const/4 v15, 0x2
@@ -478,7 +478,7 @@
 
     move-object/from16 v0, p0
 
-    iput v15, v0, Landroid/widget/NumberPicker;->mMaxWidth:I
+    iput v15, v0, Landroid/widget/NumberPicker;->mSelectionDividerHeight:I
 
     .line 630
     const/4 v15, 0x1
@@ -509,7 +509,7 @@
 
     move-object/from16 v0, p0
 
-    iput v15, v0, Landroid/widget/NumberPicker;->mMaximumFlingVelocity:I
+    iput v15, v0, Landroid/widget/NumberPicker;->mSelectionDividersDistance:I
 
     .line 636
     const/4 v15, 0x5
@@ -524,7 +524,7 @@
 
     move-object/from16 v0, p0
 
-    iput v15, v0, Landroid/widget/NumberPicker;->mLastDownEventY:F
+    iput v15, v0, Landroid/widget/NumberPicker;->mMinHeight:I
 
     .line 639
     const/4 v15, 0x6
@@ -539,12 +539,12 @@
 
     move-object/from16 v0, p0
 
-    iput-boolean v15, v0, Landroid/widget/NumberPicker;->mHideWheelUntilFocused:Z
+    iput v15, v0, Landroid/widget/NumberPicker;->mMaxHeight:I
 
     .line 641
     move-object/from16 v0, p0
 
-    iget v15, v0, Landroid/widget/NumberPicker;->mLastDownEventY:F
+    iget v15, v0, Landroid/widget/NumberPicker;->mMinHeight:I
 
     const/16 v16, -0x1
 
@@ -554,7 +554,7 @@
 
     move-object/from16 v0, p0
 
-    iget-boolean v15, v0, Landroid/widget/NumberPicker;->mHideWheelUntilFocused:Z
+    iget v15, v0, Landroid/widget/NumberPicker;->mMaxHeight:I
 
     const/16 v16, -0x1
 
@@ -564,11 +564,11 @@
 
     move-object/from16 v0, p0
 
-    iget v15, v0, Landroid/widget/NumberPicker;->mLastDownEventY:F
+    iget v15, v0, Landroid/widget/NumberPicker;->mMinHeight:I
 
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Landroid/widget/NumberPicker;->mHideWheelUntilFocused:Z
+    iget v0, v0, Landroid/widget/NumberPicker;->mMaxHeight:I
 
     move/from16 v16, v0
 
@@ -609,7 +609,7 @@
 
     move-object/from16 v0, p0
 
-    iput v15, v0, Landroid/widget/NumberPicker;->mLastHandledDownDpadKeyCode:I
+    iput v15, v0, Landroid/widget/NumberPicker;->mMinWidth:I
 
     .line 649
     const/16 v15, 0x8
@@ -624,12 +624,12 @@
 
     move-object/from16 v0, p0
 
-    iput-boolean v15, v0, Landroid/widget/NumberPicker;->mIncrementVirtualButtonPressed:Z
+    iput v15, v0, Landroid/widget/NumberPicker;->mMaxWidth:I
 
     .line 651
     move-object/from16 v0, p0
 
-    iget v15, v0, Landroid/widget/NumberPicker;->mLastHandledDownDpadKeyCode:I
+    iget v15, v0, Landroid/widget/NumberPicker;->mMinWidth:I
 
     const/16 v16, -0x1
 
@@ -639,7 +639,7 @@
 
     move-object/from16 v0, p0
 
-    iget-boolean v15, v0, Landroid/widget/NumberPicker;->mIncrementVirtualButtonPressed:Z
+    iget v15, v0, Landroid/widget/NumberPicker;->mMaxWidth:I
 
     const/16 v16, -0x1
 
@@ -649,11 +649,11 @@
 
     move-object/from16 v0, p0
 
-    iget v15, v0, Landroid/widget/NumberPicker;->mLastHandledDownDpadKeyCode:I
+    iget v15, v0, Landroid/widget/NumberPicker;->mMinWidth:I
 
     move-object/from16 v0, p0
 
-    iget-boolean v0, v0, Landroid/widget/NumberPicker;->mIncrementVirtualButtonPressed:Z
+    iget v0, v0, Landroid/widget/NumberPicker;->mMaxWidth:I
 
     move/from16 v16, v0
 
@@ -674,7 +674,7 @@
     :cond_2
     move-object/from16 v0, p0
 
-    iget-boolean v15, v0, Landroid/widget/NumberPicker;->mIncrementVirtualButtonPressed:Z
+    iget v15, v0, Landroid/widget/NumberPicker;->mMaxWidth:I
 
     const/16 v16, -0x1
 
@@ -687,7 +687,7 @@
     :goto_1
     move-object/from16 v0, p0
 
-    iput v15, v0, Landroid/widget/NumberPicker;->mSelectorElementHeight:I
+    iput-boolean v15, v0, Landroid/widget/NumberPicker;->mComputeMaxWidth:Z
 
     .line 658
     const/16 v15, 0x9
@@ -923,7 +923,7 @@
 
     move-object/from16 v0, p0
 
-    iput v15, v0, Landroid/widget/NumberPicker;->mPreviousScrollerY:I
+    iput v15, v0, Landroid/widget/NumberPicker;->mTouchSlop:I
 
     .line 741
     invoke-virtual {v7}, Landroid/view/ViewConfiguration;->getScaledMinimumFlingVelocity()I
@@ -932,7 +932,7 @@
 
     move-object/from16 v0, p0
 
-    iput v15, v0, Landroid/widget/NumberPicker;->mLastHoveredChildVirtualViewId:I
+    iput v15, v0, Landroid/widget/NumberPicker;->mMinimumFlingVelocity:I
 
     .line 742
     invoke-virtual {v7}, Landroid/view/ViewConfiguration;->getScaledMaximumFlingVelocity()I
@@ -943,7 +943,7 @@
 
     move-object/from16 v0, p0
 
-    iput v15, v0, Landroid/widget/NumberPicker;->mInitialScrollOffset:I
+    iput v15, v0, Landroid/widget/NumberPicker;->mMaximumFlingVelocity:I
 
     .line 744
     move-object/from16 v0, p0
@@ -958,7 +958,7 @@
 
     move-object/from16 v0, p0
 
-    iput v15, v0, Landroid/widget/NumberPicker;->mMinimumFlingVelocity:I
+    iput v15, v0, Landroid/widget/NumberPicker;->mTextSize:I
 
     .line 747
     new-instance v14, Landroid/graphics/Paint;
@@ -979,7 +979,7 @@
     .line 750
     move-object/from16 v0, p0
 
-    iget v15, v0, Landroid/widget/NumberPicker;->mMinimumFlingVelocity:I
+    iget v15, v0, Landroid/widget/NumberPicker;->mTextSize:I
 
     int-to-float v15, v15
 
@@ -1089,11 +1089,11 @@
 
     move-result-object v15
 
-    iget v15, v15, Landroid/content/res/Configuration;->navigationHidden:I
+    iget v15, v15, Landroid/content/res/Configuration;->orientation:I
 
     move-object/from16 v0, p0
 
-    iput-boolean v15, v0, Landroid/widget/NumberPicker;->mComputeMaxWidth:Z
+    iput v15, v0, Landroid/widget/NumberPicker;->mCurrentOrientation:I
 
     .line 770
     return-void

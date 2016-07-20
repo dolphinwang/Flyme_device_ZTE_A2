@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 22658
+    .line 22656
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$34;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iput-boolean p2, p0, Lcom/android/server/am/ActivityManagerService$34;->val$isFg:Z
@@ -44,10 +44,10 @@
     .locals 2
 
     .prologue
-    .line 22660
+    .line 22658
     monitor-enter p0
 
-    .line 22661
+    .line 22659
     :try_start_0
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$34;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -55,7 +55,7 @@
 
     iput-boolean v1, v0, Lcom/android/server/am/ActivityManagerService;->mIsWallpaperFg:Z
 
-    .line 22662
+    .line 22660
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$34;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mWallpaperProcess:Lcom/android/server/am/ProcessRecord;
@@ -68,7 +68,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 22663
+    .line 22661
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$34;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$34;->this$0:Lcom/android/server/am/ActivityManagerService;
@@ -77,14 +77,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/am/ActivityManagerService;->updateOomAdjLocked(Lcom/android/server/am/ProcessRecord;)Z
 
-    .line 22665
+    .line 22663
     :cond_0
     monitor-exit p0
 
-    .line 22666
+    .line 22664
     return-void
 
-    .line 22665
+    .line 22663
     :catchall_0
     move-exception v0
 

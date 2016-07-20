@@ -29,17 +29,17 @@
     .param p3, "pkg"    # Ljava/lang/String;
 
     .prologue
-    .line 475
+    .line 479
     iput-object p1, p0, Lcom/android/server/backup/BackupManagerService$ClearRetryParams;->this$0:Lcom/android/server/backup/BackupManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 476
+    .line 480
     iput-object p2, p0, Lcom/android/server/backup/BackupManagerService$ClearRetryParams;->transportName:Ljava/lang/String;
 
-    .line 477
+    .line 481
     iput-object p3, p0, Lcom/android/server/backup/BackupManagerService$ClearRetryParams;->packageName:Ljava/lang/String;
 
-    .line 478
+    .line 482
     return-void
 .end method

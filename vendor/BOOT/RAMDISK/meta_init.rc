@@ -256,7 +256,9 @@ on post-fs-data
     mkdir /data/adb 0700 root root
     # Separate location for storing security policy files on data
     mkdir /data/security 0711 system system
-
+#KPH key
+    mkdir /data/app 0771 system system	
+	mkdir /data/app/mcRegistry 0775 system system
     # Reload policy from /data/security if present.
     setprop selinux.reload_policy 1
 
@@ -477,7 +479,12 @@ service KPH /system/bin/kph
 on property:sys.kph.enable=1    
     start KPH
 
+service rtck_kphkey_re /system/bin/rootcheck  -KPHKEY_RESTORE
+    class main
+    oneshot
 
+on property:sys.rtck_kphkey_r.enable=1
+	start rtck_kphkey_re
 # logcat
 service logcat /system/bin/logcat -r4096 -n 8 -v time -f /data/local/log/logcat.log  -k &
     user root

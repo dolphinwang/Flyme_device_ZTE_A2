@@ -127,6 +127,14 @@
     .end annotation
 .end method
 
+.method public abstract startNavigation(Landroid/os/IBinder;)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract startVerify(Landroid/os/IBinder;[I)I
     .annotation system Ldalvik/annotation/Throws;
         value = {

@@ -985,6 +985,41 @@
     goto :goto_0
 .end method
 
+.method public startNavigation()I
+    .locals 2
+
+    .prologue
+    .line 252
+    invoke-direct {p0}, Lcom/android/fingerprint/FingerprintDelegate;->initFingerprintInterface()Lcom/android/fingerprint/FingerprintInterface;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    .line 253
+    const-string v0, "FingerprintDelegate"
+
+    const-string/jumbo v1, "mFingerprintInterface is null"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 254
+    const/4 v0, -0x1
+
+    .line 257
+    :goto_0
+    return v0
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/fingerprint/FingerprintDelegate;->mFingerprintInterface:Lcom/android/fingerprint/FingerprintInterface;
+
+    invoke-interface {v0}, Lcom/android/fingerprint/FingerprintInterface;->startNavigation()I
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
 .method public updateTA(Ljava/lang/String;Ljava/lang/String;)Z
     .locals 3
     .param p1, "src"    # Ljava/lang/String;

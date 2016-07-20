@@ -1,11 +1,14 @@
 .class Lcom/android/internal/policy/impl/PhoneWindowManager$25;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "PhoneWindowManager.java"
+
+# interfaces
+.implements Landroid/graphics/drawable/AnimationDrawable$AnimationListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/internal/policy/impl/PhoneWindowManager;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/internal/policy/impl/PhoneWindowManager;->PlayGestureAnimation()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,128 +20,55 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
+.field final synthetic val$anim:Landroid/widget/ImageView;
+
+.field final synthetic val$wm:Landroid/view/WindowManager;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
+.method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/view/WindowManager;Landroid/widget/ImageView;)V
     .locals 0
 
     .prologue
-    .line 5905
+    .line 5331
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$25;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    iput-object p2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$25;->val$wm:Landroid/view/WindowManager;
+
+    iput-object p3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$25;->val$anim:Landroid/widget/ImageView;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+.method public onAnimationEnd()V
+    .locals 2
 
     .prologue
-    .line 5908
-    const-string v1, "android.intent.action.DOCK_EVENT"
+    .line 5343
+    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$25;->val$wm:Landroid/view/WindowManager;
 
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$25;->val$anim:Landroid/widget/ImageView;
 
-    move-result-object v2
+    invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 5344
+    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$25;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    move-result v1
+    const/4 v1, 0x0
 
-    if-eqz v1, :cond_0
+    iput-object v1, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mAnimationWindowToken:Landroid/os/IBinder;
 
-    .line 5909
-    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$25;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
+    .line 5346
+    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$25;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    const-string v2, "android.intent.extra.DOCK_STATE"
+    const/4 v1, -0x1
 
-    const/4 v3, 0x0
+    iput v1, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mGestureKeyCode:I
 
-    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v2
-
-    iput v2, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mDockMode:I
-
-    .line 5919
-    :goto_0
-    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$25;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateRotation(Z)V
-
-    .line 5920
-    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$25;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    # getter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mLock:Ljava/lang/Object;
-    invoke-static {v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$1400(Lcom/android/internal/policy/impl/PhoneWindowManager;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    monitor-enter v2
-
-    .line 5921
-    :try_start_0
-    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$25;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    invoke-virtual {v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateOrientationListenerLp()V
-
-    .line 5922
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 5923
+    .line 5347
     return-void
-
-    .line 5913
-    :cond_0
-    :try_start_1
-    const-string v1, "uimode"
-
-    invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object v1
-
-    invoke-static {v1}, Landroid/app/IUiModeManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/IUiModeManager;
-
-    move-result-object v0
-
-    .line 5915
-    .local v0, "uiModeService":Landroid/app/IUiModeManager;
-    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$25;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    invoke-interface {v0}, Landroid/app/IUiModeManager;->getCurrentModeType()I
-
-    move-result v2
-
-    iput v2, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mUiMode:I
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
-
-    goto :goto_0
-
-    .line 5916
-    .end local v0    # "uiModeService":Landroid/app/IUiModeManager;
-    :catch_0
-    move-exception v1
-
-    goto :goto_0
-
-    .line 5922
-    :catchall_0
-    move-exception v1
-
-    :try_start_2
-    monitor-exit v2
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw v1
 .end method

@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 166
+    .line 167
     iput-object p1, p0, Lcom/mediatek/internal/telephony/ims/ImsService$1;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,7 +39,7 @@
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 169
+    .line 170
     const-string v20, "android.net.conn.CONNECTIVITY_ACTION_HANDOVER_END"
 
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -52,7 +52,7 @@
 
     if-eqz v20, :cond_1
 
-    .line 170
+    .line 171
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/ims/ImsService$1;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
@@ -91,12 +91,12 @@
 
     invoke-virtual/range {v20 .. v23}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 251
+    .line 255
     :cond_0
     :goto_0
     return-void
 
-    .line 172
+    .line 173
     :cond_1
     const-string v20, "android.intent.action.NOTIFY_CONNECTION_ERROR"
 
@@ -110,7 +110,7 @@
 
     if-eqz v20, :cond_2
 
-    .line 173
+    .line 174
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/ims/ImsService$1;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
@@ -137,7 +137,7 @@
 
     iput v0, v1, Lcom/mediatek/internal/telephony/ims/ImsService;->mWfcRegErrorCode:I
 
-    .line 174
+    .line 175
     const-string v20, "ImsService"
 
     new-instance v21, Ljava/lang/StringBuilder;
@@ -174,7 +174,7 @@
 
     goto :goto_0
 
-    .line 175
+    .line 176
     :cond_2
     const-string v20, "android.intent.action.SIM_STATE_CHANGED"
 
@@ -188,7 +188,7 @@
 
     if-eqz v20, :cond_7
 
-    .line 176
+    .line 177
     const-string v20, "ss"
 
     move-object/from16 v0, p2
@@ -199,7 +199,7 @@
 
     move-result-object v15
 
-    .line 177
+    .line 178
     .local v15, "simState":Ljava/lang/String;
     const-string v20, "phone"
 
@@ -215,15 +215,15 @@
 
     move-result v12
 
-    .line 178
+    .line 179
     .local v12, "phoneId":I
     const/4 v8, 0x0
 
-    .line 179
+    .line 180
     .local v8, "mcc":I
     const/4 v9, 0x0
 
-    .line 180
+    .line 181
     .local v9, "mnc":I
     const-string v20, "ImsService"
 
@@ -249,10 +249,10 @@
 
     invoke-static/range {v20 .. v21}, Landroid/telephony/Rlog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 181
+    .line 182
     const/4 v6, 0x0
 
-    .line 182
+    .line 183
     .local v6, "instance":Lcom/android/ims/internal/IImsConfig;
     move-object/from16 v0, p0
 
@@ -267,7 +267,7 @@
 
     monitor-enter v21
 
-    .line 183
+    .line 184
     :try_start_0
     move-object/from16 v0, p0
 
@@ -294,7 +294,7 @@
 
     if-eqz v20, :cond_3
 
-    .line 184
+    .line 185
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/ims/ImsService$1;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
@@ -324,24 +324,24 @@
 
     move-object v6, v0
 
-    .line 189
+    .line 190
     :goto_1
     monitor-exit v21
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 192
+    .line 193
     const/16 v18, 0x0
 
-    .line 193
+    .line 194
     .local v18, "volteRes":Z
     const/16 v17, 0x0
 
-    .line 194
+    .line 195
     .local v17, "vilteRes":Z
     const/16 v19, 0x0
 
-    .line 196
+    .line 197
     .local v19, "wfcRes":Z
     :try_start_1
     const-string v20, "ABSENT"
@@ -354,14 +354,14 @@
 
     if-eqz v20, :cond_4
 
-    .line 197
+    .line 198
     const-string v20, "ImsService"
 
     const-string v21, "setImsCapability by default value"
 
     invoke-static/range {v20 .. v21}, Landroid/telephony/Rlog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 199
+    .line 200
     const/16 v20, 0x1
 
     const/16 v21, 0x0
@@ -380,11 +380,11 @@
 
     goto/16 :goto_0
 
-    .line 237
+    .line 238
     :catch_0
     move-exception v5
 
-    .line 238
+    .line 239
     .local v5, "e":Landroid/os/RemoteException;
     const-string v20, "ImsService"
 
@@ -412,7 +412,7 @@
 
     goto/16 :goto_0
 
-    .line 186
+    .line 187
     .end local v5    # "e":Landroid/os/RemoteException;
     .end local v17    # "vilteRes":Z
     .end local v18    # "volteRes":Z
@@ -427,7 +427,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 187
+    .line 188
     .end local v6    # "instance":Lcom/android/ims/internal/IImsConfig;
     .local v7, "instance":Lcom/android/ims/internal/IImsConfig;
     :try_start_3
@@ -460,7 +460,7 @@
     .restart local v6    # "instance":Lcom/android/ims/internal/IImsConfig;
     goto :goto_1
 
-    .line 189
+    .line 190
     :catchall_0
     move-exception v20
 
@@ -472,7 +472,7 @@
 
     throw v20
 
-    .line 200
+    .line 201
     .restart local v17    # "vilteRes":Z
     .restart local v18    # "volteRes":Z
     .restart local v19    # "wfcRes":Z
@@ -488,7 +488,7 @@
 
     if-eqz v20, :cond_0
 
-    .line 201
+    .line 202
     # invokes: Lcom/mediatek/internal/telephony/ims/ImsService;->isTestSim(I)Z
     invoke-static {v12}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$200(I)Z
 
@@ -496,7 +496,7 @@
 
     if-nez v20, :cond_6
 
-    .line 202
+    .line 203
     const-string v20, "phone"
 
     move-object/from16 v0, p1
@@ -509,7 +509,7 @@
 
     check-cast v16, Landroid/telephony/TelephonyManager;
 
-    .line 204
+    .line 205
     .local v16, "tm":Landroid/telephony/TelephonyManager;
     move-object/from16 v0, v16
 
@@ -517,7 +517,7 @@
 
     move-result-object v11
 
-    .line 205
+    .line 206
     .local v11, "operator":Ljava/lang/String;
     const/16 v20, 0x0
 
@@ -535,7 +535,7 @@
 
     move-result v8
 
-    .line 206
+    .line 207
     const/16 v20, 0x3
 
     move/from16 v0, v20
@@ -548,7 +548,7 @@
 
     move-result v9
 
-    .line 207
+    .line 208
     const-string v20, "ImsService"
 
     new-instance v21, Ljava/lang/StringBuilder;
@@ -585,22 +585,22 @@
 
     invoke-static/range {v20 .. v21}, Landroid/telephony/Rlog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 210
+    .line 211
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v13
 
-    .line 211
+    .line 212
     .local v13, "res":Landroid/content/res/Resources;
     invoke-virtual {v13}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v10
 
-    .line 212
+    .line 213
     .local v10, "newConfiguration":Landroid/content/res/Configuration;
     iput v8, v10, Landroid/content/res/Configuration;->mcc:I
 
-    .line 213
+    .line 214
     if-nez v9, :cond_5
 
     const v20, 0xffff
@@ -610,14 +610,14 @@
 
     iput v0, v10, Landroid/content/res/Configuration;->mnc:I
 
-    .line 214
+    .line 215
     const/16 v20, 0x0
 
     move-object/from16 v0, v20
 
     invoke-virtual {v13, v10, v0}, Landroid/content/res/Resources;->updateConfiguration(Landroid/content/res/Configuration;Landroid/util/DisplayMetrics;)V
 
-    .line 216
+    .line 217
     const v20, 0x112007f
 
     move/from16 v0, v20
@@ -626,7 +626,7 @@
 
     move-result v18
 
-    .line 218
+    .line 219
     const v20, 0x1120083
 
     move/from16 v0, v20
@@ -635,7 +635,7 @@
 
     move-result v17
 
-    .line 220
+    .line 221
     const v20, 0x80c0006
 
     move/from16 v0, v20
@@ -644,7 +644,7 @@
 
     move-result v19
 
-    .line 230
+    .line 231
     .end local v10    # "newConfiguration":Landroid/content/res/Configuration;
     .end local v11    # "operator":Ljava/lang/String;
     .end local v13    # "res":Landroid/content/res/Resources;
@@ -676,7 +676,7 @@
 
     invoke-static/range {v20 .. v21}, Landroid/telephony/Rlog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 231
+    .line 232
     const-string v20, "ImsService"
 
     new-instance v21, Ljava/lang/StringBuilder;
@@ -703,7 +703,7 @@
 
     invoke-static/range {v20 .. v21}, Landroid/telephony/Rlog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 232
+    .line 233
     const-string v20, "ImsService"
 
     new-instance v21, Ljava/lang/StringBuilder;
@@ -730,7 +730,7 @@
 
     invoke-static/range {v20 .. v21}, Landroid/telephony/Rlog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 233
+    .line 234
     move/from16 v0, v18
 
     move/from16 v1, v17
@@ -739,7 +739,7 @@
 
     invoke-interface {v6, v0, v1, v2}, Lcom/android/ims/internal/IImsConfig;->setImsCapability(ZZZ)V
 
-    .line 235
+    .line 236
     const/16 v20, 0x1
 
     move-object/from16 v0, p1
@@ -757,10 +757,10 @@
     :cond_5
     move/from16 v20, v9
 
-    .line 213
+    .line 214
     goto/16 :goto_3
 
-    .line 224
+    .line 225
     .end local v10    # "newConfiguration":Landroid/content/res/Configuration;
     .end local v11    # "operator":Ljava/lang/String;
     .end local v13    # "res":Landroid/content/res/Resources;
@@ -792,18 +792,18 @@
     :try_end_5
     .catch Landroid/os/RemoteException; {:try_start_5 .. :try_end_5} :catch_0
 
-    .line 225
+    .line 226
     const/16 v18, 0x1
 
-    .line 226
+    .line 227
     const/16 v17, 0x1
 
-    .line 227
+    .line 228
     const/16 v19, 0x1
 
     goto/16 :goto_4
 
-    .line 242
+    .line 241
     .end local v6    # "instance":Lcom/android/ims/internal/IImsConfig;
     .end local v8    # "mcc":I
     .end local v9    # "mnc":I
@@ -813,6 +813,70 @@
     .end local v18    # "volteRes":Z
     .end local v19    # "wfcRes":Z
     :cond_7
+    const-string v20, "android.intent.action.RADIO_TECHNOLOGY"
+
+    invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v21
+
+    invoke-virtual/range {v20 .. v21}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v20
+
+    if-eqz v20, :cond_8
+
+    .line 242
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/ims/ImsService$1;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
+
+    move-object/from16 v20, v0
+
+    invoke-static {}, Lcom/mediatek/internal/telephony/RadioCapabilitySwitchUtil;->getMainCapabilityPhoneId()I
+
+    move-result v21
+
+    # setter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mActivePhoneId:I
+    invoke-static/range {v20 .. v21}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$302(Lcom/mediatek/internal/telephony/ims/ImsService;I)I
+
+    .line 243
+    const-string v20, "ImsService"
+
+    new-instance v21, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v21 .. v21}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v22, "update mActivePhoneId = "
+
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v21
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/mediatek/internal/telephony/ims/ImsService$1;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
+
+    move-object/from16 v22, v0
+
+    # getter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mActivePhoneId:I
+    invoke-static/range {v22 .. v22}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$300(Lcom/mediatek/internal/telephony/ims/ImsService;)I
+
+    move-result v22
+
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v21
+
+    invoke-virtual/range {v21 .. v21}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v21
+
+    invoke-static/range {v20 .. v21}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_0
+
+    .line 246
+    :cond_8
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/mediatek/internal/telephony/ims/ImsService$1;->this$0:Lcom/mediatek/internal/telephony/ims/ImsService;
@@ -834,9 +898,9 @@
     move-result v21
 
     # setter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mImsRegistry:Z
-    invoke-static/range {v20 .. v21}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$302(Lcom/mediatek/internal/telephony/ims/ImsService;Z)Z
+    invoke-static/range {v20 .. v21}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$402(Lcom/mediatek/internal/telephony/ims/ImsService;Z)Z
 
-    .line 243
+    .line 247
     const-string v20, "ImsService"
 
     new-instance v21, Ljava/lang/StringBuilder;
@@ -856,7 +920,7 @@
     move-object/from16 v22, v0
 
     # getter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mImsRegistry:Z
-    invoke-static/range {v22 .. v22}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$300(Lcom/mediatek/internal/telephony/ims/ImsService;)Z
+    invoke-static/range {v22 .. v22}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$400(Lcom/mediatek/internal/telephony/ims/ImsService;)Z
 
     move-result v22
 
@@ -870,7 +934,7 @@
 
     invoke-static/range {v20 .. v21}, Landroid/telephony/Rlog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 244
+    .line 248
     const/16 v20, 0x3
 
     move/from16 v0, v20
@@ -886,11 +950,11 @@
     move-object/from16 v20, v0
 
     # getter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mImsRegistry:Z
-    invoke-static/range {v20 .. v20}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$300(Lcom/mediatek/internal/telephony/ims/ImsService;)Z
+    invoke-static/range {v20 .. v20}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$400(Lcom/mediatek/internal/telephony/ims/ImsService;)Z
 
     move-result v20
 
-    if-eqz v20, :cond_8
+    if-eqz v20, :cond_9
 
     const/16 v20, 0x1
 
@@ -912,13 +976,13 @@
     move-object/from16 v21, v0
 
     # getter for: Lcom/mediatek/internal/telephony/ims/ImsService;->mActivePhoneId:I
-    invoke-static/range {v21 .. v21}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$400(Lcom/mediatek/internal/telephony/ims/ImsService;)I
+    invoke-static/range {v21 .. v21}, Lcom/mediatek/internal/telephony/ims/ImsService;->access$300(Lcom/mediatek/internal/telephony/ims/ImsService;)I
 
     move-result v21
 
     aput v21, v14, v20
 
-    .line 248
+    .line 252
     .local v14, "result":[I
     new-instance v4, Landroid/os/AsyncResult;
 
@@ -932,7 +996,7 @@
 
     invoke-direct {v4, v0, v14, v1}, Landroid/os/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    .line 249
+    .line 253
     .local v4, "ar":Landroid/os/AsyncResult;
     move-object/from16 v0, p0
 
@@ -970,15 +1034,15 @@
 
     goto/16 :goto_0
 
-    .line 244
+    .line 248
     .end local v4    # "ar":Landroid/os/AsyncResult;
     .end local v14    # "result":[I
-    :cond_8
+    :cond_9
     const/16 v20, 0x0
 
     goto :goto_5
 
-    .line 189
+    .line 190
     .restart local v7    # "instance":Lcom/android/ims/internal/IImsConfig;
     .restart local v8    # "mcc":I
     .restart local v9    # "mnc":I

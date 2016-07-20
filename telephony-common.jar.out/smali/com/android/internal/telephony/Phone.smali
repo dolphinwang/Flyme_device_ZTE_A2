@@ -1042,6 +1042,9 @@
 .method public abstract startDtmf(C)V
 .end method
 
+.method public abstract startMonitoringImsService()V
+.end method
+
 .method public abstract stopDtmf()V
 .end method
 

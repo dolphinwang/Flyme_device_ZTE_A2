@@ -25,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 21608
+    .line 21606
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$30;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$30;->val$uss:Lcom/android/server/am/UserStartedState;
@@ -48,13 +48,13 @@
     .param p7, "sendingUser"    # I
 
     .prologue
-    .line 21612
+    .line 21610
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$30;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$30;->val$uss:Lcom/android/server/am/UserStartedState;
 
     invoke-virtual {v0, v1}, Lcom/android/server/am/ActivityManagerService;->finishUserStop(Lcom/android/server/am/UserStartedState;)V
 
-    .line 21613
+    .line 21611
     return-void
 .end method

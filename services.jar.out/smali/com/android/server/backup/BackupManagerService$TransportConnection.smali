@@ -29,15 +29,15 @@
     .param p2, "transport"    # Landroid/content/pm/ServiceInfo;
 
     .prologue
-    .line 1829
+    .line 1837
     iput-object p1, p0, Lcom/android/server/backup/BackupManagerService$TransportConnection;->this$0:Lcom/android/server/backup/BackupManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1830
+    .line 1838
     iput-object p2, p0, Lcom/android/server/backup/BackupManagerService$TransportConnection;->mTransport:Landroid/content/pm/ServiceInfo;
 
-    .line 1831
+    .line 1839
     return-void
 .end method
 
@@ -57,7 +57,7 @@
 
     const/4 v7, 0x0
 
-    .line 1835
+    .line 1843
     const-string v3, "BackupManagerService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -80,19 +80,19 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1836
+    .line 1844
     invoke-virtual {p1}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1838
+    .line 1846
     .local v1, "name":Ljava/lang/String;
     :try_start_0
     invoke-static {p2}, Lcom/android/internal/backup/IBackupTransport$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/backup/IBackupTransport;
 
     move-result-object v2
 
-    .line 1839
+    .line 1847
     .local v2, "transport":Lcom/android/internal/backup/IBackupTransport;
     iget-object v3, p0, Lcom/android/server/backup/BackupManagerService$TransportConnection;->this$0:Lcom/android/server/backup/BackupManagerService;
 
@@ -103,7 +103,7 @@
     # invokes: Lcom/android/server/backup/BackupManagerService;->registerTransport(Ljava/lang/String;Ljava/lang/String;Lcom/android/internal/backup/IBackupTransport;)V
     invoke-static {v3, v4, v1, v2}, Lcom/android/server/backup/BackupManagerService;->access$600(Lcom/android/server/backup/BackupManagerService;Ljava/lang/String;Ljava/lang/String;Lcom/android/internal/backup/IBackupTransport;)V
 
-    .line 1840
+    .line 1848
     const/16 v3, 0xb22
 
     const/4 v4, 0x2
@@ -128,16 +128,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1845
+    .line 1853
     .end local v2    # "transport":Lcom/android/internal/backup/IBackupTransport;
     :goto_0
     return-void
 
-    .line 1841
+    .line 1849
     :catch_0
     move-exception v0
 
-    .line 1842
+    .line 1850
     .local v0, "e":Landroid/os/RemoteException;
     const-string v3, "BackupManagerService"
 
@@ -161,7 +161,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1843
+    .line 1851
     new-array v3, v9, [Ljava/lang/Object;
 
     aput-object v1, v3, v7
@@ -186,7 +186,7 @@
 
     const/4 v4, 0x0
 
-    .line 1849
+    .line 1857
     const-string v1, "BackupManagerService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -209,12 +209,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1850
+    .line 1858
     invoke-virtual {p1}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1851
+    .line 1859
     .local v0, "name":Ljava/lang/String;
     const/16 v1, 0xb22
 
@@ -234,12 +234,12 @@
 
     invoke-static {v1, v2}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 1852
+    .line 1860
     iget-object v1, p0, Lcom/android/server/backup/BackupManagerService$TransportConnection;->this$0:Lcom/android/server/backup/BackupManagerService;
 
     # invokes: Lcom/android/server/backup/BackupManagerService;->registerTransport(Ljava/lang/String;Ljava/lang/String;Lcom/android/internal/backup/IBackupTransport;)V
     invoke-static {v1, v5, v0, v5}, Lcom/android/server/backup/BackupManagerService;->access$600(Lcom/android/server/backup/BackupManagerService;Ljava/lang/String;Ljava/lang/String;Lcom/android/internal/backup/IBackupTransport;)V
 
-    .line 1853
+    .line 1861
     return-void
 .end method
