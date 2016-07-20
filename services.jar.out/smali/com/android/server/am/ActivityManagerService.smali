@@ -21,6 +21,7 @@
         Lcom/android/server/am/ActivityManagerService$IntentFirewallInterface;,
         Lcom/android/server/am/ActivityManagerService$PermissionController;,
         Lcom/android/server/am/ActivityManagerService$SecondaryZygoteHandler;,
+        Lcom/android/server/am/ActivityManagerService$FlymeActivityManagerServiceInjector;,
         Lcom/android/server/am/ActivityManagerService$Lifecycle;,
         Lcom/android/server/am/ActivityManagerService$CpuBinder;,
         Lcom/android/server/am/ActivityManagerService$DbBinder;,
@@ -2923,6 +2924,8 @@
 
     .end local v9    # "thread":Landroid/os/HandlerThread;
     :cond_2
+    invoke-static/range {p0 .. p0}, Lcom/android/server/am/ActivityManagerService$FlymeActivityManagerServiceInjector;->flymeSetup(Lcom/android/server/am/ActivityManagerService;)V
+
     return-void
 
     :cond_3
@@ -12540,6 +12543,8 @@
     move-object/from16 v0, p1
 
     invoke-virtual {v13, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    invoke-static/range {p0 .. p0}, Lcom/android/server/am/ActivityManagerService$FlymeActivityManagerServiceInjector;->flymeBroadcaseRecentTasksChanged(Lcom/android/server/am/ActivityManagerService;)V
 
     .line 9826
     invoke-virtual/range {p1 .. p1}, Lcom/android/server/am/TaskRecord;->removedFromRecents()V
@@ -44935,6 +44940,8 @@
 
     invoke-virtual {p0, p1, v8}, Lcom/android/server/am/ActivityManagerService;->notifyTaskPersisterLocked(Lcom/android/server/am/TaskRecord;Z)V
 
+    invoke-static/range {p0 .. p0}, Lcom/android/server/am/ActivityManagerService$FlymeActivityManagerServiceInjector;->flymeBroadcaseRecentTasksChanged(Lcom/android/server/am/ActivityManagerService;)V
+
     sget-boolean v7, Lcom/android/server/am/ActivityManagerService;->DEBUG_RECENTS:Z
 
     if-eqz v7, :cond_1
@@ -45131,7 +45138,7 @@
     invoke-static {v7, v8}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_d
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_flyme_0
 
     sget-boolean v7, Lcom/android/server/am/ActivityManagerService;->DEBUG_RECENTS:Z
 
@@ -45318,6 +45325,10 @@
     const/4 v2, 0x1
 
     goto/16 :goto_4
+    :cond_flyme_0
+    invoke-static/range {p0 .. p0}, Lcom/android/server/am/ActivityManagerService$FlymeActivityManagerServiceInjector;->flymeBroadcaseRecentTasksChanged(Lcom/android/server/am/ActivityManagerService;)V
+
+    return-void
 .end method
 
 .method final appDiedLocked(Lcom/android/server/am/ProcessRecord;)V
