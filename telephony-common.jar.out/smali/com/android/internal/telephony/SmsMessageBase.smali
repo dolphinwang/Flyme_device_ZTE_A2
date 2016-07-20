@@ -20,6 +20,8 @@
 
 .field protected destinationAddress:Lcom/android/internal/telephony/SmsAddress;
 
+.field protected destinationAddress:Lcom/android/internal/telephony/SmsAddress;
+
 .field protected mEmailBody:Ljava/lang/String;
 
 .field protected mEmailFrom:Ljava/lang/String;
