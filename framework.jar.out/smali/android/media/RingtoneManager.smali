@@ -251,15 +251,15 @@
 
     aput-object v1, v0, v6
 
-    const-string v1, "is_drm"
+    #const-string v1, "is_drm"
 
-    aput-object v1, v0, v7
+    #aput-object v1, v0, v7
 
-    const/4 v1, 0x5
+    #const/4 v1, 0x5
 
-    const-string v2, "drm_method"
+    #const-string v2, "drm_method"
 
-    aput-object v2, v0, v1
+    #aput-object v2, v0, v1
 
     sput-object v0, Landroid/media/RingtoneManager;->MEDIA_COLUMNS:[Ljava/lang/String;
 
