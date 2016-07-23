@@ -10,3 +10,5 @@ cp -a mcRegistry $TARGET_FILES_DIR/SYSTEM/app/
 cp -a bootanimation.zip $TARGET_FILES_DIR/SYSTEM/media/
 
 sed -i 's#ro.mtk_audio_profiles=1#ro.mtk_audio_profiles=0#g' $TARGET_FILES_DIR/SYSTEM/build.prop
+
+cp -a firmware/* $TARGET_FILES_DIR/BOOTABLE_IMAGES/
