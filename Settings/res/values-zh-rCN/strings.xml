@@ -6,4 +6,6 @@
     <item type="string" name="gesture_title">点击动作</item>
     <add-resource type="string" name="fp_title" />
     <item type="string" name="fp_title">指纹</item>
+    <add-resource type="string" name="button_backlight_title" />
+    <item type="string" name="button_backlight_title">按键灯</item>
 </resources>
