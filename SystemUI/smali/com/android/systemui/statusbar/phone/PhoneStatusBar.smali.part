@@ -36,7 +36,7 @@
     iput v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mIconSize:I
 
     .line 799
-    const v4, 0x7f0400bc
+    const v4, #com.android.systemui:layout@super_status_bar#t
 
     const/4 v5, 0x0
 
@@ -79,7 +79,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a0208
+    const v5, #com.android.systemui:id@status_bar#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -139,7 +139,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v5, 0x7f0a0213
+    const v5, #com.android.systemui:id@back_more_area#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -156,7 +156,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a025e
+    const v5, #com.android.systemui:id@panel_holder#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -179,7 +179,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a0217
+    const v5, #com.android.systemui:id@notification_panel#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -249,7 +249,7 @@
 
     move-result-object v6
 
-    const v8, 0x7f08001a
+    const v8, #com.android.systemui:color@notification_panel_solid_background#t
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -261,7 +261,7 @@
 
     .line 841
     :cond_1
-    const v4, 0x7f040006
+    const v4, #com.android.systemui:layout@heads_up#t
 
     const/4 v5, 0x0
 
@@ -343,7 +343,7 @@
     if-eqz v42, :cond_3
 
     .line 858
-    const v4, 0x7f040082
+    const v4, #com.android.systemui:layout@navigation_bar#t
 
     const/4 v5, 0x0
 
@@ -422,7 +422,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v5, 0x7f0a020d
+    const v5, #com.android.systemui:id@system_icon_area#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -439,7 +439,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v5, 0x7f0a020e
+    const v5, #com.android.systemui:id@system_icons#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -456,7 +456,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v5, 0x7f0a0210
+    const v5, #com.android.systemui:id@statusIcons#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -486,7 +486,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v5, 0x7f0a01b7
+    const v5, #com.android.systemui:id@notification_icon_area_inner#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -501,7 +501,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v5, 0x7f0a01b6
+    const v5, #com.android.systemui:id@notification_icon_area#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -557,7 +557,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v5, 0x7f0a01ba
+    const v5, #com.android.systemui:id@notificationIcons#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -574,7 +574,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v5, 0x7f0a020b
+    const v5, #com.android.systemui:id@status_bar_switcher#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -591,7 +591,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v5, 0x7f0a020a
+    const v5, #com.android.systemui:id@status_bar_contents#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -608,7 +608,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a021f
+    const v5, #com.android.systemui:id@notification_stack_scroller#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -649,7 +649,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0400b5
+    const v5, #com.android.systemui:layout@status_bar_notification_speed_bump#t
 
     move-object/from16 v0, p0
 
@@ -682,7 +682,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0400b0
+    const v5, #com.android.systemui:layout@status_bar_no_notifications#t
 
     move-object/from16 v0, p0
 
@@ -720,7 +720,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0400b2
+    const v5, #com.android.systemui:layout@status_bar_notification_dismiss_all#t
 
     move-object/from16 v0, p0
 
@@ -776,7 +776,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    const v5, 0x7f0a0223
+    const v5, #com.android.systemui:id@dismiss_btn#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->findViewById(I)Landroid/view/View;
 
@@ -808,7 +808,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a0255
+    const v5, #com.android.systemui:id@backdrop#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -825,7 +825,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mBackdrop:Lcom/android/systemui/statusbar/BackDropView;
 
-    const v5, 0x7f0a0257
+    const v5, #com.android.systemui:id@backdrop_front#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/BackDropView;->findViewById(I)Landroid/view/View;
 
@@ -842,7 +842,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mBackdrop:Lcom/android/systemui/statusbar/BackDropView;
 
-    const v5, 0x7f0a0256
+    const v5, #com.android.systemui:id@backdrop_back#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/BackDropView;->findViewById(I)Landroid/view/View;
 
@@ -870,7 +870,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a025a
+    const v5, #com.android.systemui:id@scrim_behind#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -884,7 +884,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a025f
+    const v5, #com.android.systemui:id@scrim_in_front#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -952,7 +952,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a0224
+    const v5, #com.android.systemui:id@header#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -978,7 +978,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a00ee
+    const v5, #com.android.systemui:id@keyguard_header#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -995,7 +995,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mKeyguardStatusBar:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
-    const v5, 0x7f0a01b6
+    const v5, #com.android.systemui:id@notification_icon_area#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -1040,7 +1040,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mKeyguardStatusBar:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
-    const v5, 0x7f0a0210
+    const v5, #com.android.systemui:id@statusIcons#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -1057,7 +1057,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a006f
+    const v5, #com.android.systemui:id@time#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -1074,7 +1074,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a008b
+    const v5, #com.android.systemui:id@keyguard_bottom_area#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -1100,7 +1100,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a008c
+    const v5, #com.android.systemui:id@keyguard_indication_text#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -1161,7 +1161,7 @@
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/MzKeyguardBottomAreaView;->setKeyguardIndicationController(Lcom/android/systemui/statusbar/KeyguardIndicationController;)V
 
     .line 975
-    const v4, 0x7f0b0012
+    const v4, #com.android.systemui:bool@enable_ticker#t
 
     move-object/from16 v0, v39
 
@@ -1185,7 +1185,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v5, 0x7f0a0083
+    const v5, #com.android.systemui:id@ticker_stub#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -1262,7 +1262,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v5, 0x7f0a024c
+    const v5, #com.android.systemui:id@tickerText#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -1276,7 +1276,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mTickerViewHolster:Landroid/view/View;
 
-    const v5, 0x7f0a024c
+    const v5, #com.android.systemui:id@tickerText#t
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1308,7 +1308,7 @@
     .end local v49    # "tickerView":Lcom/flyme/systemui/statusbar/phone/MarqueeTickerView;
     .end local v50    # "tickerViewHolster":Lcom/flyme/systemui/statusbar/phone/MarqueeTickerView;
     :cond_4
-    const v4, 0x7f0900cb
+    const v4, #com.android.systemui:dimen@status_bar_edge_ignore#t
 
     move-object/from16 v0, v39
 
@@ -1767,7 +1767,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0b0009
+    const v5, #com.android.systemui:bool@config_showRotationLock#t
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -1820,7 +1820,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v5, 0x7f0a0211
+    const v5, #com.android.systemui:id@signal_cluster#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -1834,7 +1834,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mKeyguardStatusBar:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
-    const v5, 0x7f0a0211
+    const v5, #com.android.systemui:id@signal_cluster#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -1848,7 +1848,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mHeader:Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;
 
-    const v5, 0x7f0a0211
+    const v5, #com.android.systemui:id@signal_cluster#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarHeaderView;->findViewById(I)Landroid/view/View;
 
@@ -1989,7 +1989,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a0066
+    const v5, #com.android.systemui:id@carrier_label#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -2019,7 +2019,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mKeyguardStatusBar:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
-    const v5, 0x7f0a00f2
+    const v5, #com.android.systemui:id@keyguard_clock#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -2034,7 +2034,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mKeyguardStatusBar:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
-    const v5, 0x7f0a00f1
+    const v5, #com.android.systemui:id@keyguard_carrier_text#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -2049,7 +2049,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a0227
+    const v5, #com.android.systemui:id@header_carrier_label#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -2066,7 +2066,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a00f1
+    const v5, #com.android.systemui:id@keyguard_carrier_text#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -2283,7 +2283,7 @@
 
     iget-object v5, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v6, 0x7f0a0220
+    const v6, #com.android.systemui:id@keyguard_user_switcher#t
 
     invoke-virtual {v5, v6}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -2314,7 +2314,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a01c5
+    const v5, #com.android.systemui:id@quick_settings_panel#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -2575,7 +2575,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v5, 0x7f0a0212
+    const v5, #com.android.systemui:id@battery#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -2640,7 +2640,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mKeyguardStatusBar:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
-    const v5, 0x7f0a0212
+    const v5, #com.android.systemui:id@battery#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -2657,7 +2657,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mKeyguardStatusBar:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
-    const v5, 0x7f0a00f4
+    const v5, #com.android.systemui:id@battery_level#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -2674,7 +2674,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v5, 0x7f0a0082
+    const v5, #com.android.systemui:id@battery_percent#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -2702,7 +2702,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v5, 0x7f0a020f
+    const v5, #com.android.systemui:id@connection_rate#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -2730,7 +2730,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mKeyguardStatusBar:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
 
-    const v5, 0x7f0a020f
+    const v5, #com.android.systemui:id@connection_rate#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -2810,7 +2810,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v6, 0x7f0a025b
+    const v6, #com.android.systemui:id@brightness_mirror#t
 
     invoke-virtual {v4, v6}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -2967,7 +2967,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a00a7
+    const v5, #com.android.systemui:id@keyguard_music_view#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -3044,7 +3044,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a0253
+    const v5, #com.android.systemui:id@keyguard_background_frame#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -3061,7 +3061,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a0258
+    const v5, #com.android.systemui:id@blur_background#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -3075,7 +3075,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a0259
+    const v5, #com.android.systemui:id@blur_background_cover#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
@@ -3174,7 +3174,7 @@
 
     iget-object v4, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    const v5, 0x7f0a0254
+    const v5, #com.android.systemui:id@blur_anim_background#t
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
 
