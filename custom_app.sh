@@ -11,6 +11,8 @@ mv $tempSmaliDir/res/drawable-xhdpi-v4/stat_sys_upload_anim2.png $tempSmaliDir/r
 mv $tempSmaliDir/res/drawable-xhdpi-v4/stat_sys_upload_anim3.png $tempSmaliDir/res/drawable-xxhdpi-v4/stat_sys_upload_anim3.png
 mv $tempSmaliDir/res/drawable-xhdpi-v4/stat_sys_upload_anim4.png $tempSmaliDir/res/drawable-xxhdpi-v4/stat_sys_upload_anim4.png
 mv $tempSmaliDir/res/drawable-xhdpi-v4/stat_sys_upload_anim5.png $tempSmaliDir/res/drawable-xxhdpi-v4/stat_sys_upload_anim5.png
+echo ">>> in custom_app for $apkBaseName to fix notify disk full img big"
+rm -rf $tempSmaliDir/res/drawable-xhdpi-v4/stat_notify_disk_full.png
 fi
 
 #if [ "$apkBaseName" = "MzSyncService" ];then
