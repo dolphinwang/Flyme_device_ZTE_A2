@@ -13,7 +13,7 @@ mv $tempSmaliDir/res/drawable-xhdpi-v4/stat_sys_upload_anim4.png $tempSmaliDir/r
 mv $tempSmaliDir/res/drawable-xhdpi-v4/stat_sys_upload_anim5.png $tempSmaliDir/res/drawable-xxhdpi-v4/stat_sys_upload_anim5.png
 fi
 
-if [ "$apkBaseName" = "MzSyncService" ];then
-echo ">>> in custom_app for $apkBaseName to fix sync img big"
-mv $tempSmaliDir/res/drawable-nodpi-v4/mz_stat_notify_sync_succeed.png $tempSmaliDir/res/drawable-xxxhdpi-v4/mz_stat_notify_sync_succeed.png
-fi
+#if [ "$apkBaseName" = "MzSyncService" ];then
+#echo ">>> in custom_app for $apkBaseName to fix sync img big"
+#mv $tempSmaliDir/res/drawable-nodpi-v4/mz_stat_notify_sync_succeed.png $tempSmaliDir/res/drawable-xxxhdpi-v4/mz_stat_notify_sync_succeed.png
+#fi
