@@ -404,7 +404,7 @@
 
     .line 733
     .local v0, "extraValue":I
-    if-ne v0, v5, :cond_1
+    if-eq v0, v5, :cond_1
 
     .line 734
     const-string v3, " or "
