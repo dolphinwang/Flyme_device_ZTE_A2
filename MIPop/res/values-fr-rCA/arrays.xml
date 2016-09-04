@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mipop_first_key_entries">
+        <item>Touche Retour en arrière</item>
+        <item>Touche Accueil</item>
+    </string-array>
+    <string-array name="entries_key">
+        <item>Domicile</item>
+        <item>Précédent</item>
+        <item>Applications récentes</item>
+        <item>Verrouillage du clavier</item>
+        <item>"Capture d'écran"</item>
+        <item>Silencieux</item>
+        <item>"BARRE D'ÉTAT"</item>
+        <item>Recommencer</item>
+        <item>Éteindre</item>
+        <item>Menu</item>
+    </string-array>
+</resources>

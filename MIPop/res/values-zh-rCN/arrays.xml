@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="year">
+        <item>年</item>
+    </string-array>
+    <string-array name="month">
+        <item>月</item>
+    </string-array>
+    <string-array name="day">
+        <item>日</item>
+    </string-array>
+    <string-array name="mipop_first_key_entries">
+        <item>返回键</item>
+        <item>HOME键</item>
+    </string-array>
+    <string-array name="entries_key">
+        <item>主屏幕</item>
+        <item>返回</item>
+        <item>最近应用</item>
+        <item>锁屏</item>
+        <item>截屏</item>
+        <item>静音</item>
+        <item>下拉状态栏</item>
+        <item>重启</item>
+        <item>关机</item>
+        <item>菜单</item>
+    </string-array>
+</resources>

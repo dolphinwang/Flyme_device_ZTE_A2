@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mipop_first_key_entries">
+        <item>Tecla atrás</item>
+        <item>Tecla de inicio</item>
+    </string-array>
+    <string-array name="entries_key">
+        <item>Local</item>
+        <item>Atrás</item>
+        <item>Aplicaciones recientes</item>
+        <item>Protección de clave</item>
+        <item>Captura de pantalla</item>
+        <item>Silenciar</item>
+        <item>Barra de estado</item>
+        <item>Reiniciar</item>
+        <item>Apagar</item>
+        <item>Menú</item>
+    </string-array>
+</resources>

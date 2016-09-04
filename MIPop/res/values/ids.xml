@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="action_mode_close_button" />
+    <item type="id" name="alertTitle" />
+    <item type="id" name="amPm" />
+    <item type="id" name="body" />
+    <item type="id" name="buttonPanel" />
+    <item type="id" name="calendar_view" />
+    <item type="id" name="cancel" />
+    <item type="id" name="contentPanel" />
+    <item type="id" name="custom" />
+    <item type="id" name="customPanel" />
+    <item type="id" name="datePicker" />
+    <item type="id" name="day" />
+    <item type="id" name="decrement" />
+    <item type="id" name="divider" />
+    <item type="id" name="edittext_container" />
+    <item type="id" name="hour" />
+    <item type="id" name="icon" />
+    <item type="id" name="increment" />
+    <item type="id" name="left_icon" />
+    <item type="id" name="linearLayout" />
+    <item type="id" name="linecancel" />
+    <item type="id" name="lineok" />
+    <item type="id" name="mdActiveViewPosition" />
+    <item type="id" name="mdContent" />
+    <item type="id" name="mdMenu" />
+    <item type="id" name="md__background" />
+    <item type="id" name="md__content" />
+    <item type="id" name="md__drawer" />
+    <item type="id" name="md__menu" />
+    <item type="id" name="md__splitbackground" />
+    <item type="id" name="md__translationX" />
+    <item type="id" name="md__translationY" />
+    <item type="id" name="message" />
+    <item type="id" name="minute" />
+    <item type="id" name="modifyTime" />
+    <item type="id" name="month" />
+    <item type="id" name="numberpicker_input" />
+    <item type="id" name="ok" />
+    <item type="id" name="parentPanel" />
+    <item type="id" name="pickers" />
+    <item type="id" name="progress" />
+    <item type="id" name="radio" />
+    <item type="id" name="repeat_fri" />
+    <item type="id" name="repeat_mon" />
+    <item type="id" name="repeat_sat" />
+    <item type="id" name="repeat_sun" />
+    <item type="id" name="repeat_thu" />
+    <item type="id" name="repeat_tue" />
+    <item type="id" name="repeat_wed" />
+    <item type="id" name="right_icon" />
+    <item type="id" name="scrollView" />
+    <item type="id" name="select_dialog_listview" />
+    <item type="id" name="switchWidget" />
+    <item type="id" name="text1" />
+    <item type="id" name="text2" />
+    <item type="id" name="textSpacerNoButtons" />
+    <item type="id" name="timePickerLayout" />
+    <item type="id" name="title" />
+    <item type="id" name="titleDivider" />
+    <item type="id" name="titleDividerTop" />
+    <item type="id" name="title_container" />
+    <item type="id" name="title_template" />
+    <item type="id" name="topPanel" />
+    <item type="id" name="week" />
+    <item type="id" name="weekText" />
+    <item type="id" name="year" />
+    <item type="id" name="zte_popup_list" />
+    <item type="id" name="on" />
+    <item type="id" name="off" />
+    <item type="id" name="back_button" />
+    <item type="id" name="breadcrumb_section" />
+    <item type="id" name="button1" />
+    <item type="id" name="button2" />
+    <item type="id" name="button3" />
+    <item type="id" name="button_bar" />
+    <item type="id" name="headers" />
+    <item type="id" name="icon_frame" />
+    <item type="id" name="list_footer" />
+    <item type="id" name="next_button" />
+    <item type="id" name="prefs" />
+    <item type="id" name="prefs_frame" />
+    <item type="id" name="seekbar" />
+    <item type="id" name="skip_button" />
+    <item type="id" name="not_pressed" />
+    <item type="id" name="pressed" />
+    <item type="id" name="ib_add" />
+    <item type="id" name="progress_percent" />
+    <item type="id" name="progress_number" />
+    <item type="id" name="indicator" />
+    <item type="id" name="button_always" />
+    <item type="id" name="button_once" />
+    <item type="id" name="checkbox_always" />
+    <item type="id" name="resolver_grid" />
+    <item type="id" name="timePicker" />
+    <item type="id" name="option1" />
+    <item type="id" name="option2" />
+    <item type="id" name="option3" />
+    <item type="id" name="search_bar" />
+    <item type="id" name="search_badge" />
+    <item type="id" name="search_button" />
+    <item type="id" name="search_edit_frame" />
+    <item type="id" name="search_mag_icon" />
+    <item type="id" name="search_plate" />
+    <item type="id" name="search_src_text" />
+    <item type="id" name="search_close_btn" />
+    <item type="id" name="submit_area" />
+    <item type="id" name="search_go_btn" />
+    <item type="id" name="search_voice_btn" />
+    <item type="id" name="date_picker_day" />
+    <item type="id" name="date_picker_header" />
+    <item type="id" name="date_picker_month" />
+    <item type="id" name="date_picker_month_and_day_layout" />
+    <item type="id" name="date_picker_month_day_year_layout" />
+    <item type="id" name="date_picker_year" />
+    <item type="id" name="day_picker_selector_layout" />
+    <item type="id" name="hours" />
+    <item type="id" name="minutes" />
+    <item type="id" name="month_text_view" />
+    <item type="id" name="radial_picker" />
+    <item type="id" name="separator" />
+    <item type="id" name="time_header" />
+    <item type="id" name="ampm_label" />
+    <item type="id" name="animator" />
+    <item type="id" name="divider1" />
+    <item type="id" name="divider2" />
+    <item type="id" name="photodivider" />
+    <item type="id" name="longpress" />
+    <item type="id" name="text_cancel" />
+    <item type="id" name="reset" />
+    <item type="id" name="text_reset" />
+    <item type="id" name="power" />
+    <item type="id" name="text_power" />
+    <item type="id" name="airplanemode" />
+    <item type="id" name="airplane" />
+    <item type="id" name="text_airplane" />
+    <item type="id" name="silent_mode" />
+    <item type="id" name="silent" />
+    <item type="id" name="text_silent" />
+    <item type="id" name="reset_action" />
+    <item type="id" name="power_action" />
+    <item type="id" name="decor_content_parent" />
+    <item type="id" name="content" />
+    <item type="id" name="action_bar_container" />
+    <item type="id" name="action_bar" />
+    <item type="id" name="action_context_bar" />
+    <item type="id" name="action_bar_title" />
+    <item type="id" name="action_bar_subtitle" />
+    <item type="id" name="space" />
+    <item type="id" name="checkbox" />
+    <item type="id" name="shortcut" />
+    <item type="id" name="submenuarrow" />
+    <item type="id" name="text_container" />
+    <item type="id" name="split_action_bar" />
+    <item type="id" name="container" />
+    <item type="id" name="temp" />
+    <item type="id" name="tabs" />
+    <item type="id" name="pager" />
+    <item type="id" name="colors" />
+    <item type="id" name="space1" />
+    <item type="id" name="picker_year" />
+    <item type="id" name="space2" />
+    <item type="id" name="picker_month" />
+    <item type="id" name="space3" />
+    <item type="id" name="picker_day" />
+    <item type="id" name="lunar_choice" />
+    <item type="id" name="widgetLayout">false</item>
+    <item type="id" name="widgetMiPop">false</item>
+    <item type="id" name="mipopLayout">false</item>
+    <item type="id" name="widgetOn">false</item>
+    <item type="id" name="imageView2">false</item>
+    <item type="id" name="widgetOff">false</item>
+    <item type="id" name="imageView1">false</item>
+    <item type="id" name="text">false</item>
+    <item type="id" name="widgetFullScreen">false</item>
+    <item type="id" name="fullLayout">false</item>
+    <item type="id" name="widgetFullOn">false</item>
+    <item type="id" name="imageView3">false</item>
+    <item type="id" name="widgetFullOff">false</item>
+    <item type="id" name="imageView4">false</item>
+    <item type="id" name="keyLayout">false</item>
+    <item type="id" name="upLayout">false</item>
+    <item type="id" name="upImageViewCycle">false</item>
+    <item type="id" name="upImageView">false</item>
+    <item type="id" name="leftLayout">false</item>
+    <item type="id" name="leftImageViewCycle">false</item>
+    <item type="id" name="leftImageView">false</item>
+    <item type="id" name="midLayout">false</item>
+    <item type="id" name="midImageViewCycle">false</item>
+    <item type="id" name="midImageView">false</item>
+    <item type="id" name="rightLayout">false</item>
+    <item type="id" name="rightImageViewCycle">false</item>
+    <item type="id" name="rightImageView">false</item>
+    <item type="id" name="downLayout">false</item>
+    <item type="id" name="downImageViewCycle">false</item>
+    <item type="id" name="downImageView">false</item>
+    <item type="id" name="key_list">false</item>
+    <item type="id" name="layout">false</item>
+    <item type="id" name="clipPathView1">false</item>
+    <item type="id" name="bottom_btns">false</item>
+    <item type="id" name="btn_cancel">false</item>
+    <item type="id" name="btn_save">false</item>
+    <item type="id" name="btn_paint">false</item>
+    <item type="id" name="btn_share">false</item>
+    <item type="id" name="image_menu">false</item>
+    <item type="id" name="menu_content">false</item>
+    <item type="id" name="btn_crop_oval">false</item>
+    <item type="id" name="btn_crop_rect">false</item>
+    <item type="id" name="btn_crop_path">false</item>
+    <item type="id" name="btn_capture_textview">false</item>
+    <item type="id" name="btn_capture_button1">false</item>
+    <item type="id" name="btn_capture">false</item>
+    <item type="id" name="btn_capture_button2">false</item>
+    <item type="id" name="base">false</item>
+    <item type="id" name="image">false</item>
+    <item type="id" name="discard">false</item>
+    <item type="id" name="save">false</item>
+    <item type="id" name="paint">false</item>
+    <item type="id" name="share">false</item>
+    <item type="id" name="fullScreem">false</item>
+    <item type="id" name="viewFlipper1">false</item>
+    <item type="id" name="linearLayout3">false</item>
+    <item type="id" name="linearLayout8">false</item>
+    <item type="id" name="linearLayout7">false</item>
+    <item type="id" name="linearLayout9">false</item>
+    <item type="id" name="linearLayout12">false</item>
+    <item type="id" name="linearLayout13">false</item>
+    <item type="id" name="imageView5">false</item>
+    <item type="id" name="gifView1">false</item>
+    <item type="id" name="imageView6">false</item>
+    <item type="id" name="linearLayout14">false</item>
+    <item type="id" name="linearLayout10">false</item>
+    <item type="id" name="linearLayout11">false</item>
+    <item type="id" name="linearLayout4">false</item>
+    <item type="id" name="linearLayout5">false</item>
+    <item type="id" name="linearLayout18">false</item>
+    <item type="id" name="linearLayout19">false</item>
+    <item type="id" name="linearLayout20">false</item>
+    <item type="id" name="linearLayout6">false</item>
+    <item type="id" name="textView2">false</item>
+    <item type="id" name="helpMipopImage1">false</item>
+    <item type="id" name="textView1">false</item>
+    <item type="id" name="helpMipopImage2">false</item>
+    <item type="id" name="helpMipopImage3">false</item>
+    <item type="id" name="image_prefrence">false</item>
+    <item type="id" name="change_key_layout">false</item>
+    <item type="id" name="change_key_chevron_right">false</item>
+    <item type="id" name="power_off">false</item>
+    <item type="id" name="imageView_power_off">false</item>
+    <item type="id" name="textView_power_off">false</item>
+    <item type="id" name="reboot">false</item>
+    <item type="id" name="imageView_reboot">false</item>
+    <item type="id" name="textView_reboot">false</item>
+    <item type="id" name="lock_screen">false</item>
+    <item type="id" name="imageView_lock_screen">false</item>
+    <item type="id" name="textView_lock_screen">false</item>
+    <item type="id" name="screenshots">false</item>
+    <item type="id" name="imageView_screenshots">false</item>
+    <item type="id" name="textView_screenshots">false</item>
+    <item type="id" name="volume">false</item>
+    <item type="id" name="imageView_volume">false</item>
+    <item type="id" name="textView_volume">false</item>
+    <item type="id" name="mute">false</item>
+    <item type="id" name="imageView_mute">false</item>
+    <item type="id" name="textView_mute">false</item>
+    <item type="id" name="layout_main">false</item>
+    <item type="id" name="paintpad">false</item>
+    <item type="id" name="main_activity_cancel">false</item>
+    <item type="id" name="main_activity_save">false</item>
+    <item type="id" name="main_activity_share">false</item>
+    <item type="id" name="main_activity_undo">false</item>
+    <item type="id" name="main_activity_redo">false</item>
+    <item type="id" name="layout_menu">false</item>
+    <item type="id" name="layout_menu_content">false</item>
+    <item type="id" name="menu_title">false</item>
+    <item type="id" name="btn_close_menu">false</item>
+    <item type="id" name="btn_eraser">false</item>
+    <item type="id" name="btn_pen_normal">false</item>
+    <item type="id" name="btn_pen_blur">false</item>
+    <item type="id" name="btn_pen_emboss">false</item>
+    <item type="id" name="layout_menu_eraser">false</item>
+    <item type="id" name="seekBar_Eraser_Width">false</item>
+    <item type="id" name="image_eraser_width">false</item>
+    <item type="id" name="btn_clear_all">false</item>
+    <item type="id" name="layout_menu_pen">false</item>
+    <item type="id" name="penPreview">false</item>
+    <item type="id" name="seekBar_Pen_Width">false</item>
+    <item type="id" name="shape_pathline">false</item>
+    <item type="id" name="shape_line">false</item>
+    <item type="id" name="shape_rect">false</item>
+    <item type="id" name="shape_circle">false</item>
+    <item type="id" name="shape_oval">false</item>
+    <item type="id" name="shape_poin">false</item>
+    <item type="id" name="btn_color_red">false</item>
+    <item type="id" name="btn_color_yellow">false</item>
+    <item type="id" name="btn_color_green">false</item>
+    <item type="id" name="btn_color_dkblue">false</item>
+    <item type="id" name="btn_color_ltblue">false</item>
+    <item type="id" name="btn_color_white">false</item>
+    <item type="id" name="btn_color_black">false</item>
+    <item type="id" name="btn_color_rainbow">false</item>
+    <item type="id" name="color_picker">false</item>
+    <item type="id" name="textLayout">false</item>
+    <item type="id" name="scrool_hight_text">false</item>
+    <item type="id" name="imageView">false</item>
+    <item type="id" name="textView">false</item>
+    <item type="id" name="radioButton">false</item>
+    <item type="id" name="singlegridwidgetLayout">false</item>
+    <item type="id" name="bg_btns">false</item>
+    <item type="id" name="singleWidgetOff">false</item>
+    <item type="id" name="singleImageView1">false</item>
+    <item type="id" name="singleWidgetOn">false</item>
+    <item type="id" name="singleImageView2">false</item>
+    <item type="id" name="singleText">false</item>
+    <item type="id" name="smart_remind_image">false</item>
+    <item type="id" name="smart_remind">false</item>
+    <item type="id" name="close_button">false</item>
+    <item type="id" name="switch1">false</item>
+</resources>

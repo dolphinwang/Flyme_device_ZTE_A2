@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="year">
+        <item>Jahr</item>
+    </string-array>
+    <string-array name="month">
+        <item>Monat</item>
+    </string-array>
+    <string-array name="day">
+        <item>Tag</item>
+    </string-array>
+    <string-array name="mipop_first_key_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="mipop_first_key_entries">
+        <item>Zurück-Taste</item>
+        <item>Hauptmenü-Taste</item>
+    </string-array>
+    <string-array name="entries_key">
+        <item>Startseite</item>
+        <item>Zurück</item>
+        <item>Zuletzt aktive Apps</item>
+        <item>Keyguard</item>
+        <item>Screenshots</item>
+        <item>Ton aus</item>
+        <item>Statusleiste</item>
+        <item>Neustart</item>
+        <item>Ausschalten</item>
+        <item>Menü</item>
+    </string-array>
+</resources>

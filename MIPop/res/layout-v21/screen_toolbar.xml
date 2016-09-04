@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zte.mifavor.actionbar.ActionBarOverlayLayout android:id="@id/decor_content_parent" android:layout_width="fill_parent" android:layout_height="fill_parent" android:splitMotionEvents="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/content" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.zte.mifavor.actionbar.ActionbarContainer android:gravity="top" android:id="@id/action_bar_container" android:layout_width="fill_parent" android:layout_height="@dimen/appbar_height01" android:layout_alignParentTop="true" android:transitionName="android:action_bar" android:touchscreenBlocksFocus="true">
+        <com.zte.mifavor.actionbar.ToolBarActionBar android:id="@id/action_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" style="?android:attr/toolbarStyle" />
+        <com.zte.mifavor.actionbar.ActionBarContextView android:id="@id/action_context_bar" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" style="?android:attr/toolbarStyle" />
+    </com.zte.mifavor.actionbar.ActionbarContainer>
+    <com.zte.mifavor.widget.ToolBarZTE android:id="@id/split_action_bar" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/appbar_height01" android:elevation="50.0px" />
+</com.zte.mifavor.actionbar.ActionBarOverlayLayout>

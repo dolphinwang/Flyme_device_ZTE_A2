@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="preference_fragment_scrollbarStyle">0x2000000</integer>
+    <integer name="preference_screen_header_scrollbarStyle">0x2000000</integer>
+    <integer name="preferences_left_pane_weight">4</integer>
+    <integer name="preferences_right_pane_weight">6</integer>
+    <integer name="config_switch_width_factor">4</integer>
+    <integer name="config_switch_height_extend">0</integer>
+    <integer name="config_lowBatteryWarningLevel_ten">10</integer>
+    <integer name="config_lowBatteryWarningLevel_five">5</integer>
+    <integer name="config_lowBatteryWarningLevel_two">2</integer>
+    <integer name="config_maxResolverActivityColumns">3</integer>
+    <integer name="zte_config_ntpPollingIntervalShorter">10000</integer>
+    <integer name="zte_config_ntpRetry">13</integer>
+    <integer name="zte_config_ntpFail_timesMax">6</integer>
+    <integer name="zte_config_ntpTimeout">2000</integer>
+    <integer name="mipop">0</integer>
+</resources>

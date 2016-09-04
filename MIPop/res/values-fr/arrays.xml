@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="year">
+        <item>année</item>
+    </string-array>
+    <string-array name="month">
+        <item>mois</item>
+    </string-array>
+    <string-array name="day">
+        <item>Jour</item>
+    </string-array>
+    <string-array name="mipop_first_key_entries">
+        <item>Touche Retour</item>
+        <item>Touche Accueil</item>
+    </string-array>
+</resources>

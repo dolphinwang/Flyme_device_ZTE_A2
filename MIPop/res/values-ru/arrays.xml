@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mipop_first_key_entries">
+        <item>Кнопка назад</item>
+        <item>Кнопка домой</item>
+    </string-array>
+    <string-array name="entries_key">
+        <item>Домой</item>
+        <item>Назад</item>
+        <item>Последние приложения</item>
+        <item>Блокировка</item>
+        <item>Снимок экрана</item>
+        <item>Без звука</item>
+        <item>Панель уведомлений</item>
+        <item>Перезагрузка</item>
+        <item>Выключение</item>
+        <item>Меню</item>
+    </string-array>
+</resources>

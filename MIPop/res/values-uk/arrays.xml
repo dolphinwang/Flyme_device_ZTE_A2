@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mipop_first_key_entries">
+        <item>Клавіша \"Назад\"</item>
+        <item>Клавіша \"Домашній\"</item>
+    </string-array>
+</resources>

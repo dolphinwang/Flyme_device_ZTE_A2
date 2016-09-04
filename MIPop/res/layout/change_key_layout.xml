@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="54.0dip">
+        <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="#ff5976b3" android:layout_gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="10.0dip" android:text="@string/change_key_text" />
+    </LinearLayout>
+    <RelativeLayout android:id="@id/keyLayout" android:layout_width="fill_parent" android:layout_height="182.0dip">
+        <RelativeLayout android:id="@id/upLayout" android:layout_width="42.0dip" android:layout_height="42.0dip" android:layout_marginLeft="166.0dip">
+            <ImageView android:id="@id/upImageViewCycle" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ImageView android:id="@id/upImageView" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_centerInParent="true" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/leftLayout" android:layout_width="42.0dip" android:layout_height="42.0dip" android:layout_marginLeft="115.0dip" android:layout_marginTop="70.0dip">
+            <ImageView android:id="@id/leftImageViewCycle" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ImageView android:id="@id/leftImageView" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_centerInParent="true" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center" android:id="@id/midLayout" android:layout_width="42.0dip" android:layout_height="42.0dip" android:layout_marginLeft="208.0dip" android:layout_marginTop="42.0dip">
+            <ImageView android:id="@id/midImageViewCycle" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ImageView android:id="@id/midImageView" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_centerInParent="true" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center" android:id="@id/rightLayout" android:layout_width="42.0dip" android:layout_height="42.0dip" android:layout_marginLeft="208.0dip" android:layout_marginTop="98.0dip">
+            <ImageView android:id="@id/rightImageViewCycle" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ImageView android:id="@id/rightImageView" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_centerInParent="true" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/downLayout" android:layout_width="42.0dip" android:layout_height="42.0dip" android:layout_marginLeft="166.0dip" android:layout_marginTop="140.0dip">
+            <ImageView android:id="@id/downImageViewCycle" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ImageView android:id="@id/downImageView" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_centerInParent="true" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="#ff5976b3" android:layout_gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="10.0dip" android:text="@string/change_key" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ListView android:id="@id/key_list" android:paddingLeft="0.0dip" android:paddingRight="4.0dip" android:layout_width="fill_parent" android:layout_height="0.0dip" android:divider="@null" android:choiceMode="singleChoice" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

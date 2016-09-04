@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mipop_first_key_entries">
+        <item>戻るキー</item>
+        <item>ホームキー</item>
+    </string-array>
+    <string-array name="entries_key">
+        <item>Home</item>
+        <item>Back</item>
+        <item>最近のアプリ</item>
+        <item>画面ロック</item>
+        <item>画面キャプチャ</item>
+        <item>ミュート</item>
+        <item>ステータスバー</item>
+        <item>再起動</item>
+        <item>電源を切る</item>
+        <item>メニュー</item>
+    </string-array>
+</resources>

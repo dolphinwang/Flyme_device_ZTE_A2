@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="string" name="timepicker_ampm_circle_radius_multiplier">0.19</item>
+    <item type="string" name="timepicker_circle_radius_multiplier">0.82</item>
+    <item type="string" name="timepicker_circle_radius_multiplier_24HourMode">0.85</item>
+    <item type="string" name="timepicker_numbers_radius_multiplier_inner">0.6</item>
+    <item type="string" name="timepicker_numbers_radius_multiplier_normal">0.81</item>
+    <item type="string" name="timepicker_numbers_radius_multiplier_outer">0.83</item>
+    <item type="string" name="timepicker_selection_radius_multiplier">0.16</item>
+    <item type="string" name="timepicker_text_size_multiplier_inner">0.14</item>
+    <item type="string" name="timepicker_text_size_multiplier_normal">0.17</item>
+    <item type="string" name="timepicker_text_size_multiplier_outer">0.11</item>
+    <item type="string" name="timepicker_transition_end_radius_multiplier">1.3</item>
+    <item type="string" name="timepicker_transition_mid_radius_multiplier">0.95</item>
+</resources>

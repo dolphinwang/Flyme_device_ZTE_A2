@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="config_autoBrightnessLevels">
+        <item>10</item>
+        <item>45</item>
+        <item>60</item>
+        <item>150</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>7000</item>
+    </integer-array>
+    <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>20</item>
+        <item>35</item>
+        <item>60</item>
+        <item>75</item>
+        <item>115</item>
+        <item>160</item>
+        <item>180</item>
+        <item>200</item>
+        <item>240</item>
+        <item>255</item>
+    </integer-array>
+    <integer-array name="config_autoBrightnessButtonBacklightValues">
+        <item>250</item>
+        <item>250</item>
+        <item>250</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+    <integer-array name="config_autoBrightnessKeyboardBacklightValues">
+        <item>250</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+    <string-array name="config_locationProviderPackageNames">
+        <item>com.android.location.fused</item>
+        <item>com.baidu.map.location</item>
+    </string-array>
+    <string-array name="zte_config_ntpServers">
+        <item>cn.pool.ntp.org</item>
+        <item>210.72.145.39</item>
+        <item>asia.pool.ntp.org</item>
+        <item>pool.ntp.org</item>
+    </string-array>
+    <string-array name="year">
+        <item>year</item>
+    </string-array>
+    <string-array name="month">
+        <item>month</item>
+    </string-array>
+    <string-array name="day">
+        <item>day</item>
+    </string-array>
+    <string-array name="sim_names_cm">
+        <item>中国移动</item>
+        <item>CMCC</item>
+        <item>China Mobile</item>
+    </string-array>
+    <string-array name="sim_names_cu">
+        <item>中国联通</item>
+        <item>CHN-UNICOM</item>
+        <item>China Unicom</item>
+    </string-array>
+    <string-array name="sim_names_ct">
+        <item>中国电信</item>
+        <item>CHN-CT</item>
+        <item>China Telecom</item>
+    </string-array>
+    <string-array name="mipop_first_key_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="mipop_first_key_entries">
+        <item>Back key</item>
+        <item>Home key</item>
+    </string-array>
+    <string-array name="entries_key">
+        <item>Home</item>
+        <item>Back</item>
+        <item>Recent Apps</item>
+        <item>Lock screen</item>
+        <item>Screenshot</item>
+        <item>Mute</item>
+        <item>Status bar</item>
+        <item>Restart</item>
+        <item>Shutdown</item>
+        <item>Menu</item>
+    </string-array>
+    <string-array name="drawings">
+        <item>随笔</item>
+        <item>直线</item>
+        <item>矩形</item>
+        <item>椭圆</item>
+        <item>圆形</item>
+        <item>点</item>
+        <item>橡皮擦</item>
+    </string-array>
+</resources>

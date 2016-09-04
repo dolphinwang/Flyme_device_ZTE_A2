@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mipop_first_key_entries">
+        <item>취소 버튼</item>
+        <item>홈 버튼</item>
+    </string-array>
+</resources>

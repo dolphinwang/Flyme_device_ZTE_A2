@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mipop_first_key_entries">
+        <item>返回鍵</item>
+        <item>首頁鍵</item>
+    </string-array>
+    <string-array name="entries_key">
+        <item>主屏幕</item>
+        <item>返回</item>
+        <item>最近應用</item>
+        <item>鎖屏</item>
+        <item>截屏</item>
+        <item>靜音</item>
+        <item>下拉狀態欄</item>
+        <item>重啟</item>
+        <item>關機</item>
+        <item>菜單</item>
+    </string-array>
+</resources>

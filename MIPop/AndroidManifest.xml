@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:androidzte="http://schemas.android.com/apk/res/androidzte" android:sharedUserId="android.uid.system" package="com.android.mipop" platformBuildVersionCode="23" platformBuildVersionName="6.0.1">
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.REBOOT"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name=".api.MyApplication" android:persistent="true" android:supportsRtl="true" android:theme="@style/Theme.ZTE.Light">
+        <meta-data android:name="appuid" android:value="4d492d504f50636f6c6c656374696f6e"/>
+        <meta-data android:name="marketinfo" android:value="preload"/>
+        <activity android:label="@string/app_name" android:name=".MIPopActivity" android:parentActivityName="com.android.settings.SettingsMain" android:screenOrientation="portrait" android:theme="@style/MipopTheme">
+            <meta-data android:name="appDescription" android:value="ZTE_appName|MiPOP_country|GENERIC_operator|GENERIC_device|MTK-07"/>
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.android.settings.SettingsMain"/>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.android.mipop.help.HelpActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:label="@string/screenshots" android:name=".cropimage.CropImageEx" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.CropImage"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".paintpad.activities.MainActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.PaintPad"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name=".cropimage.MenuActivity" android:theme="@style/Theme.ZTE.Light.Dialog"/>
+        <activity android:label="" android:name=".longscreenshot.ShowDialogActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Material.Light.Dialog.Alert"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name=".help.SmartRemindDialogActivity" android:taskAffinity="android.task.mipop_remind_dialog" android:theme="@style/smartRemindDlgTheme">
+            <intent-filter/>
+        </activity>
+        <service android:exported="true" android:name=".cropimage.CropImageService"/>
+        <receiver android:name="com.android.mipop.cropimage.ServiceReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="com.android.mipop.cropimage"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.android.mipop.help.SmartRemindStandByReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+                <action android:name="mipop.help.action.TEN_DAYS_REACHED"/>
+                <action android:name="mipop.help.action.SIXTY_DAYS_REACHED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:name=".cropimage.CropImage" android:theme="@style/Transparent">
+            <intent-filter>
+                <action android:name="com.android.mipop.cropimage"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name=".ChangeKeyActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.android.mipop.changekey"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name=".longscreenshot.StaticReceiver">
+            <intent-filter>
+                <action android:name="com.zte.screenshotstart"/>
+                <action android:name="com.zte.windowscrollover"/>
+                <action android:name="com.zte.screenshotmodeover"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name=".longscreenshot.LongCropImageService">
+            <intent-filter>
+                <action android:name="com.android.mipop.longscreenshot"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.android.mipop.ZTEUserSwitchReceiver">
+            <intent-filter>
+                <action android:name="zte.intent.action.USER_SWITCHED"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

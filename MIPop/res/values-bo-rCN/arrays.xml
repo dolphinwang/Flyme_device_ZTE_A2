@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mipop_first_key_entries">
+        <item>ཕྱིར་ལོག་མཐེབ།</item>
+        <item>HOMEམཐེབ།</item>
+    </string-array>
+    <string-array name="entries_key">
+        <item>སྡོད་གནས།</item>
+        <item>ཕྱིར་ལོག</item>
+        <item>"ཉེར་ཆར་ཉེར་སྤྱོད།  "</item>
+        <item>"སྒོ་ཐེབས་བརྙན་ཤེལ། "</item>
+        <item>"བརྙན་ངོས་བཀག་ཕབ། "</item>
+        <item>སྒྲ་མེད།</item>
+        <item>"མར་འཐེན་རྣམ་པའི་སྒྲོམ། "</item>
+        <item>"སྐྱར་སྐུལ། "</item>
+        <item>སྒོ་རྒྱོབ།</item>
+        <item>ཚལ་ཐོ།</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>སྡོད་ཁང།</item>
+        <item>ལག་འདོགས་ཁ་པར།</item>
+        <item>སྡེ་ཚན།</item>
+        <item>ལས་ཁུངས་ཀྱི་བརྙན་སྐྱེལ།</item>
+        <item>སྡོད་ཁང་གི་བརྙན་སྐྱེལ།</item>
+        <item>འབོད་བརྡ་གཏོང་ཆས།</item>
+        <item>གཞན་དག</item>
+        <item>རང་སྒྲུབ།</item>
+    </string-array>
+    <string-array name="emailAddressTypes">
+        <item>མི་སྒེར།</item>
+        <item>ལས་ཀ</item>
+        <item>གཞན་དག</item>
+        <item>རང་སྒྲུབ།</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>སྡོད་ཁང།</item>
+        <item>སྡེ་ཚན།</item>
+        <item>གཞན་དག</item>
+        <item>རང་སྒྲུབ།</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>སྡོད་ཁང།</item>
+        <item>ལས་ཀ</item>
+        <item>གཞན་དག</item>
+        <item>རང་སྒྲུབ།</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>སྡེ་ཚན།</item>
+        <item>གཞན་དག</item>
+        <item>རང་སྒྲུབ།</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>ཀྲུང་གོའི་ཡཱ་ཧུའུ།</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+</resources>
