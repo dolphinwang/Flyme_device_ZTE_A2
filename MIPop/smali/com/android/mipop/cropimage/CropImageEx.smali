@@ -1240,11 +1240,11 @@
     invoke-virtual {v14, v15}, Landroid/widget/Button;->setEnabled(Z)V
 
     .line 272
-    const-class v14, Landroid/app/KeyguardManager;
+    const-string v14, "keyguard"
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v14}, Lcom/android/mipop/cropimage/CropImageEx;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v0, v14}, Lcom/android/mipop/cropimage/CropImageEx;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v14
 
