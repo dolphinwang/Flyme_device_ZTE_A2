@@ -57,7 +57,7 @@ RESOLUTION := 720x1280
 vendor_saved_apps := Bluetooth KeyChain HTMLViewer UserDictionaryProvider BackupRestoreConfirmation \
                      FusedLocation PrintSpooler SharedStorageBackup  ExternalStorageProvider InputDevices \
                      ProxyHandler Shell DefaultContainerService SuperSU Camera_ZTE VirtualHardKey \
-                     zgesture MIPop FPService fingerprint FMRadio_ZTE
+                     zgesture MIPop FPService fingerprint FMRadio_ZTE MiraVision_ZTE SchedulePowerOnOff
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
