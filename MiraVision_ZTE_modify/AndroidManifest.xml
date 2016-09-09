@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:sharedUserId="android.uid.system" package="com.zte.miravision" platformBuildVersionCode="21" platformBuildVersionName="5.0.1-1624448">
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES"/>
+    <application android:allowBackup="false" android:debuggable="false" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/Theme.ZTE.Light">
+        <meta-data android:name="isZteApp" android:value="true"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name=".MiravisionActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.zte.miravision.action.setting"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

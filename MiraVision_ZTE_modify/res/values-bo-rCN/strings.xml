@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">བརྙན་གཞིའི་ཁྱད་ཡོན།</string>
+    <string name="gray">དཀར་ནག</string>
+    <string name="inverse">ཚོས་ལོག</string>
+    <string name="vivid">ཧར་པོ།</string>
+    <string name="colortemperature">མདོག་དྲོད།</string>
+    <string name="sharpness">རྣོ་ཚད།</string>
+    <string name="saturation">ཚད་ལོངས་ཚད།</string>
+    <string name="cold">གྲང་།</string>
+    <string name="warm">དྲོ།</string>
+    <string name="mild">སྙོམས་པོ།</string>
+    <string name="sharp">རྣོ་ངར།</string>
+    <string name="nature">རང་བཞིན།</string>
+    <string name="florid">བཀྲ་ཆེ།</string>
+    <string name="contrast">བསྡུར་ཚད།</string>
+    <string name="standard">ཚད་ལྡན།</string>
+    <string name="mode">དཔེ་རྣམ།</string>
+    <string name="usermode">རང་སྒྲུབ།</string>
+    <string name="fade">ཤུགས་འཕྲི།</string>
+    <string name="enhance">ཤུགས་སྣོན།</string>
+    <string name="reset">སོར་བཞག་སླར་གསོ།</string>
+</resources>

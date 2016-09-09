@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/drawer_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/image_layout" android:layout_width="fill_parent" android:layout_height="@dimen/image_height">
+        <ImageView android:id="@id/myImage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="6.0dip" android:scaleType="fitXY" />
+    </RelativeLayout>
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:id="@id/layout_root" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:id="@id/layout_default" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+                <View android:background="@color/line_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <RelativeLayout android:id="@id/layout_standard" android:background="?android:selectableItemBackground" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight" android:paddingEnd="?android:scrollbarSize">
+                    <com.zte.mifavor.widget.TextViewZTE android:textSize="18.0sp" android:textColor="@color/text_color_b" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_marginLeft="@dimen/lr_margin" android:text="@string/standard" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    <com.zte.mifavor.widget.RadioButtonZTE android:id="@id/radiobtn_standard" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/radiobtn_marginR" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <View android:background="@color/line_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <RelativeLayout android:id="@id/layout_heibai" android:background="?android:selectableItemBackground" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight" android:paddingEnd="?android:scrollbarSize">
+                    <com.zte.mifavor.widget.TextViewZTE android:textSize="18.0sp" android:textColor="@color/text_color_b" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_marginLeft="@dimen/lr_margin" android:text="@string/gray" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    <com.zte.mifavor.widget.RadioButtonZTE android:id="@id/radiobtn_heibai" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/radiobtn_marginR" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <View android:background="@color/line_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <RelativeLayout android:id="@id/layout_fanse" android:background="?android:selectableItemBackground" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight" android:paddingEnd="?android:scrollbarSize">
+                    <com.zte.mifavor.widget.TextViewZTE android:textSize="18.0sp" android:textColor="@color/text_color_b" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_marginLeft="@dimen/lr_margin" android:text="@string/inverse" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    <com.zte.mifavor.widget.RadioButtonZTE android:id="@id/radiobtn_fanse" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/radiobtn_marginR" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <View android:background="@color/line_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <RelativeLayout android:id="@id/layout_xianyan" android:background="?android:selectableItemBackground" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight" android:paddingEnd="?android:scrollbarSize">
+                    <com.zte.mifavor.widget.TextViewZTE android:textSize="18.0sp" android:textColor="@color/text_color_b" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_marginLeft="@dimen/lr_margin" android:text="@string/vivid" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    <com.zte.mifavor.widget.RadioButtonZTE android:id="@id/radiobtn_xianyan" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/radiobtn_marginR" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <View android:background="@color/line_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight">
+                    <LinearLayout android:id="@id/layout_zidingyi_setting" android:background="?android:selectableItemBackground" android:clickable="true" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="8.0">
+                        <com.zte.mifavor.widget.TextViewZTE android:textSize="18.0sp" android:textColor="@color/text_color_b" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_marginLeft="@dimen/lr_margin" android:text="@string/usermode" />
+                    </LinearLayout>
+                    <View android:layout_gravity="center_vertical" android:background="@color/line_color" android:layout_width="1.0px" android:layout_height="40.0dip" />
+                    <RelativeLayout android:id="@id/layout_zidingyi" android:background="?android:selectableItemBackground" android:clickable="true" android:layout_width="80.0dip" android:layout_height="fill_parent" android:paddingEnd="?android:scrollbarSize">
+                        <com.zte.mifavor.widget.RadioButtonZTE android:id="@id/radiobtn_zidingyi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/radiobtn_marginR" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <View android:background="@color/line_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/layout_user" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:layout_below="@id/layout_default">
+                <View android:background="@color/line_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <RelativeLayout android:id="@id/layout_baohedu" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/lr_margin" android:layout_marginTop="5.0dip" android:layout_marginRight="@dimen/lr_margin">
+                    <TextView android:textSize="18.0sp" android:textColor="@color/text_color_b" android:layout_width="wrap_content" android:layout_height="50.0dip" android:text="@string/saturation" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/layout_sb_baohedu" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip">
+                    <com.zte.mifavor.widget.TextViewZTE android:textColor="@color/sub_text_color" android:id="@id/textView5" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginLeft="@dimen/lr_margin" android:text="@string/nature" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    <com.zte.mifavor.widget.SeekBarZTE android:id="@id/seekBar_baohedu" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/progressbar_margin" android:layout_marginRight="@dimen/progressbar_margin" android:layout_centerVertical="true" />
+                    <TextView android:textColor="@color/sub_text_color" android:id="@id/textView6" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginRight="@dimen/lr_margin" android:text="@string/florid" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <View android:background="@color/line_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <RelativeLayout android:id="@id/layout_sewen" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/lr_margin" android:layout_marginTop="5.0dip" android:layout_marginRight="@dimen/lr_margin">
+                    <com.zte.mifavor.widget.TextViewZTE android:textSize="18.0sp" android:textColor="@color/text_color_b" android:layout_width="wrap_content" android:layout_height="50.0dip" android:text="@string/colortemperature" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/layout_sb_sewen" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip">
+                    <TextView android:textColor="@color/sub_text_color" android:id="@id/textView1" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginLeft="@dimen/lr_margin" android:text="@string/warm" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    <com.zte.mifavor.widget.SeekBarZTE android:id="@id/seekBar_sewen" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/progressbar_margin" android:layout_marginRight="@dimen/progressbar_margin" android:layout_centerVertical="true" />
+                    <TextView android:textColor="@color/sub_text_color" android:id="@id/textView2" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginRight="@dimen/lr_margin" android:text="@string/cold" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <View android:background="@color/line_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <RelativeLayout android:id="@id/layout_ruidu" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/lr_margin" android:layout_marginTop="5.0dip" android:layout_marginRight="@dimen/lr_margin">
+                    <com.zte.mifavor.widget.TextViewZTE android:textSize="18.0sp" android:textColor="@color/text_color_b" android:layout_width="wrap_content" android:layout_height="50.0dip" android:text="@string/sharpness" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/layout_sb_ruidu" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip">
+                    <TextView android:textColor="@color/sub_text_color" android:id="@id/textView3" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginLeft="@dimen/lr_margin" android:text="@string/mild" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    <com.zte.mifavor.widget.SeekBarZTE android:id="@id/seekBar_ruidu" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/progressbar_margin" android:layout_marginRight="@dimen/progressbar_margin" android:layout_centerVertical="true" />
+                    <TextView android:textColor="@color/sub_text_color" android:id="@id/textView4" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginRight="@dimen/lr_margin" android:text="@string/sharp" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <View android:background="@color/line_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <RelativeLayout android:id="@id/layout_duibidu" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/lr_margin" android:layout_marginTop="5.0dip" android:layout_marginRight="@dimen/lr_margin">
+                    <TextView android:textSize="18.0sp" android:textColor="@color/text_color_b" android:layout_width="wrap_content" android:layout_height="50.0dip" android:text="@string/contrast" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/layout_sb_duibidu" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip">
+                    <TextView android:textColor="@color/sub_text_color" android:id="@id/textView7" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginLeft="@dimen/lr_margin" android:text="@string/fade" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    <com.zte.mifavor.widget.SeekBarZTE android:id="@id/seekBar_duibidu" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/progressbar_margin" android:layout_marginRight="@dimen/progressbar_margin" android:layout_centerVertical="true" />
+                    <TextView android:textColor="@color/sub_text_color" android:id="@id/textView8" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginRight="@dimen/lr_margin" android:text="@string/enhance" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <View android:background="@color/line_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
