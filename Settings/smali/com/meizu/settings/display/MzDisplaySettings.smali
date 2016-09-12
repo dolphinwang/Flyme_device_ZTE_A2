@@ -770,6 +770,22 @@
     iget-object v7, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mButtonBackLightSwitchPreference:Lcom/meizu/common/preference/SwitchPreference;
 
     invoke-virtual {v7, v5}, Lcom/meizu/common/preference/SwitchPreference;->setChecked(Z)V
+
+    invoke-direct {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->hasNavigationBar()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_hxs_0
+
+    invoke-virtual {p0}, Lcom/meizu/settings/display/MzDisplaySettings;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
+
+    move-result-object v5
+
+    iget-object v7, p0, Lcom/meizu/settings/display/MzDisplaySettings;->mButtonBackLightSwitchPreference:Lcom/meizu/common/preference/SwitchPreference;
+
+    invoke-virtual {v5, v7}, Landroid/preference/PreferenceScreen;->removePreference(Landroid/preference/Preference;)Z
+
+    :cond_hxs_0
 # hxs modify end
     .line 123
     const-string v5, "screen_timeout"
