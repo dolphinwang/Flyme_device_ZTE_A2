@@ -19,9 +19,9 @@ apktool if ../../flyme/release/arm/SYSTEM/framework/flyme-res/flyme-res.apk
 
 #idtoname out/PackageInstaller/res/values/public.xml out/PackageInstaller
 
-apktool d ../../flyme/release/arm/SYSTEM/priv-app/Mms/Mms.apk -o out/Mms
+#apktool d ../../flyme/release/arm/SYSTEM/priv-app/Mms/Mms.apk -o out/Mms
 
-idtoname out/Mms/res/values/public.xml out/Mms
+#idtoname out/Mms/res/values/public.xml out/Mms
 
 apktool d ../../flyme/release/arm/SYSTEM/priv-app/Settings/Settings.apk -o out/Settings
 
