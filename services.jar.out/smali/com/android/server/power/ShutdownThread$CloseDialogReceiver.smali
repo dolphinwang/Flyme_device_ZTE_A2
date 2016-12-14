@@ -29,24 +29,24 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .line 165
+    .line 336
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    .line 166
+    .line 337
     iput-object p1, p0, Lcom/android/server/power/ShutdownThread$CloseDialogReceiver;->mContext:Landroid/content/Context;
 
-    .line 167
+    .line 338
     new-instance v0, Landroid/content/IntentFilter;
 
     const-string v1, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 168
+    .line 339
     .local v0, "filter":Landroid/content/IntentFilter;
     invoke-virtual {p1, p0, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 169
+    .line 340
     return-void
 .end method
 
@@ -57,26 +57,33 @@
     .param p1, "unused"    # Landroid/content/DialogInterface;
 
     .prologue
-    .line 177
+    .line 349
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$CloseDialogReceiver;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 178
+    .line 350
     return-void
 .end method
 
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 1
+    .locals 2
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 173
+    .line 344
+    const-string v0, "ShutdownThread"
+
+    const-string v1, "CloseDialogReceiver: onReceive"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 345
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$CloseDialogReceiver;->dialog:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->cancel()V
 
-    .line 174
+    .line 346
     return-void
 .end method
