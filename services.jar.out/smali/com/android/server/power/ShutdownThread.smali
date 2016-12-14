@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/power/ShutdownThread$FlymeInjector;,
         Lcom/android/server/power/ShutdownThread$CloseDialogReceiver;
     }
 .end annotation
@@ -900,7 +901,7 @@
     .line 472
     sget-object v4, Lcom/android/server/power/ShutdownThread;->pd:Landroid/app/ProgressDialog;
 
-    invoke-virtual {v4}, Landroid/app/ProgressDialog;->show()V
+    invoke-static/range {p0 .. p0}, Lcom/android/server/power/ShutdownThread$FlymeInjector;->showShutDownAnimation(Landroid/content/Context;)V
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_2
 
@@ -1599,9 +1600,10 @@
     move-result-object v13
 
     const-string v14, "ipo_setting"
-
-    const/4 v15, 0x1
-
+# hxs modify begin
+# fix shutdown not shutdown
+    const/4 v15, 0x0
+# hxs modify end
     invoke-static {v13, v14, v15}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
     :try_end_1
     .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_1} :catch_1
